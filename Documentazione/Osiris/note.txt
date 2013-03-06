@@ -1,0 +1,5 @@
+- I sorgenti non pubblici non riguardano il P2P, solo la parte CMS (reputazioni, oggetti, rendering pagine, bbcode). E' in C++ con Boost e ASIO: http://think-async.com/
+
+- Anubis non è "interessante"", è l'insieme di servizi PHP che usano per sviluppare il progetto (ad esempio il sistema di traduzioni).
+
+- La parte interessante è Isis
