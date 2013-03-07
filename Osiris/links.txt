@@ -1,4 +1,0 @@
-homepage:	http://www.osiris-sps.org
-repository:	http://www.osiris-sps.org/websvn_inline/
-docs:		http://www.osiris-sps.org/documentation/
-docs Isis:	http://www.osiris-sps.org/isis_docs/
