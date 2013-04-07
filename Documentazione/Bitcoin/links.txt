@@ -1,3 +1,7 @@
 documenti tecnici: https://en.bitcoin.it/wiki/Research
 regole protocollo: https://en.bitcoin.it/wiki/Protocol_rules
 specifica protocollo: https://en.bitcoin.it/wiki/Protocol_specification
+
+funzionamento transazioni: https://en.bitcoin.it/wiki/Transactions
+block explorer: https://blockexplorer.com/
+articolo lwn: https://lwn.net/Articles/414452/
