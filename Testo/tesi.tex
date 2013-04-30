@@ -1,28 +1,28 @@
-\documentclass[10pt,a4paper,twoside,draft,notitlepage]{report}
-\usepackage{graphicx}
-\usepackage{ifpdf}
-\ifpdf
-   \DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps}
-   \usepackage{hyperref} 
-\else
-   % put here packages only for the DVI:
-\fi
-\usepackage{tesi}
+\documentclass[10pt,a4paper,twoside,english,italian]{report}
+
+\usepackage{uniudtesi}
+
+\graphicspath{{./img/}}
+  
+\makeindex
 
 \begin{document}
 \input{./tex/titolo.tex}
-%\maketitle
+\maketitle
+
 \input{./tex/abstract.tex}
 \tableofcontents
-\listoffigures
-\listoftables
+%\listoffigures
+%\listoftables
+
 \input{./tex/intro.tex}
 
 %\appendix
 %\input{./tex/myappendix.tex}
 
-% Bibliography:
 \bibliographystyle{plain}
 \bibliography{bibliografia}
+
+%\printindex % se si fa l'indice analitico.
 
 \end{document}

@@ -1,40 +1,13 @@
-\begin{titlepage}
-\author{Paoluzzi Matteo}
-\title{BitCoin}
-\begin{center}
-
-% Upper part of the page. The '~' is needed because \\
-% only works if a paragraph has started.
-%\includegraphics[width=0.15\textwidth]{./logo}~\\[1cm]
-
-\textsc{\LARGE Università degli Studi di Udine}\\[1.5cm]
-
-\textsc{\Large Tesi}\\[0.5cm]
-
-% Title
-%\HRule \\[0.4cm]
-{ \huge \bfseries BitCoin}\\[0.4cm]
-
-%\HRule \\[1.5cm]
-
-% Author and supervisor
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Autore:}\\
-Matteo \textsc{Paoluzzi}
-\end{flushleft}
-\end{minipage}
-\begin{minipage}{0.4\textwidth}
-\begin{flushright} \large
-\emph{Relatore:} \\
-Dr.~Ivan \textsc{Scagnetto}
-\end{flushright}
-\end{minipage}
-
-\vfill
-
-% Bottom of the page
-{\large \today}
-
-\end{center}
-\end{titlepage}
+\titolo{La mia tesi\\ di Matematica}
+\laureanda{Giovanna Tesista}
+%\laureando{Giovanni Tesista}
+\annoaccademico{2012-2013}
+%\facolta{Scienze Matematiche, Fisiche e Naturali} % (default)
+%\corsodilaurea{Informatica} % per la laurea vecchio ordinamento
+%\corsodilaureatriennalein{Matematica}
+%\corsodilaureaspecialisticain{Informatica}
+\corsodilaureamagistralein{Matematica}
+\relatore[Prof.]{Tal dei Tali}
+%\correlatore{Talaltro dei Tali}
+%\correlatoreDue{Secondo Correlatore}
+\dedica{Ai miei genitori\\ per non avermi tagliato i viveri} % (facoltativo)
