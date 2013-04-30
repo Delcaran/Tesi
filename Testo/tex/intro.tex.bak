@@ -1,0 +1,10 @@
+%\documentclass[../tesi.tex]{subfiles} 
+\chapter{Introduzione}
+Introduzione generale a cosa è un P2P
+\section{Titolo della sezione di prova}
+testo
+\pagebreak
+testo
+\pagebreak
+\section{seconda sezione}
+\nocite{core_concepts_p2p} 

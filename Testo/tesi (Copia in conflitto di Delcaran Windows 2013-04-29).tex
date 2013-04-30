@@ -1,0 +1,31 @@
+\documentclass[10pt,a4paper,twoside,draft,titlepage]{book}
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+   \DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps}
+   \usepackage{hyperref} 
+\else
+   % put here packages only for the DVI:
+\fi
+\usepackage{tesi}
+
+\begin{document}
+\input{./tex/titolo.tex}
+%\maketitle
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+\input{./tex/intro.tex}
+%\appendix
+%\input{./tex/myappendix.tex}
+
+% Bibliography:
+%\clearpage
+%\addcontentsline{toc}{chapter}{Bibliografia}
+%\input{./tex/mybibliography.tex}
+\bibliographystyle{plain}
+\cite{}
+\bibliography{bibliografia}
+
+\end{document}

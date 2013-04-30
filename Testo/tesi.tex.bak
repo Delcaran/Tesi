@@ -1,0 +1,28 @@
+\documentclass[10pt,a4paper,twoside,draft,notitlepage]{report}
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+   \DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps}
+   \usepackage{hyperref} 
+\else
+   % put here packages only for the DVI:
+\fi
+\usepackage{tesi}
+
+\begin{document}
+\input{./tex/titolo.tex}
+%\maketitle
+\input{./tex/abstract.tex}
+\tableofcontents
+\listoffigures
+\listoftables
+\input{./tex/intro.tex}
+
+%\appendix
+%\input{./tex/myappendix.tex}
+
+% Bibliography:
+\bibliographystyle{plain}
+\bibliography{bibliografia}
+
+\end{document}
