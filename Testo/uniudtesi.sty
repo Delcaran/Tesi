@@ -12,7 +12,12 @@
 %\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
 %\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \usepackage[utf8]{inputenc}
-\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{minitoc} % crea dei mini-indici nei capitoli nel caso di numerose sezioni
+\usepackage[bottom]{footmisc} % forzo le note in fondo alle pagine
+\usepackage{acronym} % \crea un elenco degli acronimi con link ipertestuali e definizioni
+\usepackage{varioref} % \vref e \eqref indicano da soli la pagina dei riferimenti se serve
+\usepackage[italian,english]{babel}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \usepackage{latexsym}
 \usepackage{makeidx}
@@ -21,6 +26,20 @@
 %\usepackage{epstopdf}
 \usepackage[fixlanguage]{babelbib}
 \usepackage{fancyhdr}
+
+\newcommand{\fncyblank}{\fancyhf{}}
+\newenvironment{abstract}%
+{\cleardoublepage\fncyblank\null \vfill\begin{center}%
+\bfseries \abstractname \end{center}}%
+	{\vfill\null}
+
+% tolgo le impaginazioni in caso di pagina vuota
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside
+\ifodd\c@page
+\else\hbox{}\thispagestyle{empty}\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
 
 % Col pacchetto tocbibind compariranno nell'indice anche
 % la bibliografia ed eventualmente l'indice analitico

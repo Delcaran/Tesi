@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper,twoside,english,italian]{report}
+\documentclass[11pt,a4paper,twoside,openright,english,italian,draft]{book}
 
 \usepackage{uniudtesi}
 
@@ -8,6 +8,7 @@
 
 \begin{document}
 \input{./tex/titolo.tex}
+\frontmatter
 \maketitle
 
 \input{./tex/abstract.tex}
@@ -15,11 +16,13 @@
 %\listoffigures
 %\listoftables
 
+\mainmatter
 \input{./tex/intro.tex}
 
 %\appendix
 %\input{./tex/myappendix.tex}
 
+\backmatter
 \bibliographystyle{plain}
 \bibliography{bibliografia}
 
