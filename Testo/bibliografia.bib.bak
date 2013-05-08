@@ -144,17 +144,6 @@
     booktitle = {Proceedings of Financial Cryptography 2013},
     month = {April},
     year = {2013},
-    url = {http://www.truststc.org/pubs/907.html},
+    URL = {http://www.truststc.org/pubs/907.html},
 	note = {Disponibile in \url{http://fc13.ifca.ai/proc/1-2.pdf}}
-}
-
-@article{pool_analysis,
-  author    = {Meni Rosenfeld},
-  title     = {Analysis of Bitcoin Pooled Mining Reward Systems},
-  journal   = {CoRR},
-  volume    = {abs/1112.4980},
-  year      = {2011},
-  ee        = {http://arxiv.org/abs/1112.4980},
-  bibsource = {DBLP, http://dblp.uni-trier.de}
-  note = {Disponibile in \url{http://arxiv.org/pdf/1112.4980v1.pdf}}
 }
