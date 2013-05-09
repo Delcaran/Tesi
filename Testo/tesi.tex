@@ -1,12 +1,13 @@
-\documentclass[11pt,a4paper,twoside,openright,english,italian,draft]{book}
+\documentclass[11pt,a4paper,twoside,openright,english,italian]{book}
 
 \usepackage{uniudtesi}
-
 \graphicspath{{./img/}}
-  
+\usepackage{commands}
+
 \makeindex
 
 \begin{document}
+
 \input{./tex/titolo.tex}
 \frontmatter
 \maketitle
@@ -23,9 +24,9 @@
 %\input{./tex/myappendix.tex}
 
 \backmatter
-\bibliographystyle{plain}
+\nocite{*}
+\bibliographystyle{babplain}
 \bibliography{bibliografia}
 
 %\printindex % se si fa l'indice analitico.
-
 \end{document}
