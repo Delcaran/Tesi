@@ -3,7 +3,33 @@
 P2P come alternativa a client-server "puro"
 Esempio di una ricerca MP3 \cite{kurose_ross}
 Chiarire come ogni peer è contemporaneamente sia un client che un server, in tal senso il paradigma è sempre client-server: esempio: se scarico via http, ogni peer è sia un client web che un web server temporaneo (temporaneo perché IP non è fisso).
-P2P è scalabile per definizione
+
+\section{Distribuzione File}
+Ciascun peer distribuisce la quantità di contenuti in suo possesso mentre scarica da altri peer quello che gli manca
+\subsection{Scalabilità}
+\begin{description}
+\item[$u_s$]frequenza di upload verso il server
+\item[$u_i$]frequenza di upload dell'$i-$esimo peer
+\item[$d_i$]frequenza di download dell'$i-$esimo peer
+\item[$F$]dimensione in bit del file da distribuire
+\item[$N$]numero di peer che vuole una copia del file
+\item[$D_{cs}$]tempo di distribuzione del file per l'architettura client-server
+\end{description}
+Implicazione: condizioni ottimali di distribuzione (rete dedicata)
+\subsubsection{Client-Server}
+Osservazioni:
+\begin{itemize}
+\item Il server deve trasmettere il file a $N$ peer, quindi $NF$ bit. Data la frequenza di upload $u_s$, il tempo per distribuire il file deve essere almeno $NF/u_s$.
+\item sia $ d_{min} = \min\{d_1,d_p,\cdots,d_N \}$ la frequenza di download del peer con il valore più basso. Tale peer riceverà il file in almeno $F/d_{min}$ secondi, che è quindi il tempo minimo di distribuzione.
+\end{itemize}
+Da cui
+\begin{displaymath}
+D_{cs} \geq \max \left\lbrace \frac{NF}{u_s}, \frac{F}{d_{min}} \right\rbrace
+\end{displaymath}
+Questo è il limite inferiore al tempo di distribuzione minimo per l'architettura client-server. Trattiamo il caso ottimo e consideriamolo come il tempo di distribuzione effettivo, ovvero:
+\begin{equation}
+D_{cs} = \max \left\lbrace \frac{NF}{u_s}, \frac{F}{d_{min}} \right\rbrace
+\end{equation}
 
 \section{Localizzazione dei contenuti}
 \subsection{Directory centralizzata}
