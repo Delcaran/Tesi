@@ -1,32 +1,39 @@
- \documentclass[11pt,a4paper,twoside,openright,english,italian]{book}
+\documentclass[11pt,a4paper,twoside,openright,english,italian,draft]{book}
 
 \usepackage{uniudtesi}
 \graphicspath{{./img/}}
 \usepackage{commands}
 
+\includeonly{./tex/titolo,./tex/abstract,./tex/intro}
+
 \makeindex
 
 \begin{document}
 
-\input{./tex/titolo.tex}
+%\input{./tex/titolo.tex}
+\include{./tex/titolo}
+
 \frontmatter
 \maketitle
 
-\input{./tex/abstract.tex}
+%\input{./tex/abstract.tex}
+\include{./tex/abstract}
 \tableofcontents
 %\listoffigures
 %\listoftables
 
 \mainmatter
-\input{./tex/intro.tex}
+%\input{./tex/intro.tex}
+\include{./tex/intro}
 
-%\appendix
+\appendix
 %\input{./tex/myappendix.tex}
+\include{./tex/appendix}
 
 \backmatter
 \nocite{*}
 \bibliographystyle{babplain}
 \bibliography{bibliografia}
 
-%\printindex % se si fa l'indice analitico.
+\printindex % se si fa l'indice analitico.
 \end{document}
