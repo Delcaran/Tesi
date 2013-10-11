@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: tesi.aux
+A level-1 auxiliary file: ./tex/titolo.aux
+A level-1 auxiliary file: ./tex/abstract.aux
+A level-1 auxiliary file: ./tex/intro.aux
+The style file: babplain.bst
+Database file #1: bibliografia.bib
+Warning--to sort, need author or key in bitcoin_wiki
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Warning--empty language in bitcoin_wiki
+You've used 14 entries,
+            2788 wiz_defined-function locations,
+            740 strings with 9274 characters,
+and the built_in function-call counts, 6179 in all, are:
+= -- 538
+> -- 223
+< -- 10
++ -- 86
+- -- 71
+* -- 661
+:= -- 839
+add.period$ -- 42
+call.type$ -- 14
+change.case$ -- 72
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 337
+empty$ -- 600
+format.name$ -- 145
+if$ -- 1339
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 13
+newline$ -- 82
+num.names$ -- 32
+pop$ -- 120
+preamble$ -- 1
+purify$ -- 60
+quote$ -- 0
+skip$ -- 182
+stack$ -- 0
+substring$ -- 211
+swap$ -- 164
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 50
+warning$ -- 2
+while$ -- 41
+width$ -- 16
+write$ -- 188
+(There were 2 warnings)

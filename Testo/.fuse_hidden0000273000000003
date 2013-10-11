@@ -1,0 +1,162 @@
+\begin{thebibliography}{10}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {bitcoin_wiki}
+\btxtitlefont {\btxifchangecase {Bitcoin wiki}{Bitcoin Wiki}}.
+\newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/}}.
+
+\bibitem {user_privacy}
+\btxnamefont {\btxlastnamefont {Androulaki}, Elli}, \btxnamefont {Ghassan
+  \btxlastnamefont {Karame}}, \btxnamefont {Marc \btxlastnamefont {Roeschlin}},
+  \btxnamefont {Tobias \btxlastnamefont {Scherer}}\btxandcomma {} \btxandlong
+  {}\ \btxnamefont {Srdjan \btxlastnamefont {Capkun}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Evaluating user privacy in
+  bitcoin}{Evaluating User Privacy in Bitcoin}}.
+\newblock Cryptology ePrint Archive, Report 2012/596, 2012.
+\newblock {\latintext \btxurlfont{http://eprint.iacr.org/2012/596.pdf}}.
+
+\bibitem {red_balloons}
+\btxnamefont {\btxlastnamefont {Babaioff}, Moshe}, \btxnamefont {Shahar
+  \btxlastnamefont {Dobzinski}}, \btxnamefont {Sigal \btxlastnamefont
+  {Oren}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Aviv \btxlastnamefont
+  {Zohar}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {On bitcoin and red
+  balloons}{On bitcoin and red balloons}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Proceedings of the 13th ACM Conference
+  on Electronic Commerce}, EC '12, \btxpageslong {}\ 56--73, New York, NY, USA,
+  2012. \btxpublisherfont {ACM}\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont
+  {978-1-4503-1415-2}}}.
+\newblock {\latintext \btxurlfont{http://doi.acm.org/10.1145/2229012.2229022}},
+  Disponibile in download gratuito all'indirizzo
+  \url{http://arxiv.org/pdf/1111.2626.pdf}.
+
+\bibitem {bitter_better}
+\btxnamefont {\btxlastnamefont {Barber}, Simon}, \btxnamefont {Xavier
+  \btxlastnamefont {Boyen}}, \btxnamefont {Elaine \btxlastnamefont
+  {Shi}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Ersin \btxlastnamefont
+  {Uzun}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Bitter to better —
+  how to make bitcoin a better currency}{Bitter to Better — How to Make Bitcoin
+  a Better Currency}}.
+\newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Keromytis},
+  AngelosD.}\ (\btxeditorlong {}): \btxtitlefont {Financial Cryptography and
+  Data Security}, \btxvolumelong {}\ \btxvolumefont {7397} \btxofserieslong {}\
+  \btxtitlefont {Lecture Notes in Computer Science}, \btxpageslong {}\
+  399--414. \btxpublisherfont {Springer Berlin Heidelberg}, 2012\ifbtxprintISBN
+  {, \mbox{\btxISBN~\btxISBNfont {978-3-642-32945-6}}}.
+\newblock {\latintext
+  \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_29}}, Disponibile in
+  download gratuito all'indirizzo \url{http://www.cs.stanford.edu/~xb/fc12/}.
+
+\bibitem {commitcoin}
+\btxnamefont {\btxlastnamefont {Clark}, Jeremy} \btxandlong {}\ \btxnamefont
+  {Aleksander \btxlastnamefont {Essex}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Commitcoin: Carbon dating commitments with
+  bitcoin}{CommitCoin: Carbon Dating Commitments with Bitcoin}}.
+\newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Keromytis},
+  AngelosD.}\ (\btxeditorlong {}): \btxtitlefont {Financial Cryptography and
+  Data Security}, \btxvolumelong {}\ \btxvolumefont {7397} \btxofserieslong {}\
+  \btxtitlefont {Lecture Notes in Computer Science}, \btxpageslong {}\
+  390--398. \btxpublisherfont {Springer Berlin Heidelberg}, 2012\ifbtxprintISBN
+  {, \mbox{\btxISBN~\btxISBNfont {978-3-642-32945-6}}}.
+\newblock {\latintext
+  \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_28}}, Disponibile in
+  download gratuito all'indirizzo \url{http://eprint.iacr.org/2011/677.pdf}.
+
+\bibitem {vulnerabilities}
+\btxnamefont {\btxlastnamefont {Engle}, Marling} \btxandlong {}\ \btxnamefont
+  {Javed\btxfnamespacelong I. \btxlastnamefont {Khan}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Vulnerabilities of p2p systems and a
+  critical look at their solution}{Vulnerabilities of P2P Systems and a
+  Critical Look at their Solution}}.
+\newblock \btxtechreplong {}, Kent State University, Networking and Media
+  Communications Research Laboratories, Department of Computer Science, 233
+  MSB, Kent, OH 44242, \btxprintmonthyear{.}{November}{2006}{long}.
+\newblock {\latintext
+  \btxurlfont{http://medianet.kent.edu/technicalreports.html}}.
+
+\bibitem {distributed_computing}
+\btxnamefont {\btxlastnamefont {Kshemkalyani}, Ajay\btxfnamespacelong D.}
+  \btxandlong {}\ \btxnamefont {Mukesh \btxlastnamefont
+  {Singhal}}\btxauthorcolon\ \btxtitlefont {Peer-to-peer computing and overlay
+  graphs}, \btxchapterlong {}~18.
+\newblock \btxpublisherfont {Cambridge University Press}, The Edinburgh
+  Building, Cambridge CB2 8RU, UK, \btxeditionnumlong {first}{}, 2008.
+
+\bibitem {kurose_ross}
+\btxnamefont {\btxlastnamefont {Kurose}, James\btxfnamespacelong F.}
+  \btxandlong {}\ \btxnamefont {Keith\btxfnamespacelong W. \btxlastnamefont
+  {Ross}}\btxauthorcolon\ \btxtitlefont {Applicazioni peer-to-peer},
+  \btxchapterlong {}~2, \btxpageslong {}\ 131--144.
+\newblock \btxpublisherfont {Pearson Education, Addison-Wesley},
+  \btxeditionnumlong {quarta}{}, 2006.
+
+\bibitem {middleman}
+\btxnamefont {\btxlastnamefont {Moore}, Tyler} \btxandlong {}\ \btxnamefont
+  {Nicolas \btxlastnamefont {Christin}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Beware the middleman: Empirical analysis of
+  bitcoin-exchange risk}{Beware the Middleman: Empirical Analysis of
+  Bitcoin-Exchange Risk}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Proceedings of Financial Cryptography
+  2013}, \btxprintmonthyear{.}{April}{2013}{long}.
+\newblock {\latintext \btxurlfont{http://www.truststc.org/pubs/907.html}},
+  Disponibile in download gratuito all'indirizzo
+  \url{http://fc13.ifca.ai/proc/1-2.pdf}.
+
+\bibitem {bitcoin}
+\btxnamefont {\btxlastnamefont {Nakamoto}, Satoshi}\btxauthorcolon\
+  \btxtitlefont {Bitcoin: A Peer-to-Peer Electronic Cash System}.
+\newblock satoshin@gmx.com.
+\newblock {\latintext \btxurlfont{www.bitcoin.org}}.
+
+\bibitem {anonimity}
+\btxnamefont {\btxlastnamefont {Reid}, Fergal} \btxandlong {}\ \btxnamefont
+  {Martin \btxlastnamefont {Harrigan}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {An analysis of anonymity in the bitcoin system}{An
+  Analysis of Anonymity in the Bitcoin System}}.
+\newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Altshuler}, Yaniv},
+  \btxnamefont {Yuval \btxlastnamefont {Elovici}}, \btxnamefont
+  {Armin\btxfnamespacelong B. \btxlastnamefont {Cremers}}, \btxnamefont {Nadav
+  \btxlastnamefont {Aharony}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Alex
+  \btxlastnamefont {Pentland}}\ (\btxeditorslong {}): \btxtitlefont {Security
+  and Privacy in Social Networks}, \btxpageslong {}\ 197--223.
+  \btxpublisherfont {Springer New York}, 2013\ifbtxprintISBN {,
+  \mbox{\btxISBN~\btxISBNfont {978-1-4614-4138-0}}}.
+\newblock {\latintext
+  \btxurlfont{http://dx.doi.org/10.1007/978-1-4614-4139-7_10}}, Disponibile in
+  download gratuito all'indirizzo \url{http://arxiv.org/pdf/1107.4524.pdf}.
+
+\bibitem {transazioni}
+\btxnamefont {\btxlastnamefont {Ron}, Dorit} \btxandlong {}\ \btxnamefont {Adi
+  \btxlastnamefont {Shamir}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase
+  {Quantitative analysis of the full bitcoin transaction graph}{Quantitative
+  Analysis of the Full Bitcoin Transaction Graph}}.
+\newblock Cryptology ePrint Archive, Report 2012/584, 2012.
+\newblock {\latintext \btxurlfont{http://eprint.iacr.org/2012/584.pdf}}.
+
+\bibitem {pool_analysis}
+\btxnamefont {\btxlastnamefont {Rosenfeld}, Meni}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Analysis of bitcoin pooled mining reward
+  systems}{Analysis of Bitcoin Pooled Mining Reward Systems}}.
+\newblock \btxjournalfont {CoRR}, abs/1112.4980, 2011.
+\newblock Disponibile in download gratuito all'indirizzo
+  \url{http://arxiv.org/pdf/1112.4980v1.pdf}.
+
+\bibitem {core_concepts_p2p}
+\btxnamefont {\btxlastnamefont {Schoeder}, Detlef}, \btxnamefont {Kai
+  \btxlastnamefont {Fischbach}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {Christian \btxlastnamefont {Schmitt}}\btxauthorcolon\ \btxtitlefont {Core
+  Concepts in Peer-to-Peer Networking}, \btxchapterlong {}~1.
+\newblock \btxpublisherfont {Idead Group Inc.}, 2005.
+
+\end{thebibliography}
