@@ -1,8 +1,11 @@
 \begin{abstract}
-Sommario della tesi in italiano
+Verrà descritta la struttura e il funzionamento della rete Bitcoin, un sistema monetario decentralizzato virtuale.
+Per prima cosa si procederà ad un raffronto tra le altre tipologie di reti P2P e la rete Bitcoin, evidenziandone le differenze e il perché tale rete sfugga ai normali criteri di catalogazione, pur rientrandone sotto alcuni punti di vista ben specifici.
+Verrà poi analizzata la rete nello specifico, illustrandone scopi, funzionamento, utilizzi e criticità, queste ultime soprattutto a confronto con le altre tipologie di rete nei casi attinenti.
+Infine verranno trattati in modo informale alcuni temi di carattere socio-economico collegati all'utilizzo di Bitcoin, analizzando brevemente alcune vicende di cronaca che negli ultimi anni hanno avuto tra i protagonisti tale rete.
 \end{abstract}
-\selectlanguage{english}
-\begin{abstract}
-Sommario della tesi in inglese
-\end{abstract}
-\selectlanguage{italian}
+%\selectlanguage{english}
+%\begin{abstract}
+%Sommario della tesi in inglese
+%\end{abstract}
+%\selectlanguage{italian}
