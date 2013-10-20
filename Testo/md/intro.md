@@ -155,3 +155,19 @@ Il protocollo Gnutella tenta di risolvere il problema in questo modo:
 
 #### Copertura gerarchica
 
+Avendo descritto gli approcci diametralmente opposti, vediamo ora la proverbiale via di mezzo, il modello di copertura gerarchica. L'obiettivo è ottenere il meglio dalle due implementazioni sopra descritte, e fu per la prima volta realizzato da FastTrack, un protocollo implementato in Kazaa e Morpheus. Una variante di questo modello è tutt'oggi utilizzata dall'evoluzione di Gnutella, Gnutella2.
+Come per il query flooding, anche questo è un modello decentralizzato, ma a differenza di tale modello (e a discapito del principio Peer-to-Peer) non tutti i peer sono uguali: come il nome fa suggerire, esiste una gerarchia di peer che assegna a quelli più potenti (leggasi, quelli con più banda) alcune responsabilità in più designandoli come leader per altri peer.
+Ogni nuovo peer deve stabilire una connessione con un leader a cui notifica tutti i file che intende condividere, creando quindi una sorta di mini indice centralizzato rispettavamente ai peer connessi a quel leader (solitamente nell'ordine del centinaio). 
+A differenza del modello centralizzato però, i leader non sono server dedicati, bensì peer veri e propri in collegamente tra di loro. Il risultato è che i leader sono collegati ad una rete di copertura del tutto simile a quella del modello query flooding, modello utilizzato infatti per l'inoltro delle ricerche. La ricerca di un file da parte di un peer segue quindi due fasi: una richiesta al proprio leader che provvede a consultare il suo indice e una eventuale propagazione della richiesta tramite query flooding da parte del leader agli altri leader.
+Questa struttura "a strati" permette quindi la connessione di molti peer senza generare una quantità eccessiva di traffico nella rete "ospite".
+
+
+#### DHT (Distributed Hash Table)
+
+%TODO espandere
+
+Crea un indice completamente distribuito che fa corrispondere gli identificatori dei file alla loro posizione.
+Consente agli utenti di determinare tutte le posizione di un file senza generare un'eccessiva quantità di traffico di ricerca.
+Overnet (Kademlia) sfrutta DHT come anche BitTorrent.
+	
+	
