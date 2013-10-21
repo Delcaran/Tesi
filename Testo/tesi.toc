@@ -1,0 +1,20 @@
+\select@language {italian}
+\select@language {english}
+\select@language {italian}
+\contentsline {chapter}{\numberline {1}ontroduzione}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Reti P2P}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Distribuzione dei file in una rete P2P}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Scalabilit\IeC {\`a} (\cite {kurose-ross})}{3}{subsection.1.2.1}
+\contentsline {subsubsection}{Caso Client-Server}{3}{subsection.1.2.1}
+\contentsline {subsubsection}{Caso P2P}{4}{subsection.1.2.1}
+\contentsline {subsubsection}{Confronto}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Ricerca di informazioni}{5}{subsection.1.2.2}
+\contentsline {subsubsection}{Directory centralizzata}{5}{subsection.1.2.2}
+\contentsline {subsubsection}{Query flooding}{6}{subsection.1.2.2}
+\contentsline {subsubsection}{Copertura gerarchica}{7}{Item.8}
+\contentsline {subsubsection}{DHT (Distributed Hash Table)}{7}{Item.8}
+\contentsline {chapter}{Bibliografia}{9}{appendix*.2}
+\select@language {italian}
+\select@language {italian}
+\select@language {italian}
+\select@language {italian}

@@ -1,0 +1,9 @@
+Bitcoin: moneta elettronica decentralizzata
+===========================================
+
+Tutte le reti P2P finora descritte sono in circolazione da molti anni, hanno una base di utenti che conta milioni di peer divisi tra utenti reali e server automatizzati, contano migliaia di forum di supporto e scambiano quotidianamente una immensa fetta del traffico totale della rete Internet (tanto che molti provider tendono a limitarne quanto più possibile l'utilizzo, soprattutto nelle fasce orarie di maggior traffico).
+Sono però tutte reti dedicate al file-sharing.
+Bitcoin no. O almeno, non proprio...
+
+Bitcoin è una rete P2P (intesa per tutti e tre i livelli descritti in precedenza) che mira a creare un sistema di valuta digitale priva di controllo centrale, con pagamenti effettuati direttamente tra gli utenti senza l'intervento di terzi.
+È stata ideata e realizzata in origine da un anonimo noto con il nome di **Satoshi Nakamoto** (@bitcoin)

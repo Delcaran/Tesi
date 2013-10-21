@@ -17,7 +17,7 @@
 \btxtitlefont {\btxifchangecase {Bitcoin wiki}{Bitcoin Wiki}}.
 \newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/}}.
 
-\bibitem {user_privacy}
+\bibitem {user-privacy}
 \btxnamefont {\btxlastnamefont {Androulaki}, Elli}, \btxnamefont {Ghassan
   \btxlastnamefont {Karame}}, \btxnamefont {Marc \btxlastnamefont {Roeschlin}},
   \btxnamefont {Tobias \btxlastnamefont {Scherer}}\btxandcomma {} \btxandlong
@@ -27,7 +27,7 @@
 \newblock Cryptology ePrint Archive, Report 2012/596, 2012.
 \newblock {\latintext \btxurlfont{http://eprint.iacr.org/2012/596.pdf}}.
 
-\bibitem {red_balloons}
+\bibitem {red-balloons}
 \btxnamefont {\btxlastnamefont {Babaioff}, Moshe}, \btxnamefont {Shahar
   \btxlastnamefont {Dobzinski}}, \btxnamefont {Sigal \btxlastnamefont
   {Oren}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Aviv \btxlastnamefont
@@ -41,7 +41,7 @@
   Disponibile in download gratuito all'indirizzo
   \url{http://arxiv.org/pdf/1111.2626.pdf}.
 
-\bibitem {bitter_better}
+\bibitem {bitter-better}
 \btxnamefont {\btxlastnamefont {Barber}, Simon}, \btxnamefont {Xavier
   \btxlastnamefont {Boyen}}, \btxnamefont {Elaine \btxlastnamefont
   {Shi}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Ersin \btxlastnamefont
@@ -85,7 +85,7 @@
 \newblock {\latintext
   \btxurlfont{http://medianet.kent.edu/technicalreports.html}}.
 
-\bibitem {distributed_computing}
+\bibitem {distributed-computing}
 \btxnamefont {\btxlastnamefont {Kshemkalyani}, Ajay\btxfnamespacelong D.}
   \btxandlong {}\ \btxnamefont {Mukesh \btxlastnamefont
   {Singhal}}\btxauthorcolon\ \btxtitlefont {Peer-to-peer computing and overlay
@@ -93,7 +93,7 @@
 \newblock \btxpublisherfont {Cambridge University Press}, The Edinburgh
   Building, Cambridge CB2 8RU, UK, \btxeditionnumlong {first}{}, 2008.
 
-\bibitem {kurose_ross}
+\bibitem {kurose-ross}
 \btxnamefont {\btxlastnamefont {Kurose}, James\btxfnamespacelong F.}
   \btxandlong {}\ \btxnamefont {Keith\btxfnamespacelong W. \btxlastnamefont
   {Ross}}\btxauthorcolon\ \btxtitlefont {Applicazioni peer-to-peer},
@@ -144,7 +144,7 @@
 \newblock Cryptology ePrint Archive, Report 2012/584, 2012.
 \newblock {\latintext \btxurlfont{http://eprint.iacr.org/2012/584.pdf}}.
 
-\bibitem {pool_analysis}
+\bibitem {pool-analysis}
 \btxnamefont {\btxlastnamefont {Rosenfeld}, Meni}\btxauthorcolon\
   \btxjtitlefont {\btxifchangecase {Analysis of bitcoin pooled mining reward
   systems}{Analysis of Bitcoin Pooled Mining Reward Systems}}.
@@ -152,7 +152,7 @@
 \newblock Disponibile in download gratuito all'indirizzo
   \url{http://arxiv.org/pdf/1112.4980v1.pdf}.
 
-\bibitem {core_concepts_p2p}
+\bibitem {core-concepts-p2p}
 \btxnamefont {\btxlastnamefont {Schoeder}, Detlef}, \btxnamefont {Kai
   \btxlastnamefont {Fischbach}}\btxandcomma {} \btxandlong {}\ \btxnamefont
   {Christian \btxlastnamefont {Schmitt}}\btxauthorcolon\ \btxtitlefont {Core

@@ -1,4 +1,4 @@
-﻿Introduzione
+﻿ontroduzione
 ============
 
 Reti P2P
@@ -12,7 +12,7 @@ A causa di questa sua centralità, è stata scelta come base per lo sviluppo di 
 Questa convidisione di risorse da parte di utenti per un interesse comune definisce il nucleo di quelle che vengono chiamate **reti Perr-to-Peer**, da qui in avanti abbreviate come *reti P2P*
 Data la grande diffusione di queste reti e i loro svariati obiettivi, è comprensibile che ci siano molti disaccordi sulla definizione esatta di *rete P2P*.
 
-Una classificazione molto adatta agli scopi di questo documento è quella presente in @core_concepts_p2p, che distingue tre diversi livelli di rete: 
+Una classificazione molto adatta agli scopi di questo documento è quella presente in \cite{kurose-ross} che distingue tre diversi livelli di rete: 
 
 1. **Infrastrutture P2P**, il cui scopo è porre le basi per i livelli successivi fornendo funzioni di comunicazione, integrazione e "traduzione" tra le varie componenti della rete. In particolare forniscono servizi che permettono la localizzazione e la comunicazione tra gli utenti (da ora in avanti **peers**) e l'identificazione, l'utilizzo e lo scambio delle risorse, oltre che l'implementazione delle politiche di sicurezza quali autenticazione e autorizzazione.
 
@@ -42,7 +42,7 @@ All'interno di una rete P2P invece, nel momento in cui comincia a scaricare *fil
 
 Il linguaggio sopra adottato è forzatamente generico: ciò deriva dall'ampio numero di reti P2P per il filesharing esistenti, ognuna delle quali implementa a modo suo le casistiche di aggiunta/rimozione (*churm*) di un peer (chiamato solitamente **nodo** nell'ambito del file sharing) dalla rete, la ricerca dei file e il trasferimento dei contenuti, tutti comunque rispettando il procedimento generico sopra descritto.
 
-### Scalabilità (@kurose_ross)
+### Scalabilità (\cite{kurose-ross})
 
 Analizziamo la questione da un punto di vista più formale. Avremo bisogno dei seguenti dati.
 
@@ -72,7 +72,7 @@ Osservazioni:
 
 -   Il server deve trasmettere il file a $N$ peer, quindi $NF$ bit. Data la frequenza di upload $u_s$, il tempo per distribuire il file deve essere almeno $NF/u_s$. 
 
--   sia $ d_{min} = \min\{d_1,d_p,\cdots,d_N \}$ la frequenza di download del peer con il valore più basso. Tale peer riceverà il file in almeno $F/d_{min}$ secondi, che è quindi il tempo minimo di distribuzione.
+-   sia $d_{min} = \min\{d_1,d_p,\cdots,d_N \}$ la frequenza di download del peer con il valore più basso. Tale peer riceverà il file in almeno $F/d_{min}$ secondi, che è quindi il tempo minimo di distribuzione.
 
 Da cui
 
