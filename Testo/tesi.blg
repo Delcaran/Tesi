@@ -11,7 +11,7 @@ Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty language in bitcoin_wiki
 You've used 14 entries,
             2788 wiz_defined-function locations,
-            740 strings with 9274 characters,
+            740 strings with 9262 characters,
 and the built_in function-call counts, 6179 in all, are:
 = -- 538
 > -- 223

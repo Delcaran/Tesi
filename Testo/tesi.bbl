@@ -18,7 +18,7 @@
 \newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/}}.
 
 \bibitem {user-privacy}
-\btxnamefont {\btxlastnamefont {Androulaki}, Elli}, \btxnamefont {Ghassan
+\btxnamefont {\btxlastnamefont {Androulaki}, Elli}, \btxnamefont {Ghassam
   \btxlastnamefont {Karame}}, \btxnamefont {Marc \btxlastnamefont {Roeschlin}},
   \btxnamefont {Tobias \btxlastnamefont {Scherer}}\btxandcomma {} \btxandlong
   {}\ \btxnamefont {Srdjan \btxlastnamefont {Capkun}}\btxauthorcolon\
@@ -49,11 +49,11 @@
   how to make bitcoin a better currency}{Bitter to Better - How to Make Bitcoin
   a Better Currency}}.
 \newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Keromytis},
-  AngelosD.}\ (\btxeditorlong {}): \btxtitlefont {Financial Cryptography and
-  Data Security}, \btxvolumelong {}\ \btxvolumefont {7397} \btxofserieslong {}\
-  \btxtitlefont {Lecture Notes in Computer Science}, \btxpageslong {}\
-  399--414. \btxpublisherfont {Springer Berlin Heidelberg}, 2012\ifbtxprintISBN
-  {, \mbox{\btxISBN~\btxISBNfont {978-3-642-32945-6}}}.
+  Angelos\btxfnamespacelong D.}\ (\btxeditorlong {}): \btxtitlefont {Financial
+  Cryptography and Data Security}, \btxvolumelong {}\ \btxvolumefont {7397}
+  \btxofserieslong {}\ \btxtitlefont {Lecture Notes in Computer Science},
+  \btxpageslong {}\ 399--414. \btxpublisherfont {Springer Berlin Heidelberg},
+  2012\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont {978-3-642-32945-6}}}.
 \newblock {\latintext
   \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_29}}, Disponibile in
   download gratuito all'indirizzo \url{http://www.cs.stanford.edu/~xb/fc12/}.
@@ -64,11 +64,11 @@
   {\btxifchangecase {Commitcoin: Carbon dating commitments with
   bitcoin}{CommitCoin: Carbon Dating Commitments with Bitcoin}}.
 \newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Keromytis},
-  AngelosD.}\ (\btxeditorlong {}): \btxtitlefont {Financial Cryptography and
-  Data Security}, \btxvolumelong {}\ \btxvolumefont {7397} \btxofserieslong {}\
-  \btxtitlefont {Lecture Notes in Computer Science}, \btxpageslong {}\
-  390--398. \btxpublisherfont {Springer Berlin Heidelberg}, 2012\ifbtxprintISBN
-  {, \mbox{\btxISBN~\btxISBNfont {978-3-642-32945-6}}}.
+  Angelos\btxfnamespacelong D.}\ (\btxeditorlong {}): \btxtitlefont {Financial
+  Cryptography and Data Security}, \btxvolumelong {}\ \btxvolumefont {7397}
+  \btxofserieslong {}\ \btxtitlefont {Lecture Notes in Computer Science},
+  \btxpageslong {}\ 390--398. \btxpublisherfont {Springer Berlin Heidelberg},
+  2012\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont {978-3-642-32945-6}}}.
 \newblock {\latintext
   \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_28}}, Disponibile in
   download gratuito all'indirizzo \url{http://eprint.iacr.org/2011/677.pdf}.
@@ -103,7 +103,7 @@
 
 \bibitem {middleman}
 \btxnamefont {\btxlastnamefont {Moore}, Tyler} \btxandlong {}\ \btxnamefont
-  {Nicolas \btxlastnamefont {Christin}}\btxauthorcolon\ \btxtitlefont
+  {Nicola \btxlastnamefont {Christian}}\btxauthorcolon\ \btxtitlefont
   {\btxifchangecase {Beware the middleman: Empirical analysis of
   bitcoin-exchange risk}{Beware the Middleman: Empirical Analysis of
   Bitcoin-Exchange Risk}}.

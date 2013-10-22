@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  21 OCT 2013 14:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  21 OCT 2013 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -940,9 +940,9 @@ om-mit-Coin: Car-bon Da-ting Com-
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 62--75
+Underfull \hbox (badness 1033) in paragraph at lines 62--75
 \T1/cmr/m/it/10.95 mit-men-ts wi-th Bit-coin\T1/cmr/m/n/10.95 .  Nel Ke-ro-my-t
-is, An-ge-lo-sD. (cu-ra-to-re): \T1/cmr/m/it/10.95 Fi-nan-
+is, An-ge-los D. (cu-ra-to-re): \T1/cmr/m/it/10.95 Fi-nan-
  []
 
 [9
@@ -1000,7 +1000,7 @@ er/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb
 xmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/
 type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm
 -super/sftt1200.pfb>
-Output written on tesi.pdf (18 pages, 314213 bytes).
+Output written on tesi.pdf (18 pages, 314200 bytes).
 PDF statistics:
  140 PDF objects out of 1000 (max. 8388607)
  99 compressed objects within 1 object stream
