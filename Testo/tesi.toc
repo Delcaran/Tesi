@@ -13,7 +13,11 @@
 \contentsline {subsubsection}{Query flooding}{6}{subsection.1.2.2}
 \contentsline {subsubsection}{Copertura gerarchica}{7}{Item.8}
 \contentsline {subsubsection}{DHT (Distributed Hash Table)}{7}{Item.8}
-\contentsline {chapter}{Bibliografia}{9}{appendix*.2}
+\contentsline {chapter}{\numberline {2}Bitcoin: moneta elettronica decentralizzata}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Moneta Elettronica}{9}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Portafogli e indirizzi}{10}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Transazioni}{11}{subsection.2.1.2}
+\contentsline {chapter}{Bibliografia}{13}{appendix*.2}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}

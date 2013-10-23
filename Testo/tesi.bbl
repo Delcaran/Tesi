@@ -17,6 +17,14 @@
 \btxtitlefont {\btxifchangecase {Bitcoin wiki}{Bitcoin Wiki}}.
 \newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/}}.
 
+\bibitem {blockchain-info}
+\btxtitlefont {\btxifchangecase {Blockchain.info}{BlockChain.info}}.
+\newblock {\latintext \btxurlfont{https://www.blockchain.info}}.
+
+\bibitem {mtgox}
+\btxtitlefont {\btxifchangecase {Mt. gox}{Mt. GOX}}.
+\newblock {\latintext \btxurlfont{https://mtgox.org}}.
+
 \bibitem {user-privacy}
 \btxnamefont {\btxlastnamefont {Androulaki}, Elli}, \btxnamefont {Ghassam
   \btxlastnamefont {Karame}}, \btxnamefont {Marc \btxlastnamefont {Roeschlin}},
@@ -40,6 +48,13 @@
 \newblock {\latintext \btxurlfont{http://doi.acm.org/10.1145/2229012.2229022}},
   Disponibile in download gratuito all'indirizzo
   \url{http://arxiv.org/pdf/1111.2626.pdf}.
+
+\bibitem {hashcash}
+\btxnamefont {\btxlastnamefont {Back}, Adam}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Hashcash - a denial of service counter-measuree}{Hashcash
+  - a denial of service counter-measuree}}, 2002.
+\newblock {\latintext
+  \btxurlfont{http://www.hashcash.org/papers/hashcash.pdf}}.
 
 \bibitem {bitter-better}
 \btxnamefont {\btxlastnamefont {Barber}, Simon}, \btxnamefont {Xavier
@@ -100,6 +115,16 @@
   \btxchapterlong {}~2, \btxpageslong {}\ 131--144.
 \newblock \btxpublisherfont {Pearson Education, Addison-Wesley},
   \btxeditionnumlong {quarta}{}, 2006.
+
+\bibitem {merkle}
+\btxnamefont {\btxlastnamefont {Merkle}, Ralph\btxfnamespacelong
+  C.}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Protocols for public key
+  cryptosystems}{Protocols for Public Key Cryptosystems}}.
+\newblock \Btxinlong {}\ \btxtitlefont {IEEE Symposium on Security and
+  privacy}, \btxvolumelong {}\ \btxvolumefont {1109}, \btxpageslong {}\
+  122--134, \btxprintmonthyear{.}{April}{1980}{long}.
+\newblock {\latintext
+  \btxurlfont{http://www.cs.washington.edu/research/projects/poirot3/Oakland/sp/PAPERS/00044729.PDF}}.
 
 \bibitem {middleman}
 \btxnamefont {\btxlastnamefont {Moore}, Tyler} \btxandlong {}\ \btxnamefont

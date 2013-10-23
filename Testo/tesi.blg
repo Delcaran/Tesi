@@ -4,50 +4,53 @@ The top-level auxiliary file: tesi.aux
 A level-1 auxiliary file: ./tex/titolo.aux
 A level-1 auxiliary file: ./tex/abstract.aux
 A level-1 auxiliary file: ./tex/intro.aux
+A level-1 auxiliary file: ./tex/bitcoin.aux
 The style file: babplain.bst
 Database file #1: bibliografia.bib
+Warning--to sort, need author or key in mtgox
 Warning--to sort, need author or key in bitcoin_wiki
+Warning--to sort, need author or key in blockchain-info
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty language in bitcoin_wiki
-You've used 14 entries,
+You've used 18 entries,
             2788 wiz_defined-function locations,
-            740 strings with 9262 characters,
-and the built_in function-call counts, 6179 in all, are:
-= -- 538
-> -- 223
-< -- 10
-+ -- 86
-- -- 71
-* -- 661
-:= -- 839
-add.period$ -- 42
-call.type$ -- 14
-change.case$ -- 72
+            760 strings with 9674 characters,
+and the built_in function-call counts, 7352 in all, are:
+= -- 641
+> -- 239
+< -- 12
++ -- 94
+- -- 75
+* -- 749
+:= -- 982
+add.period$ -- 51
+call.type$ -- 18
+change.case$ -- 86
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 337
-empty$ -- 600
-format.name$ -- 145
-if$ -- 1339
+cite$ -- 22
+duplicate$ -- 402
+empty$ -- 753
+format.name$ -- 151
+if$ -- 1621
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 13
-newline$ -- 82
-num.names$ -- 32
-pop$ -- 120
+int.to.str$ -- 18
+missing$ -- 14
+newline$ -- 99
+num.names$ -- 36
+pop$ -- 159
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 70
 quote$ -- 0
-skip$ -- 182
+skip$ -- 239
 stack$ -- 0
-substring$ -- 211
-swap$ -- 164
-text.length$ -- 10
+substring$ -- 259
+swap$ -- 188
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 50
-warning$ -- 2
-while$ -- 41
-width$ -- 16
-write$ -- 188
-(There were 2 warnings)
+type$ -- 66
+warning$ -- 4
+while$ -- 47
+width$ -- 20
+write$ -- 224
+(There were 4 warnings)
