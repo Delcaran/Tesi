@@ -15,9 +15,15 @@
 \contentsline {subsubsection}{DHT (Distributed Hash Table)}{7}{Item.8}
 \contentsline {chapter}{\numberline {2}Bitcoin: moneta elettronica decentralizzata}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Moneta Elettronica}{9}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Portafogli e indirizzi}{10}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Transazioni}{11}{subsection.2.1.2}
-\contentsline {chapter}{Bibliografia}{13}{appendix*.2}
+\contentsline {section}{\numberline {2.2}Portafogli e indirizzi}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Transazioni}{11}{section.2.3}
+\contentsline {section}{\numberline {2.4}Timestamp e Proof-of-Work}{12}{section.2.4}
+\contentsline {section}{\numberline {2.5}Network}{13}{section.2.5}
+\contentsline {section}{\numberline {2.6}Spazio \%FIXME: titolo orribile}{14}{section.2.6}
+\contentsline {section}{\numberline {2.7}Gestione dei valori}{15}{section.2.7}
+\contentsline {chapter}{\numberline {3}Privacy e Sicurezza}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Reti P2P in genere}{17}{section.3.1}
+\contentsline {chapter}{Bibliografia}{21}{appendix*.2}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}

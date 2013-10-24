@@ -34,11 +34,6 @@
 %\include{./tex/appendix}
 
 \backmatter
-
-\glossarystyle{listgroup}
-%\glsaddall
-\printglossaries
-
 \nocite{*}
 \bibliographystyle{babplain}
 \bibliography{bibliografia}

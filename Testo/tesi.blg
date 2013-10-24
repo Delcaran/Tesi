@@ -5,16 +5,17 @@ A level-1 auxiliary file: ./tex/titolo.aux
 A level-1 auxiliary file: ./tex/abstract.aux
 A level-1 auxiliary file: ./tex/intro.aux
 A level-1 auxiliary file: ./tex/bitcoin.aux
+A level-1 auxiliary file: ./tex/sicurezza.aux
 The style file: babplain.bst
 Database file #1: bibliografia.bib
 Warning--to sort, need author or key in mtgox
-Warning--to sort, need author or key in bitcoin_wiki
 Warning--to sort, need author or key in blockchain-info
+Warning--to sort, need author or key in bitcoin_wiki
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty language in bitcoin_wiki
 You've used 18 entries,
             2788 wiz_defined-function locations,
-            760 strings with 9674 characters,
+            761 strings with 9693 characters,
 and the built_in function-call counts, 7352 in all, are:
 = -- 641
 > -- 239

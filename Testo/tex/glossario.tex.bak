@@ -1,0 +1,9 @@
+﻿\newglossaryentry{blocco}{
+	name=blocco,
+	description={}
+}
+
+\newglossaryentry{btc}{
+	name=btc,
+	description={Bitcoin intesa come unità di misura della moneta elettronica}
+}

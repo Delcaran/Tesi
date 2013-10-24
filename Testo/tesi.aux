@@ -19,6 +19,9 @@
 \catcode `"\active 
 \@input{./tex/titolo.aux}
 \reset@newl@bel
+\@newglossary{main}{glg}{gls}{glo}
+\@istfilename{tesi.xdy}
+\@glsorder{word}
 \select@language{italian}
 \@writefile{toc}{\select@language{italian}}
 \@writefile{lof}{\select@language{italian}}
@@ -28,6 +31,7 @@
 \@writefile{@@@}{\chapterbegin }
 \@input{./tex/intro.aux}
 \@input{./tex/bitcoin.aux}
+\@input{./tex/sicurezza.aux}
 \citation{*}
 \bibstyle{babplain}
 \bibdata{bibliografia}
@@ -41,7 +45,7 @@
 \bibcite{commitcoin}{8}
 \bibcite{vulnerabilities}{9}
 \@writefile{@@@}{\chapterbegin }
-\@writefile{toc}{\contentsline {chapter}{Bibliografia}{13}{appendix*.2}}
+\@writefile{toc}{\contentsline {chapter}{Bibliografia}{21}{appendix*.2}}
 \select@language{italian}
 \@writefile{toc}{\select@language{italian}}
 \@writefile{lof}{\select@language{italian}}
@@ -60,6 +64,8 @@
 \bibcite{pool-analysis}{17}
 \bibcite{core-concepts-p2p}{18}
 \global\mtcsecondpartfalse
+\@xdylanguage{main}{italian}
+\@gls@codepage{main}{utf8}
 \select@language{italian}
 \@writefile{toc}{\select@language{italian}}
 \@writefile{lof}{\select@language{italian}}

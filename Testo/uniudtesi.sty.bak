@@ -29,7 +29,7 @@
 \usepackage{fancyhdr}
 
 \usepackage{hyperref}
-\usepackage[toc,xindy]{glossaries}
+\usepackage[toc,xindy,nonumberlist]{glossaries}
 
 \newcommand{\fncyblank}{\fancyhf{}}
 \newenvironment{abstract}%
