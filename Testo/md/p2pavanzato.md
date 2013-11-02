@@ -1,6 +1,10 @@
 Un'analisi più approfondita delle reti P2P
 ==========================================
 
+NOTA BENE: TUTTA STA ROBA NON SERVE PER BITCOIN. SI TRATTA DI UN APPROFONDIMENTO GENERICO PER RETI DI FILE SHARING IN CUI RISULTA FONDAMENTALE INDIVIDUARE CON PRECISIONE UN SINGOLO NODO O UN SINGOLO FILE. TUTTO QUESTO IN BITCOIN NON ESISTE.
+
+////
+
 Riprendiamo ora in modo più rigoroso i concetti generali espressi in precedenza.
 Chiamiamo il tipo di rete in analisi *P2P overlay* e la definiamo come un grafo virtuale che connette i peer e che viene utilizzato per la ricerca di risorse, lo storage di file e gli algoritmi di gestione.
 È bene notare che la P2P overlay si trova a livello di applicazione, mentre le comunicazioni tra i peer sono punto-a-punto una volta che la connessione è stata stabilita.
@@ -142,4 +146,20 @@ Chord utilizza un anello logico di dimensione $2^m$, per cui lo spazio delle chi
 Una chiave $k$ viene assegnata al primo nodo tale che l'identificatore di tale nodo equivale o è successivo all'identificatore della chiave $k$ nello spazio degli identificatori, e tale nodo viene chiamato *successore di k* e denotato come *succ(k)*.
 Ad esempio, in un anello con $m=7$ abbiamo i nodi N5, N18, N23, N28, N63, N73, N99, N104, N115 e N119. Sei chiavi K8, K15, K28, K53, K87 e K121 vengono distribuite tra questi nodi come segue: *succ*(8)=18, *succ*(15)=18, *succ*(28)=28, *succ*(53)=63, *succ*(87)=99, *succ*(121)=5.
 
+### Esempi di ricerca mediante chiavi
+
+In un primo, semplice, algoritmo per il lookup, ogni nodo contiene solo un valore nella sua tabella di routing e memorizza unicamente il suo successore nell'anello dei nodi. Ogni query per la chiave $x$ viene inoltrata tra i nodi fin quando raggiunge un nodo il cui identificatore $y$ è maggiore della chiave $x$ modulo $2^m$. Il risultato torna al nodo di partenza seguendo il percorso inverso.
+Questo semplice algoritmo richiede $O(1)$ di spazio locale ma $O(n)$ salti tra gli $n$ nodi.
+
+/// TODO: algoritmo 18.1 pag 690 (specificare notazione descritta in fondo a pag 689)
+/// TODO: grafico di ricerca 18.2 pag 689
+
+Una versione più raffinata del precedente algoritmo richiede l'aumento dello spazio locale di archiviazione per le tabelle di routing a $O(n)$ ma permette di ridurre il numero dei salti tra i nodi a $O(\log n)$.
+Ogni nodo $i$ mantiene una tabella di rounting chiamata di indice (*finger table*), con al massimo $O(\log n)$ valori distinti, costruita in modo tale che l'$x$-esimo valore (con $1 \leq x \leq m$) sia l'identificatore per il nodo *succ*$(i + 2^{x-1})$ (più formalmente *i.finger[$x$] = succ*$(i + 2^{x-1})$). Tale nodo risulta essere il primo nodo la cui chiave è maggiore della chiave del nodo $i$ per un valore pari ad almeno $2^{x-1}\text{*mod*}2^m$.
+
+A causa della sua struttura logaritmica, la finger table contiene più informazioni sui nodi successivi vicini rispetto ai nodi successivi lontani [^succprev]. Immaginiamo infatti di cercare la chiave $k$ partendo dal nodo $i$. Se $k$ si trova tra $i$ e il suo successore, allora vuol dire che $k$ si trova effettivamente nel successore. Altrimenti $k$ si trova oltre il successore, per cui $i$ deve scandire la sua finger table per identificare il nodo $j$ che precede immediatamente $k$. Dato che $j$ si trova più vicino a $k$ di $i$, esso conterrà molte più informazioni utili alla localizzazione di $k$.
+
+[^succprev]: qui "successivi", "vicini" e "lontani" fanno riferimento all'anello che si viene a creare nella Chord overlay.
+
+///TODO: gestione del churm in una Chord (pagg 691-695)
 

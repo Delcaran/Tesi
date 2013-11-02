@@ -4,7 +4,7 @@
 \graphicspath{{./img/}}
 \usepackage{commands}
 
-\includeonly{./tex/titolo,./tex/abstract,./tex/intro,./tex/bitcoin,./tex/sicurezza}
+\includeonly{./tex/titolo,./tex/abstract,./tex/intro,./tex/bitcoin,./tex/sicurezza,./tex/p2pavanzato}
 
 \makeglossaries
 \makeindex
@@ -26,6 +26,7 @@
 \mainmatter
 %\input{./tex/intro.tex}
 \include{./tex/intro}
+\include{./tex/p2pavanzato}
 \include{./tex/bitcoin}
 \include{./tex/sicurezza}
 
@@ -34,6 +35,11 @@
 %\include{./tex/appendix}
 
 \backmatter
+
+\glossarystyle{listgroup}
+%\glsaddall
+\printglossaries
+
 \nocite{*}
 \bibliographystyle{babplain}
 \bibliography{bibliografia}
