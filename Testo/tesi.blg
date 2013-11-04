@@ -4,54 +4,61 @@ The top-level auxiliary file: tesi.aux
 A level-1 auxiliary file: ./tex/titolo.aux
 A level-1 auxiliary file: ./tex/abstract.aux
 A level-1 auxiliary file: ./tex/intro.aux
+I couldn't open auxiliary file ./tex/p2pavanzato.aux
+---line 34 of file tesi.aux
+ : \@input{./tex/p2pavanzato.aux
+ :                              }
+I'm skipping whatever remains of this command
 A level-1 auxiliary file: ./tex/bitcoin.aux
 A level-1 auxiliary file: ./tex/sicurezza.aux
+A level-1 auxiliary file: ./tex/sicurezzabitcoin.aux
 The style file: babplain.bst
 Database file #1: bibliografia.bib
+Warning--I didn't find a database entry for "vulenrabilities"
 Warning--to sort, need author or key in mtgox
 Warning--to sort, need author or key in blockchain-info
 Warning--to sort, need author or key in bitcoin_wiki
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty language in bitcoin_wiki
-You've used 18 entries,
+You've used 20 entries,
             2788 wiz_defined-function locations,
-            761 strings with 9693 characters,
-and the built_in function-call counts, 7352 in all, are:
-= -- 641
-> -- 239
+            775 strings with 10231 characters,
+and the built_in function-call counts, 8217 in all, are:
+= -- 709
+> -- 280
 < -- 12
-+ -- 94
-- -- 75
-* -- 749
-:= -- 982
-add.period$ -- 51
-call.type$ -- 18
-change.case$ -- 86
++ -- 110
+- -- 89
+* -- 856
+:= -- 1104
+add.period$ -- 57
+call.type$ -- 20
+change.case$ -- 99
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 402
-empty$ -- 753
-format.name$ -- 151
-if$ -- 1621
+cite$ -- 24
+duplicate$ -- 452
+empty$ -- 837
+format.name$ -- 179
+if$ -- 1798
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 14
-newline$ -- 99
-num.names$ -- 36
-pop$ -- 159
+int.to.str$ -- 20
+missing$ -- 16
+newline$ -- 109
+num.names$ -- 40
+pop$ -- 184
 preamble$ -- 1
-purify$ -- 70
+purify$ -- 81
 quote$ -- 0
-skip$ -- 239
+skip$ -- 254
 stack$ -- 0
-substring$ -- 259
-swap$ -- 188
+substring$ -- 269
+swap$ -- 206
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
+type$ -- 74
 warning$ -- 4
-while$ -- 47
-width$ -- 20
-write$ -- 224
-(There were 4 warnings)
+while$ -- 51
+width$ -- 22
+write$ -- 248
+(There was 1 error message)

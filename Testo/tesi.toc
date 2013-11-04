@@ -1,16 +1,15 @@
 \select@language {italian}
 \select@language {english}
 \select@language {italian}
-\contentsline {chapter}{\numberline {1}ontroduzione}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Reti P2P}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Distribuzione dei file in una rete P2P}{2}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Scalabilit\IeC {\`a} (\cite {kurose-ross})}{3}{subsection.1.2.1}
-\contentsline {subsubsection}{Caso Client-Server}{3}{subsection.1.2.1}
-\contentsline {subsubsection}{Caso P2P}{4}{subsection.1.2.1}
-\contentsline {subsubsection}{Confronto}{4}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Ricerca di informazioni}{5}{subsection.1.2.2}
-\contentsline {subsubsection}{Directory centralizzata}{5}{subsection.1.2.2}
-\contentsline {subsubsection}{Query flooding}{6}{subsection.1.2.2}
+\contentsline {chapter}{\numberline {1}Panoramica generale sulle reti P2P}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Distribuzione dei file in una rete P2P}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Scalabilit\IeC {\`a} (\cite {kurose-ross})}{3}{subsection.1.1.1}
+\contentsline {subsubsection}{Caso Client-Server}{3}{subsection.1.1.1}
+\contentsline {subsubsection}{Caso P2P}{4}{subsection.1.1.1}
+\contentsline {subsubsection}{Confronto}{4}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Ricerca di informazioni}{5}{subsection.1.1.2}
+\contentsline {subsubsection}{Directory centralizzata}{5}{subsection.1.1.2}
+\contentsline {subsubsection}{Query flooding}{6}{subsection.1.1.2}
 \contentsline {subsubsection}{Copertura gerarchica}{7}{Item.8}
 \contentsline {subsubsection}{DHT (Distributed Hash Table)}{7}{Item.8}
 \contentsline {chapter}{\numberline {2}Bitcoin: moneta elettronica decentralizzata}{9}{chapter.2}
@@ -23,7 +22,23 @@
 \contentsline {section}{\numberline {2.7}Gestione dei valori}{15}{section.2.7}
 \contentsline {chapter}{\numberline {3}Privacy e Sicurezza}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Reti P2P in genere}{17}{section.3.1}
-\contentsline {chapter}{Bibliografia}{21}{appendix*.2}
+\contentsline {subsection}{\numberline {3.1.1}Attacchi di Basso Livello}{18}{subsection.3.1.1}
+\contentsline {subsubsection}{Denial of Service (DoS)}{18}{subsection.3.1.1}
+\contentsline {paragraph}{Contromisure al DDoS}{18}{subsection.3.1.1}
+\contentsline {subsubsection}{Attacco Man-in-the-Middle (MitM)}{19}{subsection.3.1.1}
+\contentsline {subsubsection}{Contrastare il Man-in-the-Middle}{19}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Attacchi di Medio Livello}{20}{subsection.3.1.2}
+\contentsline {subsubsection}{Worms}{20}{subsection.3.1.2}
+\contentsline {paragraph}{Contrastare i Worm}{20}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Attacchi al livello P2P}{21}{subsection.3.1.3}
+\contentsline {subsubsection}{Comportamento scorretto}{21}{subsection.3.1.3}
+\contentsline {paragraph}{Contrastare i comportamenti scorretti}{21}{subsection.3.1.3}
+\contentsline {subsubsection}{Attacco Sibilla}{22}{subsection.3.1.3}
+\contentsline {paragraph}{Contromisure all'attacco Sibilla}{22}{subsection.3.1.3}
+\contentsline {subsubsection}{Attacco Eclipse}{22}{subsection.3.1.3}
+\contentsline {paragraph}{Contromisure ad Eclipse}{23}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Contromisure generali}{23}{subsection.3.1.4}
+\contentsline {chapter}{Bibliografia}{27}{appendix*.2}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}

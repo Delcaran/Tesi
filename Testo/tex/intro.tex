@@ -1,6 +1,5 @@
-\chapter{ontroduzione}\label{ontroduzione}
-
-\section{Reti P2P}\label{reti-p2p}
+\chapter{Panoramica generale sulle reti
+P2P}\label{panoramica-generale-sulle-reti-p2p}
 
 Negli ultimi anni si è assistito ad una progressiva alterazione delle
 ``leggi'' che regolano il mondo dell'hardware informatico in campo
@@ -25,8 +24,8 @@ comprensibile che ci siano molti disaccordi sulla definizione esatta di
 \emph{rete P2P}.
 
 Una classificazione molto adatta agli scopi di questo documento è quella
-presente in \cite{kurose-ross} che distingue tre diversi livelli di
-rete:
+presente in \cite{core-concepts-p2p} che distingue tre diversi livelli
+di rete:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -116,7 +115,7 @@ nell'ambito del file sharing) dalla rete, la ricerca dei file e il
 trasferimento dei contenuti, tutti comunque rispettando il procedimento
 generico sopra descritto.
 
-\subsection{Scalabilità (\cite{kurose-ross})}\label{scalabilità}
+\subsection{Scalabilità (\cite{kurose-ross})}\label{scalabilituxe0}
 
 Analizziamo la questione da un punto di vista più formale. Avremo
 bisogno dei seguenti dati.
@@ -303,11 +302,13 @@ di richieste (\emph{query}). Quando un peer riceve una query, controlla
 se nel suo indice è presente una qualche corrispondenza e, in caso
 affermativo, invia al peer che ha effettuato la richiesta un messaggio
 di successo (\emph{query-hit}) contenente il nome del file e la
-dimensione. Dopo qualche tempo il peer di origine avrà un elenco di peer
-che condividono file corrispondenti alla sua richiesta.
+dimensione. La query-hit viene inviata al nodo che ha effettuato la
+ricerca seguendo lo stesso percorso seguito dal pacchetto query. Dopo
+qualche tempo il peer di origine avrà un elenco di peer che condividono
+file corrispondenti alla sua richiesta.
 
 Ma anche in questo approccio, la semplicità nasconde alcune
-problematiche. La più grave riguarda le richieste, che vengono propagate
+problematiche. La più grave riguarda le ricerche, che vengono propagate
 all'intera rete di copertura generando una enorme quantità di traffico
 nella rete sottostante (nel caso di Gnutella, Internet) che connette i
 peer. Come soluzione a tale problema si è inserito nei messaggi di

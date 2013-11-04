@@ -56,6 +56,19 @@
 \newblock {\latintext
   \btxurlfont{http://www.hashcash.org/papers/hashcash.pdf}}.
 
+\bibitem {bitcoinsnack}
+\btxnamefont {\btxlastnamefont {Bamert}, Tobias}, \btxnamefont {Christian
+  \btxlastnamefont {Decker}}, \btxnamefont {Lennart \btxlastnamefont {Elsen}},
+  \btxnamefont {Roger \btxlastnamefont {Wattenhofer}}\btxandcomma {}
+  \btxandlong {}\ \btxnamefont {Samuel \btxlastnamefont
+  {Welten}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Have a snack, pay
+  with bitcoins}{Have a Snack, Pay with Bitcoins}}.
+\newblock \Btxinlong {}\ \btxtitlefont {IEEE Internation Conference on
+  Peer-to-Peer Computing (P2P)}, Trento, Italy,
+  \btxprintmonthyear{.}{September}{2013}{long}.
+\newblock {\latintext
+  \btxurlfont{http://www.tik.ee.ethz.ch/file/848064fa2e80f88a57aef43d7d5956c6/P2P2013_093.pdf}}.
+
 \bibitem {bitter-better}
 \btxnamefont {\btxlastnamefont {Barber}, Simon}, \btxnamefont {Xavier
   \btxlastnamefont {Boyen}}, \btxnamefont {Elaine \btxlastnamefont
@@ -87,6 +100,17 @@
 \newblock {\latintext
   \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_28}}, Disponibile in
   download gratuito all'indirizzo \url{http://eprint.iacr.org/2011/677.pdf}.
+
+\bibitem {bitcoinpropagation}
+\btxnamefont {\btxlastnamefont {Decker}, Christian} \btxandlong {}\
+  \btxnamefont {Roger \btxlastnamefont {Wattenhofer}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Information propagation in the bitcoin
+  network}{Information Propagation in the Bitcoin Network}}.
+\newblock \Btxinlong {}\ \btxtitlefont {IEEE Internation Conference on
+  Peer-to-Peer Computing (P2P)}, Trento, Italy,
+  \btxprintmonthyear{.}{September}{2013}{long}.
+\newblock {\latintext
+  \btxurlfont{http://www.tik.ee.ethz.ch/file/49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf}}.
 
 \bibitem {vulnerabilities}
 \btxnamefont {\btxlastnamefont {Engle}, Marling} \btxandlong {}\ \btxnamefont

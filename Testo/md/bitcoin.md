@@ -42,7 +42,7 @@ I portafogli sono solitamente legati al software che li crea, basta quindi cambi
 Transazioni
 ------------------
 
-Le transazioni rappresentano il nucleo fondamentale di bitcoin. Esse sono il metodo con cui ci si assicura che un indirizzo contenga esattamente quel numero di bitcoin, che una bitcoin non venga spesa più volte e che quella bitcoin appartiene a quello specifico indirizzo.
+Le transazioni rappresentano il nucleo fondamentale di bitcoin. Esse sono il metodo con cui, a livello astratto, le bitcoin vengono trasferite da un account all'altro e tramite la loro analisi ci si assicura che un indirizzo contenga esattamente quel numero di bitcoin, che una bitcoin non venga spesa più volte e che quella bitcoin appartiene a quello specifico indirizzo.
 Le transazioni si basano su meccanismi di crittografia a chiave pubblica, rendendo quindi obsoleto il coinvolgimento di terze parti nella transazione.
 Se infatti nelle normali compravendite online, volenti o nolenti si è costretti a fidarsi di terze parti che garantiscono per il buon esito dell'operazione (istituti di credito, compagnie di carte di credito, siti come Paypal, ecc), qui gli utenti hanno direttamente la prova crittografica senza aver quindi necessita di fidarsi di qualcuno.
 
@@ -100,9 +100,10 @@ A questo punto abbiamo una prima approssimazione di come funziona la rete bitcoi
 5. I nodi accettano il nuovo blocco se e solo se tutte le transazioni in esso sono valide (si verifica calcolando l'hash delle transazioni e confrontandole con l'ultimo blocco accettato) e non già spese in precedenza.
 6. Il nodo esprime la sua accettazione del blocco appena arrivato mettendosi al lavoro per crearne uno nuovo, usando l'hash del nodo accettato.
 
-I nodi considerano la catena più lunga quella corretta e lavoreranno sempre in modo da prolungarla.
+I nodi considerano la catena più lunga quella corretta (e viene definita *blockchain*) e lavoreranno sempre in modo da prolungarla.
 Esiste la possibilità che uno stesso nodo riceva due versioni diverse dello stesso blocco in contemporanea.
 In questo caso, lavoreranno sul prima blocco ricevuto, ma manterrano una copia anche dell'altro nel caso in cui si rivelasse appartenente alla catena più lunga. La verifica viene fatta non appena viene trovata la nuova proof-of-work e una delle due catene si allunga: a questo punto si individua il blocco da mantenere in base all'hash contenuto nel blocco appena arrivato, gli altri blocchi vengono scartati e si continua il procedimento.
+Inserendo un po' di terminologia, chiamiamo il primo blocco mai realizzato (che è codificato all'interno di ogni client Bitcoin) *blocco genesi*, l'ultimo blocco della catena *blocco di testa*, la distanza tra un blocco *b* e il blocco genesi viene definita *altezza*.
 
 Quando si inviano in broadcast le nuove transazioni, non è necessario che esse raggiungano tutti i nodi: fintanto che raggiungono quanti più nodi possibile, verranno velocemente inglobate in un blocco.
 I blocchi invece devono essere ricevuti da tutti i nodi, per questo se un nodo riceve un blocco e si accorge (tramite hash) che il blocco precedente gli manca, ne richiederà immediatamente una copia ad un altro nodo, e ripeterà la verifica fino ad ottenere la catena integrale.
@@ -115,7 +116,7 @@ Visto che il numero massimo di btc è stato determinato a priori ed è invariabi
 Oltre ad invogliare un nodo a rimanere attivo, gli incentivi incoraggiano i nodi a rimanere onesti: infatti se un attaccante avido riuscisse ad accumulare abbastanza potenza di calcolo da surclassare quella di tutti gli altri nodi, potrebbe scegliere se truffare gli altri nodi ritirando i suoi pagamenti precedenti oppure usarla per accumulare nuove monete con gli incentivi.
 Un attaccante si vede quindi incoraggiato a mettere la sua potenza di calcolo a favore del sistema facendogli guadagnare più btc di tutti gli altri nodi messi insieme, invece di usare la stessa potenza per minare le basi dello stesso sistema in cui egli stessi investe i propri soldi.
 
-Spazio %FIXME: titolo orribile
+Risorse necessarie
 ------------------
 
 Il sito Blockchain.info \cite{blockchain-info} offre vari servizi agli utenti bitcoin, tra i quali spiccano un portafogli online, un sistema di navigazione dell'intera catena dei blocchi e dettagliate statistiche sull'intera rete. Da tale sito si vede come in media, in 24 ore vengono effettuate 56700 transazioni archiviate in 220 blocchi, il che vuol dire un blocco ogni 6.55 minuti. Se ogni nodo dovesse mantenere ogni singola transazione, lo spazio di memoria occupato renderebbe la rete bitcoin non così appetibile per l'utente medio. Risulta necessario minimizzare la quantità di memoria necessaria a mantenere la blockchain senza compromettere la sicurezza.
@@ -164,3 +165,20 @@ Usando questo sistema, i possedimenti di un utente sono temporalmente limitati a
 % Visto che prevedo una sezione apposta per anonimato e sicurezza, ne parlo la e non qua.
 %
 
+Analisi della rete
+------------------
+
+Sappiamo che i nodi della rete Bitcoin sono tutti omogenei e nessuno di essi ha un ruolo di coordinatore o comunque diverso da quello degli altri nodi, e ognuno di essi mantiene una copia di tutte le informazioni necessarie per far funzionare il sistema.
+Vediamo ora più formalmente come si struttura la rete Bitcoin e come le informazioni (ovvero, le transazioni e i blocchi) si propagano in essa.
+
+### Topoligia
+
+Non essendoci coordinazione tra i nodi, il grafo rappresentante la rete ha una struttura casuale.
+Durante il *churm* il nuovo nodo interroga alcuni server DNS gestiti da nodi volontari e si vede restituiti un insieme casuale di nodi con cui fare il bootstrap.
+Una volta connesso, impara dai suoi vicini gli indirizzi dei nodi raggiungibili e si mette in ascolto nel caso nuovi nodi vengano annunciati in broadcast.
+A differenza di una rete P2P "tradizionale", non esiste alcun modo per un nodo di lasciare la rete: gli indirizzi restano memorizzati per diverse ora prima che gli altri nodi li rimuovano dalla loro lista di indirizzi noti.
+
+Ogni nodo tenta di mantenere un certo numero *p* di connessioni con gli altri nodi, collegandosi ad un indirizzo scelto a caso tra quelli che conosce nel caso il numero di connessioni sia inferiore a *p* ma senza bloccare connessioni in ingresso nel caso tale sumero sia superiore. Il valore *p* rappresenta quindi un valore minimo di connessioni spesso e volentieri superato per nodi abilitati ad accettare connessioni in ingresso.
+Per il client *bitcoind*, il primo implementato da Nakamoto e tutt'ora il più diffuso, il default è $p=8$, ma il numero medio di connessioni contemporanee è 32 nel caso in cui non ci siano firewall o NAT [^nat] ad intercettare connessioni esterne.
+
+[^nat]: Network Address Translator: maschera gli indirizzi di una LAN come un unico indirizzo IP sulla rete Internet, e spesso impedisce a host presenti in Internet di connettersi ad host specifici in una LAN.
