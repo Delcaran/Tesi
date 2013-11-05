@@ -55,9 +55,9 @@ hash = hash(previous_transaction, vendor_public_key)
 transaction = sign(hash, private_key)
 ~~~~~~
 
-La moneta diventa quindi non una unità atomica, ma il risultato di una serie di transazioni che coinvolgono firme digitali e verifiche che deve essere calcolato dinamicamente. La serie di tutte le transazioni mai effettuate viene raccolta in una sequenza denominata **blockchain** %TODO: verificare termine blockchain
+La moneta diventa quindi non una unità atomica, ma il risultato di una serie di transazioni che coinvolgono firme digitali e verifiche che deve essere calcolato dinamicamente. La serie di tutte le transazioni mai effettuate viene raccolta in una sequenza denominata **blockchain**.
 
-%TODO: immagine pag 2 in alto di Nakamoto
+![Utilizzo delle chiavi e degli hash in una sequenza di transazioni.\label{bitcoin_p2_1}](bitcoin_p2_1.PNG)
 
 Questa implementazione però non garantisce che l'acquirente non abbia già effettuato una transazione con questa moneta, ovvero che stia spendendo una moneta già spesa in precedenza.
 
@@ -70,15 +70,13 @@ La soluzione consiste nell'utilizzo di un **timestamp server**. Un timestamp ser
 
 [^2]: leggasi: rende più difficili da modificare.
 
-%TODO: grafico dei timestamp a pag 2 di Nakamoto
-
 Ora il problema consiste nell'implementare questo server di timestamp in modo distribuito, come è appunto la rete Bitcoin.
 Per prima cosa bisogna trovare un sistema per cui effettuare il timestamp è un'operazione difficoltosa (computazionalmente parlando), ma verificare che il timestamp sia corretto deve essere immediato.
 Basandosi sul lavoro di Adam Back (\cite{hashcash}), Nakamoto ha deciso che la difficoltà dell'operazione deve essere trovare un valore che, una volta sottoposto ad hashing (ad esempio con SHA-256), il risultato sia un hash che comincia con uno specifico numero di bit pari a zero: la difficoltà del lavoro è esponenziale al numero di bit zero richiesti, ma è facilmente verificabile con un singolo hash.
 L'implementazione per bitcoin consiste quindi nella creazione di un blocco di dati di cui calcolare l'hash che contiene le transazioni interessate, l'hash precedente e un valore chiamato **nonce** da incrementare fino a quando l'hash non avrà le caratteristiche richieste.
 Modificare una transazione comporta modificare un blocco, e quindi ripetere tutto il lavoro di calcolo della nonce. Inoltre, se a questo blocco è già stato incatenato uno più blocchi successivi, anche tali blocchi andranno ricalcolati in sequenza, rendendo il lavoro estremamente gravoso.
 
-%TODO: immagine sequenza di blocchi pag 3 nakamoto
+![Struttura minimale di una sequenza di blocchi.\label{bitcoin_p3_1}](bitcoin_p3_1.PNG)
 
 Con la prova di lavoro si risolve anche il problema di cosa significa che la maggioranza deve accettare un timestamp.
 Con l'hash infatti si realizza una sorta di sistema one-CPU-one-vote, e la "decisione della maggioranza" è rappresentata dalla più lunga sequenza di timestamp, che è la sequenza per la quale è stata impiegata la maggior parte di lavoro computazionale.
@@ -125,13 +123,13 @@ Si è detto infatti che l'hash di un blocco viene calcolato a partire dall'hash 
 Ma invece che memorizzare le intere transazioni, esse vengono inserite come foglie di un albero di Merkle \cite{merkle}, una struttura dati in cui ogni nodo non foglia è l'hash di tutti i suoi figli, in modo che nella radice di tale albero ci sia un solo hash che riassume in se tutte le transazioni.
 È pertanto possibile calcolare l'hash di un blocco basandosi unicamente sull'hash del blocco precedente, sulla nonce e sulla radice dell'albero di Merkle, ovvero sull'hash riassuntivo delle transazioni, rendendo quindi possibile eliminare alcune transazioni dalla blockchain per risparmiare un poco di spazio.
 
-%FIXME: grafico pag 4 satoshi
+![Struttura di un blocco prima e dopo la compressione dell'albero delle transazioni.\label{bitcoin_p4_1}](bitcoin_p4_1.PNG)
 
 Con questa struttura, il **block header**  viene ad occupare esattamente 80 Bytes (vedi sezione tecnica per i dettagli %TODO: sezione tecnica), il che significa circa 6.2 MB all'anno (Satoshi Nakamoto con una stima di un blocco ogni 10 minuti aveva previsto 4.2 MB annui). Una quantità decisamente ridotta che rende la blockchain tollerabile su ogni computer degli ultimi 7 anni.
 
 È possibile quindi verificare i pagamenti senza disporre di un nodo personale. L'utente deve possedere  una copia degli header della catena più lunga (che può ottenere dai nodi della rete) e ottenere il ramo di Merkle che collega la transazione al blocco in cui è stata inserita. Non può verificare la transazione da solo calcolando gli hash (non ha le altre foglie dell'albero di Merkle), ma collegandola ad un punto specifico della catena può vedere che un nodo l'ha accettata, ed eventuali blocchi successivi confermano che anche l'intera rete l'ha accettata.
 
-%TODO: grafico alto pag 5 satoshi
+![Struttura di un blocco prima e dopo la compressione dell'albero delle transazioni.\label{bitcoin_p5_1}](bitcoin_p5_1.PNG)
 
 Così come è descritta, la verifica è affidabile fin tanto che la rete è controllata da nodi onesti, ma è vulnerabile se la rete è soverchiata da un attaccante. Mentre un nodo può effettuare le verifiche da se, il metodo semplificato è vulnerabile alle transazioni ad-hoc create da un attaccante che controlla la rete.
 Una strategia di difesa consiste nell'accettare avvisi dai nodi della rete quando questi rilevano blocchi non validi, richiedendo all'utente di scaricare l'intero blocco. Per questo motivo chi utilizza bitcoin per business ritiene preferibile avere un nodo personale con intera blockchain, in modo da poter effettuare verifiche autonomamente e velocemente. %FIXME: questo paragrafo è scritto male
@@ -142,12 +140,16 @@ Gestione dei valori
 ------------------
 
 Anche se è possibile trattare le monete una ad una, è improponibile fare una transazione per ogni singolo centesimo. Per la divisione degli importi, le transazioni contengono molteplici input e output.
-In una transazione normale si avranno o un singolo input proveniente da una grande transazione precedente oppure più input provenienti da più transazioni piccole precedenti, e al massimo due output: uno per il pagamento vero e proprio e uno per restituire il resto, se presente, al mittente.
+In una transazione normale si avranno o un singolo input proveniente da una grande transazione precedente oppure più input provenienti da più transazioni piccole precedenti, e al massimo due output: uno per il pagamento vero e proprio e uno per restituire il resto, se presente, al mittente. 
 
 Chiarimo meglio il concetto:
 
 - Un input è un riferimento ad un output di una precedente transazione che contiene l'indirizzo di chi sta effettuando la transazione. Se ci sono più input, l'importo degli output da loro referenziati viene sommato ed il totale è il massimo valore utilizzabile dall'output.
 - Un output contiene l'indirizzo del destinatario e il valore da spedire. Dato che, in una futura transazione, un output può essere referenziato da un solo input, potrebbe verificarsi il caso in cui l'input sia maggiore dell'output e della transaction fee desiderata. In questo caso è necessario creare due output, uno con il valore da spedire e l'indirizzo del destinatario, l'altro con la differenza da restituire al mittente, il **resto**. La differenza tra il totale degli input e il totale degli output è la transaction fee.
+
+La situazione è visibile in \ref{bitcoinpropagation_1}.
+
+![Schema di una transazione in cui vengono evidenziati input e output.\label{bitcoinpropagation_1}](bitcoinpropagation_1.PNG)
 
 Nonostante la stretta dipendenza tra le varie transazioni, non è necessario estrarre l'intero background di ogni input, in quanto la transazione verrà accettata solo se il blocco che contiene le transazioni con gli output referenziati dagli input è stato accettato dalla rete.
 
@@ -163,7 +165,7 @@ Usando questo sistema, i possedimenti di un utente sono temporalmente limitati a
 %%%%%%%%%
 % La documentazione di Satoshi prevede anche privacy e calcoli statistici sugli attacchi.
 % Visto che prevedo una sezione apposta per anonimato e sicurezza, ne parlo la e non qua.
-%
+% Attenzione che la parte di topologia successiva nomina alcuni risultati statistici di questa parte... una volta scritta saranno da fare i collegamenti
 
 Analisi della rete
 ------------------
@@ -205,17 +207,20 @@ Definiamo $t_{i,j}$ come il tempo trascorso tra il primo annuncio e il momento i
 
 Il tempo $t_{i,j}$ ha un comportamento **doppio esponenziale** (//TODO: tradurre "double exponential"). Il periodo di propagazione segue due fasi: una prima crescita esponenziale in cui la maggior parte dei nodi che ricevono un *inv* richiederanno il relativo dato che non possiedono, e una seconda fase di compressione esponenziale in cui la maggior parte dei nodi che ricevono un *inv* hanno già il dato.
 
-Per effettuare le loro misurazioni, i ricercatori Christian Decker e Roger Wattenhofer dell'Università (TODO: verifica) di Zurigo hanno implementato il protocollo bitcoin su un nodo creato in modo tale da non inviare messaggi *inv*, *tx* o *block* e collegato a direttamente a quanti più nodi tradizionali possibile. Tale implementazione ha il solo scopo di tracciare come i blocchi si propagano nella rete restando in ascolto dei messaggi *inv* che ne annunciano la disponibilità \cite{bitcoinpropagation}. La ricezione di un *inv* implica che il nodo che ha inviato il messaggio ha ricevuto e verificato un blocco.
+Per effettuare le loro misurazioni, i ricercatori Christian Decker e Roger Wattenhofer dello Swiss Federal Institute of Technology di Zurigo hanno implementato il protocollo bitcoin su un nodo creato in modo tale da non inviare messaggi *inv*, *tx* o *block* e collegato a direttamente a quanti più nodi tradizionali possibile. Tale implementazione ha il solo scopo di tracciare come i blocchi si propagano nella rete restando in ascolto dei messaggi *inv* che ne annunciano la disponibilità \cite{bitcoinpropagation}. La ricezione di un *inv* implica che il nodo che ha inviato il messaggio ha ricevuto e verificato un blocco.
 
-La rilevazione è partita su nodi di altezza 180000 ed è durata per 10000 blocchi. Le informazioni rilevate includono l'hash del blocco, l'IP del noto annunciante e una timestamp della ricezione dell'*inv*. La stima per $t_{i,j}$ è ottenuta sottraendo il timestamp del primo annuncio di un blocco da tutti gli annunci successivi per quel blocco. I risultati sono riassunti nel grafico (\\TODO: collegamento al grafico).
+La rilevazione è partita su nodi di altezza 180000 ed è durata per 10000 blocchi. Le informazioni rilevate includono l'hash del blocco, l'IP del noto annunciante e una timestamp della ricezione dell'*inv*. La stima per $t_{i,j}$ è ottenuta sottraendo il timestamp del primo annuncio di un blocco da tutti gli annunci successivi per quel blocco. I risultati sono riassunti nel grafico \ref{bitcoinpropagation_3}.
 
-//TODO: grafico fig.3 pag 5 di \cite{bitcoinpropagation}.
+![Istogramma normalizzato del tempo che intercorre dal primo annuncio del blocco con una curva di interpolazione esponenziale.\label{bitcoinpropagation_3}](bitcoinpropagation_3.PNG)
 
 Le misurazioni effettuate ci permettono di stabilire che il tempo mediano in cui un nodo riceve un blocco è di 6.5 secondi, mentre la media è di 12.6 secondi. La lunghezza della seconda fase, quella di contrazione esponenziale, evidenzia come dopo soli 40 secondi il 95% dei nodi abbia ricevuto il blocco.
 
 Abbiamo però detto come la dimensione di un blocco sia variabile, fino a 500kB. I dati precedenti sono aggregati per tutti i blocchi e non tengono conto delle differenti dimensioni degli stessi.
 Perciò definiamo ora il *costo di ritardo* come il ritardo che ogni kB causa alla diffusione di una transazione o di un blocco. Tale costo risulta essere una combinazione sia del tempo di trasmissione che del tempo di verifica.
-I risultati sono contenuti nel grafico (//TODO: collegamento al grafico e grafico 4 pag 5 bitcoinpropagation).
+I risultati sono contenuti nel grafico \ref{bitcoinpropagation_4}.
+
+![Costo del ritardo per il 50°, 75° e 90° percentile. Il grafico è focalizzato sui valori più bassi delle ascisse per poter mostrare il comportamento costante presente dopo i 20kB.\label{bitcoinpropagation_4}](bitcoinpropagation_4.PNG)
+
 Per pacchetti di dimensione superiore ai 20kB si vede come il costo sia pressoché costante, mentre per dimensioni minori si assiste a notevole ritardo. La causa di ciò sta nel **ritardo da un roundtrip** (//TODO: tradurre roundtrip delay), ovvero il fatto che anche i piccoli messaggi vengono annunciati con *inv* e richiesti con *getdata*. Il roundtrip è dominante per le transazione in quanto il 96% di tutte le transazioni sono inferiori ad 1kB. Per i blocchi, la cui dimensione è per la maggior parte superiore ai 20kB, ogni kB di dimensione costa circa 80ms di ritardo fino al momento in cui la maggioranza dei nodi non ha il blocco. (//TODO: verificare questa frase, sembra l'esatto opposto di quanto scritto nel grafico)
 Nel caso di piccoli blocchi sarebbe pertanto ottimale evitare l'annuncio e inoltrare direttamente il blocco ai nodi vicini.
 
@@ -238,9 +243,9 @@ Durante il normale utilizzo della rete potrebbe capitare di essere testimoni di 
 Se a questo aggiungiamo il fatto che una partizione potrebbe avere dimensione unitaria (un nodo genera un nuovo blocco in conflitto con il blocco di testa di tutti i suoi vicini) è evidente come per poter rilevare tutti i fork bisognerebbe connettersi ad ogni nodo della rete. Ma abbiamo detto che alcuni nodi non sono raggiungibili dall'esterno, per cui possiamo solo stimare il numero di fork che avvengono.
 
 Utilizzando la configurazione descritta nella sezione precedente, sono stati raccolti tutti i blocchi di altezza compresa tra 180000 e 190000. Essendo un grande campione che coinvolge tutti i nodi raggiungibili, è abbastanza probabile che tutti i blocchi generati siano stati propagati fino al nodo spia implementato permettendo di individuare la maggior parte dei fork avvenuti nell'intervallo di rilevazione.
-Nei 10000 blocchi osservati sono stati identificati 169 fork, il che si traduce in rateo di forking $r = 1.69%$. L'istogramma (//TODO: collegamento grafico) mostra i risultati in modo più dettagliato.
+Nei 10000 blocchi osservati sono stati identificati 169 fork, il che si traduce in rateo di forking $r = 1.69%$. L'istogramma \ref{bitcoinpropagation_5} mostra i risultati in modo più dettagliato.
 
-//TODO: grafico 5 pag 6 bitcoinpropagation
+![Fork osservati tra i blocchi 180000 e 190000 durante il collegamento alla rete.\label{bitcoinpropagation_5}](bitcoinpropagation_5.PNG)
 
 ### Creazione del modello
 
@@ -264,9 +269,7 @@ Da cui ottengo il rateo di nodi informati:
 
 $$ f(t) = \mathbb{E}[I(t)] \cdot n^{-1} $$
 
-//TODO: parte sotto formule a pag 7 bitcoinpropagation
-
-Notare come la $f(t)$ sia equivalente alla funzione di distribuzione cumulativa (**CDF**) della frequenza alla quale i peer vengono informati. Possiamo quindi utilizzare la funzione di densità di probabilità (**PDF**) della frequenza con cui i peer vengono informati rappresentata in (//TODO: link a grafico fig 3 pag 5 bitcoinpropagation) come una approssimazione durante le rilevazioni.
+Notare come la $f(t)$ sia equivalente alla funzione di distribuzione cumulativa (**CDF**) della frequenza alla quale i peer vengono informati. Possiamo quindi utilizzare la funzione di densità di probabilità (**PDF**) della frequenza con cui i peer vengono informati rappresentata in \ref{bitcoinpropagation_3} come una approssimazione durante le rilevazioni.
 Solo i nodi non informati possono produrre blocchi in conflitto, per cui combinando la probabilità di trovare un blocco con il rateo di nodi non informati otteniamo la probabilità di un fork. Definiamo $F$ come la variabile casuale discreta che conta il numero di blocchi in conflitto trovati mentre un altro blocco viene propagato. Allora la propabilità di un fork risulta:
 
 $$ \Pr{F \geq 1} = 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} $$
@@ -291,12 +294,14 @@ Dato che il calcolo della proof-of-work è un processo di Poisson (//TODO: scriv
 
 $$ g(t) = \lambda e^{-\lambda \cdot x}$$
 
-Estraendo i timestamp dai blocchi tra altezza 180000 e 190000 si ottiene la distribuzione illustrata nel grafico (//TODO: link al grafico).
+Estraendo i timestamp dai blocchi tra altezza 180000 e 190000 si ottiene la distribuzione illustrata nel grafico \ref{bitcoinpropagation_6}.
 Interpolando la distribuzione ottenuta con la distribuzione esponenziale si ottiene $\lambda = 0.001578$ da cui risulta un tempo atteso tra due blocchi pari a $1 / \lambda = 633.68$ secondi.
 Interpolando la densità di probabilità del tempo tra i primi annunci e le misurazioni si ottiene $\lamba = 0.001576$ che si traduce in un tempo atteso tra due blocchi $1/ \lambda = 634.17$ secondi.
 Le due approssimazioni sono coerenti ma sono entrambe leggermente sopra il valore obiettivo di 600 secondi. La differenza è probabilmente dovuta ad un decremento del potere computazione della rete.
 
-Per quando riguarda la propagazione dei nodi nella rete, a causa della normalizzazione il diagramma (//TODO link al diagramma fig 3 pag 5 bitcoinpropagation) rappresenta anche la funzione di densità di probabilità (**PDF**) delle variabili casuali $t_{b,j}$ per tutti i blocchi $b$ dell'intervallo di misurazione. Per cui la frequenza dei nodi informati $f(t)$ è l'area che sottostà all'istogramma (//TODO: link al diagramma 6 pag 7 bitcoinpropagation) fino al tempo $t$.
+Per quando riguarda la propagazione dei nodi nella rete, a causa della normalizzazione il diagramma \ref{bitcoinpropagation_3} rappresenta anche la funzione di densità di probabilità (**PDF**) delle variabili casuali $t_{b,j}$ per tutti i blocchi $b$ dell'intervallo di misurazione. Per cui la frequenza dei nodi informati $f(t)$ è l'area che sottostà all'istogramma \ref{bitcoinpropagation_3} fino al tempo $t$.
+
+![Tempo di distribuzione spostato a sinistra per i blocchi trovati tra le altezze 180000 e 190000.\label{bitcoinpropagation_6}](bitcoinpropagation_6.PNG)
 
 Combinando la probabilità di trovare un blocco e la funzione della frequenza dei nodi informati si ottiene la seguente probabilità per un fork:
 
