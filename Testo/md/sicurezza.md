@@ -1,4 +1,4 @@
-﻿Sicurezza
+﻿Privacy e Sicurezza
 ===================
 
 Reti P2P in genere
@@ -160,9 +160,5 @@ In particolare i progettisti di reti P2P dovrebbero implementare le seguenti car
 - Usare ed implementare solo standard aperti, per diversificare il software a disposizione degli utenti ed irrobustire quelli esistenti.
 
 Se queste caratteristiche vengono implementate, allora tutti gli attacchi fin qui descritti perdono gran parte della loro efficacia, ripagando con la sicurezza il costo che richiede la loro realizzazione.
-
-Rete Bitcoin
----------------------
-
 
 

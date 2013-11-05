@@ -155,7 +155,7 @@ Dato il valore elevato di una singola btc (che può variare da poche decine a mi
 
 [^satoshimoneta]: dal "nome" dell'inventore di Bitcoin
 
-Questo sistema del calcolo del valore di una transazione è lo stesso utilizzato dal sotftware che gestisce il portafoglio per calcolare il proprio valore: per ogni indirizzo all'interno del portafogli, il software scansiona le transazioni presenti nella blockchain che contengono l'indirizzo in esame, somma i valori entranti nell'indirizzo, sottrae quelli uscenti e ricava il valore "contenuto" nell'indirizzo.
+Questo sistema del calcolo del valore di una transazione è lo stesso utilizzato dal software che gestisce il portafoglio per calcolare il proprio valore: per ogni indirizzo all'interno del portafogli, il software scansiona le transazioni presenti nella blockchain che contengono l'indirizzo in esame, somma i valori entranti nell'indirizzo, sottrae quelli uscenti e ricava il valore "contenuto" nell'indirizzo.
 Usando questo sistema, i possedimenti di un utente sono temporalmente limitati all'ultimo blocco accettato nella catena, e non è quindi possibile spendere moneta ricevuta da una transazione non ancora approvata [^4].
 
 [^4]: tecnicamente, nessuna moneta è ricevuta fin tanto che la transazione non è approvata. L'utente non è nemmeno consapevole della transazione a lui destinata fino ad avvenuta approvazione.
@@ -171,7 +171,7 @@ Analisi della rete
 Sappiamo che i nodi della rete Bitcoin sono tutti omogenei e nessuno di essi ha un ruolo di coordinatore o comunque diverso da quello degli altri nodi, e ognuno di essi mantiene una copia di tutte le informazioni necessarie per far funzionare il sistema.
 Vediamo ora più formalmente come si struttura la rete Bitcoin e come le informazioni (ovvero, le transazioni e i blocchi) si propagano in essa.
 
-### Topoligia
+### Topologia
 
 Non essendoci coordinazione tra i nodi, il grafo rappresentante la rete ha una struttura casuale.
 Durante il *churm* il nuovo nodo interroga alcuni server DNS gestiti da nodi volontari e si vede restituiti un insieme casuale di nodi con cui fare il bootstrap.
@@ -182,3 +182,141 @@ Ogni nodo tenta di mantenere un certo numero *p* di connessioni con gli altri no
 Per il client *bitcoind*, il primo implementato da Nakamoto e tutt'ora il più diffuso, il default è $p=8$, ma il numero medio di connessioni contemporanee è 32 nel caso in cui non ci siano firewall o NAT [^nat] ad intercettare connessioni esterne.
 
 [^nat]: Network Address Translator: maschera gli indirizzi di una LAN come un unico indirizzo IP sulla rete Internet, e spesso impedisce a host presenti in Internet di connettersi ad host specifici in una LAN.
+
+//TODO: sistemare paragrafo seguente
+Dato il tipo di connessione tra i nodi, le partizioni non sono individuabili nel momento in cui si creano e, nel caso in cui dovessero esistere, esse continuerebbero ad operare indipendentemente.
+Una tale situazione comporta nel tempo una divergenza tra le situazioni tracciate dalle due partizioni, situazioni potenzialmente incompatibili.
+Pertanto è fondamentale individuare le partizioni nel momento in cui si creano, e uno dei modi per farlo è tracciare il potere computazionale complessivamente presente nella rete: una rapida diminuzione della frequenza di creazione di blocchi può indicare la presenza di una partizione.
+
+### Propagazione delle informazioni
+
+Per ciò che riguarda il mantenimento della blockchain, solamente i messaggi di transazione *tx* e i blocchi sono rilevanti.
+Tali messaggi sono molto più comuni di tutti gli altri scambiati nella rete e potrebbero raggiungere dimensioni rilevanti.
+Per evitare di sprecare banda e ridurre l'overhead, è necessario fare in modo di inviare ognuno di questi messaggi una sola volta per ogni nodo, evitando quindi l'inoltro ai nodi che già hanno ricevuto quel messaggio. 
+
+L'implementazione utilizzata da Bitcoin sfrutta una tecnica passiva: invece che inoltrare tutti i messaggi, ogni nodo dopo aver verificato un messaggio o una transazione invia a suoi vicini un messaggio *inv* per segnalare la disponibilità di nuovi tx o blocchi. Il messaggio *inv* contiene gli hash dei blocchi e delle transazioni disponibili per l'invio, che ogni vicino può richiedere nel caso gli mancasse tramite un messaggio *getdata*.
+I messaggi *inv* e *getdata* (61 B) sono ovviamente significativamente più piccoli dei messaggi *tx* e *block* (fino a 500 kB per i blocchi).
+
+Ogni volta che si verifica lo scambio di *inv* e *getdata*, la velocità di propagazione del messaggio subisce un rallentamento, dovuta sia allo scambio di messaggi sia alla necessità di verificare la transazione/blocco con calcoli crittografici: bisogna verificare ogni nodo prima di notificarne la disponibilità, e tale verifica include la verifica di ogni transazione nel blocco, le quali a loro volta richiedono accesso random ai dati del disco rigido.
+
+Vediamo di stimare formalmente come si propaga un dato nella rete.
+
+Definiamo $t_{i,j}$ come il tempo trascorso tra il primo annuncio e il momento in cui il nodo $j$ riceve l'oggetto $i$. Il nodo $o$ sarà l'origine dell'oggetto $i$ (ovvero il nodo che ha trovato il blocco o il nodo che ha creato la transazione), quindi $t_{i,o}=0$.
+
+Il tempo $t_{i,j}$ ha un comportamento **doppio esponenziale** (//TODO: tradurre "double exponential"). Il periodo di propagazione segue due fasi: una prima crescita esponenziale in cui la maggior parte dei nodi che ricevono un *inv* richiederanno il relativo dato che non possiedono, e una seconda fase di compressione esponenziale in cui la maggior parte dei nodi che ricevono un *inv* hanno già il dato.
+
+Per effettuare le loro misurazioni, i ricercatori Christian Decker e Roger Wattenhofer dell'Università (TODO: verifica) di Zurigo hanno implementato il protocollo bitcoin su un nodo creato in modo tale da non inviare messaggi *inv*, *tx* o *block* e collegato a direttamente a quanti più nodi tradizionali possibile. Tale implementazione ha il solo scopo di tracciare come i blocchi si propagano nella rete restando in ascolto dei messaggi *inv* che ne annunciano la disponibilità \cite{bitcoinpropagation}. La ricezione di un *inv* implica che il nodo che ha inviato il messaggio ha ricevuto e verificato un blocco.
+
+La rilevazione è partita su nodi di altezza 180000 ed è durata per 10000 blocchi. Le informazioni rilevate includono l'hash del blocco, l'IP del noto annunciante e una timestamp della ricezione dell'*inv*. La stima per $t_{i,j}$ è ottenuta sottraendo il timestamp del primo annuncio di un blocco da tutti gli annunci successivi per quel blocco. I risultati sono riassunti nel grafico (\\TODO: collegamento al grafico).
+
+//TODO: grafico fig.3 pag 5 di \cite{bitcoinpropagation}.
+
+Le misurazioni effettuate ci permettono di stabilire che il tempo mediano in cui un nodo riceve un blocco è di 6.5 secondi, mentre la media è di 12.6 secondi. La lunghezza della seconda fase, quella di contrazione esponenziale, evidenzia come dopo soli 40 secondi il 95% dei nodi abbia ricevuto il blocco.
+
+Abbiamo però detto come la dimensione di un blocco sia variabile, fino a 500kB. I dati precedenti sono aggregati per tutti i blocchi e non tengono conto delle differenti dimensioni degli stessi.
+Perciò definiamo ora il *costo di ritardo* come il ritardo che ogni kB causa alla diffusione di una transazione o di un blocco. Tale costo risulta essere una combinazione sia del tempo di trasmissione che del tempo di verifica.
+I risultati sono contenuti nel grafico (//TODO: collegamento al grafico e grafico 4 pag 5 bitcoinpropagation).
+Per pacchetti di dimensione superiore ai 20kB si vede come il costo sia pressoché costante, mentre per dimensioni minori si assiste a notevole ritardo. La causa di ciò sta nel **ritardo da un roundtrip** (//TODO: tradurre roundtrip delay), ovvero il fatto che anche i piccoli messaggi vengono annunciati con *inv* e richiesti con *getdata*. Il roundtrip è dominante per le transazione in quanto il 96% di tutte le transazioni sono inferiori ad 1kB. Per i blocchi, la cui dimensione è per la maggior parte superiore ai 20kB, ogni kB di dimensione costa circa 80ms di ritardo fino al momento in cui la maggioranza dei nodi non ha il blocco. (//TODO: verificare questa frase, sembra l'esatto opposto di quanto scritto nel grafico)
+Nel caso di piccoli blocchi sarebbe pertanto ottimale evitare l'annuncio e inoltrare direttamente il blocco ai nodi vicini.
+
+### Informazioni scomparse
+
+Trattiamo ora il caso in cui un blocco inoltrato in rete porti ad un fork della blockchain che viene rilevato solo da una piccola parte dei nodi.
+
+Definiamo il grafo che descrive la rete come $G = (V,E)$, con $V$ i nodi (vertici) ed $E$ le connessioni tra i nodi (archi/edges). Definiamo inoltre la partizione $P_h \subset V$ come l'insieme dei nodi il cui blocco di testa si trova ad altezza $h$. Trovare un nuovo nodo $b_{h+1}$ crea una nuova partizione $P_{h+1,b}$ contenente i nodi che considerano questo nuovo blocco come blocco di testa, in altre parole questo è il primo blocco di altezza $h+1$ che abbiano ricevuto. Se non vengono trovati altri blocchi, allora i nodi di $P_h$ adiacenti a $P_{h+1,b}$ si uniscono a $P_{h+1,b}$ lasciando (e quindi eliminando) la partizione $P_h$.
+Dal'altro canto, se viene trovato un blocco $b'_{h+1}$ da un nodo in $P_h$ viene creata una nuova partizione $P_{h+1,b'}$. Anche in questo caso i nodi di $P_h$ abbandoneranno la loro partizione per unirsi ad una delle due nuove di altezza superiore.
+Solamente i nodi di $P_h$ che sono a contatto sia con $P_{h+1,b}$ che con $P_{h+1,b'}$ saranno consapevoli dell'esistenza di entrambe le partizioni e quindi del fork della blockchain, e considereranno invalido il blocco di altezza $h+1$ proveniente dall'altra partizione e di conseguenza non lo annunceranno ai loro vicini fermando quindi l'espansione della partizione.
+Tale meccanismo si applica anche alle transazioni: se due tx tentano di spendere lo stesso output, solo la prima transazione ricevuta da un nodo verrà considerata valida, la seconda verrà considerata invalida e non annunciata ai vicini.
+Questo comportamento ha il vantaggio di impedire ad un nodo malevolo di inondare la rete con centinaia di transazioni contraddittorie senza costo addizionale, in termini di transaction fees, per il nodo malevolo. Il rovescio della medaglia è che questo sistema di nascondere le informazioni ritenute sbagliate da un nodo permettere l'implementazione di **attacchi double spend** che risultano invisibili ai commercianti.
+Nel caso delle transazioni, dato che esse non devono per forza propagarsi a tutti i nodi, il meccanismo descritto è ragionevole e protegge la rete da transazioni spam.
+Nel caso dei blocchi invece, fermarne la propagazione è controproducente: i fork della blockchain, che con tale sistema sono invisibili per la maggior parte dei nodi, sono una cartina tornasole che indica come nella rete ci siano alcune inconsistenze non risolte. Dato che i blocchi valido ma potenzialmente in conflitto non possono essere creati con un frequenza arbitraria come le transazioni, permettere il loro inoltro anche nel caso di conflitto non crea possibilità per un potenziale attacco.
+
+Fork della blockchain
+--------------------------
+
+Durante il normale utilizzo della rete potrebbe capitare di essere testimoni di un fork se si ricevono due blocchi conflittuali, ma osservare tutti fork che avvengono è molto difficile a causa della non propagazione dei blocchi in conflitto discussa in precedenza.
+Se a questo aggiungiamo il fatto che una partizione potrebbe avere dimensione unitaria (un nodo genera un nuovo blocco in conflitto con il blocco di testa di tutti i suoi vicini) è evidente come per poter rilevare tutti i fork bisognerebbe connettersi ad ogni nodo della rete. Ma abbiamo detto che alcuni nodi non sono raggiungibili dall'esterno, per cui possiamo solo stimare il numero di fork che avvengono.
+
+Utilizzando la configurazione descritta nella sezione precedente, sono stati raccolti tutti i blocchi di altezza compresa tra 180000 e 190000. Essendo un grande campione che coinvolge tutti i nodi raggiungibili, è abbastanza probabile che tutti i blocchi generati siano stati propagati fino al nodo spia implementato permettendo di individuare la maggior parte dei fork avvenuti nell'intervallo di rilevazione.
+Nei 10000 blocchi osservati sono stati identificati 169 fork, il che si traduce in rateo di forking $r = 1.69%$. L'istogramma (//TODO: collegamento grafico) mostra i risultati in modo più dettagliato.
+
+//TODO: grafico 5 pag 6 bitcoinpropagation
+
+### Creazione del modello
+
+Il protocollo bitcoin adatta la difficoltà della proof-of-work ogni 10 minuti in modo da mantenerla sufficientemente elevata da essere significativa.
+Definendo $X_b$ come la variabile casuale che rappresenta i secondi trascorsi tra il ritrovamento di un nodo e il ritrovamento del nodo precedente, allora la *probabilità che un blocco venga trovato* nella rete in un dato secondo è
+
+$$ P_b = \Pr{X_b < t + 1 | X_b \geq t} \approx 1/600 $$
+
+Un fork avviene se, durante la propagazione del blocco $b$, viene trovato un blocco $b'$ in conflitto nella parte di rete non ancora a conoscenza di $b$.
+Definiamo $t_j$ come il tempo in secondi in cui $j$ apprende dell'esistenta di $b$ da quando esso è stato creato. La funzione $I_{j}(t)$ identifica se il nodo $j$ sa dell'esistenza di $b$ nell'istante $b$, e la funzione $I(t)$ conta il numero di nodi che hanno ricevuto e verificato $b$ all'istante $t$.
+
+$$ I_{j}(t) = \left \lbrace 
+\begin{array}{ll}
+	0 & t_j > t \\
+	1 & t_j \leq t
+\end{array}$$
+
+$$ I(t) = \sum_{j \in V} I_{j}(t) \textrm{con }V\textrm{ insieme dei vettori} $$
+
+Da cui ottengo il rateo di nodi informati:
+
+$$ f(t) = \mathbb{E}[I(t)] \cdot n^{-1} $$
+
+//TODO: parte sotto formule a pag 7 bitcoinpropagation
+
+Notare come la $f(t)$ sia equivalente alla funzione di distribuzione cumulativa (**CDF**) della frequenza alla quale i peer vengono informati. Possiamo quindi utilizzare la funzione di densità di probabilità (**PDF**) della frequenza con cui i peer vengono informati rappresentata in (//TODO: link a grafico fig 3 pag 5 bitcoinpropagation) come una approssimazione durante le rilevazioni.
+Solo i nodi non informati possono produrre blocchi in conflitto, per cui combinando la probabilità di trovare un blocco con il rateo di nodi non informati otteniamo la probabilità di un fork. Definiamo $F$ come la variabile casuale discreta che conta il numero di blocchi in conflitto trovati mentre un altro blocco viene propagato. Allora la propabilità di un fork risulta:
+
+$$ \Pr{F \geq 1} = 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} $$
+
+In questo ultimo passaggio si è assunta la semplificazione per la quale la probabilità di un nodo di trovare un blocco è distribuita uniformemente in modo casuale tra tutti i nodi.
+
+Per cui, sapendo la probabilità dell'intera rete di trovare un blocco $P_b$ e la distribuzione di come i nodi apprendono dell'esistenza del blocco $I_j$, si può derivare la probabilità di un fork. Questi due valori dipendono dal potere computazionale della rete nonché dalla sua topologia e dimensione.
+
+### Misurazioni
+
+Per confermare il corretto funzionamento del modello proposto è necessario confrontare la probabilità ottenuta con i dati rilevati.
+
+Bisogna innanzitutto notare come i nodi non sincronizzino i loro orologi interni, bensì si regolano sui loro vicini, esiste una differenza non trascurabile tra i timestamp.
+Ad esempio il blocco ad altezza 209873 ha un timestamp pari a 22:10:13 mentre il blocco ad altezza 209874 ha un timestamp di 22:08:44. Dato che il secondo include l'hash del primo, i blocchi sono stati trovati nell'ordine corretto. Da questo si deduce che il conflitto nei timestamp è derivato dalla mancata sincronizzazione degli orologi dei nodi.
+
+//TODO: il paragrafo seguente è scritto da cani.
+
+In questa analisi si potrebbe tenere conto dell'orario in cui il nodo spia rileva l'annuncio del blocco e l'orario in cui il blocco è stato trovato. Anche se questo metodo non subisce la differenza di orario tra i nodi, potrebbe esistere un lieve ritardo tra il calcolo del blocco e la rilevazione del relativo annuncio, e per la misurazione abbiamo a disposizione solo il timestamp del blocco.
+Dato che il calcolo della proof-of-work è un processo di Poisson (//TODO: scrivere che roba è), la differenza temporale segue una distribuzione esponenziale. La combinazione della differenza temporale degli orologi e il tempo intercorso tra i ritrovamenti dei blocchi causa uno spostamento a destra del massimo. Possiamo correggere la situazione spostando a sinistra fin quando il massimo non risulta in $t=0$. L'orario di annuncio rilevato durante la misura non è influenzato dalla differenza temporale e produce l'istogramma corretto.
+
+\\TODO diagramma 6 pag 7 bitcoinpropagation
+
+$$ g(t) = \lambda e^{-\lambda \cdot x}$$
+
+Estraendo i timestamp dai blocchi tra altezza 180000 e 190000 si ottiene la distribuzione illustrata nel grafico (//TODO: link al grafico).
+Interpolando la distribuzione ottenuta con la distribuzione esponenziale si ottiene $\lambda = 0.001578$ da cui risulta un tempo atteso tra due blocchi pari a $1 / \lambda = 633.68$ secondi.
+Interpolando la densità di probabilità del tempo tra i primi annunci e le misurazioni si ottiene $\lamba = 0.001576$ che si traduce in un tempo atteso tra due blocchi $1/ \lambda = 634.17$ secondi.
+Le due approssimazioni sono coerenti ma sono entrambe leggermente sopra il valore obiettivo di 600 secondi. La differenza è probabilmente dovuta ad un decremento del potere computazione della rete.
+
+Per quando riguarda la propagazione dei nodi nella rete, a causa della normalizzazione il diagramma (//TODO link al diagramma fig 3 pag 5 bitcoinpropagation) rappresenta anche la funzione di densità di probabilità (**PDF**) delle variabili casuali $t_{b,j}$ per tutti i blocchi $b$ dell'intervallo di misurazione. Per cui la frequenza dei nodi informati $f(t)$ è l'area che sottostà all'istogramma (//TODO: link al diagramma 6 pag 7 bitcoinpropagation) fino al tempo $t$.
+
+Combinando la probabilità di trovare un blocco e la funzione della frequenza dei nodi informati si ottiene la seguente probabilità per un fork:
+
+$$
+\begin{align}{ll}
+	\Pr{F \geq 1} &= 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} \\
+	&= 1 - (1 - \frac{1}{633.68})^11.37 \\
+	&\approx 1.78%
+\end{align}
+$$
+
+Comparando questo risultato con quello osservato di 1.69% si nota di aver sovrastimato il valore osservato solo del 5%. Il risultato leggermente superiore può essere spiegato dall'assunto fatto che la potenza di calcolo sia uniformemente distribuita tra tutti i nodi nella rete. Ciononostante, il buon risultato ottenuto dimostra come il modello sia una efficace rappresentazione della realtà.
+
+Dato che il numero di transazioni e le dimensioni della rete molto probabilmente cresceranno mano a mano che aumenta l'adozione di Bitcoin, la frequenza dei fork è destinata a salire.
+Una rete più grande, con una topologia casuale e il numero di connessioni limitate per singolo nodo, aumenta il suo diametro e la distanza media tra i nodi e l'origine di un blocco. L'aumento del numero di transazioni provoca una crescita nella dimensione dei blocchi il che a sua volta aumenta il tempo necessario per la verifica e la trasmissione ad ogni passo della propagazione.
+
+//TODO: da qui in poi sono problematiche al metodo di propagazione. Sarebbe il caso di metterlo nel capitolo problemi e soluzioni
+
+Una interpretazione alternativa del risultato proposto in (TODO: link all'equazione precedente) è che ogni volta che un blocco viene trovato, l'equivalente di 11.37 secondi di potere computazionale dell'intera rete viene sprecato.
+Infatti il lavoro impiegato per trovare il primo blocco di una blockchain alternativa (che potrebbe essere scartata) non contribuisce alla sicurezza della rete e costituisce un eventuale punto a favore di un attaccante che cerca di implementare una sua blockchain alternativa.
+Come detto in precedenza da Nakamoto, un attaccante capace di controllare più del 50% del potere computazione delle rete è in grado di trovare proof-of-work più velocemente di tutto il resto il della rete. L'attaccante sarebbe perciò in grado di rimpiazzare l'intera storia delle transazione a partire da un qualsiasi blocco.
+Pur sicuramente sufficiente, questa condizione non è minima. In realtà l'efficenza della rete come intero, incluso il ritardo di propagazione, non è ottimale.
+La potenza computazionale effettiva nella rete così come si presenta a Settembre 2013 è pari a $1 - 11.37 / 633.68 = 98.20%$. Per cui ad un attaccante basta controllare il 49.1% della forza di calcolo della rete per poter portare un attacco e cambiare la blockchain. Al momento questo è un risultato difficile da ottenere, ma la situazione potrebbe cambiare in peggio a causa dell'aumento costante del ritardo di propagazione.
