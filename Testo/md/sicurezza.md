@@ -1,11 +1,3 @@
-Privacy
-==========
-
-* spiegazione di satoshi
-* evaluating user privacy in bitcoin
-* an analisis of anonimity in bitcoin sistem
-
-
 Sicurezza
 ===========
 
