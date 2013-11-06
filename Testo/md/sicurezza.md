@@ -1,5 +1,13 @@
-﻿Privacy e Sicurezza
-===================
+Privacy
+==========
+
+* spiegazione di satoshi
+* evaluating user privacy in bitcoin
+* an analisis of anonimity in bitcoin sistem
+
+
+Sicurezza
+===========
 
 Reti P2P in genere
 ------------------
@@ -161,4 +169,21 @@ In particolare i progettisti di reti P2P dovrebbero implementare le seguenti car
 
 Se queste caratteristiche vengono implementate, allora tutti gli attacchi fin qui descritti perdono gran parte della loro efficacia, ripagando con la sicurezza il costo che richiede la loro realizzazione.
 
+La rete Bitcoin
+------------------
 
+* spiegazione di satoshi
+* estensione di propagation
+* soluzioni di propagation
+* ? how to make bitcoin a better currency
+
+I Portafogli
+-----------------------
+
+* contromisure al furto di portafogli
+* paperwallets
+
+Stock Exchange
+----------------------------
+
+* beware the middleman
