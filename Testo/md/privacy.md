@@ -8,9 +8,107 @@ Non esiste quindi nessun modo per risalire al proprietario di un dato indirizzo 
 
 Esistono ovviamente diverse tecniche sia per ridurre il livello di privacy, ad esempio tramite il furto delle chiavi o un'analisi statistica degli input e degli output delle transazioni, sia per aumentarlo, magari creando un diverso portafoglio per ogni conto che si desidera creare.
 
+Analisi quantitativa della privacy
+----------------------------------
+
+Ma come si fa a misurare il livello di privacy offerto da Bitcoin?
+In questa sezione si discuteranno alcune metriche arbitrarie create appositamente che trattano i vari aspetti dell'anonimato nella rete Bitcoin.
+
+Essendo una analisi quantitativa, è necessario fornire una definizione formale per i termini fin qui usati in modo più o meno descrittivo. Sotto tale ottica verrano quindi proposte alcune definizioni formali, la prima delle quali è il concetto portante della rete:
+
+Transazione:
+	$$\tau(a_{\textrm{S}} \rightarrow a_{\textrm{R}}) = \{ \textrm{source}, B, a_{\textrm{R}}, \textrm{SIG}_{\textrm{sk}_{a_{\textrm{S}}}}(\textrm{source}, B, a_{\textrm{R}}) \} $$
+	definisce una transazione che intercorre tra i due indirizzi $a_{\textrm{S}}$ e $a_{\textrm{R}}$, in cui $\textrm{SIG}_{\textrm{sk}_{a_{\textrm{S}}}}$ è la firma digitale creata utilizzando la chiave privata $\textrm{sk}_{a_\textrm{S}}$ corrispondente alla chiave pubblica associata all'indirizzo $a_\textrm{S}$. $B$ è la quantità di BTC trasferite e $\textrm{source}$ è un riferimento alla più recente transazione da cui $a_\textrm{S}$ ha ottenuto le $B$ BTC.
+
+Al fine dell'analisi, assumiamo la situazione tipica della rete Bitcoin, in cui ogni singolo utente dispone di diversi indirizzi a lui associati.
+Mentre questa può sembrare una forzatura, in realtà non lo è affatto.
+Come abbiamo detto in precedenza, ogni transazione contiene un indirizzo di ritorno per il resto. Tale indirizzo viene definito *indirizzo ombra* ed è creato automaticamte senza l'intervento dell'utente.
+Per cui ogni utente possiede almeno due indirizzi: quello creato al momento della creazione del portafogli e l'indirizzo ombra.
+
+### Il modello antagonistico
+
+Gli algoritmi proposti consistono nell'osservazione del log pubblico di Bitcoin (*pubLog*) durante un periodo $\Delta t$.
+Durante questo periodo, $n_U $ utenti (dall'insieme $U = \{u_1, \ldots, u_{n_U}\}$) contribuiscono al *pubLog* con l'insieme di indirizzi $A = \{a_1, \ldots, a_{n_A}\}$.
+Si ha poi l'insieme delle transazioni $T = \{ \tau_1 (S_1 \rightarrow R_1), \ldots , \tau_{n_T}(S_{n_T} \rightarrow R_{n_T}) \} $ in cui $\tau_i (S_i \rightarrow R_i)$ descrive una singola transazione con ID univoco pari a $i$, e con $S_i$ e $R_i$ l'insieme degli indirizzi di mittente e destinatario rispettivamente.
+Viene introdotto anche un avversario $\adversary$ interessato ad ottenere informazioni su tutte le transazioni e gli indirizzi appartenenti ad un insieme di utenti Bitcoin. Si assume quindi che $\adversary$ sia un nodo legittimo della rete, abbia accesso a *pubLog*, ad alcuni indirizzi di commercianti resi pubblici e altre informazioni statistiche pubblicamente disponibili.
+Inoltre si assume anche che gli utenti siano incoraggiati a cambiare frequentemente i loro indirizzi, spostando le loro monete da un indirizzo all'altro. Questa è una delle abitudini consigliate da Nakamoto.
+
+### Quantificazione della Privacy
+
+Esistono (almeno) due nozioni distinte di privacy per la rete Bitcoin.
+
+*Activity unlinkability*:
+	Un avversario $\adversary$ non dovrebbe essere in grado di associare due indirizzi distinti (*address unlinkability*) o transazioni (*transaction unlinkability*) ad un utente scelto dell'avversario stesso.
+
+*Profile indistinguishability*:
+	L'avversario non deve essere in grado di ricostruire i profili (insieme di indirizzi e transazioni) di tutti gli utenti del *pubLog*. Questa nozione di privacy è più forte della precedente, in quanto riguarda l'intera rete e non solo un utente. Inoltre i due profili (per transazioni e per indirizzi) non sono equivalenti quando si tratta di modellare il profilo di un utente, in quanto è possibile indovinare correttamente gli indirizzi di utenti coinvolti in poche transazioni ma sbagliare nel caso di pochi indirizzi coinvolti in molte transazioni.
+
+Vengono definiti due algoritmi *AddUnl* e *ProfInd* che implementano una sorta di sfida in cui l'attaccante tenta di violare le due nozioni di privacy sopra descritte.
+Il risultato sarà una quantificazione delle nozioni di privacy nei termini del vantaggio che $\adversary$ possiede per vincere queste sfide nei confronti di un avversario $\adversaryrnd$ che tenta di vincere le stesse sfide rispondendo in modo casuale.
+Ipotizziamo che $\adversary$ abbia accesso completo a *pubLog* e che sia $\adversary$ che $\adversaryrnd$ abbiano accesso ad una base di conoscenza comune $\knowa$ che contengono informazioni verificate su un sottoinsieme di indirizzi e i relativi proprietari.
+
+#### Address Unlinkability
+
+Il seguente algoritmo descrive il meccanismo con cui avviene la sfida per la address unlinkability.
+In questo algoritmo si utilizza $\adversary$ come un generico avversario, in quanto per i calcoli di quantificazione l'algoritmo verrà eseguito sia da $\adversary$ che da $\adversaryrnd$.
+Si comincia con $\adversary$ che seleziona in modo causale un indirizzo presente in pubLog e lo invia ad uno sfidante $\challenger$ (che si assume sia a conoscenza delle corrette correlazioni utenti-indirizzi).
+Se l'indirizzo scelto da $\adversary$ è l'unico che appartiene all'utente, $\adversary$ vince la sfida.
+Altrimenti $\challenger$ scegli un bit casuale $\mathcol{b}$. Se $\mathcol{b} = 1$ allora $\challenger$ sceglie un nuovo indirizzo tra quelli disponibili in pubLog che appartenga allo stesso utente del primo indirizzo, altrimenti il nuovo indirizzo verrà scelto tra quelli in pubLog che non appartengono al proprietario del nuovo indirizzo. L'indirizzo scelto insieme al precedente indirizzo vengono inviati ad $\adversary$, il quale stima (con un algoritmo di sua scelta, ininfluente per la sfida) se i due indirizzi che ha ricevuto appartengono o meno allo stesso utente, e memorizza il suo risultato nel bit $\mathcol{b}'$.
+Se $\adversary$ ha indovinato, ovvero se $\mathcol{b} = \mathcol{b}'$, allora $\adversary$ vince la sfida.
+L'algoritmo è visibile in \ref{addunl_alg}.
+
+\input{./tex/AddUnl.tex}
+
+Stabiliamo che Bitcoin soddisfa il principio di *Address Unlinkability* se, per ogni avversario $\adversary$ (che ha un ben preciso algoritmo per rispondere alla domanda di $\challenger$) e per ogni coppia di indirizzi scelti dall'algoritmo, $\adversary$ ha solo un piccolo vantaggio rispetto ad un avversario come $\adversaryrnd$ che risponde a caso alla domanda posta da $\challenger$. Formalmente:
+$$ \text{Bitcoin } \dash \text{ Address Unlinkability} \text{ se } \Pr [ \mathcol{b}' \leftarrow $\adversary$ (\text{pubLog}, \knowa ) : \mathcol{b} = \mathcol{b}' ] - \Pr [\mathcol{b}' \leftarrow \adversaryrn (\knowa) : \mathcol{b} = \mathcol{b}' ] \leq \varepsilon \quad \text{ con }\varepsilon\text{ trascurabile} $$
+
+##### Quantificazione di Address Unlinkability
+
+Sfruttando i risultati ottenuti dalla sfida, è possibile stimare il *grado* con cui gli indirizzi Bitcoin possono essere collegati ad uno stesso utente.
+Verranno definite alcune strutture matematiche necessarie per i calcoli.
+
+$E_\text{link} [i, j] = \{p_{i,j}\}_{i,j \in [1, n_A ]}$:
+   Matrice $n_A \times n_A$ in cui ogni argomento esprime la probabilità $p_{i,j}$ stimata da $\adversary$ che l'indirizzo $a_i$ appartenga allo stesso utente dell'indirizzo $a_j$ (in simboli, $a_i \sameuser a_j$).
+   
+ $\text{GT}_\text{link} [i,j] = \begin{cases} 1 &\text{se } a_i \sameuser a_j \\ 0 &\text{altrimenti} \end{cases}$:
+   Matrice $n_A \times n_A$ delle connessioni tra gli indirizzi.
+   
+Date queste due strutture, si definisce l'errore commesso da $\adversary$ nella sua stima come la *distanza di Manhattan* che intercorre tra $E_\text{link} [i,*]$ e le vere associazioni di $a_i$ con tutti gli indirizzi in pubLog:
+
+$$ \begin{align} \text{Er}_{\adversary} &= \| E_\text{link} [i, *] - \text{GT}_\text{link} [i,*]\|_1 \\ 
+   &= \sum_x | E_\text{link} [i, x] - \text{GT}_\text{link} [i,x] | \quad \text{ con } x \in [1, n_A]
+   \end{align}$$
+   
+Si può dunque determinare il successo di $\adversary$ per AddUnl come il massimo del suo errore:
+
+$$ \begin{align} \text{Succ}_{\adversary} &= \max_{\forall a_i \not\in \knowa} (\| E_\text{link} [i, *] - \text{GT}_\text{link} [i,*]\|_1) \\
+   &= \max_{\forall a_i \not\in \knowa}(\sum_x | E_\text{link} [i, x] - \text{GT}_\text{link} [i,x] |) \quad \text{ con } x \in [1, n_A]
+   \end{align} $$
+   
+Stesse condizioni devono essere fatte per l'avversario con criterio di decisione casuale, $\adversaryrnd$.
+Mantenendo uguale $\text{GT}_\text{link} [i,j]$ è necessario definire
+
+$E^{\mathcol{R}}_\text{link} [i, j] = \begin{cases} \pi_{i,j} &\text{ se } \langle a_i, a_j \rangle \in \knowa \\ \rho + \rho(1-\rho)\tfrac{1}{2} &\text{ altrimenti}:
+   Matrice $n_A \times n_A$. $\pi_{i,j}$ rappresenta la probabilità che gli indirizzi $a_i$ e $a_j$ appartengano allo stesso utente secondo $\knowa$, mentre $\rho$ è la frazione di indirizzi in \{pubLog \smallsetminus \knowa\} che non può essere associata ad altri indirizzi (il che capita quando un utente ha solo un indirizzo)[^solounindirizzo]. Per le coppie di indirizzi non incluse in $\knowa$ tale probabilità è $\rho + \rho(1-\rho)\tfrac{1}{2}$.
+   
+Le altre formule vengono mantenute uguali sostituendo $$E^{\mathcol{R}}_\text{link} [i, j]$ a $E_\text{link} [i, j]$.
+Il grado di address unlinkability risulta quindi essere il grado di successo aggiuntivo che $\adversary$ può ottenere da pubLog in comparazione con $\adversaryrnd$, chiamato $Link^{\text{abs}}_{\adversary}$[^versionenormalizzata].
+
+$$ \begin{align} Link^{\text{abs}}_{\adversary} &= \text{Succ}_{\adversary} - \text{Succ}_{\adversaryrnd} \\
+   &= \frac{\text{Succ}_{\adversary} - \text{Succ}_{\adversaryrnd}}{\text{Succ}_{\adversaryrnd}} \quad \text{ in versione normalizzata}
+   \end{align}$$
+   
+///FIXME: sta roba qui sotto si o no? non so cosa sia
+Si ha inoltre:
+$$ \begin{align}\text{Bitcoin } \dash \mu-\text{Address Unlinkability} &\text{ se } \forall \text{ algoritmi } \adversary \text{ ed i corrispondenti } \adversaryrnd : \\
+   &\Pr[E_{link} \leftarrow \adversary(\text{pubLog}, \knowa), E^{\mathcol{R}}_\text{link} \leftarrow \adversaryrnd(\knowa) : \text{Link}_{\adversary} \geq 1 - \mu ] \leq \varepsilon
+   \end{align} $$
+   
+[^solounindirizzo]: l'esistenza degli indirizzi ombra non ha al momento rilevanza, ma più avanti $\rho$ diventerà trascurabile a causa della loro presenza.
+[^versionenormalizzata]: (///FIXME: non ho la minima idea di cosa sia la versione normalizzata)
 
 
-* evaluating user privacy in bitcoin
+
 * an analisis of anonimity in bitcoin sistem
 
 

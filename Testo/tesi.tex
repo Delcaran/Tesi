@@ -3,6 +3,8 @@
 \usepackage{uniudtesi}
 \graphicspath{{./img/}}
 \usepackage{commands}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 
 \includeonly{./tex/titolo,./tex/abstract,./tex/intro,./tex/bitcoin,./tex/sicurezza,./tex/privacy}
 
@@ -37,13 +39,14 @@
 
 \backmatter
 
-\glossarystyle{listgroup}
-%\glsaddall
-\printglossaries
-
 \nocite{*}
 \bibliographystyle{babplain}
 \bibliography{bibliografia}
 
 \printindex % se si fa l'indice analitico.
+
+\glossarystyle{listgroup}
+%\glsaddall
+\printglossaries
+
 \end{document}

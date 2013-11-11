@@ -243,7 +243,7 @@ Durante il normale utilizzo della rete potrebbe capitare di essere testimoni di 
 Se a questo aggiungiamo il fatto che una partizione potrebbe avere dimensione unitaria (un nodo genera un nuovo blocco in conflitto con il blocco di testa di tutti i suoi vicini) è evidente come per poter rilevare tutti i fork bisognerebbe connettersi ad ogni nodo della rete. Ma abbiamo detto che alcuni nodi non sono raggiungibili dall'esterno, per cui possiamo solo stimare il numero di fork che avvengono.
 
 Utilizzando la configurazione descritta nella sezione precedente, sono stati raccolti tutti i blocchi di altezza compresa tra 180000 e 190000. Essendo un grande campione che coinvolge tutti i nodi raggiungibili, è abbastanza probabile che tutti i blocchi generati siano stati propagati fino al nodo spia implementato permettendo di individuare la maggior parte dei fork avvenuti nell'intervallo di rilevazione.
-Nei 10000 blocchi osservati sono stati identificati 169 fork, il che si traduce in rateo di forking $r = 1.69%$. L'istogramma \ref{bitcoinpropagation_5} mostra i risultati in modo più dettagliato.
+Nei 10000 blocchi osservati sono stati identificati 169 fork, il che si traduce in rateo di forking $r = 1.69\%$. L'istogramma \ref{bitcoinpropagation_5} mostra i risultati in modo più dettagliato.
 
 ![Fork osservati tra i blocchi 180000 e 190000 durante il collegamento alla rete.\label{bitcoinpropagation_5}](bitcoinpropagation_5.PNG)
 
@@ -252,18 +252,17 @@ Nei 10000 blocchi osservati sono stati identificati 169 fork, il che si traduce 
 Il protocollo bitcoin adatta la difficoltà della proof-of-work ogni 10 minuti in modo da mantenerla sufficientemente elevata da essere significativa.
 Definendo $X_b$ come la variabile casuale che rappresenta i secondi trascorsi tra il ritrovamento di un nodo e il ritrovamento del nodo precedente, allora la *probabilità che un blocco venga trovato* nella rete in un dato secondo è
 
-$$ P_b = \Pr{X_b < t + 1 | X_b \geq t} \approx 1/600 $$
+$$ P_b = \Pr\left[ X_b < t + 1 | X_b \geq t\right] \approx 1/600 $$
 
 Un fork avviene se, durante la propagazione del blocco $b$, viene trovato un blocco $b'$ in conflitto nella parte di rete non ancora a conoscenza di $b$.
 Definiamo $t_j$ come il tempo in secondi in cui $j$ apprende dell'esistenta di $b$ da quando esso è stato creato. La funzione $I_{j}(t)$ identifica se il nodo $j$ sa dell'esistenza di $b$ nell'istante $b$, e la funzione $I(t)$ conta il numero di nodi che hanno ricevuto e verificato $b$ all'istante $t$.
 
-$$ I_{j}(t) = \left \lbrace 
-\begin{array}{ll}
-	0 & t_j > t \\
-	1 & t_j \leq t
-\end{array}$$
+$$ I_{j}(t) = \begin{cases}
+	0 &\textrm{se } t_j > t \\
+	1 &\textrm{se } t_j \leq t
+\end{cases}$$
 
-$$ I(t) = \sum_{j \in V} I_{j}(t) \textrm{con }V\textrm{ insieme dei vettori} $$
+$$ I(t) = \sum_{j \in V} I_{j}(t) \quad  \textrm{con }V\textrm{ insieme dei vettori} $$
 
 Da cui ottengo il rateo di nodi informati:
 
@@ -272,7 +271,7 @@ $$ f(t) = \mathbb{E}[I(t)] \cdot n^{-1} $$
 Notare come la $f(t)$ sia equivalente alla funzione di distribuzione cumulativa (**CDF**) della frequenza alla quale i peer vengono informati. Possiamo quindi utilizzare la funzione di densità di probabilità (**PDF**) della frequenza con cui i peer vengono informati rappresentata in \ref{bitcoinpropagation_3} come una approssimazione durante le rilevazioni.
 Solo i nodi non informati possono produrre blocchi in conflitto, per cui combinando la probabilità di trovare un blocco con il rateo di nodi non informati otteniamo la probabilità di un fork. Definiamo $F$ come la variabile casuale discreta che conta il numero di blocchi in conflitto trovati mentre un altro blocco viene propagato. Allora la propabilità di un fork risulta:
 
-$$ \Pr{F \geq 1} = 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} $$
+$$ \Pr\left[F \geq 1\right] = 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} $$
 
 In questo ultimo passaggio si è assunta la semplificazione per la quale la probabilità di un nodo di trovare un blocco è distribuita uniformemente in modo casuale tra tutti i nodi.
 
@@ -306,9 +305,9 @@ Per quando riguarda la propagazione dei nodi nella rete, a causa della normalizz
 Combinando la probabilità di trovare un blocco e la funzione della frequenza dei nodi informati si ottiene la seguente probabilità per un fork:
 
 $$
-\begin{align}{ll}
-	\Pr{F \geq 1} &= 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} \\
-	&= 1 - (1 - \frac{1}{633.68})^11.37 \\
+\begin{align}
+	\Pr\left[F \geq 1\right] &= 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} \\
+	&= 1 - \left(1 - \frac{1}{633.68}\right)^{11.37} \\
 	&\approx 1.78%
 \end{align}
 $$
@@ -324,4 +323,4 @@ Una interpretazione alternativa del risultato proposto in (TODO: link all'equazi
 Infatti il lavoro impiegato per trovare il primo blocco di una blockchain alternativa (che potrebbe essere scartata) non contribuisce alla sicurezza della rete e costituisce un eventuale punto a favore di un attaccante che cerca di implementare una sua blockchain alternativa.
 Come detto in precedenza da Nakamoto, un attaccante capace di controllare più del 50% del potere computazione delle rete è in grado di trovare proof-of-work più velocemente di tutto il resto il della rete. L'attaccante sarebbe perciò in grado di rimpiazzare l'intera storia delle transazione a partire da un qualsiasi blocco.
 Pur sicuramente sufficiente, questa condizione non è minima. In realtà l'efficenza della rete come intero, incluso il ritardo di propagazione, non è ottimale.
-La potenza computazionale effettiva nella rete così come si presenta a Settembre 2013 è pari a $1 - 11.37 / 633.68 = 98.20%$. Per cui ad un attaccante basta controllare il 49.1% della forza di calcolo della rete per poter portare un attacco e cambiare la blockchain. Al momento questo è un risultato difficile da ottenere, ma la situazione potrebbe cambiare in peggio a causa dell'aumento costante del ritardo di propagazione.
+La potenza computazionale effettiva nella rete così come si presenta a Settembre 2013 è pari a $1 - 11.37 / 633.68 = 98.20\%$. Per cui ad un attaccante basta controllare il 49.1\% della forza di calcolo della rete per poter portare un attacco e cambiare la blockchain. Al momento questo è un risultato difficile da ottenere, ma la situazione potrebbe cambiare in peggio a causa dell'aumento costante del ritardo di propagazione.
