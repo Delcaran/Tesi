@@ -1,0 +1,22 @@
+\begin{algorithm}
+	\caption{Address Unlinkability}
+	\label{addunl_alg}
+	\begin{algorithmic}
+		AddUnl(A, \challenger, \knowa$, pubLog):
+		\STATE $a_0 \leftarrow $A.randomAddr(pubLog)
+		A.send($a_0, \challenger$)
+		\IF{$\challenger$.isUniqueAddr($a_0$)
+			A.win()
+		\ELSE
+			$\mathcol{b} \leftarrow \challenger$.randomBit()
+			\IF{$\mathcol{b} = 1$}
+				$a_1 \leftarrow \challenger$.sameUsrAddr($a_0$, pubLog)
+			\ELSE
+				$a_1 \leftarrow \challenger$.otherUsrAddr($a_0$, pubLog)
+			\ENDIF
+			$\challenger$.send($\langle a_0, a_1 \rangle$, A)
+			$\mathcol{b}' \leftarrow $A.estimateSameUser($a_0, a_1$)
+			\IF{$\mathcol{b} = \mathcol{b}'$} A.win() \ENDIF
+		\ENDIF
+	\end{algorithmic}
+\end{algorithm}
