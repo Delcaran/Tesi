@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  12 NOV 2013 13:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  12 NOV 2013 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -905,36 +905,56 @@ Package hyperref Info: Option `bookmarksopen' set `true' on input line 86.
 ) (./commands.sty
 Package: commands 
 )
+\@input{./tex/glossario.aux}
+\openout2 = `./tex/glossario.aux'.
+
+(./tex/glossario.tex
+
+! Package inputenc Error: Unicode char \u8:﻿ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 ﻿
+       \newglossaryentry{blocco}{
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
 \glo@main@file=\write6
 \openout6 = `tesi.glo'.
 
-Package glossaries Info: Writing glossary file tesi.glo on input line 9.
+Package glossaries Info: Writing glossary file tesi.glo on input line 11.
 \@indexfile=\write7
 \openout7 = `tesi.idx'.
 
 
 Writing index file tesi.idx
 (./tesi.aux (./tex/titolo.aux) (./tex/abstract.aux) (./tex/intro.aux)
-No file ./tex/p2pavanzato.aux.
-(./tex/bitcoin.aux) (./tex/privacy.aux) (./tex/sicurezza.aux))
+(./tex/bitcoin.aux) (./tex/privacy.aux
+
+LaTeX Warning: Label `profind_alg' multiply defined.
+
+) (./tex/sicurezza.aux))
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-
-(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+ (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count164
 \scratchdimen=\dimen154
@@ -967,7 +987,7 @@ e
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring OFF on input line 12.
+Package hyperref Info: Link coloring OFF on input line 14.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -977,10 +997,10 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 \c@section@level=\count170
 LaTeX Info: Redefining \Ref on input line 513.
 )
-LaTeX Info: Redefining \ref on input line 12.
-LaTeX Info: Redefining \pageref on input line 12.
-LaTeX Info: Redefining \nameref on input line 12.
-LaTeX Info: Redefining \Ref on input line 12.
+LaTeX Info: Redefining \ref on input line 14.
+LaTeX Info: Redefining \pageref on input line 14.
+LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \Ref on input line 14.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1050,14 +1070,14 @@ Package minitoc(hints) Warning: W0023
 (minitoc(hints))                --- It may be the consequence 
 (minitoc(hints))                of loading the ``hyperref'' package.
 
-LaTeX Info: Redefining \celsius on input line 12.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 12.
+LaTeX Info: Redefining \celsius on input line 14.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 14.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 12.
-Package gensymb Info: Using \Omega for \ohm on input line 12.
+LaTeX Info: Redefining \ohm on input line 14.
+Package gensymb Info: Using \Omega for \ohm on input line 14.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1088,7 +1108,7 @@ Dictionary: glossaries-dictionary, Language: Italian
  (./tex/titolo.tex
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 9.
 )
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 18.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 19.
  (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -1100,30 +1120,32 @@ Package epstopdf Info: Source file: <./img/uniud_lite.eps>
 (epstopdf)                    size: 47225 bytes
 (epstopdf)             Command: <repstopdf --outfile=./img/uniud_lite-eps-conve
 rted-to.pdf ./img/uniud_lite.eps>
-(epstopdf)             \includegraphics on input line 18.
+(epstopdf)             \includegraphics on input line 19.
 Package epstopdf Info: Output file is already uptodate.
 
 <./img/uniud_lite-eps-converted-to.pdf, id=1, 406.51875pt x 406.51875pt>
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 18.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 19.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 19.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+LaTeX Font Info:    Try loading font information for U+msb on input line 19.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 18.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 19.
 
 (/usr/share/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ) [1
+
+
 
 \openout5 = `tesi.xdy'.
 
@@ -1133,7 +1155,21 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] [3] [4
+]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 \maketitle
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[3] [4
 
 ]
 \openout2 = `./tex/abstract.aux'.
@@ -1146,15 +1182,15 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ]) [7] [8
 
 
-]
-(./tesi.toc [9])
+] (./tesi.toc [9])
 \tf@toc=\write8
 \openout8 = `tesi.toc'.
 
  [10]
 \openout2 = `./tex/intro.aux'.
 
- (./tex/intro.tex
+
+(./tex/intro.tex
 Capitolo 1.
 [1
 
@@ -1172,7 +1208,6 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 \openout2 = `./tex/bitcoin.aux'.
 
  (./tex/bitcoin.tex [8
-
 
 
 
@@ -1199,30 +1234,30 @@ Overfull \hbox (433.51894pt too wide) in paragraph at lines 127--128
  []
 
 [18] <./img/bitcoinpropagation_1.PNG, id=119, 837.1275pt x 249.93375pt>
-Overfull \hbox (438.7886pt too wide) in paragraph at lines 153--154
+Overfull \hbox (438.7886pt too wide) in paragraph at lines 154--155
  [][] |
  []
 
 [19] [20] [21]
 <./img/bitcoinpropagation_3.PNG, id=130, 760.34062pt x 507.39563pt>
-Overfull \hbox (362.0019pt too wide) in paragraph at lines 199--200
+Overfull \hbox (362.0019pt too wide) in paragraph at lines 200--201
  [][] |
  []
 
 <./img/bitcoinpropagation_4.PNG, id=131, 730.22812pt x 508.14844pt>
-Overfull \hbox (331.88948pt too wide) in paragraph at lines 209--210
+Overfull \hbox (331.88948pt too wide) in paragraph at lines 210--211
  [][] |
  []
 
 [22] [23] [24] [25]
 <./img/bitcoinpropagation_5.PNG, id=146, 727.21687pt x 498.36188pt>
-Overfull \hbox (328.87823pt too wide) in paragraph at lines 231--232
+Overfull \hbox (328.87823pt too wide) in paragraph at lines 232--233
  [][] |
  []
 
 [26] [27] [28]
 <./img/bitcoinpropagation_6.PNG, id=160, 771.63281pt x 510.40688pt>
-Overfull \hbox (373.29407pt too wide) in paragraph at lines 282--283
+Overfull \hbox (373.29407pt too wide) in paragraph at lines 283--284
  [][] |
  []
 
@@ -1238,24 +1273,63 @@ Capitolo 3.
 [33] [34] (./tex/AddUnl.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 2.
-) [35] [36]) [37]
+) [35] [36] (./tex/ProfInd.tex) [37]
+! Extra \right.
+l.132 ..._{\left(*,j\right)}}\right)\right)\right)
+                                                   \]
+I'm ignoring a \right that had no matching \left.
+
+! Extra }, or forgotten \right.
+\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
+                                                 
+l.136 ...ht)} - n_{\left(*, j\right)} - n\right)!}
+                                                  \right)\right)\right)
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.136 ...ft(*, j\right)} - n\right)!}\right)\right
+                                                  )\right)
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \right. inserted.
+<inserted text> 
+                \right .
+l.137 \]
+        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[38]) [39]
 \openout2 = `./tex/sicurezza.aux'.
 
- (./tex/sicurezza.tex [38
+ (./tex/sicurezza.tex [40
 
 
 
 ]
 Capitolo 4.
 
-LaTeX Warning: Citation `vulenrabilities' on page 39 undefined on input line 9.
+LaTeX Warning: Citation `vulenrabilities' on page 41 undefined on input line 9.
 
 
-[39] [40] [41]
+[41] [42] [43]
 Underfull \vbox (badness 1038) has occurred while \output is active []
 
- [42]
-[43] [44]) [45] [46
+ [44]
+[45] [46]) [47] [48
 
 
 ] (./tesi.bbl
@@ -1300,7 +1374,7 @@ Underfull \hbox (badness 1033) in paragraph at lines 90--103
 is, An-ge-los D. (cu-ra-to-re): \T1/cmr/m/it/10.95 Fi-nan-
  []
 
-[47
+[49
 
 ]
 Underfull \hbox (badness 1168) in paragraph at lines 144--152
@@ -1320,7 +1394,7 @@ Underfull \hbox (badness 3746) in paragraph at lines 166--170
 -Peer Elec-tro-nic Cash Sy-stem\T1/cmr/m/n/10.95 .
  []
 
-[48])
+[50])
 No file tesi.gls.
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
@@ -1337,31 +1411,30 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the tesi.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 50.
-[49]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 50.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
+[51]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
  (./tesi.aux (./tex/titolo.aux) (./tex/abstract.aux) (./tex/intro.aux)
-No file ./tex/p2pavanzato.aux.
 (./tex/bitcoin.aux) (./tex/privacy.aux) (./tex/sicurezza.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 50.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 50.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 48.
 
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 14980 strings out of 493311
- 211156 string characters out of 6143650
- 405401 words of memory out of 5000000
- 17796 multiletter control sequences out of 15000+600000
+ 15284 strings out of 493311
+ 215860 string characters out of 6143650
+ 412080 words of memory out of 5000000
+ 18095 multiletter control sequences out of 15000+600000
  29594 words of font info for 79 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 53i,11n,51p,2650b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,12n,51p,2650b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/pu
@@ -1388,10 +1461,10 @@ type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm
 e/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fo
 nts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/cm-super/sftt1200.pfb>
-Output written on tesi.pdf (59 pages, 552702 bytes).
+Output written on tesi.pdf (61 pages, 569721 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
+ 335 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

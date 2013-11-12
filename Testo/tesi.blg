@@ -4,11 +4,6 @@ The top-level auxiliary file: tesi.aux
 A level-1 auxiliary file: ./tex/titolo.aux
 A level-1 auxiliary file: ./tex/abstract.aux
 A level-1 auxiliary file: ./tex/intro.aux
-I couldn't open auxiliary file ./tex/p2pavanzato.aux
----line 34 of file tesi.aux
- : \@input{./tex/p2pavanzato.aux
- :                              }
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: ./tex/bitcoin.aux
 A level-1 auxiliary file: ./tex/privacy.aux
 A level-1 auxiliary file: ./tex/sicurezza.aux
@@ -22,7 +17,7 @@ Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty language in bitcoin_wiki
 You've used 20 entries,
             2788 wiz_defined-function locations,
-            775 strings with 10222 characters,
+            774 strings with 10201 characters,
 and the built_in function-call counts, 8217 in all, are:
 = -- 709
 > -- 280
@@ -61,4 +56,4 @@ warning$ -- 4
 while$ -- 51
 width$ -- 22
 write$ -- 248
-(There was 1 error message)
+(There were 5 warnings)

@@ -11,7 +11,7 @@ Ma come si fa a misurare il livello di privacy offerto da Bitcoin? In questa sez
 Essendo una analisi quantitativa, è necessario fornire una definizione formale per i termini fin qui usati in modo più o meno descrittivo. Sotto tale ottica verrano quindi proposte alcune definizioni formali, la prima delle quali è il concetto portante della rete:
 
 Transazione:
-\[\tau(a_{\textrm{S}} \rightarrow a_{\textrm{R}}) = \{ \textrm{source}, B, a_{\textrm{R}}, \textrm{SIG}_{\textrm{sk}_{a_{\textrm{S}}}}(\textrm{source}, B, a_{\textrm{R}}) \} \]
+\[\tau(a_{\textrm{S}} \rightarrow a_{\textrm{R}}) = \{ \textrm{source}, B, a_{\textrm{R}}, \textrm{SIG}_{\textrm{sk}_{a_{\textrm{S}}}}\left(\textrm{source}, B, a_{\textrm{R}}\right) \} \]
 definisce una transazione che intercorre tra i due indirizzi $a_{\textrm{S}}$ e $a_{\textrm{R}}$, in cui $\textrm{SIG}_{\textrm{sk}_{a_{\textrm{S}}}}$ è la firma digitale creata utilizzando la chiave privata $\textrm{sk}_{a_\textrm{S}}$ corrispondente alla chiave pubblica associata all'indirizzo $a_\textrm{S}$. $B$ è la quantità di BTC trasferite e $\textrm{source}$ è un riferimento alla più recente transazione da cui $a_\textrm{S}$ ha ottenuto le $B$ BTC.
 
 Al fine dell'analisi, assumiamo la situazione tipica della rete Bitcoin, in cui ogni singolo utente dispone di diversi indirizzi a lui associati. Mentre questa può sembrare una forzatura, in realtà non lo è affatto. Come abbiamo detto in precedenza, ogni transazione contiene un indirizzo di ritorno per il resto. Tale indirizzo viene definito \emph{indirizzo ombra} ed è creato automaticamte senza l'intervento dell'utente. Per cui ogni utente possiede almeno due indirizzi: quello creato al momento della creazione del portafogli e l'indirizzo ombra.
@@ -39,7 +39,7 @@ Il seguente algoritmo descrive il meccanismo con cui avviene la sfida per la add
 Stabiliamo che Bitcoin soddisfa il principio di \emph{Address Unlinkability} se, per ogni avversario $\adversary$ (che ha un ben preciso algoritmo per rispondere alla domanda di $\challenger$) e per ogni coppia di indirizzi scelti dall'algoritmo, $\adversary$ ha solo un piccolo vantaggio rispetto ad un avversario come $\adversaryrnd$ che risponde a caso alla domanda posta da $\challenger$. Formalmente diciamo che Bitcoin soddisfa la Address Unlinkability se:
 
 \begin{equation*}
-\Pr [ \mathit{b}' \leftarrow \adversary (\text{pubLog}, \knowa ) : \mathit{b} = \mathit{b}' ] - \Pr [\mathit{b}' \leftarrow \adversaryrnd (\knowa) : \mathit{b} = \mathit{b}' ] \leq \varepsilon
+\Pr [ \mathit{b}' \leftarrow \adversary \left(\text{pubLog}, \knowa \right) : \mathit{b} = \mathit{b}' ] - \Pr [\mathit{b}' \leftarrow \adversaryrnd \left(\knowa \right) : \mathit{b} = \mathit{b}' ] \leq \varepsilon
 \end{equation*}
 
 con $\varepsilon$ trascurabile.
@@ -62,8 +62,8 @@ Date queste due strutture, si definisce l'errore commesso da $\adversary$ nella 
 
 Si può dunque determinare il successo di $\adversary$ per AddUnl come il massimo del suo errore:
 
-\[ \begin{aligned} \text{Succ}_{\adversary} &= \max_{\forall a_i \not\in \knowa} (\| E_\text{link} [i, *] - \text{GT}_\text{link} [i,*]\|_1) \\
-   &= \max_{\forall a_i \not\in \knowa}(\sum_x | E_\text{link} [i, x] - \text{GT}_\text{link} [i,x] |) \quad \text{ con } x \in [1, n_A]
+\[ \begin{aligned} \text{Succ}_{\adversary} &= \max_{\forall a_i \not\in \knowa} \left(\| E_\text{link} [i, *] - \text{GT}_\text{link} [i,*]\|_1 \right) \\
+   &= \max_{\forall a_i \not\in \knowa}\left(\sum_x | E_\text{link} [i, x] - \text{GT}_\text{link} [i,x] |\right) \quad \text{ con } x \in [1, n_A]
    \end{aligned} \]
 
 Stesse condizioni devono essere fatte per l'avversario con criterio di decisione casuale, $\adversaryrnd$. Mantenendo uguale $\text{GT}_\text{link} [i,j]$ è necessario definire la matrice $E^{\mathcal{R}}$\_come segue:
@@ -72,14 +72,74 @@ Stesse condizioni devono essere fatte per l'avversario con criterio di decisione
 
 Dove $\pi_{i,j}$ rappresenta la probabilità che gli indirizzi $a_i$ e $a_j$ appartengano allo stesso utente secondo $\knowa$, mentre $\rho$ è la frazione di indirizzi in $\{\text{pubLog} \smallsetminus \knowa\}$ che non può essere associata ad altri indirizzi (il che capita quando un utente ha solo un indirizzo)\footnote{l'esistenza degli indirizzi ombra   non ha al momento rilevanza, ma più avanti $\rho$ diventerà   trascurabile a causa della loro presenza.}. Per le coppie di indirizzi non incluse in $\knowa$ tale probabilità è $\rho + \rho(1-\rho)\tfrac{1}{2}$.
 
-Le altre formule vengono mantenute uguali sostituendo $E^{\mathcal{R}}_\text{link} [i, j]$ a $E_\text{link} [i, j]$. Il grado di address unlinkability risulta quindi essere il grado di successo aggiuntivo che $\adversary$ può ottenere da pubLog in comparazione con $\adversaryrnd$, chiamato $Link^{\text{abs}}_{\adversary}$%FIXME   non ho la minima idea di cosa sia la versione normalizzata.
+Le altre formule vengono mantenute uguali sostituendo $E^{\mathcal{R}}_\text{link} [i, j]$ a $E_\text{link} [i, j]$. Il grado di address unlinkability risulta quindi essere il grado di successo aggiuntivo che $\adversary$ può ottenere da pubLog in comparazione con $\adversaryrnd$, chiamato $Link^{\text{abs}}_{\adversary}$
+%FIXME   non ho la minima idea di cosa sia la versione normalizzata.
 
 \[ \begin{aligned} Link^{\text{abs}}_{\adversary} &= \text{Succ}_{\adversary} - \text{Succ}_{\adversaryrnd} \\
    &= \frac{\text{Succ}_{\adversary} - \text{Succ}_{\adversaryrnd}}{\text{Succ}_{\adversaryrnd}} \quad \text{ in versione normalizzata}
    \end{aligned}\]
 
+\subsubsection{User Profile Indistinguishability}\label{profile-indistinguishability}
+
+L'impossibilità di ricostruire i profili di tutti gli utenti è una proprietà molto più forte rispetto all'impossibilità di associare due indirizzi diversi ad uno stesso utente.
+
+L'algortimo di sfida \emph{ProfInd}\label{profind_alg} viene costruito nel modo seguente.
+Lo sfidante $\challenger$ invia ad $\adversary$ il numero $n_U$ di utenti in $\{\text{pubLog} \smallsetminus \knowa\}$, che risponde con $n_U$ insiemi di indirizzi (o transazioni) e con la matrice $E_\text{prof} = {\{g_i}}^{n_U}_{i=1}$ rappresentante la stima fatta da $\adversary$ sui profili degli utenti nel sistema.
+Come per l'algoritmo precedente, definiamo $\text{GT}_\text{prof} = {\{\text{gt}_i\}}^{n_U}_{i=1}$ che rappresenta le vere associazioni tra indirizzi (o transazioni) e utenti, per cui:
+
+\[
+	\text{GT}_\text{prof} = \begin{cases}
+		{\{a_{u_i}\}}^{n_U}_{i=1} &\text{ per profili basati su indirizzi} \\
+		{\{\tau_{u_i}\}}^{n_U}_{i=1} &\text{ per profili basati su transazioni} 
+	\end{cases}
+\]
+
+dove $a_{u_i}$ e $\tau_{u_i}$ rappresentano insiemi di indirizzi/transazioni per l'utente $u_i$.
+Ovviamente, $\adversary$ vince la sfida se indovina correttamente il profilo, ovvero $E_\text{prof} \equiv \text{GT}_\text{prof}$.
+
+\input{./tex/ProfInd.tex}
+
+Diciamo che un sistema soddisfa la proprietà di \emph{Profile Indistinguishability} se non esiste nessun avversario $\adversary$ in grado di vincere \emph{ProfInd} con una probabilità migliore dell'avversario che risponde casualmente $\adversaryrnd$, ovvero:
+
+\[
+	\begin{aligned}
+		\forall \adversary: &\Pr [E_\text{prof} \ leftarrow \adversary(\text{pubLog}, n_U): E_\text{prof} \equiv \text{GT}_\text{prof}] - \\
+		&\Pr [ E^\mathcal{R}_\text{prof} \leftarrow \adversaryrnd(n_U) : E^\mathcal{R}_\text{prof} \equiv \text{GT}_\text{prof} ] \leq \varepsilon
+	\end{aligned}
+\]
+
+\paragraph{Quantificazione di Profile Indistinguishability}\label{quantificazione-di-profile-indistinguishability}
+
+Anche in questa stima come per la precedente, la quantificazione dipende dal confronto tra la stima di $\adversary$ e i dati reali.
+Definiamo quindi la similitudine tra $E_\text{prof}$ e $\text{GT}_\text{prof}$ come la funzione $Sim(E_\text{prof}, \text{GT}_\text{prof})$, i cui valori appartengono all'insieme $[0, 1]$.
+Come per la address unlinkability, misuriano la profile indistinguishability contro $\adversary$ stimando il grado con cui $\adversary$ è in grado di stilare un profilo utente corretto, ovvero misurando il vantaggio che $\adversary$ ha rispetto a $\adversaryrnd$ nell'avvicinarsi a $\text{GT}_\text{prof}$:
+
+\[ \text{Prof}_\adversary = \text{Sim}(E_\text{prof}, \text{GT}_\text{prof}) - \text{Sim}(E^\mathcal{R}_\text{prof}, \text{GT}_\text{prof}) \]
+
+Per quantificare $Sim(E_\text{prof}, \text{GT}_\text{prof})$ e $\text{Prof}_\adversary$ è necessario sfruttare alcune metriche per calcolare le distanze basate sull'entropia, la \gls{nmi} e la \gls{ami}.
+La \gls{nmi} valuta la similarità di due raggruppamenti degli stessi oggetti e assume valori tanto più alti (il massimo è 1) tanto più i due raggruppanti sono identici.
+La \gls{ami}, dati due raggruppamenti $G_1$ e $G_2$, si avvicina allo 0 quando $G_1$ risulta simile ad un raggruppamento casuale, mentre si avvicina a 1 quando $G_1 = G_2$. Quindi \gls{ami} valuta direttamente il vantaggio che ha $\adversary$ nel vincere la sfida di \emph{ProfInd}.
+
+Nel caso di profili basati sugli indirizzi, \gls{nmi} e \gls{ami} sono calcolate come segue:
+
+\[
+	\begin{aligned}
+		NMI &= \frac{\Iota \left(E_\text{prof}, \text{GT}_\text{prof}\right)}{\max \left(H \left(E_\text{prof}\right),H \left(\text{GT}_\text{prof}\right)\right)} \\
+		AMI &= \frac{\Iota \left(E_\text{prof}, \text{GT}_\text{prof} - \mathcal{E}\right)}{\max \left(H \left(E_\text{prof}\right),H \left(\text{GT}_\text{prof}\right)\right) - \mathcal{E}}
+	\end{aligned}
+\]
+dove:
+\[
+	\begin{aligned}
+		\Iota \left(E_\text{prof}, \text{GT}_\text{prof}\right) &= \sum^{n_U}_{i=1} \left( \sum^{n_U}_{i=1} \left( \frac{n_{(i,j \right)}}{n_A} \log(\frac{n_{\left(i,j\right)} \cdot n_A}{n_{\left(i,*\right)}n_{\left(*,j\right)}}\right)\right)\right) \\
+		H(E_\text{prof}\right) &= - \sum^{n_U}_{i=1} \left(\frac{n_{\left(i,*\right)}}{n_A} \log(\frac{n_{\left(i,*\right)}}{n_A}\right)\right) \\
+		H(\text{GT}_\text{prof}\right) &= - \sum^{n_U}_{j=1} \left(\frac{n_{\left(*,j)}}{n_A} \log(\frac{n_{*,j)}}{n_A}\right)\right) \\
+	\end{aligned}
+\]
+
+
+
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
 \item
   an analisis of anonimity in bitcoin sistem
 \end{itemize}

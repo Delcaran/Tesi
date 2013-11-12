@@ -4,35 +4,33 @@
 \graphicspath{{./img/}}
 \usepackage{commands}
 
-\includeonly{./tex/titolo,./tex/abstract,./tex/intro,./tex/bitcoin,./tex/sicurezza,./tex/privacy}
+\includeonly{./tex/glossario,./tex/titolo,./tex/abstract,./tex/intro,./tex/bitcoin,./tex/sicurezza,./tex/privacy}
+
+\include{./tex/glossario}
 
 \makeglossaries
 \makeindex
 
 \begin{document}
 
-%\input{./tex/titolo.tex}
 \include{./tex/titolo}
 
 \frontmatter
 \maketitle
 
-%\input{./tex/abstract.tex}
 \include{./tex/abstract}
 \tableofcontents
 %\listoffigures
 %\listoftables
 
 \mainmatter
-%\input{./tex/intro.tex}
 \include{./tex/intro}
-\include{./tex/p2pavanzato}
+%\include{./tex/p2pavanzato}
 \include{./tex/bitcoin}
 \include{./tex/privacy}
 \include{./tex/sicurezza}
 
 \appendix
-%\input{./tex/myappendix.tex}
 %\include{./tex/appendix}
 
 \backmatter
