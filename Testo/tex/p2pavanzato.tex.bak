@@ -141,11 +141,10 @@ Una chiave $k$ viene assegnata al primo nodo tale che l'identificatore di tale n
 
 In un primo, semplice, algoritmo per il lookup, ogni nodo contiene solo un valore nella sua tabella di routing e memorizza unicamente il suo successore nell'anello dei nodi. Ogni query per la chiave $x$ viene inoltrata tra i nodi fin quando raggiunge un nodo il cui identificatore $y$ è maggiore della chiave $x$ modulo $2^m$. Il risultato torna al nodo di partenza seguendo il percorso inverso. Questo semplice algoritmo richiede $O(1)$ di spazio locale ma $O(n)$ salti tra gli $n$ nodi.
 
-%TODO algoritmo 18.1 pag 690 (specificare notazione descritta in fondo a pag 689) 
-%TODO grafico di ricerca 18.2 pag 689
+%TODO algoritmo 18.1 pag 690 (specificare notazione descritta in fondo a pag 689) /// TODO: grafico di ricerca 18.2 pag 689
 
 Una versione più raffinata del precedente algoritmo richiede l'aumento dello spazio locale di archiviazione per le tabelle di routing a $O(n)$ ma permette di ridurre il numero dei salti tra i nodi a $O(\log n)$. Ogni nodo $i$ mantiene una tabella di rounting chiamata di indice (\emph{finger table}), con al massimo $O(\log n)$ valori distinti, costruita in modo tale che l'$x$-esimo valore (con $1 \leq x \leq m$) sia l'identificatore per il nodo \emph{succ}$(i + 2^{x-1})$ (più formalmente \emph{i.finger{[}$x${]} = succ}$(i + 2^{x-1})$). Tale nodo risulta essere il primo nodo la cui chiave è maggiore della chiave del nodo $i$ per un valore pari ad almeno $2^{x-1}\text{*mod*}2^m$.
 
 A causa della sua struttura logaritmica, la finger table contiene più informazioni sui nodi successivi vicini rispetto ai nodi successivi lontani \footnote{qui ``successivi'', ``vicini'' e ``lontani'' fanno   riferimento all'anello che si viene a creare nella Chord overlay.}. Immaginiamo infatti di cercare la chiave $k$ partendo dal nodo $i$. Se $k$ si trova tra $i$ e il suo successore, allora vuol dire che $k$ si trova effettivamente nel successore. Altrimenti $k$ si trova oltre il successore, per cui $i$ deve scandire la sua finger table per identificare il nodo $j$ che precede immediatamente $k$. Dato che $j$ si trova più vicino a $k$ di $i$, esso conterrà molte più informazioni utili alla localizzazione di $k$.
 
-%TODO gestione del churm in una Chord (pagg 691-695)
+///TODO: gestione del churm in una Chord (pagg 691-695)

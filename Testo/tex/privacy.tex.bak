@@ -72,8 +72,7 @@ Stesse condizioni devono essere fatte per l'avversario con criterio di decisione
 
 Dove $\pi_{i,j}$ rappresenta la probabilità che gli indirizzi $a_i$ e $a_j$ appartengano allo stesso utente secondo $\knowa$, mentre $\rho$ è la frazione di indirizzi in $\{\text{pubLog} \smallsetminus \knowa\}$ che non può essere associata ad altri indirizzi (il che capita quando un utente ha solo un indirizzo)\footnote{l'esistenza degli indirizzi ombra   non ha al momento rilevanza, ma più avanti $\rho$ diventerà   trascurabile a causa della loro presenza.}. Per le coppie di indirizzi non incluse in $\knowa$ tale probabilità è $\rho + \rho(1-\rho)\tfrac{1}{2}$.
 
-Le altre formule vengono mantenute uguali sostituendo $E^{\mathcal{R}}_\text{link} [i, j]$ a $E_\text{link} [i, j]$. Il grado di address unlinkability risulta quindi essere il grado di successo aggiuntivo che $\adversary$ può ottenere da pubLog in comparazione con $\adversaryrnd$, chiamato $Link^{\text{abs}}_{\adversary}$
-%FIXME   non ho la minima idea di cosa sia la versione normalizzata.
+Le altre formule vengono mantenute uguali sostituendo $E^{\mathcal{R}}_\text{link} [i, j]$ a $E_\text{link} [i, j]$. Il grado di address unlinkability risulta quindi essere il grado di successo aggiuntivo che $\adversary$ può ottenere da pubLog in comparazione con $\adversaryrnd$, chiamato $Link^{\text{abs}}_{\adversary}$%FIXME   non ho la minima idea di cosa sia la versione normalizzata.
 
 \[ \begin{aligned} Link^{\text{abs}}_{\adversary} &= \text{Succ}_{\adversary} - \text{Succ}_{\adversaryrnd} \\
    &= \frac{\text{Succ}_{\adversary} - \text{Succ}_{\adversaryrnd}}{\text{Succ}_{\adversaryrnd}} \quad \text{ in versione normalizzata}
