@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  12 NOV 2013 17:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  13 NOV 2013 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,21 +908,7 @@ Package: commands
 \@input{./tex/glossario.aux}
 \openout2 = `./tex/glossario.aux'.
 
-(./tex/glossario.tex
-
-! Package inputenc Error: Unicode char \u8:﻿ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 ﻿
-       \newglossaryentry{blocco}{
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
+(./tex/glossario.tex)
 \glo@main@file=\write6
 \openout6 = `tesi.glo'.
 
@@ -1155,21 +1141,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.19 \maketitle
-               
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[3] [4
+] [3] [4
 
 ]
 \openout2 = `./tex/abstract.aux'.
@@ -1182,15 +1154,15 @@ or  <return>  to continue without it.
 ]) [7] [8
 
 
-] (./tesi.toc [9])
+]
+(./tesi.toc [9])
 \tf@toc=\write8
 \openout8 = `tesi.toc'.
 
  [10]
 \openout2 = `./tex/intro.aux'.
 
-
-(./tex/intro.tex
+ (./tex/intro.tex
 Capitolo 1.
 [1
 
@@ -1273,59 +1245,17 @@ Capitolo 3.
 [33] [34] (./tex/AddUnl.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 2.
-) [35] [36] (./tex/ProfInd.tex) [37]
-! Extra \right.
-l.132 ..._{\left(*,j\right)}}\right)\right)\right)
-                                                   \]
-I'm ignoring a \right that had no matching \left.
-
-! Extra }, or forgotten \right.
-\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
-                                                 
-l.136 ...ht)} - n_{\left(*, j\right)} - n\right)!}
-                                                  \right)\right)\right)
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.136 ...ft(*, j\right)} - n\right)!}\right)\right
-                                                  )\right)
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \right. inserted.
-<inserted text> 
-                \right .
-l.137 \]
-        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[38]) [39]
+) [35] [36] (./tex/ProfInd.tex) [37] [38] [39])
+[40]
 \openout2 = `./tex/sicurezza.aux'.
 
- (./tex/sicurezza.tex [40
-
-
-
-]
+ (./tex/sicurezza.tex
 Capitolo 4.
+[41
 
-LaTeX Warning: Citation `vulenrabilities' on page 41 undefined on input line 9.
 
 
-[41] [42] [43]
+] [42] [43]
 Underfull \vbox (badness 1038) has occurred while \output is active []
 
  [44]
@@ -1420,21 +1350,18 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 48.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 15284 strings out of 493311
- 215860 string characters out of 6143650
- 412080 words of memory out of 5000000
- 18095 multiletter control sequences out of 15000+600000
+ 15339 strings out of 493311
+ 216649 string characters out of 6143650
+ 412852 words of memory out of 5000000
+ 18150 multiletter control sequences out of 15000+600000
  29594 words of font info for 79 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 53i,12n,51p,2650b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,51p,2650b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/pu
@@ -1461,7 +1388,7 @@ type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm
 e/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fo
 nts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/cm-super/sftt1200.pfb>
-Output written on tesi.pdf (61 pages, 569721 bytes).
+Output written on tesi.pdf (61 pages, 576171 bytes).
 PDF statistics:
  335 PDF objects out of 1000 (max. 8388607)
  228 compressed objects within 3 object streams

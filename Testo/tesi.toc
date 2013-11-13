@@ -36,6 +36,10 @@
 \contentsline {subsubsection}{User Profile Indistinguishability}{37}{ALC@unique.17}
 \contentsline {paragraph}{Quantificazione di Profile Indistinguishability}{37}{ALC@unique.22}
 \contentsline {section}{\numberline {3.2}Valutazione della privacy in Bitcoin}{39}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Euristiche per sfruttare il client}{39}{subsection.3.2.1}
+\contentsline {paragraph}{Transazioni multi-input}{39}{subsection.3.2.1}
+\contentsline {paragraph}{Indirizzi ombra}{39}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Analisi basata sul comportamento}{39}{subsection.3.2.2}
 \contentsline {chapter}{\numberline {4}Sicurezza}{41}{chapter.4}
 \contentsline {section}{\numberline {4.1}Reti P2P in genere}{41}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Attacchi di Basso Livello}{41}{subsection.4.1.1}

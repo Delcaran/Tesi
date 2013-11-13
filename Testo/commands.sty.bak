@@ -2,7 +2,7 @@
 
 \newcommand{\sameuser}{\equiv_U}
 \newcommand{\adversary}{\mathcal{A}}
-\newcommand{\adversaryrnd}{\mathcal{A}_\mathcal{R}}
+\newcommand{\adversaryrnd}{\mathcal{A}^\mathcal{R}}
 \newcommand{\challenger}{\mathcal{C}}
 \newcommand{\knowa}{\mathcal{K}_\mathcal{A}}
 \newunicodechar{°}{\degree}
