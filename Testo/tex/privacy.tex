@@ -212,14 +212,52 @@ Da ciò si deriva la metrica per la distanza in \gls{kmc}:
 \]
 L'implementazione tiene anche conto di alcune restrizioni imposte dal mondo reale. In particolare, dato che gli utenti non possono fisicamente essere in due posti allo stesso tempo, non possono partecipare in due distinti (fisicamente) scambi di beni allo stesso tempo.
 
+<<<<<<< local
 \subsection{Simulazione: utilizzo di Bitcoin in ambiente universitario}\label{utilizzo-simulatore-privacy-utente}
+=======
+\subsection{Simulazione: utilizzo di Bitcoin in ambiente universitario}
+>>>>>>> other
 
 Per verificare i loro modelli, i ricercatori hanno simulato l'utilizzo di Bitcoin per le transazioni quotidiane da parte degli utenti del Dipartimento di Informatica all'ETH di Zurigo con l'assunzione che i negozi nei dintorni della facoltà accettino BTC come valuta.
 
+<<<<<<< local
 \paragraph{Configurazione della simulazione}
+=======
+\paragraph{Impostazione della sperimentazione}
+>>>>>>> other
 
 %TODO figura 1 in \cite{user-privacy}
 Il simulatore riceve in input un file XML come input e output:
+<<<<<<< local
+=======
+\begin{itemize}
+    \item un log che descrive gli eventi simulati, ovvero la \emph{base di verità}.
+    \item il pubLog risultante dalla simulazione.
+\end{itemize}
+I file XML di configurazione contengono tutti i parametri necessari alla simulazione, come il numero di utenti, il numero di nodi che generano i blocchi (i \emph{miners}), il tempo di simulazione, la difficoltà della generazione dei blocchi, le configurazioni per creare i profili utente e i venditori/acquirenti.
+Gli output del simulatore vengono utilizzati per valutare il successo di $\adversary$: un parser Perl utilizza i blocchi Bitcoin simulati come input ed effettua una prima classificazione degli indirizzi simulati in GA in base alle due euristiche descritte.
+Questo output prefiltrato viene dato in pasto agli algoritmi \gls{kmc} e \gls{hac} (entrambi implementati in C).
+L'output di tali algoritmi viene infine comparato con la base di verità tramite un secondo script Perl che calcola il successo di $\adversary$ sulle sfide AddUnl e ProfInd.
+
+La configurazione utilizzata rappresenta uno scenario realistico per gli studenti e lo staff del Dipartimento di Informatica dell'Università di Zurigo durante il semestre autunnale del 2012.
+Si è simulato un numero variabile di utenti dei quali il 5.2\% sono \emph{Professori}, il 42.0\% fanno parte dello \emph{Staff} e il restante 52.8\% sono \emph{Studenti}. Vengono considerati in tutto 6 eventi distinti con diverse varianti:
+\begin{itemize}
+    \item Pranzo e cena (12 varianti).
+    \item Acquisto di alimentari (2 varianti).
+    \item Acquisto da distributori automatici (4 varianti).
+    \item Shopping online (5 varianti).
+    \item Acquisto di libri (2 varianti).
+    \item Baratto con altri utenti.
+\end{itemize}
+Ad ogni utente viene assegnata una probabilità per ognuna delle varianti in accordo alla categoria (Professore, Staff, Studente) a cui appartiene.
+Per ogni evento vengono stabilite la frequenza con cui avviene e un range di prezzo, mentre alle varianti viene assegnato un punteggio in base alla loro popolarità. La probabilità che una variante venga selezionata è il risultato dell'interpolazione tra la frequenza degli eventi in una settimana e il punteggio della variante.
+Per assicurare una grande varietà di profili utente, nella configurazione per ogni evento vengono specificati valori massimi e minimi per la frequenza, il punteggio e il prezzo. Tali limiti dipendono dalla categoria dell'utente, dall'evento e dalla variante in questione.
+All'inizio della sperimentazione, gli utenti hanno meno di 10 indirizzi Bitcoin a testa. Man mano che vengono effettuate transazioni, nuovi indirizzi ombra vengono creati nei loro portafogli.
+Nella configurazione è stato inoltre modellato il comportamento degli utenti attenti alla propria privacy: tali utenti periodicamente creano nuovi indirizzi nei propri portafogli e trasferiscono parte delle proprie BTC dal vecchio al nuovo indirizzo.
+
+
+
+>>>>>>> other
 \begin{itemize}
     \item un log che descrive gli eventi simulati, ovvero la \emph{base di verità}.
     \item il pubLog risultante dalla simulazione.
