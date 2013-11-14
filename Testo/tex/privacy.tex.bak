@@ -56,7 +56,7 @@ Rappresenta una matrice $n_A \times n_A$ in cui ogni argomento esprime la probab
 
 Date queste due strutture, si definisce l'errore commesso da $\adversary$ nella sua stima come la \emph{distanza di Manhattan} che intercorre tra $E_\text{link} [i,*]$ e le vere associazioni di $a_i$ con tutti gli indirizzi in pubLog:
 
-\[ \begin{aligned} \text{Er}_{\adversary} &= \| E_\text{link} [i, *] - \text{GT}_\text{link} [i,*]\|_1 \\ 
+\[ \begin{aligned} \text{Er}_{\adversary} &= \| E_\text{link} [i, *] - \text{GT}_\text{link} [i,*]\|_1 \\
    &= \sum_x | E_\text{link} [i, x] - \text{GT}_\text{link} [i,x] | \quad \text{ con } x \in [1, n_A]
    \end{aligned}\]
 
@@ -84,13 +84,13 @@ Le altre formule vengono mantenute uguali sostituendo $E^{\mathcal{R}}_\text{lin
 L'impossibilità di ricostruire i profili di tutti gli utenti è una proprietà molto più forte rispetto all'impossibilità di associare due indirizzi diversi ad uno stesso utente.
 
 L'algortimo di sfida \emph{ProfInd}\label{profind_alg} viene costruito nel modo seguente.
-Lo sfidante $\challenger$ invia ad $\adversary$ il numero $n_U$ di utenti in $\{\text{pubLog} \smallsetminus \knowa\}$, che risponde con $n_U$ insiemi di indirizzi (o transazioni) e con la matrice $E_\text{prof} = {\{g_i}}^{n_U}_{i=1}$ rappresentante la stima fatta da $\adversary$ sui profili degli utenti nel sistema.
+Lo sfidante $\challenger$ invia ad $\adversary$ il numero $n_U$ di utenti in $\{\text{pubLog} \smallsetminus \knowa\}$, che risponde con $n_U$ insiemi di indirizzi (o transazioni) e con la matrice $E_\text{prof} = {\{g_i\}}^{n_U}_{i=1}$ rappresentante la stima fatta da $\adversary$ sui profili degli utenti nel sistema.
 Come per l'algoritmo precedente, definiamo $\text{GT}_\text{prof} = {\{\text{gt}_i\}}^{n_U}_{i=1}$ che rappresenta le vere associazioni tra indirizzi (o transazioni) e utenti, per cui:
 
 \[
 	\text{GT}_\text{prof} = \begin{cases}
 		{\{a_{u_i}\}}^{n_U}_{i=1} &\text{ per profili basati su indirizzi} \\
-		{\{\tau_{u_i}\}}^{n_U}_{i=1} &\text{ per profili basati su transazioni} 
+		{\{\tau_{u_i}\}}^{n_U}_{i=1} &\text{ per profili basati su transazioni}
 	\end{cases}
 \]
 
@@ -103,7 +103,7 @@ Diciamo che un sistema soddisfa la proprietà di \emph{Profile Indistinguishabil
 
 \[
 	\begin{aligned}
-		\forall \adversary: &\Pr [E_\text{prof} \ leftarrow \adversary(\text{pubLog}, n_U): E_\text{prof} \equiv \text{GT}_\text{prof}] - \\
+		\forall \adversary: &\Pr [E_\text{prof} \leftarrow \adversary(\text{pubLog}, n_U): E_\text{prof} \equiv \text{GT}_\text{prof}] - \\
 		&\Pr [ E^\mathcal{R}_\text{prof} \leftarrow \adversaryrnd(n_U) : E^\mathcal{R}_\text{prof} \equiv \text{GT}_\text{prof} ] \leq \varepsilon
 	\end{aligned}
 \]
@@ -122,24 +122,222 @@ La \gls{ami}, dati due raggruppamenti $G_1$ e $G_2$, si avvicina allo 0 quando $
 
 Nel caso di profili basati sugli indirizzi, \gls{nmi} e \gls{ami} sono calcolate come segue:
 
-\[
-	\begin{aligned}
-		NMI &= \frac{\Iota \left(E_\text{prof}, \text{GT}_\text{prof}\right)}{\max \left(H \left(E_\text{prof}\right),H \left(\text{GT}_\text{prof}\right)\right)} \\
-		AMI &= \frac{\Iota \left(E_\text{prof}, \text{GT}_\text{prof} - \mathcal{E}\right)}{\max \left(H \left(E_\text{prof}\right),H \left(\text{GT}_\text{prof}\right)\right) - \mathcal{E}}
-	\end{aligned}
-\]
+\[\text{NMI} = \frac{\mathcal{I} \left(E_\text{prof}, \text{GT}_\text{prof}\right)}{\max \left(H \left(E_\text{prof}\right),H \left(\text{GT}_\text{prof}\right)\right)} \]
+\[\text{AMI} = \frac{\mathcal{I} \left(E_\text{prof}, \text{GT}_\text{prof} - \mathcal{E}\right)}{\max \left(H \left(E_\text{prof}\right),H \left(\text{GT}_\text{prof}\right)\right) - \mathcal{E}}\]
 dove:
+\[ \mathcal{I} \left(E_\text{prof}, \text{GT}_\text{prof}\right) = \sum^{n_U}_{i=1} \left( \sum^{n_U}_{i=1} \left( \frac{n_{\left(i,j \right)}}{n_A} \log\left(\frac{n_{\left(i,j\right)} \cdot n_A}{n_{\left(i,*\right)}n_{\left(*,j\right)}}\right)\right)\right) \]
+\[ H\left(E_\text{prof}\right) = - \sum^{n_U}_{i=1} \left(\frac{n_{\left(i,*\right)}}{n_A} \log\left(\frac{n_{\left(i,*\right)}}{n_A}\right)\right) \]
+\[ H\left(\text{GT}_\text{prof}\right) = - \sum^{n_U}_{j=1} \left(\frac{n_{\left(*,j\right)}}{n_A} \log\left(\frac{n_{\left(*,j\right)}}{n_A}\right)\right) \]
 \[
-	\begin{aligned}
-		\Iota \left(E_\text{prof}, \text{GT}_\text{prof}\right) &= \sum^{n_U}_{i=1} \left( \sum^{n_U}_{i=1} \left( \frac{n_{(i,j \right)}}{n_A} \log(\frac{n_{\left(i,j\right)} \cdot n_A}{n_{\left(i,*\right)}n_{\left(*,j\right)}}\right)\right)\right) \\
-		H(E_\text{prof}\right) &= - \sum^{n_U}_{i=1} \left(\frac{n_{\left(i,*\right)}}{n_A} \log(\frac{n_{\left(i,*\right)}}{n_A}\right)\right) \\
-		H(\text{GT}_\text{prof}\right) &= - \sum^{n_U}_{j=1} \left(\frac{n_{\left(*,j)}}{n_A} \log(\frac{n_{*,j)}}{n_A}\right)\right) \\
-	\end{aligned}
+	\scriptstyle \mathcal{E} = \sum^{n_U}_{i=1} \left(
+	    \sum^{n_U}_{j=1} \left(
+	        \sum_{n \in \mathcal{M}} \left(
+	            \frac{n}{n_A} \log \left(
+	                \frac{n_A n}{n_{\left(i, *\right)} n_{\left(*, j \right)}}
+	            \right) \frac{n_{\left(i, *\right)}! n_{\left(*, j\right)}! \left(
+	                n_A - n_{\left(i, *\right)}
+	            \right)!\left(
+	                n_A - n_{\left(*, j\right)}
+	            \right)!}
+	            {n_A!\left(n_{\left(i, *\right)} - n\right)!
+	                    \left(n_{\left(*, j\right)} - n\right)!
+	                    \left(n_A - n_{\left(i, *\right)} - n_{\left(*, j\right)} - n \right)!}
+	            \right)
+	        \right)
+	    \right)
 \]
+\[ \mathcal{M} = \left[ \max \left( n_{\left(i,*\right)} + n_{\left(*,j\right)} - n_A, 0\right), \min\left(n_{\left(i,*\right)}, n_{\left(*,j\right)}\right)\right] \]
 
+%TODO tradurre "expected mutual information"
+In queste formule, $n_A$ è il numero di indirizzi Bitcoin, $n_{\left(i,j\right)}$ è il numero di indirizzi di $u_i$, che vengono assegnati al gruppo $g_j$, $n_{\left(i,*\right)}$ e $n_{\left(*,j\right)}$ sono il numero di indirizzi di $u_i$ e $g_i$ rispettivamente. $\mathcal{E}$ rappresenta l'informazione mutuale attesa tra il raggruppamento $\text{GT}_\text{prof}$ e il raggruppamento casuale di indirizzi $E^\mathcal{R}_\text{prof}$.
+Si possono ottenere risultati simili per calcolare \gls{nmi} e \gls{ami} nel caso di profili basati sulle transazioni.
 
+È importante far presente che, sebbene \gls{nmi} e \gls{ami} siano efficaci per rappresentare il successo di $\adversary$ nella creazione di un profilo per tutti gli utenti della rete, non sono in grado di misurare il successo dell'avversario nel creare un profilo per un utente specifico.
+Nella sezione \ref{risultati-simulazione} verrà misurato il successo di $\adversary$ nel creare il profilo di un utente specifico $u_i$ stabilendo la massima similitudine degli indirizzi (o transazioni) di $u_i$ con ogni cluster avversario, ovvero $ \max_{\forall j} = \left( \text{Sim}\left(a_{u_i}, g_j\right)\right)$.
 
+\section{Applicare il modello}\label{valutazione-della-privacy-in-bitcoin}
+
+Vediamo ora come il nostro avversario, dato pubLog, può raccogliere informazioni sugli utenti Bitcoin sfruttando alcune proprietà delle attuali implementazioni del client Bitcoin.
+Grazie ad un simulatore vedremo poi quanto il modello precedentemente descritto risulti valido data la conoscenza acquisita.
+
+\subsection{Euristiche per sfruttare il client}
+
+\paragraph{Transazioni multi-input}
+
+Quando per una transazione non è possibile sfruttare l'output di una singola transazione precedente, è necessario usare come input più di una transazione.
+I client scelgono un insieme di BTC dal portafoglio dell'utente in modo che il loro valore totale sia quello richiesto dalla transazione ed effettuano così una transazione multi-input.
+Dato che le BTC sono nel portafogli dell'utente, se tali BTC sono prese da indirizzi diversi, allora tali indirizzi appartengono tutti allo stesso utente.
+
+\paragraph{Indirizzi ombra}
+
+Come detto in precedenza, gli indirizzi ombra vengono creati dal client per raccogliere l'eventuale resto delle transazioni.
+Immaginando quindi una transazione con un input e due output, si può ragionevolmente stabilire quale dei due indirizzi sia quello ombra appartenente allo stesso utente che ha inviato la transazione. L'indirizzo ombra sarà infatti creato sul momento, dunque sarà l'indirizzo che non è presente nel pubLog in data precedente alla transazione.
+Questo è valido se si assume che gli utenti della rete siano attivi (abbiano fatto almeno una transazione) e che il client non consenta di creare una transazione con più indirizzi in output.
+
+Per valutare la bontà delle euristiche, creiamo un parser che analizzi alcuni blocchi e raggruppi gli indirizzi in cluster di indirizzi generici (GA) basati sulle euristiche.
+
+Lanciando il parser sui primi 140000 blocchi della blockchain (ovvero i blocchi creati fino ad Agosto 2011), il parser restituisce 1632648 indirizzi unici.
+Utilizzando la prima euristica, tali indirizzi possono essere classificati in 1069699 distinti GA, mentre con la seconda euristica i numeri di distinti GA scende a 693051.
+Dato che a Settembre 2011 esistevano circa 60000 utenti Bitcoin, i risultati ottenuti indicano che è stato raggruppato circa il 58\% degli indirizzi Bitcoin con una media di 11.55 indirizzi per cluster.
+Ciò dimostra che raccogliendo informazioni con queste euristiche, il vantaggio di $\adversary$ per AddUnl è considerevole.
+
+\subsection{Analisi basata sul comportamento}
+
+Ora come ora, esistono molteplici client per la rete Bitcoin, e anche quello ufficiale va spesso incontro a modifiche e miglioramenti.
+Quello che difficilmente cambia è il comportamento degli utenti.
+Esistono alcune tecniche di raggruppamento basate sul comportamento che $\adversary$ può sfruttare, come ad esempio gli algoritmi \gls{kmc} e \gls{hac}.
+Definiamo $U$ come l'insieme di tutti gli utenti Bitcoin, e $\left( \text{GA}_1 , \ldots , \text{GA}_{n_\text{GA}} \right)$ i raggruppamenti ottenuti da $\adversary$ applicando le due euristiche precedentemente descritte a pubLog.
+Con questi dati, l'obiettivo di $\adversary$  è ottenere un gruppo di clusters di indirizzi $E_\text{prof} = \{ g_1 , \ldots , g_{n_U} \}$ che approssimi il più possibile $U$.
+Dato che ogni GA è "posseduta" da esattamente un utente, la stima dell'assegnamento di ogni GA può essere modellata con una variabile $z_i$ tale che $z_i = k \iff \text{GA}_i \text{ appartiene a } g_k$.
+L'algoritmo \gls{hac} assume che inizialmente ogni GA rappresenti un utente separato ($\{ z_i = i \}^{n_\text{GA}}_{i=1}$) e calcola valori di similitudine per ogni coppia di cluster. I cluster con elevata similarità vengono raggruppati insieme e il processo si ripete sui nuovi raggruppamenti, fermandosi quando il numero di raggruppamenti è esattamente uguale al numero di utenti $n_U$.
+A questo punto si avvia \gls{kmc}, inizializzato con l'output di \gls{hac}, il quale assume che ogni utente sia rappresentato dal punto centrale di ogni raggruppamento. L'algoritmo tenta di minimizzare la distanza tra i GA e i cluster a cui essi sono stati assegnati, ricalcolando ad ogni round sia il centro dei cluster sia la distanza GA-cluster.
+
+Nella loro implementazione, gli autori di \cite{user-privacy} hanno rappresentato ogni transazione all'interno delle GA con tre punti:
+\begin{enumerate}
+    \item
+        L'orario in cui la transazione ha avuto luogo.
+    \item
+        Gli indici dei diversi GA che appaiono all'interno della transazione come mittenti o destinatari.
+    \item
+        La quantità di BTC spese nella transazione.
+\end{enumerate}
+$\tau_x$ identifica l'insieme delle transazioni di $\text{GA}_x$, e il grado di similitudine tra due cluster $\text{GA}_i$ e $\text{GA}_j$ è rappresentato dal coseno di similitudine \footnote{Tecnica euristica che misura la differenza tra due vettori, spesso usata per il confronto dei testi} tra le liste $\tau_i$ e $\tau_j$, ovvero:
+\[
+\text{Sim}^\text{hac} \left( \text{GA}_i , \text{GA}_j \right) = \frac{\sum_{\forall \tau \in \tau_i \cap \tau_j} \left( f_{\left( \tau, i \right)} \cdot f_{\left( \tau, j \right)} \right) }{ \| \tau_i \|_2 \cdot \| \tau_j \|_2 }
+\]
+dove $f_{\left( \tau, x \right)}$ sono le occorrenze dell'oggetto $\tau$ nel vettore $\tau_x$.
+Da ciò si deriva la metrica per la distanza in \gls{kmc}:
+\[
+\text{Dist}^\text{kmc} \left( \text{GA}_i , g_k \right) = \frac{2}{ 1 + text{Sim}^\text{hac} \left( \text{GA}_i , g_k \right) } - 1
+\]
+L'implementazione tiene anche conto di alcune restrizioni imposte dal mondo reale. In particolare, dato che gli utenti non possono fisicamente essere in due posti allo stesso tempo, non possono partecipare in due distinti (fisicamente) scambi di beni allo stesso tempo.
+
+\subsection{Simulazione: utilizzo di Bitcoin in ambiente universitario}\label{utilizzo-simulatore-privacy-utente}
+
+Per verificare i loro modelli, i ricercatori hanno simulato l'utilizzo di Bitcoin per le transazioni quotidiane da parte degli utenti del Dipartimento di Informatica all'ETH di Zurigo con l'assunzione che i negozi nei dintorni della facoltà accettino BTC come valuta.
+
+\paragraph{Configurazione della simulazione}
+
+%TODO figura 1 in \cite{user-privacy}
+Il simulatore riceve in input un file XML come input e output:
 \begin{itemize}
-\item
-  an analisis of anonimity in bitcoin sistem
+    \item un log che descrive gli eventi simulati, ovvero la \emph{base di verità}.
+    \item il pubLog risultante dalla simulazione.
 \end{itemize}
+I file XML di configurazione contengono tutti i parametri necessari alla simulazione, come il numero di utenti, il numero di nodi che generano i blocchi (i \emph{miners}), il tempo di simulazione, la difficoltà della generazione dei blocchi, le configurazioni per creare i profili utente e i venditori/acquirenti.
+Gli output del simulatore vengono utilizzati per valutare il successo di $\adversary$: un parser Perl utilizza i blocchi Bitcoin simulati come input ed effettua una prima classificazione degli indirizzi simulati in GA in base alle due euristiche descritte.
+Questo output prefiltrato viene dato in pasto agli algoritmi \gls{kmc} e \gls{hac} (entrambi implementati in C).
+L'output di tali algoritmi viene infine comparato con la base di verità tramite un secondo script Perl che calcola il successo di $\adversary$ sulle sfide AddUnl e ProfInd.
+
+La configurazione utilizzata rappresenta uno scenario realistico per gli studenti e lo staff del Dipartimento di Informatica dell'Università di Zurigo durante il semestre autunnale del 2012.
+Si è simulato un numero variabile di utenti dei quali il 5.2\% sono \emph{Professori}, il 42.0\% fanno parte dello \emph{Staff} e il restante 52.8\% sono \emph{Studenti}. Vengono considerati in tutto 6 eventi distinti con diverse varianti:
+\begin{itemize}
+    \item Pranzo e cena (12 varianti).
+    \item Acquisto di alimentari (2 varianti).
+    \item Acquisto da distributori automatici (4 varianti).
+    \item Shopping online (5 varianti).
+    \item Acquisto di libri (2 varianti).
+    \item Baratto con altri utenti.
+\end{itemize}
+Ad ogni utente viene assegnata una probabilità per ognuna delle varianti in accordo alla categoria (Professore, Staff, Studente) a cui appartiene.
+Per ogni evento vengono stabilite la frequenza con cui avviene e un range di prezzo, mentre alle varianti viene assegnato un punteggio in base alla loro popolarità. La probabilità che una variante venga selezionata è il risultato dell'interpolazione tra la frequenza degli eventi in una settimana e il punteggio della variante.
+Per assicurare una grande varietà di profili utente, nella configurazione per ogni evento vengono specificati valori massimi e minimi per la frequenza, il punteggio e il prezzo. Tali limiti dipendono dalla categoria dell'utente, dall'evento e dalla variante in questione.
+All'inizio della sperimentazione, gli utenti possiedono meno di 10 indirizzi Bitcoin a testa, man mano che vengono effettuate transazioni, nuovi indirizzi ombra verranno automaticamente  nei loro portafogli È stato inoltre modellato il comportamento degli utenti attenti alla propria privacy: tali utenti periodicamente creano nuovi indirizzi nei propri portafogli e trasferiscono parte delle proprie BTC dal vecchio al nuovo indirizzo.
+
+\subsection{Risultati della simulazione}\label{risultati-simulazione}
+
+Ad ogni round della simulazione sono stati emulati due diversi scenari.
+Nel primo scenario, detto di ``\emph{Conoscenza Parziale}'' è stato assunto che $\adversary$ sia consapevole della posizione e del servizio offerto da tutti i commercianti che accettano Bitcoin e possa quindi comprendere quando una transazione è il risultato di un materiale scambio di beni. In tal caso, l'indirizzo del commerciante è stato inserito in $\knowa$ durante la computazione di AddUnl. Si è inoltre assunto che $\adversary$ sia in grado di ottimizzare l'algoritmo di clustering in modo da tenere conto del fatto che un utente che effettua una transazione da qualche parte non può effettuare un'altra transazione altrove nello stesso momento (ovviamente ciò è valido nel caso in cui $\adversary$ sia in grado di stabilire la posizione fisica degli utenti coinvolti nella transazione, il che avviene se pubLog contiene tali informazioni).
+Il secondo scenario si contrappone al primo in quanto basato su ``\emph{Conoscenza Zero}'', ovvero $\adversary$ non conosce la posizione di utenti e commercianti e quindi non ha nessuna informazione a priori, ma assume arbitrariamente che al massimo il 10\% delle transazioni avvenga come risultato di uno scambio di beni ordinati via Internet.
+
+Con questo setup vengono valutate le metriche per $\text{Link}_\adversary$, $\text{Prof}^a_\adversary$ per i profili basati sugli indirizzi e $\text{Prof}^\tau_\adversary$ per i profili basati sulle transazioni rispetto al numero totale degli utenti $n_U$ e la frazione di utenti attenti alla privacy che generano manualmente nuovi indirizzi e vi spostano parte delle BTC.
+I risultati nella tabella \ref{table:risultati} mostrano come non ci siano grandi differenze tra i due diversi segnali, il che vuol dire che poco cambia per $\adversary$ il fatto di sapere qualcosa di più o di meno sugli utenti di cui stilare il profilo.
+
+\begin{table}
+  \centering
+  \caption{Risultati del clustering basato sul comportamento. Le colonne titolate \textbf{X (Y\%)} indicano una simulazione effettuata con \textbf{X} utenti di cui il \textbf{Y\%} sono attenti alla propria privacy. Ogni valore è la media di 5 diverse iterazioni ed è rappresentato con intervalli di confidenza del 95\% dopo il segno $\pm$.}
+  \label{table:risultati}
+  \begin{tabular}{| c  c | c | c | c | c | c |}
+    \hline
+    \multicolumn{2}{| c |}{\textbf{Utenti:}} & \textbf{100 (50\%)} & \textbf{200 (0\%)} & \textbf{200 (50\%)} & \textbf{200 (100\%)} & \textbf{400 (59\%)} \\ \hline
+    \hline
+    \multicolumn{2}{| c |}{\textbf{$\text{Link}_\adversary$}} & $0.91 \pm 0.01$ & $0.90 \pm 0.01$ & $0.91 \pm 0.01$ & $0.92 \pm 0.01$ & $0.93 \pm 0.01$ \\ \hline
+    \multirow{2}{*}{\textbf{$\text{Prof}^a_\adversary$}} & \gls{nmi} & $0.76 \pm 0.01$ & $0.87 \pm 0.01$ & $0.79 \pm 0.01$ & $0.70 \pm 0.01$ & $0.80 \pm 0.01$ \\
+    & \gls{ami} & $0.75 \pm 0.01$ & $0.86 \pm 0.01$ & $0.77 \pm 0.01$ & $0.68 \pm 0.01$ & $0.77 \pm 0.01$ \\ \hline
+    \multirow{2}{*}{\textbf{$\text{Prof}^\tau_\adversary$}} & \gls{nmi} & $0.68 \pm 0.01$ & $0.79 \pm 0.02$ & $0.70 \pm 0.01$ & $0.65 \pm 0.01$ & $0.72 \pm 0.01$ \\
+    & \gls{ami} & $0.67 \pm 0.01$ & $0.72 \pm 0.01$ & $0.69 \pm 0.01$ & $0.63 \pm 0.01$ & $0.70  \pm 0.01$ \\ \hline
+  \end{tabular}
+  \subcaption{Risultati dello scenario a \textbf{conoscenza parziale}}
+  \bigskip
+  \begin{tabular}{| c  c | c | c | c | c | c |}
+    \hline
+    \multicolumn{2}{| c |}{\textbf{Utenti:}} & \textbf{100 (50\%)} & \textbf{200 (0\%)} & \textbf{200 (50\%)} & \textbf{200 (100\%)} & \textbf{400 (59\%)} \\ \hline
+    \hline
+    \multicolumn{2}{| c |}{\textbf{$\text{Link}_\adversary$}} & $0.90 \pm 0.01$ & $0.90 \pm 0.01$ & $0.91 \pm 0.01$ & $0.92 \pm 0.01$ & $0.93 \pm 0.01$ \\ \hline
+    \multirow{2}{*}{\textbf{$\text{Prof}^a_\adversary$}} & \gls{nmi} & $0.79 \pm 0.01$ & $0.89 \pm 0.01$ & $0.79 \pm 0.01$ & $0.71 \pm 0.02$ & $0.80 \pm 0.01$ \\
+    & \gls{ami} & $0.78 \pm 0.02$ & $0.88 \pm 0.01$ & $0.78 \pm 0.02$ & $0.69 \pm 0.02$ & $0.78 \pm 0.01$ \\ \hline
+    \multirow{2}{*}{\textbf{$\text{Prof}^\tau_\adversary$}} & \gls{nmi} & $0.69 \pm 0.01$ & $0.73 \pm 0.03$ & $0.69 \pm 0.03$ & $0.65 \pm 0.01$ & $0.72 \pm 0.01$ \\
+    & \gls{ami} & $0.68 \pm 0.01$ & $0.72 \pm 0.01$ & $0.68 \pm 0.03$ & $0.63 \pm 0.01$ & $0.70  \pm 0.01$ \\ \hline
+  \end{tabular}
+  \subcaption{Risultati dello scenario a \textbf{conoscenza zero}}
+\end{table}
+
+In entrambi gli scenari, il vantaggio di $\adversary$ nell'associare indirizzi e utente è influenzato solamente in minima parte dalla frazione di utenti che si interessano della loro privacy, surclassando $\adversaryrnd$ di almeno il 90\%.
+Per quanto riguarda la creazione di profili utente invece, gli utenti che creano indirizzi manualmente sono più influenti: se non sono presenti tali utenti, il vantaggio per la creazione di profili basati sugli indirizzi si attesta intorno all'88\%, mentre per i profili basati sulle transazioni è intorno al 73\%. Aumentando però la percentuale di utenti sensibili alla privacy, il vantaggio diminuisce al 70\% per i profili sugli indirizzi e al 63\% per i profili sulle transazioni.
+La spiegazione è che la creazione continua di nuovi indirizzi genera rumore nel log di Bitcoin, complicando il lavoro degli algoritmi. In ogni caso, dato che i risultati di \gls{ami} sono sempre più vicini al 100\% che non allo 0\% indica come $\adversary$ in generale abbia performance molto migliori di $\adversaryrnd$ rappresentando raggruppamenti più simili alla realtà.
+
+Il grafico \ref{userprivacy_fig_2} descrive la porzione di utenti\footnote{misurata secondo i criteri di similarità delle transazioni che appaiono in un portafogli utente e i corrispondenti cluster che sono stati discussi nel paragrafo \ref{quantificazione-di-profile-indistinguishability}} che vengono ``catturati'' da $\adversary$. Si nota come, nel caso di 200 utenti nessuno dei quali interessato alla propria privacy, quasi il 42\%  viene inserito  in un cluster con un'accuratezza dell'80\%. Nel caso tutti gli utenti siano sensibili alla propria privacy, solo il 35\% di essi viene raggruppato con un'accuratezza di almeno l'80\%. Si può dunque concludere che la privacy di un utente può essere compromessa anche nel caso in cui esso crei nuovi indirizzi per gestire le proprie BTC.
+
+\begin{figure}[htbp]
+\centering
+%TODO grafico Fig.2 pag 12 privacy (molto probabilmente mi conviene crearli a mano che fanno cagare)
+%\includegraphics{userprivacy_fig_2.PNG}
+\caption{Percentuale di transazioni catturate dagli algoritmi di cluster nello scenario della \textbf{conoscenza parziale}.\label{userprivacy_fig_2}}
+\end{figure}
+
+I risultati mostrano inoltre come il vantaggio di $\adversary$ rispetto ad $\adversaryrnd$ per tentare di collegare gli indirizzi di uno stesso utente, non è influenzata in modo rilevante dal numero di utenti della rete.
+Nel caso della creazione dei profili invece aumentando il numero di utenti da 100 a 400, il successo aumenta da 76\% per gli indirizzi e 68\% per transazioni a 80\% e 72\% rispettivamente. Ciò è dovuto principalmente al fatto che con l'aumentare del numero di utenti, l'assegnamento di indirizzi (o transazioni) a gruppi di utenti diventa molto meno efficace per $\adversaryrnd$.
+
+Nel grafico \ref{userprivacy_fig_3} viene valutato il caso in cui $\adversary$ non è riuscito ad ottenere una stima accurata del numero di utenti totali presenti nello scenario. Ciò non influenza l'efficacia del clustering comportamentale, permettendo lo stesso di compromettere una significativa porzione di utenti.
+
+\begin{figure}[htbp]
+\centering
+%TODO grafico Fig.3 pag 12 privacy (molto probabilmente mi conviene crearli a mano che fanno cagare)
+%\includegraphics{userprivacy_fig_3.PNG}
+\caption{Caso in cui$\adversary$ non può stimare accuratamente $n_U = 200$ nello scenario di \textbf{conoscenza parziale}.\label{userprivacy_fig_3}}
+\end{figure}
+
+Infine il grafico \ref{userprivacy_fig_5} mostra come la percentuale di transazioni correttamente catturate dagli algoritmi di raggruppamento non sono influenzate dal numero di utenti del sistema: ad esempio la percentuale di utenti ``catturati'' con una accuratezza dell'80\% e circa il 40\% quando $n_U = 100, 200, 400$.
+
+\begin{figure}[htbp]
+\centering
+%TODO grafico Fig.5 negli appendici privacy (molto probabilmente mi conviene crearli a mano che fanno cagare)
+%\includegraphics{userprivacy_fig_5.PNG}
+\caption{Porzione delle transazioni catturate da $\adversary$ nello scenario di \textbf{conoscenza zero} e con il 50\% degli utenti attenti alla propria privacy.\label{userprivacy_fig_5}}
+\end{figure}
+
+\section{Applicare i risultati alla vera rete}
+
+Tutti questi risultati sono stati ottenuti in un contesto universitario ben delimitato come estensione possibili variabili, per cui essi rappresentano più il limite superiore di una corretta valutazione della privacy del sistema Bitcoin piuttosto che una precisa descrizione di essa nella rete reale. Questo non toglie come tali risultati possano essere molto utili per migliorare la situazione anche nella rete Bitcoin ufficiale.
+
+\paragraph{Evitare l'euristica per le transazioni multi-input}
+
+Purtroppo non è possibile evitare facilmente questa euristica senza compromettere le operazioni base della rete Bitcoin.
+Infatti la combinazione di molteplici input permette la creazione di valori più grandi da valori più piccoli: se così non fosse ogni transazione dovrebbe avere un valore minore o uguale ai suoi input, fino a quando non raggiunge il valore minimo di 1 Satoshi. In tale situazione, l'unico modo per combinare gli output di più transazioni sarebbe inviare più transazioni separate formate da un singolo input. Questo oltre ad essere decisamente poco pratico non risolve nemmeno il problema dell'euristica, dato che le transazioni possono comunque essere tracciate da $\adversary$ come provenienti dallo stesso portafogli in quanto molto ravvicinate nel tempo.
+Un'alternativa potrebbe essere modificare il protocollo in modo da permettere a diversi utenti di partecipare ad una stessa transazione: mentre questa soluzione potrebbe effettivamente ridurre drasticamente l'efficacia dell'euristica, pare improbabile che queste transazioni multi-utente possano avere terreno fertile in Bitcoin.
+
+\paragraph{Evitare l'euristica degli indirizzi ombra}
+
+Mentre evitare la prima euristica è bene o male fattibile, evitare l'utilizzo degli indirizzi ombra è addirittura controproducente in termini di privacy. Senza l'utilizzo di indirizzi ombra infatti, il resto di una transazione verrebbe semplicemente rimesso nell'indirizzo di partenza della transazione stessa, rendendo ancora più facile tracciarne il percorso.
+Così come stanno le cose però, sfruttare gli indirizzi ombra causa la dispersione delle monete in diversi indirizzi appartenenti ad uno stesso utente, il che comporta un aggravarsi della falla sfruttabile dall'euristica multi-input.
+Una possibile alternativa agli indirizzi ombra consiste in un intervento manuale dell'utente: per prima cosa suddividere le proprie BTC nella quantità necessaria per la transazione e poi effettuare la transazione con resto nullo in un momento successivo, abbastanza distante dal momento di suddivisione per non destare l'attenzione degli algoritmi di clustering.
+Una soluzione che comporta la modifica del protocollo, analogamente a quella proposta in precedenza per le transazioni multi-input, consiste nell'implementazione delle transazioni multi-input multi-output, che renderebbero più complesso distinguere un indirizzo ombra da un indirizzo alla sua prima transazione appartenente ad un altro utente.
+
+\paragraph{Implicazioni per l'utilizzo generico di Bitcoin}
+
+Gli autore di \cite{user-privacy}, nonostante la specificità della loro simulazione, ritengono che i risultati trovati possano essere applicati anche ad un utilizzo generico della rete Bitcoin.
+Nello specifico, ritengono che $\adversary$ possa estrarre dalla blockchain una piccola porzione di indirizzi che corrispondono ad utenti collocati geograficamente vicino allo stesso $\adversary$, permettendogli quindi di lanciare gli algoritmi di clustering visti in scenari simili a quelli del simulatore.
+Ad esempio, se Bitcoin fosse diffuso tra i negozianti (alcuni passi in questa direzione si sono fatti negli ultimi mesi in Brazile, Canada e Nord America), allora $\adversary$ potrebbe estrarre tutti gli indirizzi che interagiscono con i negozianti presenti in una particolare area geografica: più grande il numero di indirizzi di commercianti (fisici) conosciuti, più completa la visione che $\adversary$ ha della rete Bitcoin in quell'area, in quanto si ritiene che solo i clienti più attivi di tali commercianti siano i residenti dell'area.
+L'unica soluzione a ciò è rappresentata dall'utilizzo di servizi Bitcoin di terze parti, come banche Bitcoin e anonimizzatori, che nascondano la relazione tra gli input e gli output di una transazione. Ovviamente questa soluzione fa letteralmente a pugni con uno dei motivi principali per cui è stata creata la rete Bitcoin, ovvero la rimozione completa delle ``terze parti'' nelle transazioni. Inoltre si tratta di una relativa \emph{scelta dell'orco}: bisogna rischiare che un $\adversary$ tracci il mio profilo oppure devo fidarmi e lasciare in gestione le mie transazioni\footnote{con relativi BTC miei e delle mie controparti} ad una società che intercede per me, magari anche dietro pagamento?
+
+\chapter{Anonimato}
