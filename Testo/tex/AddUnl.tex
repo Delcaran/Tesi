@@ -1,0 +1,23 @@
+\begin{algorithm}
+	\caption{AddUnl}
+	\label{addunl_alg}
+	\begin{algorithmic}
+		\STATE $a_0 \leftarrow $A.randomAddr(pubLog)
+		\STATE A.send($a_0, \challenger$)
+		\IF{$\challenger$.isUniqueAddr($a_0$)}
+			\STATE A.win()
+		\ELSE
+			\STATE $\mathit{b} \leftarrow \challenger$.randomBit()
+			\IF{$\mathit{b} = 1$}
+				\STATE $a_1 \leftarrow \challenger$.sameUsrAddr($a_0$, pubLog)
+			\ELSE
+				\STATE $a_1 \leftarrow \challenger$.otherUsrAddr($a_0$, pubLog)
+			\ENDIF
+			\STATE $\challenger$.send($\langle a_0, a_1 \rangle$, A)
+			\STATE $\mathit{b}' \leftarrow $A.estimateSameUser($a_0, a_1$)
+			\IF{$\mathit{b} = \mathit{b}'$} 
+			    \STATE A.win() 
+			\ENDIF
+		\ENDIF
+	\end{algorithmic}
+\end{algorithm}

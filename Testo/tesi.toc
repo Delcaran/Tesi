@@ -1,0 +1,75 @@
+\select@language {italian}
+\select@language {english}
+\select@language {italian}
+\contentsline {chapter}{\numberline {1}Panoramica generale sulle reti P2P}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Distribuzione dei file in una rete P2P}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Scalabilit\IeC {\`a} (\cite {kurose-ross})}{3}{subsection.1.1.1}
+\contentsline {subsubsection}{Caso Client-Server}{3}{subsection.1.1.1}
+\contentsline {subsubsection}{Caso P2P}{4}{subsection.1.1.1}
+\contentsline {subsubsection}{Confronto}{4}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Ricerca di informazioni}{5}{subsection.1.1.2}
+\contentsline {subsubsection}{Directory centralizzata}{5}{subsection.1.1.2}
+\contentsline {subsubsection}{Query flooding}{6}{subsection.1.1.2}
+\contentsline {subsubsection}{Copertura gerarchica}{7}{Item.8}
+\contentsline {subsubsection}{DHT (Distributed Hash Table)}{7}{Item.8}
+\contentsline {chapter}{\numberline {2}Bitcoin: moneta elettronica decentralizzata}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Moneta Elettronica}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Portafogli e indirizzi}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Transazioni}{11}{section.2.3}
+\contentsline {section}{\numberline {2.4}Timestamp e Proof-of-Work}{13}{section.2.4}
+\contentsline {section}{\numberline {2.5}Network}{15}{section.2.5}
+\contentsline {section}{\numberline {2.6}Risorse necessarie}{16}{section.2.6}
+\contentsline {section}{\numberline {2.7}Gestione dei valori}{19}{section.2.7}
+\contentsline {section}{\numberline {2.8}Analisi della rete}{20}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Topologia}{21}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Propagazione delle informazioni}{21}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Informazioni scomparse}{25}{subsection.2.8.3}
+\contentsline {section}{\numberline {2.9}Fork della blockchain}{26}{section.2.9}
+\contentsline {subsection}{\numberline {2.9.1}Creazione del modello}{26}{subsection.2.9.1}
+\contentsline {subsection}{\numberline {2.9.2}Misurazioni}{28}{subsection.2.9.2}
+\contentsline {chapter}{\numberline {3}Privacy}{33}{chapter.3}
+\contentsline {section}{\numberline {3.1}Analisi quantitativa della privacy}{33}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Il modello antagonistico}{34}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Quantificazione della Privacy}{34}{subsection.3.1.2}
+\contentsline {subsubsection}{Address Unlinkability}{35}{subsection.3.1.2}
+\contentsline {paragraph}{Quantificazione di Address Unlinkability}{36}{ALC@unique.17}
+\contentsline {subsubsection}{User Profile Indistinguishability}{37}{ALC@unique.17}
+\contentsline {paragraph}{Quantificazione di Profile Indistinguishability}{37}{ALC@unique.22}
+\contentsline {section}{\numberline {3.2}Applicare il modello}{39}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Euristiche per sfruttare il client}{39}{subsection.3.2.1}
+\contentsline {paragraph}{Transazioni multi-input}{39}{subsection.3.2.1}
+\contentsline {paragraph}{Indirizzi ombra}{39}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Analisi basata sul comportamento}{39}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Simulazione: utilizzo di Bitcoin in ambiente universitario}{40}{subsection.3.2.3}
+\contentsline {paragraph}{Configurazione della simulazione}{41}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Risultati della simulazione}{42}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Applicare i risultati alla vera rete}{44}{section.3.3}
+\contentsline {paragraph}{Evitare l'euristica per le transazioni multi-input}{44}{section.3.3}
+\contentsline {paragraph}{Evitare l'euristica degli indirizzi ombra}{44}{section.3.3}
+\contentsline {paragraph}{Implicazioni per l'utilizzo generico di Bitcoin}{45}{section.3.3}
+\contentsline {chapter}{\numberline {4}Sicurezza}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}Reti P2P in genere}{47}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Attacchi di Basso Livello}{47}{subsection.4.1.1}
+\contentsline {subsubsection}{Denial of Service (DoS)}{47}{subsection.4.1.1}
+\contentsline {paragraph}{Contromisure al DDoS}{48}{subsection.4.1.1}
+\contentsline {subsubsection}{Attacco Man-in-the-Middle (MitM)}{48}{subsection.4.1.1}
+\contentsline {subsubsection}{Contrastare il Man-in-the-Middle}{49}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Attacchi di Medio Livello}{49}{subsection.4.1.2}
+\contentsline {subsubsection}{Worms}{49}{subsection.4.1.2}
+\contentsline {paragraph}{Contrastare i Worm}{50}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Attacchi al livello P2P}{51}{subsection.4.1.3}
+\contentsline {subsubsection}{Comportamento scorretto}{51}{subsection.4.1.3}
+\contentsline {paragraph}{Contrastare i comportamenti scorretti}{51}{subsection.4.1.3}
+\contentsline {subsubsection}{Attacco Sibilla}{51}{subsection.4.1.3}
+\contentsline {paragraph}{Contromisure all'attacco Sibilla}{52}{subsection.4.1.3}
+\contentsline {subsubsection}{Attacco Eclipse}{52}{subsection.4.1.3}
+\contentsline {paragraph}{Contromisure ad Eclipse}{52}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Contromisure generali}{53}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}La rete Bitcoin}{53}{section.4.2}
+\contentsline {section}{\numberline {4.3}I Portafogli}{53}{section.4.3}
+\contentsline {section}{\numberline {4.4}Stock Exchange}{53}{section.4.4}
+\contentsline {chapter}{Bibliografia}{55}{appendix*.15}
+\select@language {italian}
+\select@language {italian}
+\select@language {italian}
+\select@language {italian}

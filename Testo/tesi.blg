@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: tesi.aux
+A level-1 auxiliary file: ./tex/titolo.aux
+A level-1 auxiliary file: ./tex/abstract.aux
+A level-1 auxiliary file: ./tex/intro.aux
+A level-1 auxiliary file: ./tex/bitcoin.aux
+A level-1 auxiliary file: ./tex/privacy.aux
+A level-1 auxiliary file: ./tex/sicurezza.aux
+The style file: babplain.bst
+Database file #1: bibliografia.bib
+Warning--to sort, need author or key in mtgox
+Warning--to sort, need author or key in blockchain-info
+Warning--to sort, need author or key in bitcoin_wiki
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Warning--empty language in bitcoin_wiki
+You've used 20 entries,
+            2788 wiz_defined-function locations,
+            773 strings with 10186 characters,
+and the built_in function-call counts, 8217 in all, are:
+= -- 709
+> -- 280
+< -- 12
++ -- 110
+- -- 89
+* -- 856
+:= -- 1104
+add.period$ -- 57
+call.type$ -- 20
+change.case$ -- 99
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 452
+empty$ -- 837
+format.name$ -- 179
+if$ -- 1798
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 16
+newline$ -- 109
+num.names$ -- 40
+pop$ -- 184
+preamble$ -- 1
+purify$ -- 81
+quote$ -- 0
+skip$ -- 254
+stack$ -- 0
+substring$ -- 269
+swap$ -- 206
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 74
+warning$ -- 4
+while$ -- 51
+width$ -- 22
+write$ -- 248
+(There were 4 warnings)
