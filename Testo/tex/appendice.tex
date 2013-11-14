@@ -1,0 +1,18 @@
+\chapter{Simulatore Bitcoin per la valutazione della privacy dell'utente}
+
+Il simulatore implementato da in \cite{user-privacy} e utilizzato nella sezione \ref{utilizzo-simulatore-privacy-utente} a pagina \pageref{utilizzo-simulatore-privacy-utente} è basato su turni: ad ogni turno (che corrisponde a circa una settimana simulata), alcuni eventi vengono aggiunti ad una lista di priorità con una probabilità determinata da un file di configurazione.
+Tali eventi corrispondono ad una delle seguenti operazioni:
+
+\begin{description}
+    \item[\textbf{Nuova transazione}]
+      Un utente vuole effettuare una nuova transazione il cui orario, valore, scopo e beneficiario scaturisce dalle opzioni proposte dal file XML di configurazione. Il processo di gestione della transazione implementato nel simulatore è identico a quello presente nella rete Bitcoin.
+    \item[\textbf{Generazione di un nuovo indirizzo}]
+      Gli utenti che sono stati configurati come sensibili alla propria privacy, periodicamente generano un nuovo indirizzo in cui trasferiscono parte delle loro monete per creare un po' di rumore nel pubLog. Tali indirizzi sono in aggiunta agli indirizzi ombra che vengono automaticamente creati per recuperare l'eventuale resto delle transazioni.
+\end{description}
+
+In conformità all'attuale situazione della rete, solo una minoranza di nodi sono anche \emph{miners}, in quanto al giorno d'oggi tale attività è diventata redditizia solo se svolta su particolari hardware dedicati raggruppati nelle cosiddette \emph{mining pools}. Si presume che tale hardware sia troppo oneroso o non necessario per la maggior parte dei frequentanti una università.
+
+Il simulatore esclude alcune problematiche della rete Internet come le congestioni, i ritardi, il jitter, ecc.
+Si è assunto inoltre che tutte le transazioni generate sia ben formate e prive di tasse, e che non esistano tentativi di doppia spesa di BTC, sebbene transazioni mal formate e attacchi doppia spesa siano osservabili nella rete.
+Gli autori ritengono infatti che il comportamento malevolo di alcuni nodi nella rete non sia rilevante per la loro indagine sulla privacy.
+Sebbene i blocchi vengono generati con una frequenza identica a quella della rete Bitcoin, per gli scopi del simulatore è stato raddoppiato l'intervallo di tempo medio tra i blocchi per meglio adattarsi alle dinamiche delle reti simulate, portandolo a circa 20 minuti tra un blocco e il successivo.

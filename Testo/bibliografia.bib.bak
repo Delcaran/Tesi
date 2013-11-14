@@ -1,0 +1,205 @@
+@manual{bitcoin,
+  title = {Bitcoin: A Peer-to-Peer Electronic Cash System},
+  author = {Satoshi Nakamoto} ,
+  url = {www.bitcoin.org},
+  howpublished = {PDF File},
+  address = {satoshin@gmx.com},
+}
+
+@inbook{kurose-ross,
+  author = {Kurose, James F. and Ross, Keith W.},
+  booktitle = {Reti di Calcolatori e Internet: Un approccio top-down},
+  title = {Applicazioni peer-to-peer},
+  chapter = {2},
+  publisher = {Pearson Education, Addison-Wesley},
+  year = {2006},
+  edition = {Quarta},
+  pages = {131--144},
+}
+   
+@inbook{distributed-computing,
+  author = {Kshemkalyani, Ajay D. and Mukesh Singhal},
+  institution = {University of Chicago, University of Kentuchy},
+  booktitle = {Distributed Computing: Principles, Algorithms, and Systems},
+  title = {Peer-to-peer computing and overlay graphs},
+  publisher = {Cambridge University Press},
+  address = {The Edinburgh Building, Cambridge CB2 8RU, UK},
+  chapter = {18},
+  edition = {First},
+  eprint = {ISBN-13 978-0-511-39341-9},
+  year = {2008},
+}
+   
+@inbook{core-concepts-p2p,
+  author = {Detlef Schoeder and Kai Fischbach and Christian Schmitt},
+  booktitle = {Core Concepts in Peer-to-Peer Networking},
+  title = {Core Concepts in Peer-to-Peer Networking},
+  year = {2005},
+  institution = {University of Cologne},
+  publisher = {Idead Group Inc.},
+  chapter = {1},
+}
+   
+@techreport{vulnerabilities,
+  author = {Marling Engle and Khan, Javed I.},
+  title = {Vulnerabilities of P2P Systems and a Critical Look at their Solution},
+  institution = {Kent State University},
+  address = {Networking and Media Communications Research Laboratories, Department of Computer Science, 233 MSB, Kent, OH 44242},
+  year = {2006},
+  month = {November},
+  url = {http://medianet.kent.edu/technicalreports.html},
+}
+
+@misc{bitcoin_wiki,
+  title = {Bitcoin Wiki},
+  url = {https://en.bitcoin.it/wiki/},
+}
+
+@misc{mtgox,
+	title = {Mt. GOX},
+	url = {https://mtgox.org},
+}
+
+@misc{blockchain-info,
+	title = {BlockChain.info},
+	url = {https://www.blockchain.info},
+}
+
+@inproceedings{merkle,
+	title={Protocols for Public Key Cryptosystems},
+	author={Merkle, Ralph C.},
+	booktitle={IEEE Symposium on Security and privacy},
+	volume={1109},
+	pages={122-134},
+	year={1980},
+	month={April},
+	url={http://www.cs.washington.edu/research/projects/poirot3/Oakland/sp/PAPERS/00044729.PDF}
+}
+
+@misc{hashcash,
+	author = {Adam Back},
+	title = {Hashcash - a denial of service counter-measuree},
+	url = {http://www.hashcash.org/papers/hashcash.pdf},
+	year = {2002},
+}
+   
+@incollection{bitter-better,
+  year={2012},
+  isbn={978-3-642-32945-6},
+  booktitle={Financial Cryptography and Data Security},
+  volume={7397},
+  series={Lecture Notes in Computer Science},
+  editor={Keromytis, Angelos D.},
+  doi={10.1007/978-3-642-32946-3_29},
+  title={Bitter to Better - How to Make Bitcoin a Better Currency},
+  url={http://dx.doi.org/10.1007/978-3-642-32946-3_29},
+  publisher={Springer Berlin Heidelberg},
+  author={Barber, Simon and Boyen, Xavier and Shi, Elaine and Uzun, Ersin},
+  pages={399-414},
+  note = {Disponibile in download gratuito all'indirizzo \url{http://www.cs.stanford.edu/~xb/fc12/}},
+}
+
+@incollection{commitcoin,
+  year={2012},
+  isbn={978-3-642-32945-6},
+  booktitle={Financial Cryptography and Data Security},
+  volume={7397},
+  series={Lecture Notes in Computer Science},
+  editor={Keromytis, Angelos D.},
+  doi={10.1007/978-3-642-32946-3_28},
+  title={CommitCoin: Carbon Dating Commitments with Bitcoin},
+  url={http://dx.doi.org/10.1007/978-3-642-32946-3_28},
+  publisher={Springer Berlin Heidelberg},
+  author={Clark, Jeremy and Essex, Aleksander},
+  pages={390-398},
+  note={Disponibile in download gratuito all'indirizzo \url{http://eprint.iacr.org/2011/677.pdf}},
+}
+
+@incollection{anonimity,
+  year={2013},
+  isbn={978-1-4614-4138-0},
+  booktitle={Security and Privacy in Social Networks},
+  editor={Yaniv Altshuler and Yuval Elovici and Cremers, Armin B. and Nadav Aharony and Alex Pentland},
+  doi={10.1007/978-1-4614-4139-7_10},
+  title={An Analysis of Anonymity in the Bitcoin System},
+  url={http://dx.doi.org/10.1007/978-1-4614-4139-7_10},
+  note={Disponibile in download gratuito all'indirizzo \url{http://arxiv.org/pdf/1107.4524.pdf}},
+  publisher={Springer New York},
+  keywords={Network analysis; Anonymity; Bitcoin},
+  author={Reid, Fergal and Harrigan, Martin},
+  pages={197-223},
+}
+
+@inproceedings{red-balloons,
+  author = {Moshe Babaioff and Shahar Dobzinski and Sigal Oren and Aviv Zohar},
+  title = {On bitcoin and red balloons},
+  booktitle = {Proceedings of the 13th ACM Conference on Electronic Commerce},
+  series = {EC '12},
+  year = {2012},
+  isbn = {978-1-4503-1415-2},
+  location = {Valencia, Spain},
+  pages = {56--73},
+  numpages = {18},
+  url = {http://doi.acm.org/10.1145/2229012.2229022},
+  doi = {10.1145/2229012.2229022},
+  acmid = {2229022},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  keywords = {information propagation, mechanism design, sybil-proof mechanisms},
+  note={Disponibile in download gratuito all'indirizzo \url{http://arxiv.org/pdf/1111.2626.pdf}}
+} 
+
+@misc{user-privacy,
+  author = {Elli Androulaki and Ghassam Karame and Marc Roeschlin and Tobias Scherer and Srdjan Capkun},
+  title = {Evaluating User Privacy in Bitcoin},
+  howpublished = {Cryptology ePrint Archive, Report 2012/596},
+  year = {2012},
+  url = {http://eprint.iacr.org/2012/596.pdf},
+}
+
+@misc{transazioni,
+  author = {Dorit Ron and Adi Shamir},
+  title = {Quantitative Analysis of the Full Bitcoin Transaction Graph},
+  howpublished = {Cryptology ePrint Archive, Report 2012/584},
+  year = {2012},
+  url = {http://eprint.iacr.org/2012/584.pdf},
+}
+
+@inproceedings{middleman,
+  author = {Tyler Moore and Nicola Christian},
+  title = {Beware the Middleman: Empirical Analysis of Bitcoin-Exchange Risk},
+  booktitle = {Proceedings of Financial Cryptography 2013},
+  month = {April},
+  year = {2013},
+  url = {http://www.truststc.org/pubs/907.html},
+  note = {Disponibile in download gratuito all'indirizzo \url{http://fc13.ifca.ai/proc/1-2.pdf}}
+}
+
+@article{pool-analysis,
+  author    = {Meni Rosenfeld},
+  title     = {Analysis of Bitcoin Pooled Mining Reward Systems},
+  journal   = {CoRR},
+  volume    = {abs/1112.4980},
+  year      = {2011},
+  ee        = {http://arxiv.org/abs/1112.4980},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  note = {Disponibile in download gratuito all'indirizzo \url{http://arxiv.org/pdf/1112.4980v1.pdf}}
+}
+@inproceedings{bitcoinpropagation,
+  title={Information Propagation in the Bitcoin Network},
+  author = {Christian Decker and Roger Wattenhofer},
+  booktitle={IEEE Internation Conference on Peer-to-Peer Computing (P2P)},
+  year={2013},
+  address = {Trento, Italy},
+  month = {September},
+  url={http://www.tik.ee.ethz.ch/file/49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf}
+}
+@inproceedings{bitcoinsnack,
+  title={Have a Snack, Pay with Bitcoins},
+  author={Tobias Bamert and Christian Decker and Lennart Elsen and Roger Wattenhofer and Samuel Welten},
+  booktitle={IEEE Internation Conference on Peer-to-Peer Computing (P2P)},
+  address = {Trento, Italy},
+  month = {September},
+  year={2013},
+  url={http://www.tik.ee.ethz.ch/file/848064fa2e80f88a57aef43d7d5956c6/P2P2013_093.pdf}
+}

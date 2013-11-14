@@ -1,0 +1,23 @@
+\hypersetup{
+  % pdfpagelayout=SinglePage, % default
+  % pdfpagemode=UseOutlines, % default
+  bookmarksopen, % default
+  bookmarksopenlevel=2, % default;
+  pdftitle={BitCoin},
+  pdfauthor={Matteo Paoluzzi},
+  pdfsubject={Moneta Elettronica Peer-to-Peer},
+  pdfkeywords={p2p bitcoin}}
+
+\titolo{BitCoin\\Moneta Elettronica\\Peer-to-Peer}
+%\laureanda{Giovanna Tesista}
+\laureando{Matteo Paoluzzi}
+\annoaccademico{2012-2013}
+\facolta{Scienze Matematiche, Fisiche e Naturali} % (default)
+%\corsodilaurea{Informatica} % per la laurea vecchio ordinamento
+\corsodilaureatriennalein{Informatica}
+%\corsodilaureaspecialisticain{Informatica}
+%\corsodilaureamagistralein{Matematica}
+\relatore[Prof.]{Ivan Scagnetto}
+%\correlatore{Talaltro dei Tali}
+%\correlatoreDue{Secondo Correlatore}
+\dedica{Ai miei genitori\\ per non avermi tagliato i viveri, \\ a Serena\\ per il continuo e incessante supporto} % (facoltativo)
