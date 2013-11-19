@@ -212,24 +212,15 @@ Da ciò si deriva la metrica per la distanza in \gls{kmc}:
 \]
 L'implementazione tiene anche conto di alcune restrizioni imposte dal mondo reale. In particolare, dato che gli utenti non possono fisicamente essere in due posti allo stesso tempo, non possono partecipare in due distinti (fisicamente) scambi di beni allo stesso tempo.
 
-<<<<<<< local
 \subsection{Simulazione: utilizzo di Bitcoin in ambiente universitario}\label{utilizzo-simulatore-privacy-utente}
-=======
-\subsection{Simulazione: utilizzo di Bitcoin in ambiente universitario}
->>>>>>> other
 
 Per verificare i loro modelli, i ricercatori hanno simulato l'utilizzo di Bitcoin per le transazioni quotidiane da parte degli utenti del Dipartimento di Informatica all'ETH di Zurigo con l'assunzione che i negozi nei dintorni della facoltà accettino BTC come valuta.
 
-<<<<<<< local
 \paragraph{Configurazione della simulazione}
-=======
-\paragraph{Impostazione della sperimentazione}
->>>>>>> other
 
 %TODO figura 1 in \cite{user-privacy}
 Il simulatore riceve in input un file XML come input e output:
-<<<<<<< local
-=======
+
 \begin{itemize}
     \item un log che descrive gli eventi simulati, ovvero la \emph{base di verità}.
     \item il pubLog risultante dalla simulazione.
@@ -254,33 +245,6 @@ Per ogni evento vengono stabilite la frequenza con cui avviene e un range di pre
 Per assicurare una grande varietà di profili utente, nella configurazione per ogni evento vengono specificati valori massimi e minimi per la frequenza, il punteggio e il prezzo. Tali limiti dipendono dalla categoria dell'utente, dall'evento e dalla variante in questione.
 All'inizio della sperimentazione, gli utenti hanno meno di 10 indirizzi Bitcoin a testa. Man mano che vengono effettuate transazioni, nuovi indirizzi ombra vengono creati nei loro portafogli.
 Nella configurazione è stato inoltre modellato il comportamento degli utenti attenti alla propria privacy: tali utenti periodicamente creano nuovi indirizzi nei propri portafogli e trasferiscono parte delle proprie BTC dal vecchio al nuovo indirizzo.
-
-
-
->>>>>>> other
-\begin{itemize}
-    \item un log che descrive gli eventi simulati, ovvero la \emph{base di verità}.
-    \item il pubLog risultante dalla simulazione.
-\end{itemize}
-I file XML di configurazione contengono tutti i parametri necessari alla simulazione, come il numero di utenti, il numero di nodi che generano i blocchi (i \emph{miners}), il tempo di simulazione, la difficoltà della generazione dei blocchi, le configurazioni per creare i profili utente e i venditori/acquirenti.
-Gli output del simulatore vengono utilizzati per valutare il successo di $\adversary$: un parser Perl utilizza i blocchi Bitcoin simulati come input ed effettua una prima classificazione degli indirizzi simulati in GA in base alle due euristiche descritte.
-Questo output prefiltrato viene dato in pasto agli algoritmi \gls{kmc} e \gls{hac} (entrambi implementati in C).
-L'output di tali algoritmi viene infine comparato con la base di verità tramite un secondo script Perl che calcola il successo di $\adversary$ sulle sfide AddUnl e ProfInd.
-
-La configurazione utilizzata rappresenta uno scenario realistico per gli studenti e lo staff del Dipartimento di Informatica dell'Università di Zurigo durante il semestre autunnale del 2012.
-Si è simulato un numero variabile di utenti dei quali il 5.2\% sono \emph{Professori}, il 42.0\% fanno parte dello \emph{Staff} e il restante 52.8\% sono \emph{Studenti}. Vengono considerati in tutto 6 eventi distinti con diverse varianti:
-\begin{itemize}
-    \item Pranzo e cena (12 varianti).
-    \item Acquisto di alimentari (2 varianti).
-    \item Acquisto da distributori automatici (4 varianti).
-    \item Shopping online (5 varianti).
-    \item Acquisto di libri (2 varianti).
-    \item Baratto con altri utenti.
-\end{itemize}
-Ad ogni utente viene assegnata una probabilità per ognuna delle varianti in accordo alla categoria (Professore, Staff, Studente) a cui appartiene.
-Per ogni evento vengono stabilite la frequenza con cui avviene e un range di prezzo, mentre alle varianti viene assegnato un punteggio in base alla loro popolarità. La probabilità che una variante venga selezionata è il risultato dell'interpolazione tra la frequenza degli eventi in una settimana e il punteggio della variante.
-Per assicurare una grande varietà di profili utente, nella configurazione per ogni evento vengono specificati valori massimi e minimi per la frequenza, il punteggio e il prezzo. Tali limiti dipendono dalla categoria dell'utente, dall'evento e dalla variante in questione.
-All'inizio della sperimentazione, gli utenti possiedono meno di 10 indirizzi Bitcoin a testa, man mano che vengono effettuate transazioni, nuovi indirizzi ombra verranno automaticamente  nei loro portafogli È stato inoltre modellato il comportamento degli utenti attenti alla propria privacy: tali utenti periodicamente creano nuovi indirizzi nei propri portafogli e trasferiscono parte delle proprie BTC dal vecchio al nuovo indirizzo.
 
 \subsection{Risultati della simulazione}\label{risultati-simulazione}
 
@@ -354,9 +318,147 @@ Infine il grafico \ref{userprivacy_fig_5} mostra come la percentuale di transazi
 \caption{Porzione delle transazioni catturate da $\adversary$ nello scenario di \textbf{conoscenza zero} e con il 50\% degli utenti attenti alla propria privacy.\label{userprivacy_fig_5}}
 \end{figure}
 
-\section{Applicare i risultati alla vera rete}
+\section{Caso reale: analisi di un furto}
 
-Tutti questi risultati sono stati ottenuti in un contesto universitario ben delimitato come estensione possibili variabili, per cui essi rappresentano più il limite superiore di una corretta valutazione della privacy del sistema Bitcoin piuttosto che una precisa descrizione di essa nella rete reale. Questo non toglie come tali risultati possano essere molto utili per migliorare la situazione anche nella rete Bitcoin ufficiale.
+Tutti questi risultati sono stati ottenuti in un contesto universitario ben delimitato come estensione possibili variabili, per cui essi rappresentano più il limite superiore di una corretta valutazione della privacy del sistema Bitcoin piuttosto che una precisa descrizione di essa nella rete reale.
+Le tecniche illustrate sono state però applicate, dopo essere state adattate, alla rete reale dai ricercatori Fergal Reid e Martin Harrigan in \cite{anonimity}, i quali hanno anche utilizzato gli strumenti da loro creati per analizzare un reale caso di furto di Bitcoin.
+
+\subsection{Mappare la rete Bitcoin}
+
+Come visto, la disponibilità al pubblico dello storico delle transazioni, le relazioni tra esse e il modo in cui si gestiscono i propri indirizzi\footnote{Si ricorda che ogni indirizzo è ricavato da una chiave pubblica, la quale è collegata ad una chiave privata custodita (si spera gelosamente) da un utente.} permette di analizzare la rete Bitcoin e di raggruppare le informazioni ivi contenute.
+In particolare Redi ed Harrigan sfruttano due distinti grafi realizzabili a partire dalle informazioni pubblicamente disponibili, un grafo che rappresenta le connessioni tra le transazioni e uno che rappresenta le connessioni tra gli utenti. 
+Il primo grafo viene definito \emph{transaction network} ed illustra il flusso di BTC nel tempo: ogni vertice è una transazione ed ogni arco orientato rappresenta l'output della transazione sorgente e l'input della transazione destinataria, il tutto etichettato con il valore della transazione e un timestamp.
+Il secondo grafo, lo \emph{user network}, illustra il flusso di BTC tra gli utenti: ogni vertice è un utente e ogni arco orientato rappresenta una transazione in cui l'indirizzo sorgente è associato all'utente/vertice di partenza e l'indirizzo destinatario è associato all'utente/vertice di arrivo. Per associazione si intende che la chiave privata associata all'indirizzo/chiave pubblica è in possesso dell'utente o è comunque a lui accessibile.
+Per realizzare tali reti sono stati impiegati i dati fino all'ultima transazione avvenuta il 12 Luglio 2011, raccolti con una versione modificata dello strumento \verbatim{bitcointools}\footnote{\url{https://github.com/gavinandresen/bitcointools} } di Gavin Andresen. Il dataset comprende quindi 1019486 transazioni tra 1253054 distinti indirizzi.
+
+\subsubsection{Transaction Network}
+
+A partire dal dataset, la costruzione della transaction network non richiede nessuna elaborazione dei dati.
+La rete ha 975520 vertici e 1558854, in quanto sono state omesse transazioni non connesse ad almeno un'altra transazione\footnote{Ovvero le transazioni risultanti dal mining e le transaction fee.}. Data la natura delle transazioni, la rete è priva di multi-archi (archi tra gli stessi nodi con lo stesso verso) e di cicli, risultando quindi in un \gls{dag}. %ref{anonimity_1.3_1}
+
+%TODO grafici e loro descrizioni label{anonimity_1.3_1}
+
+Si è studiata la distribuzione cumulativa\footnote{frazione dei dati con valore in esame $\geq k$, in questo caso frazione dei nodi il cui grado è $\geq k$.} del grado di ogni nodo (il numero di connessioni entranti o uscenti dal nodo) secondo la legge di potenza $p(x)\propto x^{-\alpha}$ per $x > x_\text{min}$. I parametri di tale funzione sono stati stimati sfruttando una metodologia \gls{gof} le cui statistiche e \gls{pvalori} sono visibili nella tabella \ref{table:goftransactions} insieme alle stime dei parametri per le distribuzioni del grado (complessivo, in ingresso e in uscita) dei nodi. Si osserva che nessuna delle distribuzioni studiata ha la legge di potenza come possibile ipotesi ($p > 0.1$). Ciò è dovuto al fatto che non esiste nessun collegamento preferenziale: i nuovi vertici si uniscono ai vertici esistenti le cui transazioni non sono ancora state del tutto reclamate, ovvero ai nodi che hanno ancora BTC da spendere.
+Il grafo presenta 1949 componenti debolmente connesse, in cui il componente più grande possiede 948287 vertici (il 97.31\%) che possiede anche un componente biconnesso con 716354 vertici, il 75.64\% di tutti i vertici del componente che lo contiene.
+Se si analizza anche il numero di nodi, la densità e la lunghezza media dei cammini, la crescita e la dispersione della rete nel tempo risultano evidenti. %Nel grafico \ref{anonimity_1.3_2} si visualizzano tali dati su una base mensile, e si possono anche notare alcune anomalie nelle lunghezza del cammino medio durante Luglio e Novembre 2010.
+
+%TODO grafici e loro descrizioni label{anonimity_1.3_2}
+
+
+\begin{table}
+\centering
+\label{table:goftransactions}
+\caption{Distribuzioni del grado dei nodi per la transaction network}
+\begin{tabular}{r | c c c c c c c}
+\textbf{Variabile} & \textbf{\tilde{x}} & \textbf{\bar{x}} & \textbf{s} & \textbf{$\alpha$} & \textbf{$x_\text{min}$} & \textbf{GoF} & \textbf{p-valore} \\
+\hline
+Grado & 3 & 3.20 & 6.20 & 3.24 & 50 & 0.02 & 0.05 \\
+Grado in ingresso & 1 & 1.60 & 5.31 & 2.50 & 4 & 0.01 & 0.00 \\
+Grado in uscita & 1 & 1.60 & 3.17 & 3.50 & 51 & 0.05 & 0.00 \\
+\end{tabular}
+\end{table}
+
+\subsubsection{User Network}
+
+Tale rete rappresenta le transazioni che intercorrono tra gli utenti nel tempo, in cui i vertici sono gli utenti e gli archi diretti sono le transazioni etichettate con ammontare di BTC e timestamp.
+Come precedentemente visto, le informazioni sugli utenti non sono direttamente visibili dal dataset, per cui è necessario effettuare una fase di preprocessing in cui raggruppare gli indirizzi di uno stesso utente sfruttando le tecniche precedentemente illustrate.
+Si immagini quindi di partire da un grafo incompleto contenente soltanto gli indirizzi e non gli utenti e di cercare di contrarre tali vertici sfruttando l'euristica multi-input precedentemente illustrata.
+Si crei quindi una rete subordinata con indirizzi come vertici, e si connettano i vertici che risultano essere input della stessa transazione (e quindi appartenenti allo stesso utente) tramite archi non direzionati. Questa rete subordinata risulta avere 1253054 vertici e 4929950 archi e, cosa fondamentale, contiene 86641 componenti connesse. Ognuna di queste componenti corrisponde ad un utente ed ogni vertice di un componente è un indirizzo del relativo utente.
+Alla fine della fase di preprocessing, la user network risulta avere 881678 vertici (86641 componenti connesse e 795037 vertici isolati della rete ausiliaria) e 1961636 archi diretti. La rete è ancora incompleta, ma per il tipo di analisi che si intende descrivere è una approssimazione più che sufficiente. Ci sono 604 componenti debolmente connesse e 579355 componenti fortemente connesse\footnote{Esiste un arco orientato tra ogni coppia di nodi.}, il componente più grande conta 879859 (il 99.79\% dei vertici totali) e contiene anche un componente biconnesso con 652892, il che rappresenta il 74.20\% dei vertici del componente gigante.
+A differenza della rete delle transazioni, questa è una rete con multi-archi e cicli.
+Anche qui sono state fatte analisi sulla distribuzione del grado dei nodi, con risutlati visibili nella tabella \ref{table:gofuser}, le quali mostrano che come nella rete delle transazioni nessuna delle leggi di potenza sperimentate è una ipotesi plausibile per descrivere la distribuzione. Il tasso di distribuzione e di crescita della rete è in crescita nel tempo esattamente come la transaction network.
+
+\begin{table}
+\centering
+\label{table:gofuser}
+\caption{Distribuzioni del grado dei nodi per la user network}
+\begin{tabular}{r | c c c c c c c}
+\textbf{Variabile} & \textbf{\tilde{x}} & \textbf{\bar{x}} & \textbf{s} & \textbf{$\alpha$} & \textbf{$x_\text{min}$} & \textbf{GoF} & \textbf{p-valore} \\
+\hline
+Grado & 3 & 4.45 & 218.10 & 2.38 & 66 & 0.02 & 0.00 \\
+Grado in ingresso & 1 & 2.22 & 86.40 & 2.45 & 57 & 0.05 & 0.00 \\
+Grado in uscita & 2 & 2.22 & 183.91 & 2.03 & 10 & 0.22 & 0.00 \\
+\end{tabular}
+\end{table}
+
+La rete degli utenti appena creata è sotto molti aspetti anche una mappa della rete sociale di Bitcoin. Analizzandola è quindi possibile identificare comunità e utenti centrali che esistono nella rete.
+Dal punto di vista dell'anonimato, ci si aspetterebbe di trovare delle reti simili ad alberi che rappresentino il flusso di BTC tra indirizzi utilizzati una sola volta e non collegabili ad altri indirizzi.
+I risultati mostrano invece una struttura con un numero considerevole di cicli, il che semplifica notevolmente l'analisi della rete alla ricerca di un utente specifico, soprattutto se associata a dati importati da fonti off-network.
+
+\subsubsection{Integrare user network con informazioni off-network}
+
+Sebbene la rete non contenga di per se alcuna informazione riguardo l'utente, esistono numerosi (e molto utilizzati) servizi integrati nella rete che richiedono informazioni che possono identificare l'utente, quali indirizzi email, indirizzi di spedizione, carte di credito, indirizzi IP, ecc.
+Nel momento in cui qualcuna di queste informazioni diventa pubblicamente accessibile\footnote{oppure è accessibile dalle forze dell'ordine a seguito di apposito mandato}, allora anche l'identità degli utenti coinvolti tramite transazioni con gli utenti, le cui "generalità" sono state scoperte, sono anch'esse a rischio\footnote{a meno che non si siano usati strumenti per mascherare l'IP come proxy o la rete TOR}. Esistono varie situazioni in cui tali informazioni possano essere rese pubbliche.
+
+\paragraph{The Bitcoin Faucet}
+
+\emph{The Bitcoin Faucet}\footnote{\url{http://freebitcoins.appspot.com}} è un servizio a cui gli utenti possono donare BTC in modo che vengano distribuite in piccole quantità ad altri utenti. Per evitare abusi, il servizio pubblica uno storico delle recenti donazioni insieme agli indirizzi IP dei beneficiari. Esiste quindi la possibilità di associare un indirizzo IP ad un indirizzo Bitcoin, ed analizzando nel tempo la pagina si può realizzare una mappatura tra utenti e IP.
+Reid e Harrigan si sono accorti di come molti degli indirizzi bitcoin che hanno ricevuto BTC possano essere contratti con altri indirizzi bitcoin nella rete ausiliaria, rivelando quindi indirizzi IP collegati in qualche modo a precedenti transazioni al di fuori del servizio.
+Essendo gli indirizzi IP geolocalizzati, è stata creata una mappa degli indirizzi bitcoin che hanno ricevuto BTC nel periodo di una settimana. La figura \ref{anonimato_pag_16} mostra tale mappa incrociata con i dati della user network: un arco tra due indirizzi IP indica che gli utenti corrispondenti sono collegato da un cammino (diretto o indiretto) di lunghezza $\leq 3$ nella user network\footnote{Il cammino in questione non deve includere The Bitcoin Faucet.}. Tale figura deve servire come prova di un concetto: se i dati resi pubblici da una realtà piccola come Bitcoin Faucet possono portare ad un simile risultato, i risultati ottenibili sfruttando i dati posseduti (non necessariamente divulgati) da una grande realtà potrebbero essere decisamente critici per la privacy dell'utente.
+
+\paragraph{Rivelazioni volontarie}
+
+In molti forum relativi alla rete Bitcoin (come ad esempio il forum ufficiale \url{http://forum.bitcoin.org}) ma anche siti web e social network, è costume degli utenti pubblicare in varie forme il proprio indirizzo Bitcoin, spesso con lo scopo di ricevere donazioni da altri utenti. Dato che gli indirizzi sono semplici stringhe alfanumeriche di 27-34 caratteri, i motori di ricerca li indicizzano perfettamente.
+In molti casi, Reid ed Harrigan sono riusciti ad recuperare informazioni su alcuni indirizzi con una semplice ricerca di tali indirizzi su Google, e sfruttando la user network secondaria hanno recuperato molti altri indirizzi associati a quelli recuperati con una semplice visita sul web.
+
+\paragraph{Analisi dello stack TCP/IP}
+
+Il ricercatore Dan Kaminsky ha individuato una falla di sicurezza nella rete a livello TCP/IP: se si modifica un client bitcoin in modo da connetterlo ad ogni altro nodo della rete, è possibile mappare gli indirizzi Bitcoin agli indirizzi IP basandosi sull'assunzione che il primo nodo ad informare gli altri di una transazione è il nodo che ha realizzato tale transazione. Con tale approccio non è necessario cercare i dati da fonti esterne, basta modificare avere un client apposito simile a quello creato da Decker e Wattenhofer (\ref{propagazione-delle-informazioni}).
+
+\subsection{Analisi di un furto}
+
+%TODO grafico a colori????
+%TODO link a mining pool
+
+Con la rete da loro creata, Harrigan e Reid hanno analizzato un furto denunciato sul forum ufficiale di Bitcoin\footnote{\url{http://forum.bitcoin.org/index.php?topic=16457.0}} da un utente chiamato \verbatim{allinvain}. Sembra che in data 13/06/2011 circa 25000 BTC siano state inviate a $pk_red$\footnote{\url{http://blockchain.info/it/address/1KPTdMb6p7H3YCwsyFqrEmKGmsHqe1Q3jg}} alle ore 16:52:23. Il furto è avvenuto poco dopo che qualcuno si è introdotto nell'account della vittima sulla mining pool Slush\footnote{\url{http://mining.bitcoin.cz}}} e ha modificato l'indirizzo di pagamento da $pk_green$\footnote{\url{http://blockchain.info/it/address/1J18yk7D353z3gRVcdbS7PV5Q8h5w6oWWG}} a $pk_blue$\footnote{\url{http://blockchain.info/it/address/15iUDqk6nLmav3B1xUHPQivDpfMruVsu9f}}. All'epoca del furto, le BTC rubate avevano un valore di mercato di circa mezzo milione di dollari americani, il che può far capire quanto elevato fosse all'epoca la necessità del ladro di restare anonimo.
+
+Si prenda la user network incompleta senza nessuna contrazione dei vertici e ci si concentri sulla \emph{rete egocentrica} che circonda il ladro, ovvero tutti i nodi a distanza massima 2 (senza tenere conto del verso degli archi) e tutti gli archi indotti da tali vertici. Per evitare confusione vengono rimossi anche tutti i cicli, i multi-archi e gli archi che non sono contenuti in componenti biconnessi. Nel figura \ref{anonimato_1_11} il vertice rosso rappresenta il ladro proprietario della chiave pubblica $pk_red$, mentre il vertice verde rappresenta la vittima proprietaria della chiave $pk_green$. Il furto è rappresentato dall'arco verde che unisce la vittima al ladro.
+
+\begin{figure}[htbp]
+\centering
+%TODO fig 1.11 anonimato
+%\includegraphics{anonimato_1_11.PNG}
+\caption{Visualizzazione egocentrica del ladro nella rete ausiliaria. Gli archi sono colorati in base al vertice sorgente e la dimensione dei vertici è funzione della loro centralità nella rete.\label{anonimato_1_11}}
+\end{figure}
+
+Guardando tale rete, si nota come ladro e vittima siano collegati a meno del verso da vertici diversi da quello rappresentante il furto. Ad esempio la figura \ref{anonimato_1_12} evidenzia una sottorete ciclica ricavata dalla rete egocentrica in cui tutti i vertici/indirizzi sono stati contratti in vertici/utente. 
+Si può notare che il furto delle 25000 BTC è stato preceduto da un piccolo furto di 1 BTC. Inoltre, sfruttando dati off-network, è stato possibile identificare alcuni degli altri utenti coinvolti: il nodo viola è l'account principale della mining pool Slush e il nodo arancione è il computer appartenente al gruppo hacker noto come LulzSec\footnote{\url{http://twitter.com/LulzSec/status/76388576832651265}}. Fu fatto anche un tentativo di associare il gruppo hacker al furto tramite la pubblicazione di un comunicato (disponibile in \url{http://pastebin.com/88nGp508}) in cui l'indirizzo $pk_red$ viene indicato come appartenente a LulzSec e utilizzabile per le donazioni al gruppo. Tale tentativo è un falso in quanto il comunicato successivo alla data del furto.
+Dalla rete si vede comunque come il ladro abbia inviato 0.31337 BTC a LulzSec poco dopo il furto, ma non è possibile associarlo ulteriormente con il gruppo.
+L'account Slush ha inviato alla vittima un totale di 441.83 BTC in 70 giorni e 0.2 BTC al vertice giallo in un periodo di 2 giorni. Un giorno prima del furto, tale nodo giallo ha effettuato una donazione di 0.120607 BTC a LulzSec. L'utente proprietario del nodo giallo risulta essere proprietario di almeno 5 indirizzi \footnote{\url{http://blockchain.info/it/address/1MUpbAY7rjWxvLtUwLkARViqSdzypMgVW4}\\ \url{http://blockchain.info/it/address/13tst9ukW294Q7f6zRJr3VmLq6zp1C68EK}\\ \url{http://blockchain.info/it/address/1DcQvXMD87MaYcFZqHzDZyH3sAv8R5hMZe}\\ \url{http://blockchain.info/it/address/1AEW9ToWWwKoLFYSsLkPqDyHeS2feDVsVZ}\\ \url{http://blockchain.info/it/address/1EWASKF9DLUCgEFqfgrNaHzp3q4oEgjTsF}} e, come la vittima, è un membro del mining pool Slush e ha donato una volta sola a LulzSec: la sua donazione, il giorno prima del furto, è l'ultima attiva nota di questi indirizzi.
+
+\begin{figure}[htbp]
+\centering
+%TODO fig 1.12 anonimato
+%\includegraphics{anonimato_1_12.PNG}
+\caption{Ciclo di transazioni che coinvolge ladro, vittima e altri nodi.\label{anonimato_1_12}}
+\end{figure}
+
+Dato il grande numero di BTC coinvolte, Harrigan e Reid hanno costruito uno strumento che, dato un vertice di partenza, è in grado tracciare flussi consistenti di BTC nel tempo.
+Applicando tale strumento al furto, è stato creato un elenco di indirizzi che hanno ricevuto alcune delle BTC rubate\footnote{elenco completo disponibile nel post del forum che denuncia il furto e in \url{http://folk.uio.no/vegardno/allinvain-addresses.txt}.} contenente più di 34100 voci, inoltre è stato possibile individuare una serie di transazioni interessanti.
+Prima tra tutte è il piccolo furto di 1 BTC che ha preceduto di pochissimo il "colpo grosso" da 25000 BTC, in secondo luogo la spartizione di tale somma tra un ristretto numero di indirizzi che poi hanno nuovamente confluito il tutto all'indirizzo di partenza.
+A questa fase di smistamento delle BTC sono seguite quattro interessanti transazioni alle 19:49, 20:01, 20:13 e 20:55, le ultime due delle quali sono particolarmente notevoli in quanto passanti tra un gran numero di indirizzi nel giro di poche ore.
+Identifichiamo il flusso delle 20:55 come 1 e quello delle 20:13 come 2. Il flusso 1 si divide al vertica A alle 04:05 del giorno dopo il furto, e alcune delle BTC si uniscono al flusso 2 nel vertice B, creando il nuovo flusso 3. Le restanti BTC del flusso 1 passano attraverso numerosi nodi nel corso dei due giorni successivi, creando il flusso 4.
+Il 16 Giungo 2011 alle 13.37 un piccolo ammontare di BTC passa dal flusso 3 ad un indirizzo mai visto prima $pk_1$\footnote{\url{http://blockchain.info/it/address/1FKFiCYJSFqxT3zkZntHjfU47SvAzauZXN}}. Circa sette minuti più tardi, un altro piccolo numero di BTC viene trasferito dal flusso 3 ad un altro indirizzo $pk_2$\footnote{\url{http://blockchain.info/it/address/1FhYawPhWDvkZCJVBrDfQoo2qC3EuKtb94}} mai apparso prima. Infine ci sono due transazioni simultanee dal flusso 4 ad altri due nuovi indirizzi $pk_3$\footnote{\url{http://blockchain.info/it/address/1MJZZmmSrQZ9NzeQt3hYP76oFC5dWAf2nD}} e $pk_4$\footnote{\url{http://blockchain.info/it/address/12dJo17jcR78Uk1Ak5wfgyXtciU62MzcEc}}. Questi quattro indirizzi vengono tutti compressi nello stesso utente $C$ nella user network. Una rappresentazione di queste transazioni è visibile nella figura \ref{anonimato_1_13}
+
+\begin{figure}[htbp]
+\centering
+%TODO fig 1.13 anonimato
+%\includegraphics{anonimato_1_13.PNG}
+\caption{Flussi di transazioni interessati avvenuti in seguito al furto.\label{anonimato_1_13}}
+\end{figure}
+
+Esistono altri flussi interessanti. Ad esempio quello segnato com $Y$ involve il movimento di BTC attraverso 30 indirizzi mai visti prima in un periodo di tempo molto breve. Ad ogni transazione circa 30 BTC (con un valore di mercato di 500\$ ai tempi) vengono risucchiati dal flusso. Il 20 Giugno 2011 alle 12:35 ognuno di questi indirizzi effettua una transazione ad un indirizzo controllato dal servizio MyBitcoin\footnote{\url{http://blockchain.info/it/address/1MAazCWMydsQB5ynYXqSGQDjNQMN3HFmEu}} la quale, coincidenza vuole, era stata precedentemente coinvola in un altro furto\footnote{\url{http://forum.bitcoin.org/index.php?topic=20427.0}}. Questo flusso è visibile in figura \ref{anonimato_1_14}
+
+\begin{figure}[htbp]
+\centering
+%TODO fig 1.14 anonimato
+%\includegraphics{anonimato_1_14.PNG}
+\caption{Transazioni molto rapide in seguito al furto.\label{anonimato_1_14}}
+\end{figure}
+
+Tutte queste analisi sono circostanziali. Non è possibile stabilire con certezza se questi flussi implicano una stretta correlazione con i furti, ma sicuramente mettono in luce la quantità di informazioni reperibili e implicano la possibilità che un qualche servizio centrale della rete Bitcoin ne sappia parecchio di più di queste e di altre transazioni.
+
+\section{Contromisure e consigli per aumentare la privacy}
 
 \paragraph{Evitare l'euristica per le transazioni multi-input}
 
