@@ -153,14 +153,107 @@ Se queste caratteristiche vengono implementate, allora tutti gli attacchi fin qu
 
 \section{La rete Bitcoin}\label{la-rete-bitcoin}
 
+Per quanto riguarda lo specifico di Bitcoin, la principale minaccia all'intera rete è un utente malintenzionato con una potenza di calcolo di gran lunga superiore a quella del resto della rete.
+Satoshi analizza questo scenario nel suo whitepaper \cite{bitcoin}, in cui immagina un attaccante in grado di generare una blockchain alternativa più velocemente di quanto la blockchain ufficiale si evolva.
+Anche nel caso in cui tale evento si verifichi, la rete non diventa automaticamente vulnerabili ad arbitrarie modifiche da parte dell'attaccante, come creare valore dal nulla o acquisire moneta che non gli è mai appartenuta: queste sarebbero transazioni invalide in quanto in conflitto con la blockchain precedente su cui anche la blockchain alternativa si basa, e quindi tali transazioni verrebbero rifiutate da qualsiasi nodo. Un attaccante può solamente tentare di modificare una delle sue transazioni in modo da riappropriarsi dei soldi recentemente spesi.
+Questa gara che avviene tra la catena ufficiale e la catena alternativa può essere vista come una passeggiata aleatoria binomiale\footnote{Rappresenta formalmente l'idea di procedere in direzioni casuali. Formalmente, una variabile aleatoria discreta $X(N)$ fornisce , ad esempio, il numero di \emph{testa} usciti dopo $N$ lanci. Nel caso di 2 possibili scelte, come in questo caso, $X(N)$ ha una distribuzione binomiale, da cui il nome.}: l'evento ha successo quando la catena onesta viene estesa di un blocco, aumentando la distanza di +1, mentre il fallimento si ha quando viene creato un blocco per la catena alternativa, riducendo la distanza di -1.
+La probabilità che un attaccante riduca a zero la distanza partendo da un punto dato della blockchain ufficiale è analoga a quella del problema della \emph{rovina del giocatore d'azzardo}: si immagini che un giocatore d'azzardo con credito illimitato cominci il suo gioco con un dato deficit e giochi un numero potenzialmente infinito di partite per tentare di azzerare il divario.
+La probabilità che azzeri il divario è la stessa che ha l'attaccante di raggiungere la blockchain onesta, ovvero:
+
+\[
+q = \begin{cases}
+1 & \text{ se } p \leq q \\
+\left( \frac{q}{p} \right)^z & \text{ altrimenti}
+\end{cases}
+\]
+
+con 
+
+\begin{description}
+\item[$p = $] probabilità che un nodo onesto trovi il blocco successivo
+\item[$q = $] probabilità che l'attaccante trovi il blocco successivo
+\item[$z = $] numero di blocchi che separa la testa della blockchain dalla testa della catena dell'attaccante
+\end{description}
+
+L'assunzione più plausibile è che $p > q$, il che vuol dire che la probabilità diminuisce esponenzialmente tanto maggiore è la distanza da coprire, rendendo la situazione per l'attaccante estremamente precaria.
+
+Il risultato apre però un'altra domanda, ovvero quanto tempo deve aspettare il destinatario di una transazione prima di essere sufficientemente sicuro che tale transazione non possa essere modificata dal mittente.
+In questo caso, Nakamoto assume che l'attaccante sia appunto un mittente che vuole far credere per un certo tempo al destinatario di essere stato pagato, salvo poi modificare la transazione in modo da indirizzarla a se stesso. Se questo accade il destinatario se ne accorgerà, ma l'attaccante spera che a quel punto sarà troppo tardi.
+Si assume inoltre che il destinatario della transazione sia un utente accorto, che genera un nuovo indirizzo appositamente per questa transazione. Questa piccola accortezza impedisce al futuro attaccante di precalcolare una blockchain a suo favore, e quindi di effettuare la transazione solo una volta raggiunto un divario ridotto con la blockchain ufficiale. Quindi l'attaccante deve cominciare i suoi calcoli appena completata la transazione, in parallelo e in segreto.
+Il destinatario dal canto suo attende che la transazione venga inclusa in un blocco, e che $z$ blocchi siano stati aggiunti in seguito alla catena. Egli non sa quanto avanti è l'attaccante con i suoi calcoli, ma considerando che i nodi onesti trovino nuovi blocchi con la frequenza prevista\footnote{un blocco ogni 10 minuti secondo le stime iniziali di Nakamoto (\ref{risorse-necessarie}}, il progresso dell'attaccante risulta una distribuzione di Poisson\footnote{Detta anche \emph{legge degli eventi rari}, esprime il numero di eventi che si verificano consecutivamente ed indipendentemente in un arco di tempo sapendo quanti se ne verificano mediamente in quello stesso intervallo. La funzione di densità di probabilità è $P(n) = \dfrac{e^{-\lambda} \cdot \lamba^n}{n!} \forall n \in \mathbb{N}$} con valore atteso
+
+\[
+\lambda = z \frac{q}{p}
+\]
+
+Per ottenere la probabilità che ha ancora l'attaccante di riuscire a raggiungere la blockchain, si moltiplica la densità di Poisson calcolata per ogni possibile progresso compiuto con la probabilità che possa recuperare a partire da quel momento:
+
+\[
+\sum^\infty_{k=0} \frac{\lambda^k \cdot e^{-\lambda}}{k!} \cdot 
+\begin{cases}
+	\left( \frac{q}{p} \right)^{\left( z -k \right) } & \text{ se } k \leq z \\
+	1 & \text{ altrimenti}
+\end{cases}
+
+\]
+
+che, sistemata in modo da evitare la sommatoria infinita, risulta essere
+
+\[
+1 - \sum^z_{k=0} \frac{\lambda^k \cdot e^{-\lambda}}{k!} \left( 1 - \left( \frac{q}{p} \right)^{\left( z - k \right)} \right)
+\]
+
+Un sorgente in C scritto dallo stesso Nakamoto per effettuare questi calcoli è disponibile all'appendice \ref{src-prob-nakamoto}.
+Se non bastasse la legge matematica, i risultati ottenuti con tale codice e riassunti dal grafico \ref{grafico-risultati-codice-nakamoto} dimostrano come le speranze per l'attaccante diminuiscono esponenzialmente con l'aumentare dei calcoli che deve fare.
+
+%TODO lanciare programma e fare grafici
+% il file risultati_nakamoto_X.dat vuol dire q=0.X . Per ogni file z=1..50
+
+\begin{tikzpicture}
+	\caption{Probabilità di successo dell'attaccante nella creazione di un nuova blockchain.\label{grafico-risultati-codice-nakamoto}}
+	\begin{axis}[
+		domain=0:50, samples=100,
+		axis x line=bottom,
+		axis y line=left,
+		xlabel={z},
+		ylabel={P},
+		ymin=0, ymax=1,
+		xmin=0, xmax=51,
+		legend pos=north east
+	]
+		\foreach \id in {1,3,6,9}
+			\addplot[line width=0.5pt]
+				file {risultati_nakamoto_\id.dat}
+	\end{axis}
+\end{tikzpicture}
+
+\subsection{Ridurre i rischi}
+
+Sebbene le difficoltà che ha un attaccante di realizzare quanto sopra descritto siano minime, esse sono comunque presenti. Ma dato che non si può impedire a qualcuno di ottenere hardware con potenza di calcolo sufficientemente elevata, è necessario trovare altri sistemi per diminuire ulteriormente il rischio di creazione di nuove catene.
+L'attacco appena descritto è infatti una versione volontaria e premeditata di un evento che si verifica con una probabilità del 1.78\% ad ogni blocco trovato, ovvero il forking della blockchain (confrontare la sezione \ref{misurazioni}). Chrstian Decker dell'Università di Zurigo e Roger Wattenhofer della Microsoft Research, durante la loro analisi del metodo di propagazione delle informazioni nella rete Bitcoin, dopo aver calcolato la probabilità di forking hanno anche suggerito alcune possibili soluzioni.
+Secondo i due ricercatori, i forking non volontari si verificano a causa del modo in cui le informazioni si propagano nella rete, per cui le loro soluzioni si basano sul protocollo.
+
+\subsubsection{Ridurre i tempi di verifica}
+
+Come si è visto, un fattore importante nel ritardo della propagazione di nuovi blocchi è il tempo necessario per verificare la validità di tali blocchi: più un blocco è grande più tempo richiede la sua verifica\footnote{La dimensione massima del blocco, al momento della trattazione dei due ricercatori, era limitata a 500kB, ma attualmente è stata aumentata a 1MB.}. 
+Una prima illuminazione arriva dal fatto che la verifica potrebbe essere divisa in due fasi: un controllo della difficoltà iniziale seguita dalla validazione delle transazioni.
+Il controllo della difficoltà consiste nel verificare la proof-of-work calcolando l'hash del blocco ricevuto e confrontandolo con l'attuale difficoltà della rete. Viene inoltre verificato che il blocco non sia un duplicato e che faccia riferimento alla testa della catena.
+La parte difficoltosa sta però nella validazione delle transazioni, che vanno controllate una ad una.
+La soluzione proposta consiste nell'inoltro del blocco al termine della prima fase, prima di verificare le transazioni, e può quindi essere implementata a livello di client. Ovviamente modificare il comportamento di solo alcuni nodi nella rete potrebbe essere pericoloso ed aiutare un potenziale attaccante. In particolare in questo caso si parla di inoltrare informazioni (blocchi) non completamente verificate, il che potrebbe consentire ad un nodo malevolo di inondare la rete con blocchi falsi e realizzare quindi un attacco DDoS sfruttando le capacità di inoltro di altri blocchi legittimi.
+Ma, dato che trovare creare un blocco ad-hoc che possa essere inoltrato ha esattamente la stessa difficoltà che creare un blocco legittimo, la soluzione proposta non aumenta il rischio DDoS.
+D'altro canto però se tale implementazione non è diffusa nella maggior parte dei client (e quindi dei nodi), il vantaggio nella sua adozione è assolutamente marginale.
+
+\subsubsection{Propagare blocchi in pipeline}
+
+Un'altra modifica potrebbe essere notificare la presenza di un nuovo blocco con il messaggio \emph{inv} non appena tale messaggio viene ricevuto. Con questo sistema i successivi messaggi \emph{getdata} che richiedono il blocco verrebbero mantenuti in una coda FIFO che verrà evasa a verifica effettuata.
+Dato che dal solo hash di un blocco non è possibile effettuare alcuna verifica, un nodo malevolo potrebbe annunciare un grande numero di nodi non esistenti, e tali annunci spam verrebbero inoltrati dagli altri nodi nell'intera rete. Una soluzione alla soluzione consiste nel permettere ad un nodo di passare da questa modalità di inoltro-verifica alla modalità verifica-inoltro predefinita, in modo da ridurre la propagazione di messaggi non verificabili\footnote{Decker e Wattenhofer non specificano però i criteri secondo i quali un nodo dovrebbe cambiare modalità, ma si potrebbe pensare ad un criterio basato sulla frequenza di messaggi non verificabili ricevuti oppure implementare un criterio di coordinazione tra i nodi in modo che una certa percentuale operi sempre nella modalità verifica-inoltro.}.
+Ma, anche se si lasciano le cose come descritte, l'invio di messaggi \emph{inv} fasulli non dovrebbe risultare troppo gravoso, dato che tali messaggi hanno una dimensione ridotta e costante di 61B.
+Inoltre è da fare presente come un attacco simile sia già implementabile tramite la creazione di un numero arbitrario di transazioni
+
+
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
 \item
-  spiegazione di satoshi
-\item
-  estensione di propagation
-\item
-  soluzioni di propagation
+  qualcosa sul double-spending
 \item
   ? how to make bitcoin a better currency
 \end{itemize}
