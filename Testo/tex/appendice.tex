@@ -16,3 +16,7 @@ Il simulatore esclude alcune problematiche della rete Internet come le congestio
 Si è assunto inoltre che tutte le transazioni generate sia ben formate e prive di tasse, e che non esistano tentativi di doppia spesa di BTC, sebbene transazioni mal formate e attacchi doppia spesa siano osservabili nella rete.
 Gli autori ritengono infatti che il comportamento malevolo di alcuni nodi nella rete non sia rilevante per la loro indagine sulla privacy.
 Sebbene i blocchi vengono generati con una frequenza identica a quella della rete Bitcoin, per gli scopi del simulatore è stato raddoppiato l'intervallo di tempo medio tra i blocchi per meglio adattarsi alle dinamiche delle reti simulate, portandolo a circa 20 minuti tra un blocco e il successivo.
+
+\chapter{Probabilità di successo per l'attaccante}\label{src-prob-nakamoto}
+
+\lstinputlisting[language=C]{./src/AttackerSuccessProbability.c}
