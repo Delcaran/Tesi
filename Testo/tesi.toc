@@ -75,9 +75,15 @@
 \contentsline {paragraph}{Contromisure ad Eclipse}{58}{subsection.4.1.3}
 \contentsline {subsection}{\numberline {4.1.4}Contromisure generali}{59}{subsection.4.1.4}
 \contentsline {section}{\numberline {4.2}La rete Bitcoin}{59}{section.4.2}
-\contentsline {section}{\numberline {4.3}I Portafogli}{59}{section.4.3}
-\contentsline {section}{\numberline {4.4}Stock Exchange}{59}{section.4.4}
-\contentsline {chapter}{Bibliografia}{61}{appendix*.21}
+\contentsline {subsection}{\numberline {4.2.1}Generazione di una catena arbitraria}{59}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Ridurre i rischi}{62}{subsection.4.2.2}
+\contentsline {subsubsection}{Ridurre i tempi di verifica}{62}{subsection.4.2.2}
+\contentsline {subsubsection}{Propagare blocchi in pipeline}{63}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}I Portafogli}{63}{section.4.3}
+\contentsline {section}{\numberline {4.4}Stock Exchange}{63}{section.4.4}
+\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{65}{appendix.A}
+\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{67}{appendix.B}
+\contentsline {chapter}{Bibliografia}{69}{appendix*.22}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}

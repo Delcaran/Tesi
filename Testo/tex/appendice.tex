@@ -19,4 +19,6 @@ Sebbene i blocchi vengono generati con una frequenza identica a quella della ret
 
 \chapter{Probabilità di successo per l'attaccante}\label{src-prob-nakamoto}
 
-\lstinputlisting[language=C]{./src/AttackerSuccessProbability.c}
+Il seguente sorgente rappresenta quello utilizzato da Nakamoto per calcolare la probabilità di successo di un attaccante in un attacco di double-spending (vedi \ref{doppia-spesa}). Il file \verb|implement.h| è l'header utilizzato per ottenere i dati (risultati del tutto identici a quelli presentati dall'autore nel suo whitepaper) visualizzati nel grafico \ref{grafico-risultati-codice-nakamoto}.
+
+\lstinputlisting[language=C, numbers=left]{src/AttackerSuccessProbability.c}

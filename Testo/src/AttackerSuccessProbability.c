@@ -1,4 +1,6 @@
 #include <math.h>
+#include "implement.h"
+
 double AttackerSuccessProbability(double q, int z)
 {
 	double p = 1.0 - q;
@@ -14,3 +16,4 @@ double AttackerSuccessProbability(double q, int z)
 	}
 	return sum;
 }
+
