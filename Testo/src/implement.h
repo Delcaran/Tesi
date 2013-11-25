@@ -1,0 +1,1 @@
+double AttackerSuccessProbability(double, int);

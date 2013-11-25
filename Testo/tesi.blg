@@ -7,6 +7,7 @@ A level-1 auxiliary file: ./tex/intro.aux
 A level-1 auxiliary file: ./tex/bitcoin.aux
 A level-1 auxiliary file: ./tex/privacy.aux
 A level-1 auxiliary file: ./tex/sicurezza.aux
+A level-1 auxiliary file: ./tex/appendice.aux
 The style file: babplain.bst
 Database file #1: bibliografia.bib
 Warning--to sort, need author or key in mtgox
@@ -14,45 +15,46 @@ Warning--to sort, need author or key in blockchain-info
 Warning--to sort, need author or key in bitcoin_wiki
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty language in bitcoin_wiki
-You've used 20 entries,
+Warning--empty journal in doublespending_hash
+You've used 22 entries,
             2788 wiz_defined-function locations,
-            773 strings with 10186 characters,
-and the built_in function-call counts, 8217 in all, are:
-= -- 709
-> -- 280
+            783 strings with 10561 characters,
+and the built_in function-call counts, 8891 in all, are:
+= -- 767
+> -- 305
 < -- 12
-+ -- 110
-- -- 89
-* -- 856
-:= -- 1104
-add.period$ -- 57
-call.type$ -- 20
-change.case$ -- 99
++ -- 120
+- -- 97
+* -- 927
+:= -- 1208
+add.period$ -- 63
+call.type$ -- 22
+change.case$ -- 109
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 452
-empty$ -- 837
-format.name$ -- 179
-if$ -- 1798
+cite$ -- 27
+duplicate$ -- 487
+empty$ -- 900
+format.name$ -- 194
+if$ -- 1936
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 16
-newline$ -- 109
-num.names$ -- 40
-pop$ -- 184
+int.to.str$ -- 22
+missing$ -- 20
+newline$ -- 119
+num.names$ -- 44
+pop$ -- 196
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 89
 quote$ -- 0
-skip$ -- 254
+skip$ -- 272
 stack$ -- 0
-substring$ -- 269
-swap$ -- 206
+substring$ -- 288
+swap$ -- 217
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 74
-warning$ -- 4
-while$ -- 51
-width$ -- 22
-write$ -- 248
-(There were 4 warnings)
+type$ -- 82
+warning$ -- 5
+while$ -- 56
+width$ -- 24
+write$ -- 270
+(There were 5 warnings)

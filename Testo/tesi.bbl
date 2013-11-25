@@ -124,6 +124,17 @@
 \newblock {\latintext
   \btxurlfont{http://medianet.kent.edu/technicalreports.html}}.
 
+\bibitem {doublespendig_fast}
+\btxnamefont {\btxlastnamefont {Karame}, Ghassan}, \btxnamefont {Elli
+  \btxlastnamefont {Androulaki}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {Srdjan \btxlastnamefont {Capkun}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Two bitcoins at the price of one? double-spending attacks
+  on fast payments in bitcoin.}{Two Bitcoins at the Price of One?
+  Double-Spending Attacks on Fast Payments in Bitcoin.}}
+\newblock \btxjournalfont {IACR Cryptology ePrint Archive}, 2012:248, 2012.
+\newblock {\latintext
+  \btxurlfont{http://people.scs.carleton.ca/~clark/biblio/bitcoin/Karame%202012.pdf}}.
+
 \bibitem {distributed-computing}
 \btxnamefont {\btxlastnamefont {Kshemkalyani}, Ajay\btxfnamespacelong D.}
   \btxandlong {}\ \btxnamefont {Mukesh \btxlastnamefont
@@ -200,6 +211,13 @@
 \newblock \btxjournalfont {CoRR}, abs/1112.4980, 2011.
 \newblock Disponibile in download gratuito all'indirizzo
   \url{http://arxiv.org/pdf/1112.4980v1.pdf}.
+
+\bibitem {doublespending_hash}
+\btxnamefont {\btxlastnamefont {Rosenfeld}, Meni}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Analysis of hashrate-based
+  double-spending}{Analysis of hashrate-based double-spending}}.
+\newblock 2012.
+\newblock {\latintext \btxurlfont{https://bitcoil.co.il/Doublespend.pdf}}.
 
 \bibitem {core-concepts-p2p}
 \btxnamefont {\btxlastnamefont {Schoeder}, Detlef}, \btxnamefont {Kai
