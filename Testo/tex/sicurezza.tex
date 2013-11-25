@@ -153,11 +153,11 @@ Se queste caratteristiche vengono implementate, allora tutti gli attacchi fin qu
 
 \section{La rete Bitcoin}\label{la-rete-bitcoin}
 
-\subsection{Generazione di una catena arbitraria}\label{doppia-spesa}
+\subsection{Fork della blockchain arbitrario}
 
 Satoshi analizza questo scenario nel suo whitepaper \cite{bitcoin}, in cui immagina un attaccante in grado di generare una blockchain alternativa più velocemente di quanto la blockchain ufficiale si evolva.
 Anche nel caso in cui tale evento si verifichi, la rete non diventa automaticamente vulnerabile ad arbitrarie modifiche da parte dell'attaccante, come creare valore dal nulla o acquisire moneta che non gli è mai appartenuta: queste sarebbero transazioni invalide in quanto in conflitto con la blockchain precedente su cui anche la blockchain alternativa si basa, e quindi tali transazioni verrebbero rifiutate da qualsiasi nodo. Un attaccante può solamente tentare di modificare una delle sue transazioni in modo da riappropriarsi dei soldi recentemente spesi.
-Questa gara che avviene tra la catena ufficiale e la catena alternativa può essere vista come una passeggiata aleatoria binomiale\footnote{Rappresenta formalmente l'idea di procedere in direzioni casuali. Formalmente, una variabile aleatoria discreta $X(N)$ fornisce , ad esempio, il numero di \emph{testa} usciti dopo $N$ lanci. Nel caso di 2 possibili scelte, come in questo caso, $X(N)$ ha una distribuzione binomiale, da cui il nome.}: l'evento ha successo quando la catena onesta viene estesa di un blocco, aumentando la distanza di +1, mentre il fallimento si ha quando viene creato un blocco per la catena alternativa, riducendo la distanza di -1.
+Questa gara che avviene tra la catena ufficiale e il suo fork può essere vista come una passeggiata aleatoria binomiale\footnote{Rappresenta formalmente l'idea di procedere in direzioni casuali. Formalmente, una variabile aleatoria discreta $X(N)$ fornisce , ad esempio, il numero di \emph{testa} usciti dopo $N$ lanci. Nel caso di 2 possibili scelte, come in questo caso, $X(N)$ ha una distribuzione binomiale, da cui il nome.}: l'evento ha successo quando la catena onesta viene estesa di un blocco, aumentando la distanza di +1, mentre il fallimento si ha quando viene creato un blocco per la catena alternativa, riducendo la distanza di -1.
 La probabilità che un attaccante riduca a zero la distanza partendo da un punto dato della blockchain ufficiale è analoga a quella del problema della \emph{rovina del giocatore d'azzardo}: si immagini che un giocatore d'azzardo con credito illimitato cominci il suo gioco con un dato deficit e giochi un numero potenzialmente infinito di partite per tentare di azzerare il divario.
 La probabilità che azzeri il divario è la stessa che ha l'attaccante di raggiungere la blockchain onesta, ovvero:
 
@@ -180,7 +180,7 @@ L'assunzione più plausibile è che $p > q$, il che vuol dire che la probabilit�
 
 Il risultato apre però un'altra domanda, ovvero quanto tempo deve aspettare il destinatario di una transazione prima di essere sufficientemente sicuro che tale transazione non possa essere modificata dal mittente.
 In questo caso, Nakamoto assume che l'attaccante sia appunto un mittente che vuole far credere per un certo tempo al destinatario di essere stato pagato, salvo poi modificare la transazione in modo da indirizzarla a se stesso. Se questo accade il destinatario se ne accorgerà, ma l'attaccante spera che a quel punto sarà troppo tardi.
-Si assume inoltre che il destinatario della transazione sia un utente accorto, che genera un nuovo indirizzo appositamente per questa transazione. Questa piccola accortezza impedisce al futuro attaccante di precalcolare una blockchain a suo favore, e quindi di effettuare la transazione solo una volta raggiunto un divario ridotto con la blockchain ufficiale. Quindi l'attaccante deve cominciare i suoi calcoli appena completata la transazione, in parallelo e in segreto.
+Si assume inoltre che il destinatario della transazione sia un utente accorto, che genera un nuovo indirizzo appositamente per questa transazione. Questa piccola accortezza impedisce al futuro attaccante di precalcolare una fork a suo favore, e quindi di effettuare la transazione solo una volta raggiunto un divario ridotto con la blockchain ufficiale. Quindi l'attaccante deve cominciare i suoi calcoli appena completata la transazione, in parallelo e in segreto.
 Il destinatario dal canto suo attende che la transazione venga inclusa in un blocco, e che $z$ blocchi siano stati aggiunti in seguito alla catena. Egli non sa quanto avanti è l'attaccante con i suoi calcoli, ma considerando che i nodi onesti trovino nuovi blocchi con la frequenza prevista\footnote{un blocco ogni 10 minuti secondo le stime iniziali di Nakamoto (\ref{risorse-necessarie}}, il progresso dell'attaccante risulta una distribuzione di Poisson\footnote{Detta anche \emph{legge degli eventi rari}, esprime il numero di eventi che si verificano consecutivamente ed indipendentemente in un arco di tempo sapendo quanti se ne verificano mediamente in quello stesso intervallo. La funzione di densità di probabilità è $P(n) = \dfrac{e^{-\lambda} \cdot \lambda^n}{n!} \forall n \in \mathbb{N}$} con valore atteso
 
 \[
@@ -215,7 +215,7 @@ Se non bastasse la legge matematica, i risultati ottenuti con tale codice e rias
   \end{tikzpicture}
 \end{figure}
 
-\subsection{Ridurre i rischi: comunicazione tra i nodi}
+\subsection{Ridurre il forking: comunicazione tra i nodi}
 
 Sebbene le difficoltà che ha un attaccante di realizzare quanto sopra descritto siano minime, esse sono comunque presenti. Ma dato che non si può impedire a qualcuno di ottenere hardware con potenza di calcolo sufficientemente elevata, è necessario trovare altri sistemi per diminuire ulteriormente il rischio di creazione di nuove catene.
 L'attacco appena descritto è infatti una versione volontaria e premeditata di un evento che si verifica con una probabilità del 1.78\% ad ogni blocco trovato, ovvero il forking della blockchain (confrontare la sezione \ref{misurazioni}). Chrstian Decker dell'Università di Zurigo e Roger Wattenhofer della Microsoft Research, durante la loro analisi del metodo di propagazione delle informazioni nella rete Bitcoin, dopo aver calcolato la probabilità di forking hanno anche suggerito alcune possibili soluzioni.
@@ -248,7 +248,6 @@ Il problema però più influente è la distanza esistente tra la l'origine di un
 Decker e Wattenhofer hanno implementato le soluzioni da loro teorizzare in un client e le hanno testate sulla blockchain ad altezza compresa tra 200000 e 210000. Durante il testo il client è stato connesso ad una media di 3048 nodi e ha caricato circa 20.5 milioni di messaggi \emph{block}. Per ogni blocco il nodo ha ricevuto una media di 2048 richieste.
 In confronto ai dati rilevati in precedenza (confrontare la sezione \ref{misurazioni}), il rateo di forking della blockchain è sceso da 1.69\% a 0.78\%, ovvero un miglioramento del 53.41\%. Come osservato, minimizzare la verifica e il pipelining hanno solo un piccolo effetto su tale miglioramento, ma esso viene moltiplicato dall'aumento delle connessioni. Durante la sperimentazione si è però visto come l'aumento delle connessioni abbia comportato un elevato consumo di banda, con picchi fino a 100MB/s, e ha portato ad un upload totale di circa 2.31TB di dati \emph{block} grezzi.
 
-
 \begin{itemize}
 \item
   qualcosa sul double-spending
@@ -258,18 +257,38 @@ In confronto ai dati rilevati in precedenza (confrontare la sezione \ref{misuraz
 
 \section{I Portafogli}\label{i-portafogli}
 
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  contromisure al furto di portafogli
-\item
-  paperwallets
-\end{itemize}
+Come si è visto, la rete Bitcoin può subire alcuni tipi di attacco, ma un utente qualsiasi può fare poco e nulla per aumentare la propria sicurezza in tale ambito.
+D'altronde, l'utente ha la responsabilità più grande, ovvero mantenere sicuro il proprio patrimonio. Dato che è impossibile per un terzo modificare una transazione che non lo vede come autore, il bersaglio principale di eventuali ladri di Bitcoin sono i punti in cui le BTC vengono ``memorizzate'': i portafogli.
+Dato che una transazione viene firmata con la chiave privata del mittente ed inviata all'indirizzo/chiave pubblica del destinatario, è evidente come la coppia di chiavi sia l'unica cosa che permette di utilizzare le BTC.
+I portafogli sono le strutture dati che memorizzano, tra le altre informazioni, le coppie di chiavi pubbliche e private necessarie per l'utilizzo delle proprie BTC. Perdere il portafogli vuol dire non poter più usare le monete in esso contenute, esattamente come per un portafogli nella vita reale.
 
-\section{Stock Exchange}\label{stock-exchange}
+Per questo motivo se si effettua una ricerca online per la sicurezza di Bitcoin, la maggior parte dei risultati riguarderà metodi per rendere più sicuro il proprio portafogli.
+Il wiki ufficiale di Bitcoin\footnote{\url{https://en.bitcoin.it/wiki/Securing_your_wallet}} illustra vari metodi per tenere al sicuro il proprio portafogli, dai più semplici a quelli veramente paranoici.
 
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  beware the middleman
-\end{itemize}
+Il consiglio più ovvio è quello di cifrare il proprio portafogli, in modo che sia inaccessibile in caso di furto. La cifratura può essere una funzione implementata dal client oppure realizzabile tramite programmi esterni come ad esempio Truecrypt\footnote{\url{http://www.truecrypt.org/}}. La relativa sicurezza\footnote{\url{http://imgs.xkcd.com/comics/security.png}} così ottenuta ha però diversi svantaggi, tra cui la scomodità, la possibilità di perdere o dimenticare la password e il rischio di corruzione dei dati cifrati.
+
+Un altro consiglio molto diffuso online consiste nell'utilizzare sistemi di \emph{cold storage}, che nel gergo Bitcoin sta a significare un metodo per tenere il proprio portafoglio lontano da Internet (caso in cui si parla di\emph{hot storage}). Un \emph{cold wallet} o \emph{offline wallet} risulterà in un portafogli le cui chiavi private non sono accessibili da nessun client e da nessuna macchina, ma di cui si conoscono le chiavi pubbliche. Sarà quindi possibile unicamente inviare BTC a tali indirizzi, ma non sarà possibile in alcun modo spenderle senza importare le chiavi private in un qualche client.
+La sicurezza a questo punto si sposta su dove e come conservare le chiavi private. Molti utenti consigliano di non utilizzare dispositivi elettronici, in quanto possono rovinarsi con il tempo, e di fare ricorso invece ai \emph{paper-wallet}. Ogni client genera paper-wallet in maniera differente, a volte includendo anche codici QR per memorizzare le chiavi su dispositivi mobili, ma al lato pratico consistono nella stampa cartacea di stringhe che permettono di recuperare le coppie di chiavi.
+Mentre per alcuni client le stringhe sono proprio le chiavi, per altri possono essere alcune password che permettono di derivare le coppie di chiavi. È questo il caso dei portafogli deterministici, in cui tutte le chiavi vengono derivate a partire da un valore iniziale di \emph{seed}.
+
+Queste tecniche base vengono spesso espanse con criteri di sicurezza aggiuntivi, come l'utilizzo di una distribuzione live durante la generazione dei portafogli e ogni volta che si immettono dati sensibili (per evitare che tali dati vengano memorizzati da qualche parte nel disco rigido oppure ``sniffati'' da software malevoli eventualmente installati nel sistema), verificare che la stampante non abbia memorizzato informazioni sensibili durante la stampa del paper-wallet, e così via.
+Esistono anche questioni relative alla sicurezza delle password e dei generatori di numeri casuali, ma la trattazione di tali argomenti esula dall'ambito della tesi.
+
+Naturalmente come sempre accade spetta all'utente decidere il livello di sicurezza di cui necessita e prendere le misure necessarie.
+
+\section{Bitcoin-Exchange}\label{bitcoin-exchange}
+
+Esistono però situazioni che non riguardano la rete Bitcoin e che sono al di là delle possibilità di intervento dell'utente: le Bitcoin exchange.
+Sono questi i servizi in cui un utente può acquistare BTC da un altro utente in cambio di denaro reale e viceversa. Le exchange, al pari di altri servizi esistenti, sono di fatto le uniche autorità centrali presenti all'interno della rete, pur non facendone effettivamente parte a livello di implementazione.
+I servizi di exchange generalmente richiedono ad un utente iscritto di depositare sul proprio conto online una certa somma in denaro reale oppure in BTC. Una volta depositati, i soldi reali possono essere spesi per acquistare BTC, mentre i BTC possono essere ceduti ad altri utenti che ne fanno richiesta in cambio di soldi reali. Il denaro così guadagnato viene inviato ad un conto precedentemente indicato dall'utente, e solo a questo punto il denaro è effettivamente nelle sue mani.
+Esiste quindi un periodo in cui i soldi dell'utente sono in mano a terze parti a cui si è costretti a dare totale ed incondizionata fiducia che tale denaro sarà al sicuro per tutta la durata del deposito. Questo, unito al fatto che potrebbe passare molto tempo tra il deposito e l'acquisto\footnote{La compravendita è infatti basata su offerte e ordini in stile borsistico: un utente che desidera acquistare $X$ BTC piazza un ordine per $X$ BTC e dichiara che intende pagare $Y$ denaro reale. Fintanto che un secondo utente non dichiara di voler vendere $X$ BTC per $Y$ denaro, l'acquisto non avverrà e l'ordine rimarrà pendente, salvo sua rimozione.}
+
+I ricercatori Tyler Moore e Nicolas Christin, dato il numero molto elevato di tali servizi che sono attualmente presenti e l'elevato valore monetario mosso da Bitcoin (a Gennaio 2013 si parla di circa 187 milioni di dollari), hanno deciso di analizzare in modo empirico il rischio che un utente incorre nel dare fiducia a queste exchange(\ref{middleman}).
+
+Per la loro analisi, hanno raccolto dal sito \url{http://www.bitcoincharts.com} dati sui tassi di cambio (che includono anche la quantità di scambi giornalieri e quotazioni medie) fino al 16 Gennaio 2013 per 40 diverse exchange che convertono in 33 diverse valute.
+Hanno poi calcolato il volume di commercio giornaliero per ogni exchange rapportando il numero totale di Bitcoin convertite in tutte le valute trattate dall'exchange al numero di giorni in cui l'exchange è stata operativa. Tale arco di tempo rappresenta il ``lifetime'' dell'exchange ed è la differenza tra la prima e l'ultima data in cui è stato effettuato uno scambio. Una exchange viene considerata chiusa se non è stato effettuato nessuno scambio in almeno due settimana prima del 16 Gennaio 2013.
+Per le exchange chiuse, sono poi stati passati al setaccio vari forum e siti web che potessero contenere informazioni sulla chiusura in questione, per capire se essa sia stata dovuta ad una breccia nel sistema di sicurezza (che sia un attacco hacker o una frode perpetuata dai titolari dell'exchange stessa). Inoltre sono stati cercati report che indicassero se gli utenti delle exchange chiuse siano stati o meno risarciti per le eventuali perdite subite.
+Infine ove possibile è stato identificato il paese in cui ha sede l'exchange, per verificare quanto tale paese si sia adeguato alle norme \gls{amlcft} in base ad un indice stilato da alcuni economisti della World Bank\footnote{C. Yepes: Compliance with the AML/CFT international standard: Lessons from a cross-country analysis. IMF Working Papers 11/117, International Monetary Fund (Luglio 2011).} che varia da 0 a 49.
+
+I risultati di tale analisi (disponibili per un'analisi dettagliata in \ref{middleman}) mostrano che il rischio di chiusura di una exchange è inversamente correlata con il volume di transazioni\footnote{Si intende transazioni nel senso tradizionale del termine, non transazioni bitcoin.} che tale exchange gestisce. Di contro, un maggior numero di transazioni rende l'exchange un appetibile bersaglio per gruppi hacker, ed è pertanto direttamente correlato con l'evenienza di attacchi informatici.
+Si vede quindi che una exchange per operare in modo continuativo ha necessità di effettuare un gran numero di transazioni e contemporaneamente investire in sicurezza per contrastare i sempre più probabili attacchi che si troverà a subire.
