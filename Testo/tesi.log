@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  25 NOV 2013 12:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  2 DEC 2013 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1338,7 +1338,8 @@ Writing index file tesi.idx
 
 LaTeX Warning: Label `profind_alg' multiply defined.
 
-) (./tex/sicurezza.aux) (./tex/appendice.aux))
+) (./tex/sicurezza.aux) (./tex/mining.aux) (./tex/correlati.aux)
+(./tex/appendice.aux))
 \openout1 = `tesi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -1355,8 +1356,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
-
-(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count204
 \scratchdimen=\dimen224
@@ -1734,33 +1734,91 @@ LaTeX Warning: Reference `table:gofuser' on page 45 undefined on input line 369
 LaTeX Warning: Reference `anonimato_pag_16' on page 47 undefined on input line 
 397.
 
-[47] [48] [49] [50]) [51]
+[47] [48] [49] [50] [51]) [52]
 \openout2 = `./tex/sicurezza.aux'.
 
- (./tex/sicurezza.tex [52
-
-
-
-]
+ (./tex/sicurezza.tex
 Capitolo 4.
-[53] [54] [55]
+[53
+
+
+
+] [54] [55]
 Underfull \vbox (badness 1038) has occurred while \output is active []
 
  [56]
 [57] [58] [59] [60]
 PGFPlots: reading {src/risultati_nakamoto_1.dat}
 PGFPlots: reading {src/risultati_nakamoto_3.dat}
- [61] [62]) [63]
+ [61] [62] [63] [64] [65]
+
+LaTeX Warning: Reference `bitter-better' on page 66 undefined on input line 294
+.
+
+[66]
+
+LaTeX Warning: Reference `middleman' on page 67 undefined on input line 304.
+
+[67]
+
+LaTeX Warning: Reference `middleman' on page 68 undefined on input line 311.
+
+) [68]
+\openout2 = `./tex/mining.aux'.
+
+ (./tex/mining.tex
+Capitolo 5.
+[69
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 30--33
+
+ []
+
+[71]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [72])
+[73]
+\openout2 = `./tex/correlati.aux'.
+
+ (./tex/correlati.tex [74
+
+
+
+]
+Capitolo 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--13
+
+ []
+
+) [75]
 \openout2 = `./tex/appendice.aux'.
 
- (./tex/appendice.tex [64
+ (./tex/appendice.tex [76
 
 
 
 ]
 Appendice A.
-[65] [66]
+[77] [78]
 Appendice B.
+
+LaTeX Warning: Reference `doppia-spesa' on page 79 undefined on input line 22.
+
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
@@ -1770,9 +1828,9 @@ File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 24.
 
-(./src/AttackerSuccessProbability.c)) [67
+(./src/AttackerSuccessProbability.c)) [79
 
-] [68
+] [80
 
 
 ] (./tesi.bbl
@@ -1788,56 +1846,69 @@ babelbib: Using the BibTeX style's default font for `ISSN'.
 babelbib: Using the BibTeX style's default font for `url'.
 babelbib: Using the BibTeX style's default font for `numeral'.
 
-Underfull \hbox (badness 1270) in paragraph at lines 39--51
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 ...efont {Public Key Cryptography – PKC 2009}
+                                                  ,
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 56--68
 []\T1/cmr/m/n/10.95 .  $\T1/cmtt/m/n/10.95 http : / / doi . acm . org / 10 . 11
 45 / 2229012 . 2229022$\T1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 60--71
+Underfull \hbox (badness 1117) in paragraph at lines 77--88
 []\T1/cmr/m/n/10.95 Bamert, To-bias, Chri-stian Dec-ker, Len-nart El-sen, Ro-ge
 r Wat-te-n-ho-fer e
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--71
+Underfull \hbox (badness 10000) in paragraph at lines 77--88
 \T1/cmtt/m/n/10.95 http : / / www . tik . ee . ethz . ch / file / 848064fa2e80f
 88a57aef43d7d5956c6 /
  []
 
+[81
 
-Underfull \hbox (badness 1342) in paragraph at lines 90--103
+]
+Underfull \hbox (badness 1342) in paragraph at lines 114--127
 []\T1/cmr/m/n/10.95 Clark, Je-re-my e Alek-san-der Es-sex: \T1/cmr/m/it/10.95 C
 om-mit-Coin: Car-bon Da-ting Com-
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 90--103
+Underfull \hbox (badness 1033) in paragraph at lines 114--127
 \T1/cmr/m/it/10.95 mit-men-ts wi-th Bit-coin\T1/cmr/m/n/10.95 .  Nel Ke-ro-my-t
 is, An-ge-los D. (cu-ra-to-re): \T1/cmr/m/it/10.95 Fi-nan-
  []
 
-[69
 
-]
-Underfull \hbox (badness 1168) in paragraph at lines 155--163
+Underfull \hbox (badness 1168) in paragraph at lines 179--187
 []\T1/cmr/m/n/10.95 Merkle, Ral-ph C.: \T1/cmr/m/it/10.95 Pro-to-cols for Pu-bl
 ic Key Cryp-to-sy-stems\T1/cmr/m/n/10.95 .  Nel \T1/cmr/m/it/10.95 IEEE
  []
 
 
-Underfull \hbox (badness 5832) in paragraph at lines 155--163
+Underfull \hbox (badness 5832) in paragraph at lines 179--187
 \T1/cmr/m/it/10.95 Sym-po-sium on Se-cu-ri-ty and pri-va-cy\T1/cmr/m/n/10.95 , 
 vo-lu-me 1109, pa-gi-ne 122--134,
  []
 
 
-Underfull \hbox (badness 3746) in paragraph at lines 177--181
+Underfull \hbox (badness 3746) in paragraph at lines 201--205
 []\T1/cmr/m/n/10.95 Nakamoto, Sa-to-shi: \T1/cmr/m/it/10.95 Bit-coin: A Peer-to
 -Peer Elec-tro-nic Cash Sy-stem\T1/cmr/m/n/10.95 .
  []
 
-[70])
+[82])
 No file tesi.gls.
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
@@ -1859,14 +1930,14 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the tesi.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
-[71]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 50.
+[83]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 50.
  (./tesi.aux (./tex/titolo.aux) (./tex/abstract.aux) (./tex/intro.aux)
-(./tex/bitcoin.aux) (./tex/privacy.aux) (./tex/sicurezza.aux)
-(./tex/appendice.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 48.
+(./tex/bitcoin.aux) (./tex/privacy.aux) (./tex/sicurezza.aux) (./tex/mining.aux
+) (./tex/correlati.aux) (./tex/appendice.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 50.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 50.
 
 
 LaTeX Warning: There were undefined references.
@@ -1874,13 +1945,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
  ) 
 Here is how much of TeX's memory you used:
- 34244 strings out of 493311
- 669505 string characters out of 6143650
- 891177 words of memory out of 5000000
- 36660 multiletter control sequences out of 15000+600000
+ 34306 strings out of 493311
+ 670477 string characters out of 6143650
+ 894969 words of memory out of 5000000
+ 36702 multiletter control sequences out of 15000+600000
  33689 words of font info for 85 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  70i,19n,77p,2650b,2028s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1891,34 +1962,35 @@ blic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
 usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
-.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
-r/share/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf-d
-ist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1
-/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
-r/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb>
-</usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/tex
-mf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.
-pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share
-/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fon
-ts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public
-/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1
-440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist
-/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
-ftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on tesi.pdf (81 pages, 762930 bytes).
+e1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-di
+st/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf-dist/fonts/type1/
+public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
+/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><
+/usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texm
+f-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-s
+uper/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.p
+fb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/
+texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/font
+s/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss12
+00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+tt0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></us
+r/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on tesi.pdf (93 pages, 816278 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
+ 473 PDF objects out of 1000 (max. 8388607)
+ 325 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

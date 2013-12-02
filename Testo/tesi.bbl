@@ -25,6 +25,23 @@
 \btxtitlefont {\btxifchangecase {Mt. gox}{Mt. GOX}}.
 \newblock {\latintext \btxurlfont{https://mtgox.org}}.
 
+\bibitem {distribute-public-key}
+\btxnamefont {\btxlastnamefont {Abdalla}, Michel}, \btxnamefont {Xavier
+  \btxlastnamefont {Boyen}}, \btxnamefont {C\'{e}line \btxlastnamefont
+  {Chevalier}}\btxandcomma {} \btxandlong {}\ \btxnamefont {David
+  \btxlastnamefont {Pointcheval}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Distributed public-key cryptography from weak
+  secrets}{Distributed Public-Key Cryptography from Weak Secrets}}.
+\newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Jarecki}, Stanislaw}
+  \btxandlong {}\ \btxnamefont {Gene \btxlastnamefont {Tsudik}}\
+  (\btxeditorslong {}): \btxtitlefont {Public Key Cryptography – PKC 2009},
+  \btxvolumelong {}\ \btxvolumefont {5443} \btxofserieslong {}\ \btxtitlefont
+  {Lecture Notes in Computer Science}, \btxpageslong {}\ 139--159.
+  \btxpublisherfont {Springer Berlin Heidelberg}, 2009\ifbtxprintISBN {,
+  \mbox{\btxISBN~\btxISBNfont {978-3-642-00467-4}}}.
+\newblock {\latintext
+  \btxurlfont{http://dx.doi.org/10.1007/978-3-642-00468-1_9}}.
+
 \bibitem {user-privacy}
 \btxnamefont {\btxlastnamefont {Androulaki}, Elli}, \btxnamefont {Ghassam
   \btxlastnamefont {Karame}}, \btxnamefont {Marc \btxlastnamefont {Roeschlin}},
@@ -85,6 +102,13 @@
 \newblock {\latintext
   \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_29}}, Disponibile in
   download gratuito all'indirizzo \url{http://www.cs.stanford.edu/~xb/fc12/}.
+
+\bibitem {boyen2007halting}
+\btxnamefont {\btxlastnamefont {Boyen}, Xavier}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Halting password puzzles}{Halting password puzzles}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Proc. Usenix Security}, 2007.
+\newblock {\latintext
+  \btxurlfont{http://static.usenix.org/events/sec07/tech/full_papers/boyen/boyen.pdf}}.
 
 \bibitem {commitcoin}
 \btxnamefont {\btxlastnamefont {Clark}, Jeremy} \btxandlong {}\ \btxnamefont
