@@ -67,5 +67,26 @@ Tale valore è solitamente più elevato di quanto un novello operatore si aspett
 
 \subsection{Metodo di Slush}
 
+Prende il nome dalla pool in cui fu per la prima volta implementato ed è il primo metodo progettato con l'obiettivo di rendere inefficiente il pool-hopping.
+Si basa sempre sul metodo proporzionale, ma invece di basare le retribuzione sulla semplice conta delle shares, attribuisce uno \emph{score} ad ogni share in base al quale verrà distribuito il premio per il ritrovamento del blocco alla fine del round.
+Il punteggio è in relazione diretta al tempo trascorso dall'inizio del round, in modo da contrastare l'effetto visto nel metodo proporzionale. La funzione di score è esponenziale: $s=e^{\frac{T}{C}}$ dove $s$ è lo score assegnato per una share caricata all'istante $T$ e $C$ è una costante.
+Tale funzione garantisce che ad un certo punto dopo l'inizio del round si raggiunga uno stato stabile in cui non è più rilevante l'istante in cui una share viene condivisa in quanto lo score attribuito risulta essere identico così come di conseguenza la ricompensa.
+Il parametro $C$ controlla la velocità con cui si raggiunge tale stato di stabilità o, equivalentemente, la velocità con cui il punteggio decade in relazione alle shares. Se $C$ è basso il decadimento è rapido, ovvero ogni share ha una elevata possibilità di non ricevere nessun pagamento nel caso di lunghi round. Per round brevi invece il pagamento sarà molto elevato perché non sarà condiviso con molte altre share.
+Il risultato è che valori bassi di $C$ aumentando notevolmente la varianza dei pagamenti ricevuti, riducendo però la vulnerabilità al pool-hopping.
+Nonostante la sua importanza storica, tale metodo ha diversi aspetti negativi:
 
+\begin{itemize}
+	\item Il punto di stabilità viene raggiunto solo ad un certo punto nel round, il che vuol dire che si ripresentano gli stessi problemi del metodo proporzionale relativi a quando associarsi alle mining pools. Sebbene l'effetto non sia altrettanto drastico, la conseguenza è un diretto fallimento delle premesse del metodo che non risulta completamente resistente al pool-hopping.
+	\item Dato che lo score dipende dal tempo e non dal numero di share, il metodo è soggetto ad hopping dovuto a fluttuazioni nell'hashrate.
+	\item Nel calcolo del punteggio non si tiene conto della difficoltà nel trovare un blocco, quindi il metodo può subire hopping derivato dai cambiamenti previsti nella difficoltà.
+\end{itemize}
 
+Il primo problema è il più grave in quanto è un caso di un problema più generale: un sistema che ad ogni divide una ricompensa in modo proporzionale tra i minatori partecipanti al round può essere immune al pool-hopping solo se retribuisce la share che ha risolto il round, il che risulta equivalente al mining in solitario e quindi indesiderabile a causa dell'elevata varianza. Tale affermazione è nota come \emph{teorema dell'immunità da hopping}, dimostrato da Rosenfeld nell'appendice D di \cite{pool-analysis}.
+
+\subsection{Metodo Geometrico}
+
+Una evoluzione del motodo di Slush che risulta essere immune da hopping.
+In questo metodo esistono due tipi di tariffe, una fissa e una variabile. La tariffa fissa viene scalata dalla ricompensa di ogni blocco, mentre quella variabile è un punteggio assegnato automaticamente all'operatore all'inizio di ogni round e che decade nel tempo esattamente come il punteggio dei minatori.
+Questo porta alla creazione di uno stato stabile in cui il punteggio per ogni share rimane costante eliminando le differenze derivanti dai tempi di condivisione delle share. L'algoritmo \ref{alg_metodo_geometrico} illustra il funzionamento del metodo.
+
+\input{./tex/metodogeometrico.tex}

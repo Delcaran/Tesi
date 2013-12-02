@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  2 DEC 2013 16:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  2 DEC 2013 19:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1790,11 +1790,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--33
 [71]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [72])
+ [72]
 [73]
+
+LaTeX Warning: Reference `alg_metodo_geometrico' on page 74 undefined on input 
+line 90.
+
+[74] (./tex/metodogeometrico.tex)) [75]
 \openout2 = `./tex/correlati.aux'.
 
- (./tex/correlati.tex [74
+ (./tex/correlati.tex [76
 
 
 
@@ -1805,19 +1810,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--13
 
  []
 
-) [75]
+) [77]
 \openout2 = `./tex/appendice.aux'.
 
- (./tex/appendice.tex [76
+ (./tex/appendice.tex [78
 
 
 
 ]
 Appendice A.
-[77] [78]
+[79] [80]
 Appendice B.
 
-LaTeX Warning: Reference `doppia-spesa' on page 79 undefined on input line 22.
+LaTeX Warning: Reference `doppia-spesa' on page 81 undefined on input line 22.
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
@@ -1828,9 +1833,9 @@ File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 24.
 
-(./src/AttackerSuccessProbability.c)) [79
+(./src/AttackerSuccessProbability.c)) [81
 
-] [80
+] [82
 
 
 ] (./tesi.bbl
@@ -1876,7 +1881,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--88
 88a57aef43d7d5956c6 /
  []
 
-[81
+[83
 
 ]
 Underfull \hbox (badness 1342) in paragraph at lines 114--127
@@ -1908,7 +1913,7 @@ Underfull \hbox (badness 3746) in paragraph at lines 201--205
 -Peer Elec-tro-nic Cash Sy-stem\T1/cmr/m/n/10.95 .
  []
 
-[82])
+[84])
 No file tesi.gls.
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
@@ -1931,7 +1936,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                in the tesi.log file.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 50.
-[83]
+[85]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 50.
  (./tesi.aux (./tex/titolo.aux) (./tex/abstract.aux) (./tex/intro.aux)
 (./tex/bitcoin.aux) (./tex/privacy.aux) (./tex/sicurezza.aux) (./tex/mining.aux
@@ -1948,10 +1953,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
  ) 
 Here is how much of TeX's memory you used:
- 34306 strings out of 493311
- 670477 string characters out of 6143650
- 894969 words of memory out of 5000000
- 36702 multiletter control sequences out of 15000+600000
+ 34311 strings out of 493311
+ 670591 string characters out of 6143650
+ 894972 words of memory out of 5000000
+ 36704 multiletter control sequences out of 15000+600000
  33689 words of font info for 85 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  70i,19n,77p,2650b,2028s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1987,10 +1992,10 @@ fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
 tt0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on tesi.pdf (93 pages, 816278 bytes).
+Output written on tesi.pdf (95 pages, 824906 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
- 325 compressed objects within 4 object streams
+ 479 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
