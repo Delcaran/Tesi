@@ -134,4 +134,17 @@ Ogni altro metodo di cambiamento (in particolare in caso di riduzione di $X$) po
 
 \section{Pay-per-share privo di rischi}
 
+L'attrattiva del metodo PPS per i minatori, in contrasto con l'elevato rischio per gli operatori, ha generato molti tentativi di implementazione che mimino il PPS ma con ricompensa di tipo \emph{best-effort} in base alla fortuna della pool.
+
+\subsection{Maximum Pay-Per-Share (MPPS)}
+
+In questo metodo vengono mantenuti due bilanci separati per ogni partecipante, un bilancio PPS e un bilancio proporzionale. Ogniqualvolta un minatore invia una share, il suo bilancio PPS viene incrementato come se fosse una pool PPS. Quando viene trovato un blocco, il bilancio proporzionale di ogni minatore viene incrementato come se fosse una pool omonima. Il pagamento che spetta ad ogni partecipante è il minimo tra i due bilanci.\\
+L'idea alla base di tale sistema è, dato che il totale del bilancio proporzionale di tutti i minatori è uguale alla ricompensa totale ottenuta dalla pool e il pagamento che viene elargito ai minatori è minore di questa quantità, la pool non potrà mai andare in perdita. Inoltre, dato che il bilancio PPS di un minatore è un accumulo della ricompensa media per ogni share trovata, non può utilizzare il pool-hopping per ottenere una ricompensa più alta di quella media: i round corti non pagano grandi ricompense nell'immediato, bensì riempiono una sorta di buffer del minatore per aiutare i pagamenti durante i round più lunghi.
+Purtroppo tale metodo ha un clamoroso difetto. Innanzitutto, dato che il totale ammontare pagato è il minimo di due differenti bilanci, ognuno dei quali ha un valore atteso uguale alla media, ne consegue che il pagamento atteso risulta sempre minore alla media: la ricompensa per il minatore è normale in caso di round fortunati e minore del normale in tutti gli altri casi.
+Rosenfeld ha quantificato che in media la porzione di ricompensa persa risulta essere $\frac{1}{\sqrt{2\pi n}}$ nel caso in cui un minatore si unisca ad una pool MPPS e collabori per tutto il tempo necessario alla pool per trovare $n$ blocchi. Mano a mano che il minatore rimane nella pool le perdite relative diminuiscono sensibilmente (nonostante aumentino in senso assoluto), infatti nel caso in cui $n=10$ le perdite ammontano a circa il 12.6\%.
+
+\subsection{Shared maximum Pay-Per-Share (SMPPS)}
+
+Con questo metodo si tenta di risolvere il problema di MPPS rimpiazzando il buffer per-utente con un buffer globale condiviso tra tutti gli utenti. Round fortunati riempiono il buffer
+
 \section{Attacchi (??? spostare in sicurezza????)}
