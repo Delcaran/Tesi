@@ -110,3 +110,28 @@ Il metodo non è però semplice da mantenere nel caso in cui sia stato implement
 \end{itemize}
 
 \input{./tex/metodogeometricolog.tex}
+
+\subsection{Pay-per-lst-N-shares (PPLNS)}
+
+Non si tratta di un metodo solo, ma di una famiglia di metodi che si liberano del concetto di round finora visto.
+Invece di distribuire le ricompense tra i partecipanti di un round, vengono distribuite tra i contributori recenti indipendentemente se sono stati trovati blocchi o meno nel periodo in esame. Così facendo si elimina il concetto di ``all'inizio del round'' e ne risulta che alcune varianti di PPLNS sono effettivamente immuni al pool-hopping.
+La variante più semplice consiste nello stabile un numero fisso $N$ e pagare una ricompensa di $\frac{(1-f)B}{N}$ per ognuna delle ultime $N$ share inviate. Il pagamento per ogni share è $\frac{(1-f)BL}{N}$ dove $L$ è il numero di blocchi trovato nelle $N$ shares. Dato che ogni share ha una probabilità $p$ di essere un blocco indipendentemente dalle share passate, $L$ segue la distribuzione di Poisson cone media $\lambda = pN$, il che porta la ricompensa attesa a $\frac{(1-f)BpN}{N} = (1-f)pB$. La varianza di $L$ è $pN$ e di conseguenza la varianza per il pagamento atteso è $\frac{(1-f)^2 pB^2}{N} \approx \frac{pB^2}{N}$, ovvero $N$ volte migliore di quella di un minatore solitario.
+La tempistica dei pagamenti è uniformemente distribuita lungo le $N$ shares in modo che ogni ricompensa venga ricevuta in media dopo $\frac{N}{2}$ shares, il che significa che il tempo medio di maturazione delle quote è $\frac{pN}{2}$. Aumentare $N$ riduce la varianza ma aumenta il tempo di maturazione, con l'invariante che il prodotto di questi due dati rimane costante a $\frac{(pB)^2}{2}$.
+Nel caso in cui $D$ e $B$ non siano fissi, questa implementazione non è resistente al pool-hopping: i contributi di un minatore sono determinati dalla difficoltà corrente, mentre la sua ricompensa è influenzata dalla difficoltà futura, per cui i pool-hoppers possono utilizzare l'eventuale conoscenza di future fluttuazione nella difficoltà a loro vantaggio, unendosi quando la difficoltà è in prevista diminuzione e andandosene quando è previsto un aumento.\\\\
+Una variante completamente resistente al pool-hopping è chiamata "unit-PPLNS" ed è descritta nell'algoritmo \ref{alg_unit_pplns}. In pratica viene tenuta traccia del valore di $p$ (chiamato \emph{unità}) e di $B$ (chiamato \emph{amplificatore}) per ogni share nel momento in cui questa viene ricevuta, il numero totale di unità $U^T$ e $U^T_k$ ovverto il valore di $U^T$ nel momento in cui è stata inviata la $k$-esima share.
+Quando un blocco viene trovato e il valore corrente di $U^T$ viene memorizzato in $U^T_n$, per ogni share si ha $U=U^T_n - U^T_0$ in modo che le uniche share da ricompensare sono quelle per cui $U^T_0 > U^T_n - X -u_n$ dove $X$ è una finestra temporale in termini di unità e $u_n$ sono le unità della share che ha trovato il blocco. Di fondamentale importanza è garantire che la struttura dati utilizzata per $U^T$ e le misurazioni derivate possa supportare la precisione necessaria.
+Il pagamento totale per ogni share è $\frac{(1-f)pBL}{X}$ dove $p$ è l'inverso della difficoltà, $B$ la ricompensa del blocco al momento ed $L$ è il numero dei blocchi trovati entro le prossime shares per un totale di $X$ unità. La probabilità di ogni share di essere un blocco è uguale alle sue unità e di conseguenza $L$ segue la distribuzione di Poisson con una media $\lambda = X$ indipendentemente dal passato o da ogni futura modifica della difficoltà. La ricompensa attesa per ogni share risulta essere $(1-f)pB$, la varianza approssimativamente $\frac{(pB)^2}{X}$ (migliorata di $\frac{X}{p}$ rispetto al minatore solitario), il tempo di maturazione è $\frac{X}{2}$ e il prodotto tra la varianza e il tempo di maturazione è $\frac{(pB)^2}{2}$.
+La ricompensa attesa per una share come amplificatore $a$, $u$ unità e un totale di $U$ unità inviate dopo tale share è $\frac{(1-f)ua\max(X-U,0)}{X}$.\\\\
+Dato che non esiste nessuna suddivisione in round in questa famiglia di metodi, un'operatore che volesse cambiare i parametri della pool non può farlo tra i round: deve modificarli in ogni share in modo da assicurare che le ricompense attese non cambino.
+\begin{itemize}
+  \item Per modificare le unità bisogna procedere in senso inverso dalla prima all'ultima share in modo da non alterare i valori di $U$.
+  \item Se si intende modificare $f$ il metodo più semplice è ridimensionare l'amplificatore di ogni share di un fattore di $\frac{1-f_1}{1-f_2}$.
+  \item La modifica di $X$ si devono riscalare le unità di ogni share di un fattore di $\frac{X_2}{X_1}$ e gli amplificatori di $\frac{X_1}{X_2}$. In questo modo i valori di $ua$ e di $\max(X-U, 0)$ rimangono invariati in ogni share.
+\end{itemize}
+Ogni altro metodo di cambiamento (in particolare in caso di riduzione di $X$) potrebbe portare a situazioni in cui per qualche share si ha $U > X$ e quindi nessun cambiamento nei suoi valori è in grado di mantenere uguale la ricompensa attesa e l'operatore si vede costretto a pagare immediatamente il valore atteso: una sorta di pagamento per il ``prestito statistico'' che ha sottoscritto quando ha aperto la pool con un valore di $X$ troppo elevato.
+
+\input{./tex/alg_unit_pplns.tex}
+
+\section{Pay-per-share privo di rischi}
+
+\section{Attacchi (??? spostare in sicurezza????)}
