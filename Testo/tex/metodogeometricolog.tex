@@ -1,26 +1,27 @@
 \begin{algorithm}
-    \caption{Metodo Geometrico}
-    \label{alg_metodo_geometrico}
+    \caption{Metodo Geometrico Logaritmico}
+    \label{alg_metodo_geometrico_log}
     \begin{algorithmic}
       \STATE Impostare tariffa fissa $f$
       \STATE Impostare tariffa variabile $c$
       \FORALL{round}
-        \STATE contatore per il decadimento: $s \leftarrow 1$
+        \STATE $ls \leftarrow 0$
         \FORALL{minatore: $k$}
-          \STATE punteggio di $k$: $S_k \leftarrow 0$
+          \STATE punteggio logaritmico di $k$: $lS_k \leftarrow -\infty$
         \ENDFOR
         \REPEAT
           \IF{prima iterazione \OR $D$ modificata}
             \STATE $p = \frac{1}{D}$
             \STATE tasso di decadimento: $r = 1 - p + \frac{p}{c}$
+            \STATE $lr = \ln{r}$
           \ENDIF
           \IF{minatore $k$ invia share}
-            \STATE $S_k \leftarrow S_k + spB$
-            \STATE $s \leftarrow sr$
+            \STATE $lS_k \leftarrow ls + \ln{e^{lS_k - ls} + pB}$
+            \STATE $ls \leftarrow ls + lr$
           \ENDIF
         \UNTIL{blocco trovato}
         \FORALL{minatore: $k$}
-          \STATE{paga $\frac{\left( 1 - f \right)\left(r - 1 \right)S_k}{sp}$}
+          \STATE{paga $\frac{\left( 1 - f \right)\left(r - 1 \right)e^{lS_k - ls}}{p}$}
         \ENDFOR
       \ENDFOR
     \end{algorithmic}
