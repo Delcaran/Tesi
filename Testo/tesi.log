@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  3 DEC 2013 17:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2013.9.10)  3 DEC 2013 17:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1801,7 +1801,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--126
 
  []
 
-[76] [77] [78] (./tex/alg_unit_pplns.tex)) [79] [80]
+[76] [77] [78] (./tex/alg_unit_pplns.tex) [79]) [80]
 \openout2 = `./tex/correlati.aux'.
 
  (./tex/correlati.tex
@@ -1960,7 +1960,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
 Here is how much of TeX's memory you used:
  34321 strings out of 493311
  670816 string characters out of 6143650
- 904112 words of memory out of 5000000
+ 904116 words of memory out of 5000000
  36708 multiletter control sequences out of 15000+600000
  33689 words of font info for 85 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1997,7 +1997,7 @@ fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
 tt0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on tesi.pdf (99 pages, 845337 bytes).
+Output written on tesi.pdf (99 pages, 847880 bytes).
 PDF statistics:
  492 PDF objects out of 1000 (max. 8388607)
  338 compressed objects within 4 object streams
