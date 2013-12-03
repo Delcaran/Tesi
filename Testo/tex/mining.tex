@@ -90,3 +90,23 @@ In questo metodo esistono due tipi di tariffe, una fissa e una variabile. La tar
 Questo porta alla creazione di uno stato stabile in cui il punteggio per ogni share rimane costante eliminando le differenze derivanti dai tempi di condivisione delle share. L'algoritmo \ref{alg_metodo_geometrico} illustra il funzionamento del metodo.
 
 \input{./tex/metodogeometrico.tex}
+
+Come per gli altri metodi, la tariffa fissa permette all'operatore di intascare $fB$ sulla ricompensa del blocco, mentre sul rimanente $(1-f)B$ viene applicata la tariffa variabile permettendogli di guadagnare un ulteriore $c(1-f)B$. Complessivamente quindi la tariffa vale in media $c + f -cf$ e di conseguenza un operatore prende in media $(c+f-cf)B$  per blocco mentre il restante $(1-c)(1-f)B$ viene diviso tra i miners a seconda del loro punteggio.
+Viene utilizzato un contatore dei round $s$ che verrà utilizzato come multiplo di $pB$, in modo da far decadere in modo esponenziale il valore delle prime shares del round mano a mano che questo procede.
+Il rateo di decadimento è indicato da $r$, che imposta il punteggio per ogni share come $r$ volte il punteggio della share precedente. A difficoltà fissa $r$ rimane costante in modo che il punteggio dell'$I$-esima share sia $r^{I-1}pB$. Più basso è $r$ maggiore deve essere il punteggio dell'operatore per mantenere una situazione stabile, per cui maggiore è anche la tariffa variabile.
+A difficoltà e ricompensa costanti, se $N$ è il numero complessivo di share sottoposte nel round, allora $s=r^N$ e il pagamento medio per un minatore risulta essere
+\[ \frac{(1-f)(r-1)S_k}{sp} = \frac{S_k}{\frac{r^N pB}{r-1}}(1-f)B = \frac{S_k}{\sum^N_{i=-\infty}r^{i-1}pB}(1-f)B \]
+che è equivalente a distribuire $(1-f)B$ in proporzione al punteggio, se l'operatore riceve un punteggio di $\sum^0_{i=-\infty}r^{i-1}pB = \frac{pB}{r-1}$ e il punteggio complessivo di tutti i partecipanti è $\sum^N_{i=-\infty}r^{i-1}pB$.
+Lo scopo di ciò è fare in modo di assegnare un numero infinito di share all'operatore all'inizio di ogni round. Così facendo, ogniqualvolta un miner invia una share essa sarà l'ultima di una serie infinita il cui punteggio decade in modo esponenziale nel tempo, permettendo quindi di mantenere fisse le proprietà statistiche della share appena inviata.
+Dato che il pagamento atteso per ogni share è $(1-f)(1-c)pB$ la varianza risulta essere approssimativamente $\frac{(pB)^2}{2c+p}$, una riduzione di circa $1+\frac{2c}{p}$ rispetto alla varianza $pB^2$ di un minatore solitario. L'operatore si trova in modo similare con una varianza per blocco di circa $cB^2$.
+Se la tariffa media complessiva $c+f-cf$ rimane costante durante il round a causa della diminuzione di $f$ e dell'aumento di $c$, la varianza per l'operatore viene aumentata mentre viene diminuita quella per i minatori, ma fintanto che $f$ rimane positivo l'operatore non rischia di subire alcuna perdita alla fine del round. Se però egli sceglie di assorbire maggiore varianza, può rendere negativo $f$ e aumentare ulteriormente $c$, aggiungendo di fatto le sue BTC personali alla ricompensa prevista dal ritrovamento del blocco: ciò significa che può arrivare a perdere fino a $(-f)B$ per blocco nei round più lunghi, ed impostando $f=\frac{-c}{1-c}$ la sua tariffa risulta pari a 0.
+Nel caso limite in cui $c \rightarrow 0$, solo la share vincente verrà ricompensata e i minatori stanno a livello pratico lavorando in solitario.
+Se invece $c+f-cf$ viene mantenuto fisso con $c \rightarrow 1$ e $f \rightarrow -\infty$, le varianze sopra citate sono trascurabili e il metodo si diventa equivalente al Pay-Per-Share: è quindi consigliato mantenere il valore di $c$ compreso tra 0 e 1.
+
+Il metodo non è però semplice da mantenere nel caso in cui sia stato implementato in modo approssimativo, soprattutto a causa della crescita esponenziale di $s$, per cui è necessario prendere alcune precauzioni:
+\begin{itemize}
+    \item Resettare i punteggi: dato che quello che conta è il rapporto tra il punteggio dei lavoratori e il valore corrente di $s$, niente viene alterato se tutti questi punteggi vengono divisi per la stessa quantità. Per cui periodicamente è buona norma reinizializzare $\forall k S_k = \frac{S_k}{s}$ e successivamente $s=1$.
+    \item Usare una scala logaritmica. L'algoritmo \ref{alg_metodo_geometrico} memorizza i valori reali di $s$ e $S$, che possono diventare molto elevati. Memorizzando i loro logaritmi $ls$ ed $lS$ ed adattando i calcoli si evita l'overflow di tali variabili. Una implementazione in tal senso è visibile nell'algoritmo \ref{alg_metodo_geometrico_log}.
+\end{itemize}
+
+\input{./tex/metodogeometricolog.tex}
