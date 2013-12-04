@@ -254,7 +254,7 @@ Da cui ottengo il rateo di nodi informati:
 
 Notare come la $f(t)$ sia equivalente alla funzione di distribuzione cumulativa (\textbf{CDF}) della frequenza alla quale i peer vengono informati. Possiamo quindi utilizzare la funzione di densità di probabilità (\textbf{PDF}) della frequenza con cui i peer vengono informati rappresentata in \ref{bitcoinpropagation_3} come una approssimazione durante le rilevazioni. Solo i nodi non informati possono produrre blocchi in conflitto, per cui combinando la probabilità di trovare un blocco con il rateo di nodi non informati otteniamo la probabilità di un fork. Definiamo $F$ come la variabile casuale discreta che conta il numero di blocchi in conflitto trovati mentre un altro blocco viene propagato. Allora la probabilità di un fork risulta:
 
-\[ \Pr\left[F \geq 1\right] = 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} \]
+\[ \Pr\left[F \geq 1\right] = 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d} t} \]
 
 In questo ultimo passaggio si è assunta la semplificazione per la quale la probabilità di un nodo di trovare un blocco è distribuita uniformemente in modo casuale tra tutti i nodi.
 
@@ -288,7 +288,7 @@ Combinando la probabilità di trovare un blocco e la funzione della frequenza de
 
 \begin{equation}
 \begin{aligned}
-    \Pr [F \geq 1 ] &= 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d}t} \\
+    \Pr [F \geq 1 ] &= 1 - (1 - P_b)^{\int_{0}^{\infty} \! (1 - f(t)) \, \mathrm{d} t} \\
     &= 1 - (1 - \frac{1}{633.68})^{11.37} \\
     &\approx 1.78%
 \end{aligned}
