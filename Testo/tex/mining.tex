@@ -36,7 +36,7 @@ In ogni caso tali considerazioni non hanno effetto sulla quantità del pagamento
 
 \section{Sistemi di retribuzione semplici}
 
-\subsection{Proporzionale}
+\subsection{Proporzionale}\label{pool-proporzionale}
 
 In questo sistema, i pagamenti sono calcolati in base ad una divisione in \emph{round}, dove un round è il tempo che intercorre tra due ritrovamenti di blocchi da parte della pool. Alla fine di ogni round, quando il blocco viene ritrovato e la pool riceve la relativa ricompensa, l'operatore trattiene la sua parte e distribuisce il resto tra i minatori in proporzione diretta al numero di share da loro sottoposte durante il round. Se un minatore ha inviato $n$ share il numero totale di share ricevute dalla pool è $N$, allora il pagamento di tale minatore per il round è $\frac{n}{N}(1-f)B$.
 La varianza per ogni share è approssimativamente $p^2 B^2 \ln{D}$, dato che la varianza per un minatore solitario è $pB^2$ per share, si tratta di un miglioramento di un fattore pari a $\frac{D}{\ln{D}}$. Questo vale unicamente per piccoli miners. Per i miner più importanti la varianza totale non può scendere sotto un valore che è $q$ volta la varianza del singolo minatore, dove $q=\frac{h}{H}$ è la frazione di potere computazionale della rete fornito dal minatore.
@@ -65,7 +65,7 @@ Tale valore è solitamente più elevato di quanto un novello operatore si aspett
 
 \section{Sistemi di retribuzione a punteggio}
 
-\subsection{Metodo di Slush}
+\subsection{Metodo di Slush}\label{pool-slush}
 
 Prende il nome dalla pool in cui fu per la prima volta implementato ed è il primo metodo progettato con l'obiettivo di rendere inefficiente il pool-hopping.
 Si basa sempre sul metodo proporzionale, ma invece di basare le retribuzione sulla semplice conta delle shares, attribuisce uno \emph{score} ad ogni share in base al quale verrà distribuito il premio per il ritrovamento del blocco alla fine del round.
@@ -132,7 +132,7 @@ Ogni altro metodo di cambiamento (in particolare in caso di riduzione di $X$) po
 
 \input{./tex/alg_unit_pplns.tex}
 
-\section{Pay-per-share privo di rischi}
+\section{Pay-per-share privo di rischi}\label{pool-famiglia-mpps}
 
 L'attrattiva del metodo PPS per i minatori, in contrasto con l'elevato rischio per gli operatori, ha generato molti tentativi di implementazione che mimino il PPS ma con ricompensa di tipo \emph{best-effort} in base alla fortuna della pool.
 
@@ -145,6 +145,60 @@ Rosenfeld ha quantificato che in media la porzione di ricompensa persa risulta e
 
 \subsection{Shared maximum Pay-Per-Share (SMPPS)}
 
-Con questo metodo si tenta di risolvere il problema di MPPS rimpiazzando il buffer per-utente con un buffer globale condiviso tra tutti gli utenti. Round fortunati riempiono il buffer
+Con questo metodo si tenta di risolvere il problema di MPPS rimpiazzando il buffer per-utente con un buffer globale condiviso tra tutti gli utenti. Round corti riempiono il buffer, aiutando la pool ad elargire i pagamenti PPS durante i round più lunghi. Una volta che il buffer si esaurisce tutti i pagamenti PPS vengono ritardati fin quando non vengono raccolti abbastanza fondi. Come questo viene fatto dipende dall'implementazione specifica della pool.
+Nella sua concezione originale, la pool tiene traccia della ricompensa spettante ad ogni minatore: quando una share viene inviata la ricompensa viene incrementata come se la pool fosse PPS, mentre per elargire un pagamento esso viene dedotto da tale ammontare. La pool tiene inoltre traccia del suo buffer $R$, definito come la differenza tra il totale dei guadagni derivati dal ritrovamento dei blocchi e il totale PPS dovuto ai minatori.
+Nel caso in cui $R < 0$, ovvero esistono partecipanti creditori della pool che non possono essere pagati per mancanza di fondi, il totale dovuto ai minatori è $-R$, per cui appena un blocco viene trovato la sua ricompensa viene divisa tra tutti i minatori in proporzione a quanto loro dovuto: un minatore a cui si deve $w$ si verrà pagato $\frac{wB}{-R}$.
+Il primo inconveniente con questo metodo si ha quando $R<0$: il tempo di maturazione\footnote{Tempo medio necessario espresso in numero di blocchi per ricevere il pagamento da parte della pool.} diventa tanto più elevato quanto $R$ si riduce, essendo approssimabile a $\frac{-R}{B}$.
+Il secondo problema è che sicuramente il buffer prima o poi raggiungerà livelli arbitrariamente bassi ovvero, se la pool continua ad operare indefinitamente, esiste una probabilità del 100\% che ad un certo punto il buffer sarà di $-1000$ BTC, ma anche che in un altro momento sarà $-10000$ BTC e via dicendo. Quando il debito diventa sufficientemente alto, il tempo di maturazione sarà talmente elevato che probabilmente i minatori non vedranno mai alcun pagamento, abbandoneranno la pool aggravando quindi il problema, in quanto riducendo l'hashrate aumenta il tempo necessario per trovare un blocco e di conseguenza il tempo di maturazione quando misurato in tempo reale. Quando questa spirale distruttiva entra in scena, chiunque abbia un qualche credito con la pool non lo vedrà mai saldato.
+Un terzo problema è che tale collasso accadrà prima del previsto: inefficienze quali blocchi invalidi, sabotaggi, shares non aggiornate (quando pagate) e via dicendo non fanno altro che ridurre il guadagno atteso da ogni share, provocando un lento ma inesorabile declino del livello del buffer.
+Infine, questo metodo non è immune da hopping: mentre il pagamento atteso per ogni share è in teoria fisso, il tempo di maturazione non lo è. Lavorare per la pool mentre il buffer è positivo è conveniente in quanto è essenzialmente una PPS senza tariffe, quando il buffer è negativo non è conveniente a causa dell'elevato tempo di maturazione, per cui i minatori tenderanno a lavorare in situazioni di buffer pieno e ad abbandonare la pool altrimenti, lasciando ai minatori onesti tutto il peso del buffer vuoto e invogliando anche essi a lasciare la pool per lidi più feritili.
 
-\section{Attacchi (??? spostare in sicurezza????)}
+\subsection{Equalized shared maximum Pay-Per-Share (ESMPPS)}
+
+Si tratta di una variante del metodo precedente basata sull'idea che un seppur minimo pagamento per la share vada elargito appena possibile, mettendo in secondo piano il pagamento completo.
+In tale metodo, la pool tiene traccia di tutte le share inviate e quanto è dovuto per ognuna di essere. Tali shares vengono pagate in toto fino a quando la pool ha sufficienti fondi, in caso ciò non sia possibile appena viene trovato un blocco la ricompensa viene divisa tra tutte le share in modo da massimizzare il pagamento minimo elargito ad ognuna di esse (ovvero, si da la priorità alle share che sono state pagate di meno).
+Grazie a questo meccanismo, anche se il pagamento dovuto diventa molto grande, le nuove share possono velocemente raggiungere il livello di pagamento di quelle più vecchie. Ma una volta che tale livello di pagamento diventa sufficientemente alto è molto difficile che tale livello aumenti ulteriormente, per cui è molto difficile che la pool saldi al 100\% i suoi debiti\footnote{In effetti, gli operatori di tali pool non considerano il pagamento completo un obiettivo raggiungibile, ma puntano piuttosto a valori attorno al 97\%}. Come conseguenza, il tempo di maturazione di questo metodo è di fatto infinito.
+Il vantaggio di ESMPPS sta nel modo graduale con cui gestisce le perdite. Le inefficienze riducono il livello di pagamento a cui le share si avvicinano, ma il buffer non risulta essere in drastico declino come in SMPPS. Cionondimeno, anche questo buffer raggiungerà sicuramente livelli molto bassi, oltre al fatto che non è resistente al pool-hopping.
+
+\section{Attacchi}
+
+\subsection{Pool-Hopping}
+
+Una pool vulnerabile a tale attacco possiede caratteristiche di attrattività per il mining, in termini di guadagno atteso, varianza e tempo di maturazione, che variano nel tempo. Il pool-hopping è quindi una tecnica per sfruttare le circostanze favorevoli che consiste nel collegarsi ad una pool quando l'attrattiva è alta ed allontanarsene quando è bassa, portando grandi benefici al pool-hopper a discapito di quei minatori che rimangono collegati anche nei momenti di minore attrattività.
+Essere costantemente collegati ad una pool vulnerabile è dunque svantaggioso, ma uno scenario in qui il pool-hopping è la normalità è altrettanto insostenibile: prima o poi ogni pool vulnerabile entrerà in uno stato tale da risultare meno attrattiva di una non vulnerabile e quando ciò accade tale pool è destinata a morte certa. L'unico sistema sostenibile è quello in cui ogni minatore opera in solitario o in una pool invulnerabile o quantomeno estremamente resistente al pool-hoppin.\\\\
+Nella sua forma più tradizione il pool-hopping si attua sfruttando la ricompensa più elevata elargita per aver minato in round brevi nelle pool proporzionali e nelle pool Slush.
+Può anche essere attuato nelle pool che utilizzano una qualche forma di buffer: minore il buffer, minore l'attrattiva. Nelle SMPPS i pool-hoppers possono ridurre il loro tempo di maturazione collegandosi solo nei momenti in cui il buffer risulta positivo,
+In alcune implementazioni ingenue basate su punteggi che tengono conto di fattori temporanei (e non unicamente su shares e blocchi), l'attacco è reso possibile in base alle fluttuazioni dell'hashrate complessivo della pool. Generalmente è più profittevole collegarsi quando l'hashrate attuale è più alto della media.
+
+\subsection{Sottrazione di blocchi}
+
+Con l'attuale implementazione del protocollo, un minatore è in grado di riconoscere in modo autonomo se una share da lui trovata è o meno un blocco. Un attaccante potrebbe dunque inviare ad una pool solo le share che non sono blocchi per intascare la relativa ricompensa da parte della pool, ma trattenere per se o dilazionare l'invio nel caso in cui la share sia un blocco valido. Questo comportamento può essere usato per portare due tipi di attacchi, sabotaggi e imboscate.
+
+\subsection{Sabotaggi}
+
+L'attacco più semplice, in cui l'attaccante non invia mai la share/blocco trovata.
+In un sistema di ricompensa senza rischio per l'operatore, ogni partecipante, attaccante compreso, perde una parte delle sua ricompensa uguale alla porzione di hashrate dell'attaccante, ovvero in media ogni minatore riceve $(1-f)\left(1-\frac{h}{H}\right)pB$ a share. La perdita può essere significativa, ma dato che è difficile da rilevare potrebbe non causare una fuga dalla pool o altri danni a lungo termine.
+Se il sistema di ricompensa prevede un rischio per l'operatore, l'intera perdita ricade sulle sue spalle. In media egli guadagnare $\left(f-\frac{h}{H}\right)pB$ per ogni share e, dato che $f$ è solo una piccola percentuale, il risultato potrebbe benissimo essere negativo, portando la pool alla bancarotta.
+
+\subsection{Imboscata}
+
+In questo vantaggioso attacco si ritarda l'invio del blocco appena trovato e si sfrutta la propria conoscenza dell'imminente ritrovamento da parte di altri per focalizzare il proprio lavoro dove più conviene.
+Se $T_0 = 10$ min. è il tempo medio necessario per trovare un blocco, si assuma che esistano $m$ pool PPLNS con parametro finestra $X=1$ e hashrate $H$, e che l'attaccante lavori contemporaneamente in ogni pool con hashrate $h$ (\emph{fase di attesa}). Ogniqualvolta trova un blocco, il minatore concentra tutta la sua potenza di calcolo sulla pool in cui lo ha trovato (\emph{imboscata}) e, dopo un certo tempo $T$ invii il blocco e ricominci a minare in tutte le pool tornando alla fase di attesa. Se un altro blocco è trovato durante la fase di attacco (rendendo quindi il suo blocco invalido), torna alla fase di attesa.
+Le probabilità di avere successo nell'imboscata (ovvero le probabilità che non venga trovato un altro blocco durante l'intervallo $T$) è $e^\frac{-T}{T_0} \approx 1 - \frac{T}{T_0}$. Durante l'imboscata troverà in media $mhT2^{-32}$ shares ognuna delle quali vale circa $pB$ più della norma, perché verrà ricompensato sia per il blocco imminente che sta per inviare sia per tutti i blocchi futuri. Comunque, ritardare l'invio del blocco fa decadere le shares esistenti nella pool per un valore totale approssimativamente di $\frac{pBhT}{H}(H + (m-1)h) \approx pBhT2^{-32}$. Nel caso l'imboscata fallisca, non ricaverà nessun extra ma il valore delle shares sarà comunque diminuito, causandogli una perdita di circa $pBhT2^{-32}$ dato che il tempo per trovare il prossimo blocco è in media approssimabile a $\frac{T}{2}$.
+A conti fatti, il valore atteso dall'imboscata è dunque
+\[pBh2^{-32}\left(\left(1-\frac{T}{T_0}\right)\left(mT-T\right) - \frac{T}{T_0}\frac{T}{2}\right)\]
+Se $T=\frac{m-1}{2m-1}T_0$ tale valore raggiunge il suo massimo $pBh2^{-32}\frac{(m-1)^2}{4m-2}T_0 \approx pBh2^{-34}mT_0$. L'hashrate totale della rete è $H_0=\frac{2^{32}D}{T_0}$, il che porta il valore atteso ad essere equivalente a $\frac{mhB}{4H_0}$, dove $mh$ è l'hashrate dell'attaccante.
+Ogni share trovata dall'attaccante ha un probabilità $p$ di essere un blocco valido e rendere fattibile un'imboscata, per cui la ricompensa attesa per ogni share risulta essere $pB\left(1 + \frac{mh}{4H_0}\right)$.
+
+\subsection{Contromisura: Share Offuscate}
+
+Una soluzione che prevede la modifica del protocollo Bitcoin consiste nella creazioni di share offuscate, ovvero share che, quando trovate dai minatori, non possono essere identificate come blocchi validi.    Rosenfeld propone la seguente implementazione per le share offuscate.
+\begin{itemize}
+    \item Ogni blocco ha tre campi associati:\verb|SecretSeed|, \verb|ExtraHash| e \verb|SecretHash|.
+      \begin{description}
+          \item[\verb|ExtraHash|] è l'hash di \verb|SecretSeed|, sarà parte dell'header del blocco ed uno dei campi utilizzati per calcolare l'hash del blocco.
+          \item[\verb|SecretHash|] è l'hash della concatenazione del blocco dell'hash con \verb|SecretSeed|.
+      \end{description}
+    \item Perché un blocco sia valido, invece di richiedere che il suo hash sia minore di $\frac{2^256}{2^32 D}$, si richiede che l'hash del blocco sia minore di $\frac{2^256}{2^32}$ e che \verb|SecretHash| sia minore di $\frac{2^256}{D}$.
+\end{itemize}
+L'operatore di una pool sceglierà \verb|SecretSeed| e lo manterrà segreto, calcolerà \verb|ExtraHash| e lo invierà ai minatori insieme agli altri campi che compongono l'hash del blocco. I minatori possono calcolare l'hash del blocco, verificare che sia minore di $\frac{2^256}{2^32}$ (il che accade con una probabilità di $2^{-32}$) e in tal caso inviarlo come una share. Non hanno idea se quella share sia un blocco o meno, in quanto non hanno accesso a \verb|SecretSeed| e non possono calcolare \verb|SecretHash|. L'operatore che riceve le share conosce \verb|SecretSeed|, calcola \verb|SecretHash| e se esso è inferiore a $\frac{2^256}{D}$ (probabilità $p$), allora la share è un blocco valido che verrà inoltrato nella rete.

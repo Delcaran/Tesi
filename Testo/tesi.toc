@@ -97,12 +97,17 @@
 \contentsline {section}{\numberline {5.4}Pay-per-share privo di rischi}{79}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Maximum Pay-Per-Share (MPPS)}{79}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Shared maximum Pay-Per-Share (SMPPS)}{80}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}Attacchi (??? spostare in sicurezza????)}{80}{section.5.5}
-\contentsline {chapter}{\numberline {6}Argomenti correlati}{81}{chapter.6}
-\contentsline {section}{\numberline {6.1}Deflazione}{81}{section.6.1}
-\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{83}{appendix.A}
-\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{85}{appendix.B}
-\contentsline {chapter}{Bibliografia}{87}{appendix*.22}
+\contentsline {subsection}{\numberline {5.4.3}Equalized shared maximum Pay-Per-Share (ESMPPS)}{81}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Attacchi}{82}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Pool-Hopping}{82}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Sottrazione di blocchi}{83}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Sabotaggi}{83}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Menzogne}{83}{subsection.5.5.4}
+\contentsline {chapter}{\numberline {6}Argomenti correlati}{85}{chapter.6}
+\contentsline {section}{\numberline {6.1}Deflazione}{85}{section.6.1}
+\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{87}{appendix.A}
+\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{89}{appendix.B}
+\contentsline {chapter}{Bibliografia}{91}{appendix*.22}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}
