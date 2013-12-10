@@ -194,11 +194,10 @@ Ogni share trovata dall'attaccante ha un probabilità $p$ di essere un blocco va
 
 Una soluzione che prevede la modifica del protocollo Bitcoin consiste nella creazioni di share offuscate, ovvero share che, quando trovate dai minatori, non possono essere identificate come blocchi validi.    Rosenfeld propone la seguente implementazione per le share offuscate.
 \begin{itemize}
-    \item Ogni blocco ha tre campi associati:\verb|SecretSeed|, \verb|ExtraHash| e \verb|SecretHash|.
-      \begin{description}
-          \item[\verb|ExtraHash|] è l'hash di \verb|SecretSeed|, sarà parte dell'header del blocco ed uno dei campi utilizzati per calcolare l'hash del blocco.
-          \item[\verb|SecretHash|] è l'hash della concatenazione del blocco dell'hash con \verb|SecretSeed|.
-      \end{description}
+    \item Ogni blocco ha tre campi associati:\verb|SecretSeed|, \verb|ExtraHash| e \verb|SecretHash|. \verb|ExtraHash| ] è l'hash di \verb|SecretSeed|, sarà parte dell'header del blocco ed uno dei campi utilizzati per calcolare l'hash del blocco. \verb|SecretHash| è l'hash della concatenazione del blocco dell'hash con \verb|SecretSeed|.
     \item Perché un blocco sia valido, invece di richiedere che il suo hash sia minore di $\frac{2^256}{2^32 D}$, si richiede che l'hash del blocco sia minore di $\frac{2^256}{2^32}$ e che \verb|SecretHash| sia minore di $\frac{2^256}{D}$.
 \end{itemize}
 L'operatore di una pool sceglierà \verb|SecretSeed| e lo manterrà segreto, calcolerà \verb|ExtraHash| e lo invierà ai minatori insieme agli altri campi che compongono l'hash del blocco. I minatori possono calcolare l'hash del blocco, verificare che sia minore di $\frac{2^256}{2^32}$ (il che accade con una probabilità di $2^{-32}$) e in tal caso inviarlo come una share. Non hanno idea se quella share sia un blocco o meno, in quanto non hanno accesso a \verb|SecretSeed| e non possono calcolare \verb|SecretHash|. L'operatore che riceve le share conosce \verb|SecretSeed|, calcola \verb|SecretHash| e se esso è inferiore a $\frac{2^256}{D}$ (probabilità $p$), allora la share è un blocco valido che verrà inoltrato nella rete.
+
+
+%TODO: forse potrei aggiungere l'ultimo capitolo sui metodi di ricompensa non standard, in caso più avanti
