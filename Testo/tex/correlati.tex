@@ -1,5 +1,108 @@
 \chapter{Argomenti correlati}
 
+\section{Scripting}\label{transaction-scripting}
+
+Le transazioni Bitcoin contengono un potenziale nascosto che non viene ancora sfruttato dalle attuali implementazioni del client.
+Alcuni campi delle transazioni possono infatti contenere piccoli script scritti in un linguaggio di programmazione Forth-like basato su stack valutato da sinistra verso destra, e di fatto nelle implementazioni attuali contengono script per la verifica della correttezza delle transazioni. Il linguaggio di scripting è descritto in \cite{bitcoin-scripting-api} ed offre funzioni crittografiche quali \verb|SHA1|, che rimpiazza l'elemento in cima allo stack con il suo hash, e \verb|CHECKSIG| che estrae una chiave pubblica ECDSA e la relativa firma dallo stack, verifica la firma per un messaggio implicitamente definito dai dati della transazione e carica il risultato (vero o falso) nello stack.\\\\
+In una transazione standard da un nodo ad un altro nodo (transazione \verb|pay-to-pubkey-hash|), nella parte di input è presente un campo \verb|scriptSig| contenente \verb|<sig> <pubKey>| dove \verb|pubKey| è la chiave pubblica dell'autore della transazione (che dimostra così di essere abilitato a spendere le BTC a cui si riferisce la transazione con gli altri suoi campi) mentre \verb|sig| è la firma ECDSA di un hash di una versione semplificata\footnote{Come la transazione viene semplificata è deciso da alcuni flag e permette di creare vari tipi di transazioni. Vedere la sezione \ref{contratti}.} della transazione (la quale, combinata con \verb|pubKey| prova che la transazione è stata creata dall'attuale possessore dell'indirizzo).
+Nella parte di output è invece presente il campo \verb|scriptPubKey| che contiene lo script \verb|OP_DUP OP_HASH160 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG| dove \verb|pubKeyHash| è l'indirizzo del destinatario della transazione.\\
+La verifica di tale transazione avviene secondo la procedure illustrata nella tabella \ref{table:pay-to-pubkey-hash}.
+
+\begin{table}
+  \centering
+  \label{table:pay-to-pubkey-hash}
+  \begin{tabular}{m{0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep}}
+    \hline
+    Stack&Script&Descrizione \\
+    \hline
+    \verb||&\verb|<sig>| \verb|<pubKey>| \verb|OP_DUP| \verb|OP_HASH160| \verb|<pubKeyHash>| \verb|OP_EQUALVERIFY| \verb|OP_CHECKSIG|&Unisco \verb|scriptSig| e \verb|scriptPubKey| creando lo script da analizzare  \\ \hline
+    \verb|<sig>| \verb|<pubKey>|&\verb|OP_DUP| \verb|OP_HASH160| \verb|<pubKeyHash>| \verb|OP_EQUALVERIFY| \verb|OP_CHECKSIG|&Carico nello stack la firma della transazione e la chiave pubblica del mittente \\ \hline
+    \verb|<sig>| \verb|<pubKey>| \verb|<pubKey>|&\verb|OP_HASH160| \verb|<pubKeyHash>| \verb|OP_EQUALVERIFY| \verb|OP_CHECKSIG|&Duplico l'elemento in cima allo stack (servirà due volte) \\ \hline
+    \verb|<sig>| \verb|<pubKey>| \verb|<pubHashA>|&\verb|<pubKeyHash>|&Calcolo l'hash dell'elemento in cima allo stack e lo carico nello stack stesso \\ \hline
+    \verb|<sig>| \verb|<pubKey>| \verb|<pubHashA>| \verb|<pubKeyHash>|&\verb|OP_EQUALVERIFY| \verb|OP_CHECKSIG|&Carico nello stack la chiave pubblica del destinatario \\ \hline
+    \verb|<sig>| \verb|<pubKey>|&\verb|OP_CHECKSIG|&Verifico che i due elementi in cima allo stack siano uguali \\ \hline
+    \verb|true|&\verb||&Verifico la firma e salvo il risultato nello stack \\ \hline
+  \end{tabular}
+  \caption{Passaggi della verifica di una transazione standard tra due utenti.}
+\end{table}
+
+L'altra transazione standard accettata dall'implementazione attuale è quella con cui si pagano le ricompense derivanti dal ritrovamento di un blocco, \verb|pay-to-pubkey|. Non essendoci un indirizzo sorgente o una transazione in input, i valori dei campi sono più ridotti: \verb|scriptPubKey| contiene \verb|<pubKey> OP_CHECKSIG| mentre \verb|scriptSig| contiene unicamente \verb|<sig>|. Il funzionamento di questo script è descritto nella tabella \ref{table:pay-to-pubkey}.
+
+\begin{table}
+  \centering
+  \label{table:pay-to-pubkey}
+  \begin{tabular}{m{0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep}}
+    \hline
+    Stack&Script&Descrizione \\
+    \hline
+    \verb||&\verb|<sig>| \verb|<pubKey>| \verb|OP_CHECKSIG|&Unisco \verb|scriptSig| e \verb|scriptPubKey| creando lo script da analizzare  \\ \hline
+    \verb|<sig>| \verb|<pubKey>|&\verb|OP_CHECKSIG|&Carico nello stack la firma della transazione e la chiave pubblica del destinatario \\ \hline
+    \verb|true|&\verb||&Verifico la firma e salvo il risultato nello stack \\ \hline
+  \end{tabular}
+  \caption{Passaggi della verifica di una transazione standard di generazione di BTC.}
+\end{table}
+
+Con il linguaggio di scripting è anche possibile effettuare alcune transazioni particolari non ancora considerate standard. Ad esempio è possibile creare una transazione il cui output non è spendibile semplicemente inserendo all'inizio di \verb|scriptPubKey| il comando \verb|OP_RETURN|, il quale termina subito l'esecuzione dello script rendendo la transazione non utilizzabile in un futuro input in quanto il contenuto di \verb|scriptSig| diventa inutile. Esiste un esempio di tale tipo di transazione\footnote{\url{https://blockexplorer.com/tx/eb31ca1a4cbd97c2770983164d7560d2d03276ae1aee26f12d7c2c6424252f29}} che avendo l'unico output impostato a 0, lascia l'intero ammontare di 0.125 BTC come transaction fee al minatore che troverà il blocco.\\
+Dal lato opposto, è anche possibile creare transazioni spendibili da chiunque\footnote{Un motivo per utilizzare in futuro questo tipo di transazioni è illustrato nel Wiki all'indirizzo \url{https://en.bitcoin.it/wiki/Fidelity_bonds}.} lasciando vuoto \verb|scriptPubKey| e inserendo \verb|OP_TRUE| in \verb|scriptSig|.\\
+Un ulteriore esempio delle potenzialità dello scripting è la creazione di alcuni puzzle crittografici che devono essere risolti per poter spendere le BTC\. Esiste un esempio \footnote{\url{https://blockexplorer.com/tx/a4bfa8ab6435ae5f25dae9d89e4eb67dfa94283ca751f393c1ddc5a837bbc31b}} in cui si richiede di trovare qualche dato tale che, sottoposto due volte ad hash, risulti uguale ad un dato fornito. La tabella \ref{table:puzzle-transaction} illustra l'esecuzione di un simile script.
+
+\begin{table}
+  \centering
+  \label{table:puzzle-transaction}
+  \begin{tabular}{m{0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep}}
+    \hline
+    Stack&Script&Descrizione \\
+    \hline
+    \verb||&\verb|<data>| \verb|OP_HASH256| \verb|<given_hash>| \verb|OP_EQUAL|&Unisco \verb|scriptSig| e \verb|scriptPubKey| creando lo script da analizzare  \\ \hline
+    \verb|<data>|&\verb|OP_HASH256| \verb|<given_hash>| \verb|OP_EQUAL|&Carico nello stack \verb|scriptSig| \\ \hline
+    \verb|<data_hash>|&\verb|<given_hash>| \verb|OP_EQUAL|&Calcolo l'hash del dato \\ \hline
+    \verb|<data_hash>| \verb|<given_hash>|&\verb|OP_EQUAL|&Carico nello stack l'hash di confronto \\ \hline
+    \verb|true|&\verb||&Confronto i due hash \\ \hline
+  \end{tabular}
+  \caption{Passaggi della verifica di una transazione di esempio contente un puzzle.}
+\end{table}
+
+\subsection{Contratti}\label{contratti}
+
+\section{Statistiche}
+
+Le tecniche descritte in \ref{quantificazione-della-privacy} sono state utilizzate dai ricercatori Dorit Ron e Adi Shamir del Weizmann Institute of Science di Israele per condurre alcune analisi statistiche sulla rete delle transazioni Bitcoin dalla prima transazione del 3 Gennaio 2009 al 13 Maggio 2012. I risultati da loro trovati verranno qui esposti in forma sintetica sotto forma di punti solo come nota informativa di alcune proprietà della rete, in quanto la trattazione è ormai vecchia di quasi 2 anni, durante i quali il mondo Bitcoin si è espanso esponenzialmente, minando la corrispondenza di tali statistiche con l'attuale realtà. I risultati completi sono disponibili in \cite{transazioni}. Statistiche aggiornate sono invece disponibili in tempo reale presso \cite{blockchain-info}.\\
+
+Prima di esporre i risultati è importante specificare alcune osservazioni fatte dagli stessi osservatori. Come descritto in \ref{quantificazione-della-privacy}, il grafo delle transazioni viene chiamato \emph{grafo degli indirizzi} mentre il grafo derivato dall'unificazione degli indirizzi prende il nome di \emph{grafo delle entità}, il quale è per forza di cose un risultato approssimato e potrebbe essere vittima di due stime errate. È possibile infatti che si sia verificata una sottostima nell'assegnazione di un indirizzo ad una entità nel caso in cui non ci siano abbastanza dati (transazioni) per associare tale indirizzo ad una entità, ma è anche possibile sovrastimare il numero di entità nel caso in cui molti utenti abbiano deciso di unificare le loro attività in una unica transazione a cui ciascuno di essi contribuisce con il proprio indirizzo. Avendone parlato con gli stessi sviluppatori Bitcoin, i ricercatori hanno stabilito che gli errori di sovrastima sono estremamente ridotti, ma potrebbero essere stati commessi alcune sottostime, come già rilevato in \ref{quantificazione-della-privacy}.\\
+
+I risultati più rilevanti della trattazione sono i seguenti:
+\begin{itemize}
+    \item I dati analizzati contano 3730218 indirizzi distinti, dei quali 609270 compaiono solo come destinatari di transazioni.
+    \item I 3120948 indirizzi che inviano BTC sono stati aggregati in 1851544 entità distinte, che unite agli indirizzi unicamente destinatari, porta il totale delle entità a 2460814.
+    \item Esiste una varianza notevole nelle statistiche a causa di una sola entità che possiede 156722 indirizzi. L'entità in questione è l'exchange Mt. Gox, responsabile all'epoca di circa il 90\% del totale degli acquisti di BTC.
+    \item Dato che il bilancio medio di un indirizzo è di 2.4 BTC, e quello di una entità è 3.7 BTC, a causa degli errori sopra descritti si stima che il bilancio medio di un utente sia superiore alle 3.7 BTC.
+    \item All'epoca dell'analisi esistevano 9000050 BTC, generati dai 180001 blocchi analizzati, ma sommando i bilanci degli indirizzi che hanno solo ricevuto BTC si vede che essi contengono 7019100 BTC, ovvero il 78\% del totale.
+      \begin{itemize}
+          \item Di queste, il 76.5\% (il 59.7\% del totale) sono \emph{vecchie BTC}, nel senso che sono state ricevute più di tre mesi prima del 13 Maggio 2012 e che non sono mai state spese fino a tale data.
+          \item Alcune di queste monete potrebbero essere smarrite o abbandonate da utenti che muovevano i loro primi passi nel mondo ancora acerbo di Bitcoin, e non per forza BTC accumulate per avidità.
+          \item Per precauzione Dorit e Adi hanno deciso di ignorare tutte le transazioni precedenti il 18 Luglio 2010, data di apertura di Mt. Gox, portando il numero di monete \emph{sparite} dalla rete a 1657480.
+          \item Ripetendo i calcoli, il 73\% di tutte le BTC rimanenti è depositato in indirizzi dormienti, e il 70\% di tali indirizzi (il 51\% del totale) risultano vecchie.
+      \end{itemize}
+    \item Calcolando in base agli indirizzi invece che in base alle transazioni, risulta che il 55\% di tutte le BTC è dormiente, dato non affetto da eventuali errori di stima precedentemente descritti.
+    \item Il numero totale di BTC coinvolte in transazioni fino al 13 Maggio 2012 è di 423287950 (mining escluso).
+    \item Il 52\% delle entità (59\% degli indirizzi) hanno ricevuto meno di 10 BTC, e l'88\% delle entità (91\% degli indirizzi) meno di 100 BTC.
+    \item 76 entità (129 indirizzi) hanno ricevuto tra le 400000 e le 800000 BTC e solo quattro entità (un indirizzo) hanno ricevuto più di 800000 BTC.
+    \item Al 13 Maggio 2012 il bilancio del 97\% (98\%) di tutte le entità (indirizzi) è minore di 10 BTC. I valori cambiano a 88\% (91\%) se si considera il valore massimale mai raggiunto durante l'intera vita dell'entità (indirizzo).
+    \item Solo 78 entità e 70 indirizzi hanno un bilancio finale maggiore di 10000 BTC. I numeri aumentano a 3812 entità e 3876 indirizzi se si osserva il bilancio massimale.
+    \item Il 97\% (98\%) delle entità (indirizzi) hanno meno di 10 transazioni a testa, mentre 75 entità e 80 indirizzi ne hanno almeno 5000.
+    \item La maggior parte delle transazioni sono piccole:
+      \begin{itemize}
+          \item Il 28\% delle transazioni nel grafo delle entità (47\% in quello degli indirizzi) muove meno di 0.1 BTC.
+          \item Il 73\% delle transazioni nel grafo delle entità (84\% in quello degli indirizzi) muove meno di 10 BTC.
+          \item Esistono solo 364 transazioni nel grafo delle entità (340 in quello degli indirizzi) che muovono più di 50000 BTC.
+      \end{itemize}
+    \item Mt. Gox possiede il maggior numero di indirizzi (156722) ma non il maggior numero di transazioni (477526).
+    \item Una entità non meglio identificata che possede il secondo maggior numero di indirizzi (il 50\% di quelli di Mt. Gox, ovvero 246012) ha ricevuto il 31\% in più di BTC rispetto a Mt. Gox (2886650 contro 2206170).
+    \item La pool Deepbit ha generato il 70\% di transazioni in più rispetto a Mt. Gox (814044 in totale), pur possendo solo due indirizzi.
+\end{itemize}
+
+Un fatto interessante riguarda le transazioni con più di 50000 BTC. Esse sono esattamente 364, la prima delle quali datata 8 Novembre 2010 e valente 90000 BTC. Tracciando il flusso delle altre 363, i ricercatori si sono resi conto che 348 sono in realtà successori della prima grande transazione di Novembre. Il grafo che descrive tale transazione mostra catene di transazioni molto lunghe, suddivisione e riunificazioni di BTC e self-loop, tutti descritti nel dettaglio in \cite{transazioni} e molto probabilmente effettuati nel tentativo (evidentemente infruttuoso) di mascherare la destinazione e la provenienza del denaro.
+
 \section{Deflazione}\label{deflazione}
 
 Come si è detto, Bitcoin è un sistema monetario privo di inflazione, in quanto nessuna entità centrale può emettere moneta.
@@ -7,7 +110,14 @@ Esiste però una elevatissima propensione alla deflazione\footnote{Diminuzione g
 Dato il loro estremo valore in rapporto alle monete circolanti, le BTC tendono ad essere accumulate invece che spese sparendo quindi dal sistema dal punto di vista economico. Stessa fine fanno le monete per le quali è stata persa la chiave privata che permetteva loro di essere spese.
 Mano a mano che le BTC spariscono dalla circolazione (per volontà o incidente), diminuisce il volume delle transazioni, quindi anche il numero di blocchi generati nell'unità di tempo e di conseguenza il numero di nuove monete introdotte in circolazione, il quale viene già dimezzato ad intervalli programmati in modo da generare in assoluto al massimo 21 milioni di BTC.
 L'attrattiva della creazione di nuovi blocchi diventa quindi via via sempre più ridotta, in quanto non solo ci saranno meno BTC generate, ma anche meno tasse da parte degli utenti a causa delle minori transazioni.
-Se la circolazione di BTC si riduce troppo, potrebbe verificarsi una perdita di interesse nel sistema, il che si traduce in un numero sempre minore di miners e quindi di ``verificatori'' per le transazioni, fino al punto in cui il sistema è diventato troppo debole per potersi difendere da fork nella blockchain o altri attacchi.\\\\
+Se la circolazione di BTC si riduce troppo, potrebbe verificarsi una perdita di interesse nel sistema, il che si traduce in un numero sempre minore di miners e quindi di ``verificatori'' per le transazioni, fino al punto in cui il sistema è diventato troppo debole per potersi difendere da fork nella blockchain o altri attacchi.\\
 Purtroppo non esistono contromisure pratiche per il rischio di deflazione, e l'unico modo per rendere Bitcoin resistente a tale pericolo consiste nel rendere consapevoli gli utenti ed in particolare i minatori di quanto importante sia il loro contributo per la salvaguardia del loro stesso denaro.\\
 Si può però imparare da Bitcoin per una futura moneta elettronica che sia resistente alla deflazione integrando un sistema di feedback per controllare il tasso di mining globale, in modo che rifornire il sistema nel caso la circolazione diminuisca.
 
+\section{Esempi reali ???titolo da cambiare}
+
+\subsection{Distributore automatico}
+
+\subsection{Bancomat}
+
+\subsection{Silkroad ??FORSE???}

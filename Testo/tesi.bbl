@@ -13,6 +13,10 @@
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
 \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {bitcoin-scripting-api}
+\btxtitlefont {\btxifchangecase {Bitcoin script}{Bitcoin Script}}.
+\newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Script}}.
+
 \bibitem {bitcoin_wiki}
 \btxtitlefont {\btxifchangecase {Bitcoin wiki}{Bitcoin Wiki}}.
 \newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/}}.
