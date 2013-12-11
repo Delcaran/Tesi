@@ -20,10 +20,10 @@
 \contentsline {section}{\numberline {2.5}Network}{15}{section.2.5}
 \contentsline {section}{\numberline {2.6}Risorse necessarie}{16}{section.2.6}
 \contentsline {section}{\numberline {2.7}Gestione dei valori}{19}{section.2.7}
-\contentsline {section}{\numberline {2.8}Analisi della rete}{20}{section.2.8}
+\contentsline {section}{\numberline {2.8}Analisi della rete}{21}{section.2.8}
 \contentsline {subsection}{\numberline {2.8.1}Topologia}{21}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}Propagazione delle informazioni}{21}{subsection.2.8.2}
-\contentsline {subsection}{\numberline {2.8.3}Informazioni scomparse}{25}{subsection.2.8.3}
+\contentsline {subsection}{\numberline {2.8.2}Propagazione delle informazioni}{22}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Informazioni scomparse}{24}{subsection.2.8.3}
 \contentsline {section}{\numberline {2.9}Fork della blockchain}{26}{section.2.9}
 \contentsline {subsection}{\numberline {2.9.1}Creazione del modello}{26}{subsection.2.9.1}
 \contentsline {subsection}{\numberline {2.9.2}Misurazioni}{28}{subsection.2.9.2}
@@ -106,16 +106,16 @@
 \contentsline {subsection}{\numberline {5.5.5}Contromisura: Share Offuscate}{84}{subsection.5.5.5}
 \contentsline {chapter}{\numberline {6}Argomenti correlati}{85}{chapter.6}
 \contentsline {section}{\numberline {6.1}Scripting}{85}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Contratti}{88}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Statistiche}{88}{section.6.2}
-\contentsline {section}{\numberline {6.3}Deflazione}{90}{section.6.3}
-\contentsline {section}{\numberline {6.4}Esempi reali ???titolo da cambiare}{91}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Distributore automatico}{91}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Bancomat}{91}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Silkroad ??FORSE???}{91}{subsection.6.4.3}
-\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{93}{appendix.A}
-\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{95}{appendix.B}
-\contentsline {chapter}{Bibliografia}{97}{appendix*.25}
+\contentsline {subsection}{\numberline {6.1.1}Contratti}{90}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Statistiche}{91}{section.6.2}
+\contentsline {section}{\numberline {6.3}Deflazione}{93}{section.6.3}
+\contentsline {section}{\numberline {6.4}Esempi reali ???titolo da cambiare}{94}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Distributore automatico}{94}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Bancomat}{94}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Silkroad ??FORSE???}{94}{subsection.6.4.3}
+\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{95}{appendix.A}
+\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{97}{appendix.B}
+\contentsline {chapter}{Bibliografia}{99}{appendix*.25}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}

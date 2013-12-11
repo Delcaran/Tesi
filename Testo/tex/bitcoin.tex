@@ -135,16 +135,16 @@ Da questo si può dedurre un fatto importante che distingue la rete bitcoin dall
 
 \section{Gestione dei valori}\label{gestione-dei-valori}
 
-Anche se è possibile trattare le monete una ad una, è improponibile fare una transazione per ogni singolo centesimo. Per la divisione degli importi, le transazioni contengono molteplici input e output. In una transazione normale si avranno o un singolo input proveniente da una grande transazione precedente oppure più input provenienti da più transazioni piccole precedenti, e al massimo due output: uno per il pagamento vero e proprio e uno per restituire il resto, se presente, al mittente.
+Anche se è possibile trattare le monete una ad una, è improponibile fare una transazione per ogni singolo centesimo. Per la divisione degli importi, le transazioni contengono molteplici input e output. Nella maggior parte delle transazioni da indirizzo ad indirizzo si avranno o un singolo input proveniente da una grande transazione precedente oppure più input provenienti da più transazioni piccole precedenti, e al massimo due output: uno per il pagamento vero e proprio e uno per restituire il resto, se presente, al mittente. È importante distinguere input e output dal pagamento effettuato ad un indirizzo: una transazione è infatti l'operazione tramite il quale uno ed un solo utente assegna una certa quantità di BTC prelevate da uno o più dei suoi indirizzi ad uno o più indirizzi anche non appartenenti allo stesso utente\footnote{Senza analizzare la rete come descritto in \ref{privacy} è infatti impossibile risalire al proprietario di un indirizzo.}. Per cui per ogni indirizzo a cui si desidera assegnare BTC si creerà una voce di output contenente l'indirizzo e il valore da assegnarli, ed inoltre se gli input e gli output differiscono verrà creato un ulteriore output per inviare il resto al creatore della transazione su un nuovo indirizzo appositamente creato.
 
-Chiarimo meglio il concetto:
+Riassumendo:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Un input è un riferimento ad un output di una precedente transazione   che contiene l'indirizzo di chi sta effettuando la transazione. Se ci   sono più input, l'importo degli output da loro referenziati viene   sommato ed il totale è il massimo valore utilizzabile dall'output.
 \item
-  Un output contiene l'indirizzo del destinatario e il valore da   spedire. Dato che, in una futura transazione, un output può essere   referenziato da un solo input, potrebbe verificarsi il caso in cui   l'input sia maggiore dell'output e della transaction fee desiderata.   In questo caso è necessario creare due output, uno con il valore da   spedire e l'indirizzo del destinatario, l'altro con la differenza da   restituire al mittente, il \textbf{resto}. La differenza tra il totale   degli input e il totale degli output è la transaction fee.
+  Un output contiene l'indirizzo del destinatario e il valore da   spedire. Dato che, in una futura transazione, un output può essere referenziato da un solo input, potrebbe verificarsi il caso in cui l'input sia maggiore dell'output e della transaction fee desiderata. In questo caso è necessario creare due output, uno con il valore da   spedire e l'indirizzo del destinatario, l'altro con la differenza da   restituire al mittente, il \textbf{resto}. La differenza tra il totale   degli input e il totale degli output è la transaction fee.
 \end{itemize}
 
 La situazione è visibile in \ref{bitcoinpropagation_1}.
@@ -157,7 +157,7 @@ La situazione è visibile in \ref{bitcoinpropagation_1}.
 
 Nonostante la stretta dipendenza tra le varie transazioni, non è necessario estrarre l'intero background di ogni input, in quanto la transazione verrà accettata solo se il blocco che contiene le transazioni con gli output referenziati dagli input è stato accettato dalla rete.
 
-Dato il valore elevato di una singola btc (che può variare da poche decine a migliaia di dollari) e le difficoltà inerenti nel trattare numeri in virgola mobile su un computer, l'unità di misura base della transazione non è il btc ma il Satoshi \footnote{dal ``nome''   dell'inventore di Bitcoin}, e 1 BTC = 100000000 Satoshi.
+Dato il valore elevato di una singola btc (che può variare da poche decine a centinaia di dollari) e le difficoltà inerenti nel trattare numeri in virgola mobile su un computer, l'unità di misura base della transazione non è il btc ma il Satoshi \footnote{dal ``nome''   dell'inventore di Bitcoin}, e 1 BTC = 100000000 Satoshi.
 
 Questo sistema del calcolo del valore di una transazione è lo stesso utilizzato dal software che gestisce il portafoglio per calcolare il proprio valore: per ogni indirizzo all'interno del portafogli, il software scansiona le transazioni presenti nella blockchain che contengono l'indirizzo in esame, somma i valori entranti nell'indirizzo, sottrae quelli uscenti e ricava il valore ``contenuto'' nell'indirizzo. Usando questo sistema, i possedimenti di un utente sono temporalmente limitati all'ultimo blocco accettato nella catena, e non è quindi possibile spendere moneta ricevuta da una transazione non ancora approvata \footnote{tecnicamente, nessuna moneta è ricevuta fin tanto   che la transazione non è approvata. L'utente non è nemmeno consapevole   della transazione a lui destinata fino ad avvenuta approvazione.}.
 
