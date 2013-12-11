@@ -152,6 +152,11 @@
 \newblock {\latintext
   \btxurlfont{http://medianet.kent.edu/technicalreports.html}}.
 
+\bibitem {bitcoin-contracts}
+\btxnamefont {\btxlastnamefont {Hearn}, Mike}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Bitcoin contracts}{Bitcoin Contracts}}.
+\newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Contracts}}.
+
 \bibitem {doublespendig_fast}
 \btxnamefont {\btxlastnamefont {Karame}, Ghassan}, \btxnamefont {Elli
   \btxlastnamefont {Androulaki}}\btxandcomma {} \btxandlong {}\ \btxnamefont
@@ -207,6 +212,13 @@
 \newblock satoshin@gmx.com.
 \newblock {\latintext \btxurlfont{www.bitcoin.org}}.
 
+\bibitem {how-bitcoin-actually-work}
+\btxnamefont {\btxlastnamefont {Nielsen}, Michael}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {How bitcoin actually work}{How Bitcoin
+  actually work}}.
+\newblock {\latintext
+  \btxurlfont{http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works/}}.
+
 \bibitem {anonimity}
 \btxnamefont {\btxlastnamefont {Reid}, Fergal} \btxandlong {}\ \btxnamefont
   {Martin \btxlastnamefont {Harrigan}}\btxauthorcolon\ \btxtitlefont
@@ -253,5 +265,11 @@
   {Christian \btxlastnamefont {Schmitt}}\btxauthorcolon\ \btxtitlefont {Core
   Concepts in Peer-to-Peer Networking}, \btxchapterlong {}~1.
 \newblock \btxpublisherfont {Idead Group Inc.}, 2005.
+
+\bibitem {nick-szabo}
+\btxnamefont {\btxlastnamefont {Szab\'{o}}, Nick}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Formalizing and securing relationships on public
+  networks}{Formalizing and Securing Relationships on Public Networks}}.
+\newblock {\latintext \btxurlfont{http://szabo.best.vwh.net/formalize.html}}.
 
 \end{thebibliography}

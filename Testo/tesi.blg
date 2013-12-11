@@ -19,45 +19,45 @@ Warning--to sort, need author or key in bitcoin_wiki
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty language in bitcoin-scripting-api
 Warning--empty journal in doublespending_hash
-You've used 25 entries,
+You've used 28 entries,
             2788 wiz_defined-function locations,
-            804 strings with 11114 characters,
-and the built_in function-call counts, 10141 in all, are:
-= -- 871
-> -- 344
+            816 strings with 11454 characters,
+and the built_in function-call counts, 10936 in all, are:
+= -- 937
+> -- 365
 < -- 14
-+ -- 135
-- -- 109
-* -- 1060
-:= -- 1366
-add.period$ -- 72
-call.type$ -- 25
-change.case$ -- 123
++ -- 144
+- -- 115
+* -- 1117
+:= -- 1480
+add.period$ -- 78
+call.type$ -- 28
+change.case$ -- 135
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 560
-empty$ -- 1037
-format.name$ -- 219
-if$ -- 2216
+cite$ -- 34
+duplicate$ -- 599
+empty$ -- 1139
+format.name$ -- 228
+if$ -- 2396
 int.to.chr$ -- 0
-int.to.str$ -- 25
+int.to.str$ -- 28
 missing$ -- 22
-newline$ -- 133
-num.names$ -- 50
-pop$ -- 225
+newline$ -- 145
+num.names$ -- 56
+pop$ -- 255
 preamble$ -- 1
-purify$ -- 100
+purify$ -- 109
 quote$ -- 0
-skip$ -- 314
+skip$ -- 350
 stack$ -- 0
-substring$ -- 331
-swap$ -- 251
+substring$ -- 346
+swap$ -- 263
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
+type$ -- 106
 warning$ -- 6
-while$ -- 63
-width$ -- 27
-write$ -- 303
+while$ -- 69
+width$ -- 30
+write$ -- 327
 (There were 6 warnings)

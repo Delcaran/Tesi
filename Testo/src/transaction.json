@@ -1,0 +1,44 @@
+{
+	"hash":"993830...",
+	"ver":1,
+	"vin_sz":3,
+	"vout_sz":2,
+	"lock_time":0,
+	"size":552,
+	"in":[
+		{
+			"prev_out":{
+				"hash":"3beabc...",
+				"n":0
+			},
+			"scriptSig":"304402... 04c7d2..."
+		},
+		{
+			"prev_out":{
+				"hash":"fdae9b...",
+				"n":0
+			},
+			"scriptSig":"304502... 026e15..."
+		},
+		{
+			"prev_out":{
+				"hash":"20c86b...",
+				"n":1
+			},
+			"scriptSig":"304402... 038a52..."
+		}
+	],
+	"out":[
+		{
+			"value":"0.01068000",
+			"scriptPubKey":
+				"OP_DUP OP_HASH160 e8c306... OP_EQUALVERIFY OP_CHECKSIG"
+		},
+		{
+			"value":"4.00000000",
+			"scriptPubKey":
+				"OP_DUP OP_HASH160 d644e3... OP_EQUALVERIFY OP_CHECKSIG"
+		}
+	]
+}
+
