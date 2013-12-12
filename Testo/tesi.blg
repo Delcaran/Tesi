@@ -8,6 +8,7 @@ A level-1 auxiliary file: ./tex/bitcoin.aux
 A level-1 auxiliary file: ./tex/privacy.aux
 A level-1 auxiliary file: ./tex/sicurezza.aux
 A level-1 auxiliary file: ./tex/mining.aux
+A level-1 auxiliary file: ./tex/scripting.aux
 A level-1 auxiliary file: ./tex/correlati.aux
 A level-1 auxiliary file: ./tex/appendice.aux
 The style file: babplain.bst
@@ -21,7 +22,7 @@ Warning--empty language in bitcoin-scripting-api
 Warning--empty journal in doublespending_hash
 You've used 28 entries,
             2788 wiz_defined-function locations,
-            816 strings with 11454 characters,
+            817 strings with 11473 characters,
 and the built_in function-call counts, 10936 in all, are:
 = -- 937
 > -- 365

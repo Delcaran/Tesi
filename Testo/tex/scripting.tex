@@ -120,6 +120,46 @@ Rimanendo nell'ambito della rete Internet, è possibile voler sottoscrivere un a
     \item L'utente può ora inviare $\tau_1$ per pagare l'operatore con la somma pattuita e successivamente inoltrare $\tau_2$ per rendere valido il contratto.
 \end{enumerate}
 
-Una volta completati tali passaggi, le X BTC inviate con $\tau_1$ si trovano in uno stato in cui non possono essere spese ne dall'utente ne dall'operatore senza l'approvazione dell'altro. Allo scadere del \verb|time_lock| il contratto si concluderà e l'utente riavrà indietro le sue monete anche nel caso in cui il sito o l'operatore siano spariti.
+Una volta completati tali passaggi, le X BTC inviate con $\tau_1$ si trovano in uno stato in cui non possono essere spese ne dall'utente ne dall'operatore senza l'approvazione dell'altro. Allo scadere del \verb|time_lock| il contratto si concluderà e l'utente riavrà indietro le sue monete anche nel caso in cui il sito o l'operatore siano spariti.\\
 
-Nel caso in cui l'utente voglia chiudere anticipatamente il contratto, l'operatore crea una nuova versione di $\tau_2$, ad esempio $\tau_2.1$, in cui \verb|lock_time| è impostato a 0 e il contatore al suo massimo \verb|UINT_MAX| e applica la sua firma. $\tau_2.1$ viene inviata all'utente, il quale controlla, eventualmente firma e inoltra la transazione alla rete invalidando $\tau_2$ e riappropriandosi subito delle sue BTC.
+Nel caso in cui l'utente voglia chiudere anticipatamente il contratto, l'operatore crea una nuova versione di $\tau_2$, ad esempio $\tau_2.1$, in cui \verb|lock_time| è impostato a 0 e il contatore al suo massimo \verb|UINT_MAX| e applica la sua firma. $\tau_2.1$ viene inviata all'utente, il quale controlla, eventualmente firma e inoltra la transazione alla rete invalidando $\tau_2$ e riappropriandosi subito delle sue BTC.\\
+La stessa procedura viene applicata se l'utente volesse prolungare il contratto: basta impostare un nuovo \verb|lock_time|, incrementare di una unità il contatore, firmare ed inoltrare.
+
+\subsection{Acquisto di beni con mediatore}
+
+La preoccupazione più grande di tutti coloro che acquistano online o con altri mezzi telematici è ``Il prodoto che ricevo (se lo ricevo) sarà quello per cui ho pagato? E se non sono soddisfatto riavrò i soldi indietro?''. Simile è anche la preoccupazione di chi vende nel caso in cui il pagamento venga effettuato dopo la spedizione o dopo aver dovuto effettuare alcune spese: ``Riceverò mai il denaro che mi spetta?''. Sfruttando piattaforme quali eBay o Amazon è possibile richiedere l'intervento di un mediatore (appunto, eBay o Amazon) per risolvere la disputa e assegnare il denaro a colui che ne ha diritto.\\
+Sfruttando Bitcoin e le opzioni di firma multipla viste è possibile eseguire le stesse operazioni, ovvero creare un pagamento tra tre parti che rimane bloccato fintanto che due delle tre parti non decidono a chi spetta il denaro. La procedura è la seguente:
+\begin{enumerate}
+    \item Ognuna delle parti crea la sua chiave pubblica: $k_c$ per il commerciante, $k_a$ per l'acquirente e $k_m$ per il mediatore. Commerciante e mediatore inviano le proprie chiavi all'acquirente.
+    \item L'acquirente invia al commerciante $k_m$.
+    \item Il commerciante ``sfida'' il mediatore con una nonce casuale, che viene da lui firmata con la porzione privata di $k_m$, garantendo che tale nonce appartiene proprio al commerciante.
+    \item L'acquirente crea la transazione $\tau_1$ nel cui output sarà presente lo script \verb|2| \verb|<Kc>| \verb|Km| \verb|Ka| \verb|3| \verb|CHECKMULTISIGVERIFY| e la inoltra nella rete.
+\end{enumerate}
+
+La situazione che si viene a creare blocca le monete inviate con la transazione in uno stato di inspendibilità fino a quando non avviene uno dei seguenti fatti:
+\begin{itemize}
+    \item Commerciante ed acquirente raggiungono un accordo (il commercio è andato a buon fine oppure il commerciante accetta di rimborsare il cliente).
+    \item Acquirente e mediatore si accordano (il commercio è andato male e il mediatore da ragione all'acquirente).
+    \item Il mediatore spalleggia il commerciante (i beni sono comunque arrivati a destinazione come richiesto e il denaro spetta al commerciante).
+\end{itemize}
+Infatti l'output della transazione inoltrata, per essere speso, richiede che l'input della nuova transazione contenga almeno due delle firme collegate alle chiavi pubbliche elencate. Per cui una volta raggiunto l'accordo, una delle parti crea una $\tau_2$ con \verb|scriptSig| contenente la sua firma, la inoltra alla seconda parte interessata la quale la firma e la inoltra alla rete assegnando il denaro a chi di dovere.
+
+\subsection{Raccolta fondi assicurata}\footnote{Mia interpretazione di ``Assurance Contract'' di cui non trovo la traduzione vera.}
+
+Si immagini un'associazione di volontari che intenda creare un bene comune, ad esempio gli abitanti di un quartiere che vogliono realizzare un parco giochi o la Protezione Civile che intende sistemare gli argini di un fiume senza intaccare gli scarsi fondi comunali, e che avvia appositamente una raccolta fondi per finanziare il progetto. Probabilmente tutti gli interessati investirebbero nell'impresa secondo le loro potenzialità, ma cosa succede se i fondi raccolti non raggiungono la somma preventivata per la buona riuscita dell'opera? Si cambia opera? Si abbassa la qualità del lavoro finale? Si restituiscono i soldi? E in quest'ultimo caso come si procede in caso di donazioni anonime?.
+Con una raccolta fondi assicurata ci si impegna a pagare una somma se e soltanto se il totale delle donazioni raggiunge una certa quota prefissata, altrimenti nessuno deve pagare nulla.
+Si può implementare questo comportamento come segue:
+\begin{enumerate}
+    \item Un imprenditore crea un nuovo indirizzo per la raccolta fondi e stima il traguardo a X BTC.
+    \item Chiunque intenda contribuire crea una nuova transazione prendendo come input il valore che desidera inviare ma non la inoltra. La transazione differisce per tre particolari da una transazione normale: \begin{itemize}
+        \item Non esiste resto. L'utente deve quindi effettuare una transazione preventiva per creare un output dell'ammontare desiderato nel caso non ne possieda già uno.
+        \item Lo script di input è firmato con ``\verb|SIGHASH_ALL| \| \verb|SIGHASH_ANYONECANPAY|``.
+        \item Il valore in output è esattamente X BTC. Dato che tale output è maggiore della somma degli input, la transazione non risulta valida ed è quindi totalmente sicuro inviarla ad uno sconosciuto.
+    \end{itemize}
+    \item La transazione viene caricata sul server dedicato alla raccolta fondi. L'imprenditore tiene conto quanto essa vale e aggiorna il valore ancora mancante per il traguardo.
+    \item Appena raggiunto il traguardo, tutte le transazioni invalide inviate vengono unite in una unica transazione. Tale transazione avrà come input tutti gli input delle donazioni e come output l'indirizzo della raccolta fondi, ovvero lo stesso presente in modo identico in tutti gli output delle donazioni.
+    \item La transazione così creata viene inoltrata nella rete, effettuando quindi i pagamenti.
+\end{enumerate}
+L'utilizzo di \verb|SIGHASH_ALL| è il comportamento predefinito in una transazione standard Bitcoin e indica che viene firmato tutto il contenuto della transazione tranne lo script di input. Nel caso specifico significa che non è possibile per il realizzatore della raccolta fondi modificare la transazione di riferimento dell'input e quindi nemmeno l'ammontare che l'autore della transazione desidera donare. Il modificatore \verb|SIGHASH_ANYONECANPAY| indica che la firma indicata nell'input della transazione si riferisce solo ed esclusivamente a quell'input e non deve essere presa in considerazione quando si tratteranno altri input.
+Combinando questi due opcode si ottiene una transazione che risulta ancora perfettamente valida nel caso in cui vengano aggiunti altri input ma risulta invalida se viene modificata una qualsiasi altra parte di essa. Si ha quindi la garanzia che, se la somma che si intende donare viene spesa, finisce esattamente nell'indirizzo desiderato e nell'ammontare desiderato e ciò è avvenuto perché si è raggiunta la somma necessaria all'impresa. E' da notare come se le donazioni sono in eccesso rispetto alla somma necessaria, la differenza diventa una transaction fee destinata allo scopritore del blocco in quanto non è possibile modificare gli output in modo da dirigere tale differenza verso un secondo indirizzo magari dedito alla stessa causa. L'imprenditore che ha avviato la raccolta fondi deve quindi prestare attenzione alle somme donate e combinarle in modo da produrre l'output desiderato, tasse incluse.
+
