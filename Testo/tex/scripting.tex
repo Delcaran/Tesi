@@ -153,7 +153,7 @@ Si può implementare questo comportamento come segue:
     \item Un imprenditore crea un nuovo indirizzo per la raccolta fondi e stima il traguardo a X BTC.
     \item Chiunque intenda contribuire crea una nuova transazione prendendo come input il valore che desidera inviare ma non la inoltra. La transazione differisce per tre particolari da una transazione normale: \begin{itemize}
         \item Non esiste resto. L'utente deve quindi effettuare una transazione preventiva per creare un output dell'ammontare desiderato nel caso non ne possieda già uno.
-        \item Lo script di input è firmato con ``\verb|SIGHASH_ALL| \| \verb|SIGHASH_ANYONECANPAY|``.
+        \item Lo script di input è firmato con ``\verb|SIGHASH_ALL| $\|$ \verb|SIGHASH_ANYONECANPAY|``.
         \item Il valore in output è esattamente X BTC. Dato che tale output è maggiore della somma degli input, la transazione non risulta valida ed è quindi totalmente sicuro inviarla ad uno sconosciuto.
     \end{itemize}
     \item La transazione viene caricata sul server dedicato alla raccolta fondi. L'imprenditore tiene conto quanto essa vale e aggiorna il valore ancora mancante per il traguardo.

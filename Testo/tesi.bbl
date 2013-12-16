@@ -13,9 +13,22 @@
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
 \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {bitcoin-difficulty}
+\btxtitlefont {\btxifchangecase {Bitcoin difficulty}{Bitcoin Difficulty}}.
+\newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Difficulty}}.
+
+\bibitem {bitcoin-proofofwork}
+\btxtitlefont {\btxifchangecase {Bitcoin proof-of-work}{Bitcoin
+  Proof-of-Work}}.
+\newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Proof_of_work}}.
+
 \bibitem {bitcoin-scripting-api}
 \btxtitlefont {\btxifchangecase {Bitcoin script}{Bitcoin Script}}.
 \newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Script}}.
+
+\bibitem {bitcoin-target}
+\btxtitlefont {\btxifchangecase {Bitcoin target}{Bitcoin Target}}.
+\newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Target}}.
 
 \bibitem {bitcoin_wiki}
 \btxtitlefont {\btxifchangecase {Bitcoin wiki}{Bitcoin Wiki}}.
