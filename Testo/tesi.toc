@@ -125,11 +125,13 @@
 \contentsline {section}{\numberline {7.2}Deflazione}{105}{section.7.2}
 \contentsline {section}{\numberline {7.3}Esempi reali ???titolo da cambiare}{106}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Distributore automatico}{106}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Bancomat}{106}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Silkroad ??FORSE???}{106}{subsection.7.3.3}
-\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{107}{appendix.A}
-\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{109}{appendix.B}
-\contentsline {chapter}{Bibliografia}{111}{appendix*.25}
+\contentsline {subsubsection}{Analisi preliminare}{106}{subsection.7.3.1}
+\contentsline {subsubsection}{Implementazione}{107}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Bancomat}{108}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Silkroad ??FORSE???}{108}{subsection.7.3.3}
+\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{109}{appendix.A}
+\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{111}{appendix.B}
+\contentsline {chapter}{Bibliografia}{113}{appendix*.25}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}
