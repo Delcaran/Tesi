@@ -18,20 +18,23 @@ malevoli.  Data la grande varietà di reti P2P, è necessario specificare cosa i
   Un sistema di routing, che utilizza una chiave per inoltrare un   messaggio alla sua destinazione. Questo include una serie di regole   per il churm.
 \end{itemize}
 
-%TODO vedere se usare la documentazione del prof per descrivere i modelli di rete P2P\ldots{}un casino
+%TODO vedere se usare la documentazione del prof per descrivere i modelli di rete P2P
 
 Basandoci sul modello di rete OSI, classifichiamo gli attacchi come di basso, medio e alto livello, a seconda della vicinanza al livello di comunicazione fisico: più il livello dell'attacco è alto, più si basa sul software invece che sull'hardware.
 
 Visto che le reti P2P sono costruite sulla base di altre reti, i livelli ISO/OSI a cui siamo interessati sono il livello applicativo (per il P2P vero e proprio) e il livello di comunicazione (per attacchi basati su TCP e IP).
 
-%TODO grafico dei livelli di attacco in confronto ad ISO/OSI (da vulnerabilities)
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{vulnerabilities_p2p-001.PNG}
+\caption{Livelli di attacco in confronto con lo stack ISO/OSI.\label{vulnerabilities_p2p-001}}
+\end{figure}
 
 \subsection{Attacchi di Basso Livello}\label{attacchi-di-basso-livello}
 
 \subsubsection{Denial of Service (DoS)}\label{denial-of-service-dos}
 
-Uno degli attacchi più basilari che interessa praticamente ogni tipo di rete. Consiste nel bloccare i servizi offerti da uno specifico bersaglio. Si tratta di un attacco estremamente comune esistente in infinite varianti, ma nel caso di P2P la sua versione più semplice consiste nel flood. Consiste nell'estremizzare quanto descritto nel query flood: inondare la rete di pacchetti, legittimi o creati ad-hoc, in modo da ostacolare la normale comunicazione tra i nodi. Semplice, ma estremamente efficace.
-%TODO collegamento a query flood
+Uno degli attacchi più basilari che interessa praticamente ogni tipo di rete. Consiste nel bloccare i servizi offerti da uno specifico bersaglio. Si tratta di un attacco estremamente comune esistente in infinite varianti, ma nel caso di P2P la sua versione più semplice consiste nel flood. Consiste nell'estremizzare quanto descritto nel query flood\footnote{Confrontare sezione \ref{query-flooding}}: inondare la rete di pacchetti, legittimi o creati ad-hoc, in modo da ostacolare la normale comunicazione tra i nodi. Semplice, ma estremamente efficace.
 
 Una variante ancora più efficace, e resa tale proprio dalla natura distribuita delle reti P2P, consiste nel \textbf{Distribute Denial of Service} (DDoS). Come dice il nome, la differenza sta nel fatto che l'attaccante non è un singolo nodo bensì un insieme di nodi. Il vantaggio in questa tecnica, oltre che nell'immenso numero di pacchetti che inondano la rete, sta nell'anonimato che circonda l'attaccante. Spesso infatti i nodi che a tutti gli effetti inviano i pacchetti sono inconsapevoli di essere parte dell'attacco e manipolati remotamente da un attaccante. Questo aggiunge un ulteriore strato tra l'attaccante e i nodi legittimi che tentano di impedire l'attacco.
 
@@ -57,9 +60,7 @@ Dato che l'attaccante può piazzarsi dove vuole all'interno della rete, gli atta
 
 Il metodo principale per difendersi dal MitM è rendere tale attacco il più infruttuoso possibile. In una rete senza nodi privilegiati (ad esempio un server centrale, un supernodo o un'autorità centrale di autenticazione), il MitM si limita a compromettere la sicurezza tra due soli nodi nella rete, senza minacciare per nulla il resto dei nodi \footnote{almeno fino a quando la perdita di tre nodi (due vittime e un   attaccante) risulta tollerabile per la rete, il che è vero per tutte   quelle reti ampiamente diffuse.}.
 
-%TODO vedi capitolo su gnutella e co
-Molte reti (non bitcoin) sfruttano nodi privilegiati per affrontare altre minacce o come parte integrante della loro struttura, e anche nelle reti maggiormente distribuite è possibile effettuare un attacco MitM su larga scala (\emph{Eclipse}).
-%TODO link a più avanti
+Molte reti (non bitcoin) sfruttano nodi privilegiati per affrontare altre minacce o come parte integrante della loro struttura, e anche nelle reti maggiormente distribuite è possibile effettuare un attacco MitM su larga scala (vedi \ref{attacco-eclipse} più avanti).
 
 Il metodo più diffuso per evitare la fuoriuscita di informazioni nella comunicazione tra due nodi è la cifratura a chiave pubblica. Con tale sistema si garantisce l'origine del messaggio, il fatto che non è stato alterato in alcun modo e, volendo, fornisce anche un metodo per evitare che una terza parte non autorizzata possa leggerne il contenuto. L'implementazione di questo semplice meccanismo rende praticamente inutile qualsiasi tentativo di MitM tra due nodi.
 
@@ -71,8 +72,7 @@ Un worm è un programma auto-replicante simile a un virus che, a differenza di q
 
 Oltre alla grande velocità di diffusione, il fatto che molte reti P2P siano concepite per il file-sharing e abbiano quindi una grande abbondanza di banda, consente al worm P2P di avere dimensioni maggiori e di essere quindi capace di azioni ed attacchi molto più complicati rispetto ad un worm normale, a volte grande solo come un pacchetto TCP/IP. Molti nodi sono inoltre spesso computer personali di utenti normali che utilizzano quotidianamente Internet. Worm sufficientemente complessi sono in grado di monitorare l'attività dell'utente anche al di fuori della rete P2P e di accedere a dati quali numero di carta di credito, password di account, ecc., rendendo le reti P2P un bersaglio di estremo valore.
 
-Infine, i worm possono usare la rete come uno strumento. Si è parlato prima parlando del DDoS di come un nodo qualsiasi possa diventare un ignaro vettore di attacco. I worm sono il modo in cui questo viene reso possibile: il worm contiene tutto il codice necessario ad effettuare l'attacco, oltre al codice per replicare se stesso negli altri nodi.
-%TODO link a DDoS
+Infine, i worm possono usare la rete come uno strumento. Si è parlato prima parlando del DDoS (nella sezione \ref{denial-of-service-dos}) di come un nodo qualsiasi possa diventare un ignaro vettore di attacco. I worm sono il modo in cui questo viene reso possibile: il worm contiene tutto il codice necessario ad effettuare l'attacco, oltre al codice per replicare se stesso negli altri nodi.
 
 \paragraph{Contrastare i Worm}\label{contrastare-i-worm}
 
@@ -109,14 +109,13 @@ Un esempio encomiabile è quello di BitTorrent: il protocollo è disinteressato 
 
 \subsubsection{Attacco Sibilla}\label{attacco-sibilla}
 
-Si ha questo attacco quando una singola entità malevola rappresenta un grande numero (spesso estremamente elevato) di utenti in una rete P2P con l'obiettivo di assumere il controllo di un segmento della rete. L'attacco si implementa con l'attaccante che tenta di creare un grande numero dei nodi a lui vicini. L'attacco diventa più efficace se l'attaccante è in grado di decidere dove posizionarsi nella rete, in quanto potrebbe aver bisogno di meno nodi per poter causare gravi danni alla rete. Con molti nodi a propria disposizione è possibile controllare tutti i messaggi che passano per il segmente formato dai nodi in questione. Questo attacco è inoltre un \textbf{attacco gateway}, il che sta ad indicare una categoria di attacchi solitamente usati come passo preliminare per attacchi su vasta scala di altro tipo, come per esempio l'attacco Eclipse descritto più avanti.
-%TODO collegamento ad attacco Eclipse
+Si ha questo attacco quando una singola entità malevola rappresenta un grande numero (spesso estremamente elevato) di utenti in una rete P2P con l'obiettivo di assumere il controllo di un segmento della rete. L'attacco si implementa con l'attaccante che tenta di creare un grande numero dei nodi a lui vicini. L'attacco diventa più efficace se l'attaccante è in grado di decidere dove posizionarsi nella rete, in quanto potrebbe aver bisogno di meno nodi per poter causare gravi danni alla rete. Con molti nodi a propria disposizione è possibile controllare tutti i messaggi che passano per il segmente formato dai nodi in questione. Questo attacco è inoltre un \textbf{attacco gateway}, il che sta ad indicare una categoria di attacchi solitamente usati come passo preliminare per attacchi su vasta scala di altro tipo, come per esempio l'attacco Eclipse descritto nella sezione \ref{attacco-eclipse}.
 
 \paragraph{Contromisure all'attacco Sibilla}\label{contromisure-allattacco-sibilla}
 
 La natura aperta delle reti P2P gioca a favore di questo tipo di attacco: senza un'autorità centrale è impossibile fermare completamente un attacco Sibilla. Il meglio che si può fare è renderlo impraticabile.
 
-Per rallentare un attacco si può usare lo stesso metodo usato con gli attacchi DoS: il pricing. %TODO collegamento a pricing in DoS
+Per rallentare un attacco si può usare lo stesso metodo usato con gli attacchi DoS: il pricing (confrontare la sezione \ref{denial-of-service-dos}).
 Il grande numero di calcoli richiesti per unire molti nodi alla rete può richiedere all'attaccante più tempo di quanto sia disposto ad impiegarne. Se inoltre la rete implementa una sorta di tempo massimo durante il quale un nodo mantiene un certo identificativo, tutti gli attacchi hanno un tempo massimo entro il quale devono essere portati a termine, dopo di che i nodi creati dovranno ricollegarsi alla rete e quindi si dovranno ripetere tutte le pratiche del pricing.
 
 \subsubsection{Attacco Eclipse}\label{attacco-eclipse}
@@ -354,12 +353,6 @@ Il nodo verificatore ha raccolto le sue informazioni memorizzando un timestamp p
 Si viene quindi a creare un distinguo tra i vari nodi a seconda della loro ``anzianità'': i nodi ``giovani'' che hanno visto poche transazioni e quindi non opporranno molta resistenza a nuove blockchain, e i nodi ``anziani'', la cui visione del mondo è molto più difficile da cambiare. Nel caso in cui si dovesse presentare un fork, si assisterebbe quindi ad una momentanea partizione della rete, destinata comunque a risolversi in breve tempo mano a mano che sempre pià nodi si schierano e le due catene crescono in lunghezza.\\
 In realtà nel protocollo attuale esiste una sorta di sistema di checkpoint: nel client ufficiale bitcoin sono infatti inseriti a livello di codice alcuni hash di blocchi verificati accuratamente, che vengono eventualmente aggiornati con le nuove versioni del client. Esiste comunque il rischio che il software che si va a scaricare sia una versione compromessa di quella ufficiale, nel qual caso la soluzione proposta sarebbe una efficace contromisura.
 
-\begin{itemize}
-\item
-  qualcosa sul double-spending
-
-\end{itemize}
-
 \section{I Portafogli}\label{i-portafogli}
 
 Come si è visto, la rete Bitcoin può subire alcuni tipi di attacco, ma un utente qualsiasi può fare poco e nulla per aumentare la propria sicurezza in tale ambito.
@@ -381,7 +374,7 @@ Esistono anche questioni relative alla sicurezza delle password e dei generatori
 
 Naturalmente come sempre accade spetta all'utente decidere il livello di sicurezza di cui necessita e prendere le misure necessarie.
 
-L'implementazione di un particolare tipo di portafogli potrebbe però risultare in un eccellente compromesso tra sicurezza e facilità d'uso: il \emph{super-wallet} proposto in \ref{bitter-better}, un portafoglio cifrato e distribuito su più dispositivi fisici in modo tale che solo se più autorizzazioni vengono verificate (ad esempio, una password, un file sul filesystem e una chiave privata) si può sfruttarne il contenuto. L'utente porterebbe inoltre con se una sorta di \emph{sub-wallet}, magari installato nel suo smartphone, configurato con alcune transazioni pre-approvate in modo che si possa prelevare denaro dal portafogli principale in piccole quantità e in un certo intervallo di tempo. Il funzionamento è esattamente identico a quello di una banca che offre servizio bancomat: si può prelevare denaro in quantità predefinite e con una soglia massima mensile. Il vantaggio evidente si ha in caso di furto del portafoglio più piccolo: si perde solo quello che vi è contenuto, il resto del proprio denaro è al sicuro in ``banca''.
+L'implementazione di un particolare tipo di portafogli potrebbe però risultare in un eccellente compromesso tra sicurezza e facilità d'uso: il \emph{super-wallet} proposto in \cite{bitter-better}, un portafoglio cifrato e distribuito su più dispositivi fisici in modo tale che solo se più autorizzazioni vengono verificate (ad esempio, una password, un file sul filesystem e una chiave privata) si può sfruttarne il contenuto. L'utente porterebbe inoltre con se una sorta di \emph{sub-wallet}, magari installato nel suo smartphone, configurato con alcune transazioni pre-approvate in modo che si possa prelevare denaro dal portafogli principale in piccole quantità e in un certo intervallo di tempo. Il funzionamento è esattamente identico a quello di una banca che offre servizio bancomat: si può prelevare denaro in quantità predefinite e con una soglia massima mensile. Il vantaggio evidente si ha in caso di furto del portafoglio più piccolo: si perde solo quello che vi è contenuto, il resto del proprio denaro è al sicuro in ``banca''.
 Tale portafogli è implementabile con una modifica al protocollo di generazione delle chiavi, ma è retrocompatibile in quanto non richiede modifiche ai meccanismi di verifica.
 
 \section{Bitcoin-Exchange}\label{bitcoin-exchange}
@@ -391,12 +384,12 @@ Sono questi i servizi in cui un utente può acquistare BTC da un altro utente in
 I servizi di exchange generalmente richiedono ad un utente iscritto di depositare sul proprio conto online una certa somma in denaro reale oppure in BTC. Una volta depositati, i soldi reali possono essere spesi per acquistare BTC, mentre i BTC possono essere ceduti ad altri utenti che ne fanno richiesta in cambio di soldi reali. Il denaro così guadagnato viene inviato ad un conto precedentemente indicato dall'utente, e solo a questo punto il denaro è effettivamente nelle sue mani.
 Esiste quindi un periodo in cui i soldi dell'utente sono in mano a terze parti a cui si è costretti a dare totale ed incondizionata fiducia che tale denaro sarà al sicuro per tutta la durata del deposito. Questo, unito al fatto che potrebbe passare molto tempo tra il deposito e l'acquisto\footnote{La compravendita è infatti basata su offerte e ordini in stile borsistico: un utente che desidera acquistare $X$ BTC piazza un ordine per $X$ BTC e dichiara che intende pagare $Y$ denaro reale. Fintanto che un secondo utente non dichiara di voler vendere $X$ BTC per $Y$ denaro, l'acquisto non avverrà e l'ordine rimarrà pendente, salvo sua rimozione.}
 
-I ricercatori Tyler Moore e Nicolas Christin, dato il numero molto elevato di tali servizi che sono attualmente presenti e l'elevato valore monetario mosso da Bitcoin (a Gennaio 2013 si parla di circa 187 milioni di dollari), hanno deciso di analizzare in modo empirico il rischio che un utente incorre nel dare fiducia a queste exchange(\ref{middleman}).
+I ricercatori Tyler Moore e Nicolas Christin, dato il numero molto elevato di tali servizi che sono attualmente presenti e l'elevato valore monetario mosso da Bitcoin (a Gennaio 2013 si parla di circa 187 milioni di dollari), hanno deciso di analizzare in modo empirico il rischio che un utente incorre nel dare fiducia a queste exchange (\cite{middleman}).
 
 Per la loro analisi, hanno raccolto dal sito \url{http://www.bitcoincharts.com} dati sui tassi di cambio (che includono anche la quantità di scambi giornalieri e quotazioni medie) fino al 16 Gennaio 2013 per 40 diverse exchange che convertono in 33 diverse valute.
 Hanno poi calcolato il volume di commercio giornaliero per ogni exchange rapportando il numero totale di Bitcoin convertite in tutte le valute trattate dall'exchange al numero di giorni in cui l'exchange è stata operativa. Tale arco di tempo rappresenta il ``lifetime'' dell'exchange ed è la differenza tra la prima e l'ultima data in cui è stato effettuato uno scambio. Una exchange viene considerata chiusa se non è stato effettuato nessuno scambio in almeno due settimana prima del 16 Gennaio 2013.
 Per le exchange chiuse, sono poi stati passati al setaccio vari forum e siti web che potessero contenere informazioni sulla chiusura in questione, per capire se essa sia stata dovuta ad una breccia nel sistema di sicurezza (che sia un attacco hacker o una frode perpetuata dai titolari dell'exchange stessa). Inoltre sono stati cercati report che indicassero se gli utenti delle exchange chiuse siano stati o meno risarciti per le eventuali perdite subite.
 Infine ove possibile è stato identificato il paese in cui ha sede l'exchange, per verificare quanto tale paese si sia adeguato alle norme \gls{amlcft} in base ad un indice stilato da alcuni economisti della World Bank\footnote{C. Yepes: Compliance with the AML/CFT international standard: Lessons from a cross-country analysis. IMF Working Papers 11/117, International Monetary Fund (Luglio 2011).} che varia da 0 a 49.
 
-I risultati di tale analisi (disponibili per un'analisi dettagliata in \ref{middleman}) mostrano che il rischio di chiusura di una exchange è inversamente correlata con il volume di transazioni\footnote{Si intende transazioni nel senso tradizionale del termine, non transazioni bitcoin.} che tale exchange gestisce. Di contro, un maggior numero di transazioni rende l'exchange un appetibile bersaglio per gruppi hacker, ed è pertanto direttamente correlato con l'evenienza di attacchi informatici.
+I risultati di tale analisi (disponibili per un'analisi dettagliata in \cite{middleman}) mostrano che il rischio di chiusura di una exchange è inversamente correlata con il volume di transazioni\footnote{Si intende transazioni nel senso tradizionale del termine, non transazioni bitcoin.} che tale exchange gestisce. Di contro, un maggior numero di transazioni rende l'exchange un appetibile bersaglio per gruppi hacker, ed è pertanto direttamente correlato con l'evenienza di attacchi informatici.
 Si vede quindi che una exchange per operare in modo continuativo ha necessità di effettuare un gran numero di transazioni e contemporaneamente investire in sicurezza per contrastare i sempre più probabili attacchi che si troverà a subire.

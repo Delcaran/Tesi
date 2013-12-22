@@ -22,6 +22,16 @@
   Proof-of-Work}}.
 \newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Proof_of_work}}.
 
+\bibitem {bitcoin-protocol}
+\btxtitlefont {\btxifchangecase {Bitcoin protocol}{Bitcoin Protocol}}.
+\newblock {\latintext
+  \btxurlfont{https://en.bitcoin.it/wiki/Protocol_specification}}.
+
+\bibitem {bitcoin-protocolrules}
+\btxtitlefont {\btxifchangecase {Bitcoin protocol rules}{Bitcoin Protocol
+  Rules}}.
+\newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Protocol_rules}}.
+
 \bibitem {bitcoin-scripting-api}
 \btxtitlefont {\btxifchangecase {Bitcoin script}{Bitcoin Script}}.
 \newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Script}}.
@@ -60,12 +70,12 @@
   \btxurlfont{http://dx.doi.org/10.1007/978-3-642-00468-1_9}}.
 
 \bibitem {user-privacy}
-\btxnamefont {\btxlastnamefont {Androulaki}, Elli}, \btxnamefont {Ghassam
-  \btxlastnamefont {Karame}}, \btxnamefont {Marc \btxlastnamefont {Roeschlin}},
-  \btxnamefont {Tobias \btxlastnamefont {Scherer}}\btxandcomma {} \btxandlong
-  {}\ \btxnamefont {Srdjan \btxlastnamefont {Capkun}}\btxauthorcolon\
-  \btxtitlefont {\btxifchangecase {Evaluating user privacy in
-  bitcoin}{Evaluating User Privacy in Bitcoin}}.
+\btxnamefont {\btxlastnamefont {Androulaki}, Elli}, \btxnamefont
+  {Ghassan\btxfnamespacelong O. \btxlastnamefont {Karame}}, \btxnamefont {Marc
+  \btxlastnamefont {Roeschlin}}, \btxnamefont {Tobias \btxlastnamefont
+  {Scherer}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Srdjan
+  \btxlastnamefont {Capkun}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase
+  {Evaluating user privacy in bitcoin}{Evaluating User Privacy in Bitcoin}}.
 \newblock Cryptology ePrint Archive, Report 2012/596, 2012.
 \newblock {\latintext \btxurlfont{http://eprint.iacr.org/2012/596.pdf}}.
 
@@ -171,20 +181,20 @@
 \newblock {\latintext \btxurlfont{https://en.bitcoin.it/wiki/Contracts}}.
 
 \bibitem {doublespendig_fast}
-\btxnamefont {\btxlastnamefont {Karame}, Ghassan}, \btxnamefont {Elli
-  \btxlastnamefont {Androulaki}}\btxandcomma {} \btxandlong {}\ \btxnamefont
-  {Srdjan \btxlastnamefont {Capkun}}\btxauthorcolon\ \btxjtitlefont
-  {\btxifchangecase {Two bitcoins at the price of one? double-spending attacks
-  on fast payments in bitcoin.}{Two Bitcoins at the Price of One?
-  Double-Spending Attacks on Fast Payments in Bitcoin.}}
+\btxnamefont {\btxlastnamefont {Karame}, Ghassan\btxfnamespacelong O.},
+  \btxnamefont {Elli \btxlastnamefont {Androulaki}}\btxandcomma {} \btxandlong
+  {}\ \btxnamefont {Srdjan \btxlastnamefont {Capkun}}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Two bitcoins at the price of one?
+  double-spending attacks on fast payments in bitcoin.}{Two Bitcoins at the
+  Price of One? Double-Spending Attacks on Fast Payments in Bitcoin.}}
 \newblock \btxjournalfont {IACR Cryptology ePrint Archive}, 2012:248, 2012.
 \newblock {\latintext
   \btxurlfont{http://people.scs.carleton.ca/~clark/biblio/bitcoin/Karame%202012.pdf}}.
 
 \bibitem {distributed-computing}
 \btxnamefont {\btxlastnamefont {Kshemkalyani}, Ajay\btxfnamespacelong D.}
-  \btxandlong {}\ \btxnamefont {Mukesh \btxlastnamefont
-  {Singhal}}\btxauthorcolon\ \btxtitlefont {Peer-to-peer computing and overlay
+  \btxandlong {}\ \btxnamefont {Singhal \btxlastnamefont
+  {Mukesh}}\btxauthorcolon\ \btxtitlefont {Peer-to-peer computing and overlay
   graphs}, \btxchapterlong {}~18.
 \newblock \btxpublisherfont {Cambridge University Press}, The Edinburgh
   Building, Cambridge CB2 8RU, UK, \btxeditionnumlong {first}{}, 2008.
@@ -237,13 +247,13 @@
   {Martin \btxlastnamefont {Harrigan}}\btxauthorcolon\ \btxtitlefont
   {\btxifchangecase {An analysis of anonymity in the bitcoin system}{An
   Analysis of Anonymity in the Bitcoin System}}.
-\newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Altshuler}, Yaniv},
-  \btxnamefont {Yuval \btxlastnamefont {Elovici}}, \btxnamefont
-  {Armin\btxfnamespacelong B. \btxlastnamefont {Cremers}}, \btxnamefont {Nadav
-  \btxlastnamefont {Aharony}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Alex
-  \btxlastnamefont {Pentland}}\ (\btxeditorslong {}): \btxtitlefont {Security
-  and Privacy in Social Networks}, \btxpageslong {}\ 197--223.
-  \btxpublisherfont {Springer New York}, 2013\ifbtxprintISBN {,
+\newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Yaniv}, Altshuler},
+  \btxnamefont {Elovici \btxlastnamefont {Yuval}}, \btxnamefont
+  {Armin\btxfnamespacelong B. \btxlastnamefont {Cremers}}, \btxnamefont
+  {Aharony \btxlastnamefont {Nadav}}\btxandcomma {} \btxandlong {}\
+  \btxnamefont {Alex \btxlastnamefont {Pentland}}\ (\btxeditorslong {}):
+  \btxtitlefont {Security and Privacy in Social Networks}, \btxpageslong {}\
+  197--223. \btxpublisherfont {Springer New York}, 2013\ifbtxprintISBN {,
   \mbox{\btxISBN~\btxISBNfont {978-1-4614-4138-0}}}.
 \newblock {\latintext
   \btxurlfont{http://dx.doi.org/10.1007/978-1-4614-4139-7_10}}, Disponibile in
