@@ -18,7 +18,6 @@ Entrambi questi metodi sono fondamentali nell'ecosistema Bitcoin:
 \item
   La compravendita di bitcoin è invece simile alle compravendite di   azioni effettuate nelle borse di tutte il mondo. Esistono infatti   alcuni luoghi dedicati (ad esempio il sito internet \emph{Mt. GOX})   che fungono da stock exchange offrendo agli utenti la possibilità di   mettere in vendita o di acquistare bitcoin al prezzo che preferiscono.   Sono delle vere e proprie borse che trattano unicamente bitcoin invece   che molti titoli di aziende diverse, calcolano un valore di scambio   medio basato sulle ultime transazioni portate a termine ma lasciano   libero l'utente di scegliere a quanto vendere o comprare bitcoin, con   prezzo medio che si adegua di conseguenza.
 %FIXME sistemare sta roba
-%TODO verificare se rapporto bitcoin/euro e bitcoin/dollaro sono   legati alle transazioni in quella valuta (come credo che sia)
 \end{itemize}
 
 Come per le monete in valuta reale e le azioni borsistiche, anche le bitcoin vengono ``tenute'' in portafogli. Come vedremo, il termine \emph{tenute} è usato impropriamente, ma questa è l'apparenza dal punto di vista dell'utente, per cui a tale apparenza al momento ci atterremo.
@@ -27,8 +26,7 @@ Come per le monete in valuta reale e le azioni borsistiche, anche le bitcoin ven
 
 La prima volta che un nuovo utente avvia il suo client Bitcoin fresco di installazione, si vede assegnato un portafoglio contenente un indirizzo e una copia di chiavi di cifratura simmetrica. L'indirizzo è semplicemente una stringa di 27-34 caratteri alfanumerici che inizia con un 1 o con un 3, generata in modo casuale dalle chiavi create per l'utente. Gli indirizzi rappresentano il punto di uscita e/o il punto di ingresso per tutti i movimenti che coinvolgono Bitcoin. Questo significa che nelle transazioni Bitcoin compariranno unicamente questi indirizzi, rendendo di fatto \textbf{anonimi} tutti i movimenti di BTC (meno quelli che riguardano l'acquisto di BTC tramite moneta reale), in un modo del tutto equivalente a quello dei conti in Svizzera. Non esiste quindi nessuna correlazione diretta e ovvia tra un utente e il suo indirizzo. Un portafogli può contenere più indirizzi: basta infatti generare una nuova coppia di chiavi e verrà generato anche un nuovo indirizzo. Il numero di indirizzi esistenti è virtualmente infinito.
 
-I portafogli sono solitamente legati al software che li crea, basta quindi cambiare software per poter creare un nuovo portafogli e una nuova coppia di chiavi (oppure installare un software in grado di gestire più portafogli). In alternativa è possibile ``aprire un conto'' presso numeri siti che offrono questa funzionalità, quale ad esempio blockchain.info. In questo caso però bisogna fare i conti con la sicurezza del sito in questione
-%TODO link alla sezione sicurezza
+I portafogli sono solitamente legati al software che li crea, basta quindi cambiare software per poter creare un nuovo portafogli e una nuova coppia di chiavi (oppure installare un software in grado di gestire più portafogli). In alternativa è possibile ``aprire un conto'' presso numeri siti che offrono questa funzionalità, quale ad esempio blockchain.info. In questo caso però bisogna fare i conti con la sicurezza del sito in questione. In caso di furto del portafogli infatti non esiste modo per recuperare le proprie BTC (confronta sezione \ref{i-portafogli}).
 
 \section{Transazioni}\label{transazioni}
 
@@ -47,7 +45,7 @@ La moneta diventa quindi non una unità atomica, ma il risultato di una serie di
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoin_p2_1.PNG}
+\includegraphics[width=\textwidth]{bitcoin_p2_1.PNG}
 \caption{Utilizzo delle chiavi e degli hash in una sequenza di transazioni.\label{bitcoin_p2_1}}
 \end{figure}
 
@@ -63,7 +61,7 @@ Ora il problema consiste nell'implementare questo server di timestamp in modo di
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoin_p3_1.PNG}
+\includegraphics[width=\textwidth]{bitcoin_p3_1.PNG}
 \caption{Struttura minimale di una sequenza di blocchi.\label{bitcoin_p3_1}}
 \end{figure}
 
@@ -98,8 +96,7 @@ I nodi considerano la catena più lunga quella corretta (e viene definita \emph{
 
 Quando si inviano in broadcast le nuove transazioni, non è necessario che esse raggiungano tutti i nodi: fintanto che raggiungono quanti più nodi possibile, verranno velocemente inglobate in un blocco. I blocchi invece devono essere ricevuti da tutti i nodi, per questo se un nodo riceve un blocco e si accorge (tramite hash) che il blocco precedente gli manca, ne richiederà immediatamente una copia ad un altro nodo, e ripeterà la verifica fino ad ottenere la catena integrale.
 
-Per convenzione, la prima transazione di un blocco è una transazione speciale che crea una nuova moneta e la assegna al creatore del blocco. In pratica il primo nodo che riesce a trovare la proof-work di un nuovo blocco riceve un premio in bitcoin. Tale premio serve ad incentivare i nodi a mantenere attiva la rete ed inoltre permette la messa in circolazione di nuove monete, senza che sia necessaria una zecca centrale. Questo profitto derivante dal calcolo della proof-of-work viene denominato \textbf{mining} e ha spinto molti utenti ad acquistare hardware dedicato sempre più performante in modo da creare per primi il nuovo blocco e ottenere il relativo premio, inizialmente ammontante a 50btc ma ora dimezzato a 25btc).
-%TODO collegamento al mining
+Per convenzione, la prima transazione di un blocco è una transazione speciale che crea una nuova moneta e la assegna al creatore del blocco. In pratica il primo nodo che riesce a trovare la proof-work di un nuovo blocco riceve un premio in bitcoin. Tale premio serve ad incentivare i nodi a mantenere attiva la rete ed inoltre permette la messa in circolazione di nuove monete, senza che sia necessaria una zecca centrale. Questo profitto derivante dal calcolo della proof-of-work viene denominato \textbf{mining}\footnote{Descritto in dettaglio nel capitolo \ref{mining-pools}.} e ha spinto molti utenti ad acquistare hardware dedicato sempre più performante in modo da creare per primi il nuovo blocco e ottenere il relativo premio, inizialmente ammontante a 50 BTC, ora dimezzato a 25 BTC e che verrà ulteriormente dimezzato in futuro).
 
 Visto che il numero massimo di btc è stato determinato a priori ed è invariabile, per incentivare i nodi anche quando il mining risulterà inutile, sono state introdotte delle vere e proprie tasse di transazione, le \textbf{transaction fees}. Una transaction fee non ha un valore fisso, ma viene decisa da chi effettua la transazione e può anche essere nulla: viene registrata come una differenza tra il valore di input e il valore di output della transazione, con quest'ultimo valore inferiore del primo (come in una tassa, l'acquirente spende più dell'importo effettivo). Tale differenza verrà trasferita nella transazione dedicata all'incentivo al momento della creazione del nuovo blocco, sempre ammesso che l'utente che ha creato il blocco voglia riceve queste btc.
 
@@ -113,18 +110,17 @@ Si è detto infatti che l'hash di un blocco viene calcolato a partire dall'hash 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoin_p4_1.PNG}
+\includegraphics[width=\textwidth]{bitcoin_p4_1.PNG}
 \caption{Struttura di un blocco prima e dopo la compressione dell'albero delle transazioni.\label{bitcoin_p4_1}}
 \end{figure}
 
-%TODO sezione tecnica
-Con questa struttura, il \textbf{block header} viene ad occupare esattamente 80 Bytes (vedi sezione tecnica per i dettagli), il che significa circa 6.2 MB all'anno (Satoshi Nakamoto con una stima di un blocco ogni 10 minuti aveva previsto 4.2 MB annui). Una quantità decisamente ridotta che rende la blockchain tollerabile su ogni computer degli ultimi 7 anni.
+Con questa struttura, il \textbf{block header} viene ad occupare esattamente 80 Bytes\footnote{I dettagli sull'implementazione delle strutture dati sono disponibili nel wiki ufficiale \cite{bitcoin-protocol}.}, il che significa circa 6.2 MB all'anno (Satoshi Nakamoto con una stima di un blocco ogni 10 minuti aveva previsto 4.2 MB annui). Una quantità decisamente ridotta che rende la blockchain tollerabile su ogni computer degli ultimi 7 anni.
 
 È possibile quindi verificare i pagamenti senza disporre di un nodo personale. L'utente deve possedere una copia degli header della catena più lunga (che può ottenere dai nodi della rete) e ottenere il ramo di Merkle che collega la transazione al blocco in cui è stata inserita. Non può verificare la transazione da solo calcolando gli hash (non ha le altre foglie dell'albero di Merkle), ma collegandola ad un punto specifico della catena può vedere che un nodo l'ha accettata, ed eventuali blocchi successivi confermano che anche l'intera rete l'ha accettata.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoin_p5_1.PNG}
+\includegraphics[width=\textwidth]{bitcoin_p5_1.PNG}
 \caption{Struttura di un blocco prima e dopo la compressione dell'albero delle transazioni.\label{bitcoin_p5_1}}
 \end{figure}
 
@@ -151,7 +147,7 @@ La situazione è visibile in \ref{bitcoinpropagation_1}.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoinpropagation_1.PNG}
+\includegraphics[width=\textwidth]{bitcoinpropagation_1.PNG}
 \caption{Schema di una transazione in cui vengono evidenziati input e output.\label{bitcoinpropagation_1}}
 \end{figure}
 
@@ -160,8 +156,6 @@ Nonostante la stretta dipendenza tra le varie transazioni, non è necessario est
 Dato il valore elevato di una singola btc (che può variare da poche decine a centinaia di dollari) e le difficoltà inerenti nel trattare numeri in virgola mobile su un computer, l'unità di misura base della transazione non è il btc ma il Satoshi \footnote{dal ``nome''   dell'inventore di Bitcoin}, e 1 BTC = 100000000 Satoshi.
 
 Questo sistema del calcolo del valore di una transazione è lo stesso utilizzato dal software che gestisce il portafoglio per calcolare il proprio valore: per ogni indirizzo all'interno del portafogli, il software scansiona le transazioni presenti nella blockchain che contengono l'indirizzo in esame, somma i valori entranti nell'indirizzo, sottrae quelli uscenti e ricava il valore ``contenuto'' nell'indirizzo. Usando questo sistema, i possedimenti di un utente sono temporalmente limitati all'ultimo blocco accettato nella catena, e non è quindi possibile spendere moneta ricevuta da una transazione non ancora approvata \footnote{tecnicamente, nessuna moneta è ricevuta fin tanto   che la transazione non è approvata. L'utente non è nemmeno consapevole   della transazione a lui destinata fino ad avvenuta approvazione.}.
-
-\%\%\%\%\%\%\%\%\% \% La documentazione di Satoshi prevede anche privacy e calcoli statistici sugli attacchi. \% Visto che prevedo una sezione apposta per anonimato e sicurezza, ne parlo la e non qua. \% Attenzione che la parte di topologia successiva nomina alcuni risultati statistici di questa parte\ldots{} una volta scritta saranno da fare i collegamenti
 
 \section{Analisi della rete}\label{analisi-della-rete}
 
@@ -188,8 +182,7 @@ Vediamo di stimare formalmente come si propaga un dato nella rete.
 
 Definiamo $t_{i,j}$ come il tempo trascorso tra il primo annuncio e il momento in cui il nodo $j$ riceve l'oggetto $i$. Il nodo $o$ sarà l'origine dell'oggetto $i$ (ovvero il nodo che ha trovato il blocco o il nodo che ha creato la transazione), quindi $t_{i,o}=0$.
 
-%TODO tradurre ``double exponential''
-Il tempo $t_{i,j}$ ha un comportamento \textbf{doppio esponenziale}. Il periodo di propagazione segue due fasi: una prima crescita esponenziale in cui la maggior parte dei nodi che ricevono un \emph{inv} richiederanno il relativo dato che non possiedono, e una seconda fase di compressione esponenziale in cui la maggior parte dei nodi che ricevono un \emph{inv} hanno già il dato.
+Il tempo $t_{i,j}$ ha un comportamento \textbf{doppiamente esponenziale}. Il periodo di propagazione segue infatti due fasi: una prima crescita esponenziale in cui la maggior parte dei nodi che ricevono un \emph{inv} richiederanno il relativo dato che non possiedono, e una seconda fase di compressione esponenziale in cui la maggior parte dei nodi che ricevono un \emph{inv} hanno già il dato.
 
 Per effettuare le loro misurazioni, i ricercatori Christian Decker e Roger Wattenhofer dello Swiss Federal Institute of Technology di Zurigo hanno implementato il protocollo bitcoin su un nodo creato in modo tale da non inviare messaggi \emph{inv}, \emph{tx} o \emph{block} e collegato a direttamente a quanti più nodi tradizionali possibile. Tale implementazione ha il solo scopo di tracciare come i blocchi si propagano nella rete restando in ascolto dei messaggi \emph{inv} che ne annunciano la disponibilità \cite{bitcoinpropagation}. La ricezione di un \emph{inv} implica che il nodo che ha inviato il messaggio ha ricevuto e verificato un blocco.
 
@@ -197,7 +190,7 @@ La rilevazione è partita su nodi di altezza 180000 ed è durata per 10000 blocc
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoinpropagation_3.PNG}
+\includegraphics[width=\textwidth]{bitcoinpropagation_3.PNG}
 \caption{Istogramma normalizzato del tempo che intercorre dal primo annuncio del blocco con una curva di interpolazione esponenziale.\label{bitcoinpropagation_3}}
 \end{figure}
 
@@ -207,11 +200,10 @@ Abbiamo però detto come la dimensione di un blocco sia variabile, fino a 500kB.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoinpropagation_4.PNG}
+\includegraphics[width=\textwidth]{bitcoinpropagation_4.PNG}
 \caption{Costo del ritardo per il 50°, 75° e 90° percentile. Il grafico è focalizzato sui valori più bassi delle ascisse per poter mostrare il comportamento costante presente dopo i 20kB.\label{bitcoinpropagation_4}}
 \end{figure}
 
-%TODO tradurre roundtrip delay
 Per pacchetti di dimensione superiore ai 20kB si vede come il costo sia pressoché costante, mentre per dimensioni minori si assiste a notevole ritardo. La causa di ciò sta nel \textbf{ritardo da un roundtrip}, ovvero il fatto che anche i piccoli messaggi vengono annunciati con \emph{inv} e richiesti con \emph{getdata}. Il roundtrip è dominante per le transazione in quanto il 96\% di tutte le transazioni sono inferiori ad 1kB. Per i blocchi, la cui dimensione è per la maggior parte superiore ai 20kB, ogni kB di dimensione costa circa 80ms di ritardo fino al momento in cui la maggioranza dei nodi non ha il blocco. %TODO verificare questa frase, sembra l'esatto opposto di quanto scritto nel grafico
 Nel caso di piccoli blocchi sarebbe pertanto ottimale evitare l'annuncio e inoltrare direttamente il blocco ai nodi vicini.
 
@@ -229,7 +221,7 @@ Utilizzando la configurazione descritta nella sezione precedente, sono stati rac
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoinpropagation_5.PNG}
+\includegraphics[width=\textwidth]{bitcoinpropagation_5.PNG}
 \caption{Fork osservati tra i blocchi 180000 e 190000 durante il collegamento alla rete.\label{bitcoinpropagation_5}}
 \end{figure}
 
@@ -267,10 +259,7 @@ Per confermare il corretto funzionamento del modello proposto è necessario conf
 Bisogna innanzitutto notare come i nodi non sincronizzino i loro orologi interni, bensì si regolano sui loro vicini, esiste una differenza non trascurabile tra i timestamp. Ad esempio il blocco ad altezza 209873 ha un timestamp pari a 22:10:13 mentre il blocco ad altezza 209874 ha un timestamp di 22:08:44. Dato che il secondo include l'hash del primo, i blocchi sono stati trovati nell'ordine corretto. Da questo si deduce che il conflitto nei timestamp è derivato dalla mancata sincronizzazione degli orologi dei nodi.
 
 %TODO il paragrafo seguente è scritto da cani.
-%TODO scrivere che roba è un Processo di Poisson
-In questa analisi si potrebbe tenere conto dell'orario in cui il nodo spia rileva l'annuncio del blocco e l'orario in cui il blocco è stato trovato. Anche se questo metodo non subisce la differenza di orario tra i nodi, potrebbe esistere un lieve ritardo tra il calcolo del blocco e la rilevazione del relativo annuncio, e per la misurazione abbiamo a disposizione solo il timestamp del blocco. Dato che il calcolo della proof-of-work è un processo di Poisson, la differenza temporale segue una distribuzione esponenziale. La combinazione della differenza temporale degli orologi e il tempo intercorso tra i ritrovamenti dei blocchi causa uno spostamento a destra del massimo. Possiamo correggere la situazione spostando a sinistra fin quando il massimo non risulta in $t=0$. L'orario di annuncio rilevato durante la misura non è influenzato dalla differenza temporale e produce l'istogramma corretto.
-
-%TODO diagramma 6 pag 7 bitcoinpropagation
+In questa analisi si potrebbe tenere conto dell'orario in cui il nodo spia rileva l'annuncio del blocco e l'orario in cui il blocco è stato trovato. Anche se questo metodo non subisce la differenza di orario tra i nodi, potrebbe esistere un lieve ritardo tra il calcolo del blocco e la rilevazione del relativo annuncio, e per la misurazione abbiamo a disposizione solo il timestamp del blocco. Dato che il calcolo della proof-of-work è un processo di Poisson\footnote{Ovvero il tempo che intercorre tra la scoperta di un blocco e la scoperta del blocco successivo segue una distribuzione esponenziale ed è indipendente da ogni altro intervallo di ritrovamento.}, la differenza temporale segue una distribuzione esponenziale. La combinazione della differenza temporale degli orologi e il tempo intercorso tra i ritrovamenti dei blocchi causa uno spostamento a destra del massimo. Possiamo correggere la situazione spostando a sinistra fin quando il massimo non risulta in $t=0$. L'orario di annuncio rilevato durante la misura non è influenzato dalla differenza temporale e produce l'istogramma corretto.
 
 \[ g(t) = \lambda e^{-\lambda \cdot x}\]
 
@@ -280,7 +269,7 @@ Per quando riguarda la propagazione dei nodi nella rete, a causa della normalizz
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{bitcoinpropagation_6.PNG}
+\includegraphics[width=\textwidth]{bitcoinpropagation_6.PNG}
 \caption{Tempo di distribuzione spostato a sinistra per i blocchi trovati tra le altezze 180000 e 190000.\label{bitcoinpropagation_6}}
 \end{figure}
 
@@ -298,7 +287,4 @@ Comparando questo risultato con quello osservato di 1.69\% si nota di aver sovra
 
 Dato che il numero di transazioni e le dimensioni della rete molto probabilmente cresceranno mano a mano che aumenta l'adozione di Bitcoin, la frequenza dei fork è destinata a salire. Una rete più grande, con una topologia casuale e il numero di connessioni limitate per singolo nodo, aumenta il suo diametro e la distanza media tra i nodi e l'origine di un blocco. L'aumento del numero di transazioni provoca una crescita nella dimensione dei blocchi il che a sua volta aumenta il tempo necessario per la verifica e la trasmissione ad ogni passo della propagazione.
 
-%TODO da qui in poi sono problematiche al metodo di propagazione. Sarebbe il caso di metterlo nel capitolo problemi e soluzioni
-
-Una interpretazione alternativa del risultato proposto in %TODO link all'equazione precedente
-è che ogni volta che un blocco viene trovato, l'equivalente di 11.37 secondi di potere computazionale dell'intera rete viene sprecato. Infatti il lavoro impiegato per trovare il primo blocco di una blockchain alternativa (che potrebbe essere scartata) non contribuisce alla sicurezza della rete e costituisce un eventuale punto a favore di un attaccante che cerca di implementare una sua blockchain alternativa. Come detto in precedenza da Nakamoto, un attaccante capace di controllare più del 50\% del potere computazione delle rete è in grado di trovare proof-of-work più velocemente di tutto il resto il della rete. L'attaccante sarebbe perciò in grado di rimpiazzare l'intera storia delle transazione a partire da un qualsiasi blocco. Pur sicuramente sufficiente, questa condizione non è minima. In realtà l'efficenza della rete come intero, incluso il ritardo di propagazione, non è ottimale. La potenza computazionale effettiva nella rete così come si presenta a Settembre 2013 è pari a $1 - 11.37 / 633.68 = 98.20\%$. Per cui ad un attaccante basta controllare il 49.1\% della forza di calcolo della rete per poter portare un attacco e cambiare la blockchain. Al momento questo è un risultato difficile da ottenere, ma la situazione potrebbe cambiare in peggio a causa dell'aumento costante del ritardo di propagazione.
+Una interpretazione alternativa del risultato proposto nell'equazione precedente è che ogni volta che un blocco viene trovato, l'equivalente di 11.37 secondi di potere computazionale dell'intera rete viene sprecato. Infatti il lavoro impiegato per trovare il primo blocco di una blockchain alternativa (che potrebbe essere scartata) non contribuisce alla sicurezza della rete e costituisce un eventuale punto a favore di un attaccante che cerca di implementare una sua blockchain alternativa. Come detto in precedenza da Nakamoto, un attaccante capace di controllare più del 50\% del potere computazione delle rete è in grado di trovare proof-of-work più velocemente di tutto il resto il della rete. L'attaccante sarebbe perciò in grado di rimpiazzare l'intera storia delle transazione a partire da un qualsiasi blocco. Pur sicuramente sufficiente, questa condizione non è minima. In realtà l'efficenza della rete come intero, incluso il ritardo di propagazione, non è ottimale. La potenza computazionale effettiva nella rete così come si presenta a Settembre 2013 è pari a $1 - 11.37 / 633.68 = 98.20\%$. Per cui ad un attaccante basta controllare il 49.1\% della forza di calcolo della rete per poter portare un attacco e cambiare la blockchain. Al momento questo è un risultato difficile da ottenere, ma la situazione potrebbe cambiare in peggio a causa dell'aumento costante del ritardo di propagazione.
