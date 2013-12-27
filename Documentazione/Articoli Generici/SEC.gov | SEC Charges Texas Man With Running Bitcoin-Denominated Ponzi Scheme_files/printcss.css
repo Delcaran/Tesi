@@ -1,0 +1,63 @@
+/*==================================
+Print CSS
+====================================*/
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; overflow:visible; width: 100%; margin: 0; float: none; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  #global-header, #local-nav, #global-footer { display: none; }
+  body {
+    font-size: 12.5pt;
+    font-size: 10pt\9;
+    *font-size: 13pt;
+  }
+  H1.articleTitle {
+    font-size: 15pt;
+    font-size: 13pt\9;
+    *font-size: 15pt;
+  }
+  #main-content h2 {
+    font-size: 14pt;
+    font-size: 12pt\9;
+    *font-size: 14pt;
+  }
+  #main-content h3 {
+    *font-size: 13pt;
+  }
+
+#appIconsDetail {
+  display: none !important;
+}
+
+#breadcrumb {
+  display: none;
+}
+
+#main-content div {
+  width: 800px;
+  width: 575px\9;
+  *width: 800px;
+  /*border: 1px solid #000;*/
+  display: block;
+  clear: both;
+}
+
+#main-content div ul {vertical-align:top;}
+#main-content div ul li {vertical-align:top;}
+
+hr { display: none; }
+
+#relatedMaterials {
+  padding: 10px;
+  margin: 15px;
+  font-size: 11px !important;
+  clear:both !important;
+  position:relative;
+  *display:none !important;
+}
+
+#moreAbout {
+  padding: 10px;
+  margin: 15px;
+  font-size: 12px !important;
+  clear:both !important;
+  *display: none !important;
+}

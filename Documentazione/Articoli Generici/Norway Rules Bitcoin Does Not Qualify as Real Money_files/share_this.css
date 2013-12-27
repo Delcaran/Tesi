@@ -1,0 +1,117 @@
+.share_horizontal{
+	float: left;
+	width: 488px;
+	background: #fff;
+	border: 1px solid #e2e2e2;
+	height: auto;
+	padding: 5px;
+	margin-bottom: 15px !important;
+}
+.share_this{
+	float: left;
+	width: 260px;
+	height: auto;
+	border-right: 1px solid #e2e2e2;
+}
+.share_this h1{
+	float: left;
+	width: 260px;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 5px !important;
+}
+.share_this ul{
+	list-style: none;	
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.share_this ul li{
+	list-style: none !important;
+	float: left;
+	padding: 0 !important;
+	margin: 0 !important;
+	margin-right: 20px !important;
+}
+.share_this ul li a{	
+	display: block;
+	width: 31px;
+	height: 31px;
+	margin: 0 !important;
+}
+.share_this ul li a#fb_icon{
+	background: url(http://img.ibtimes.com/uk/images/fb_share_1off.jpg) no-repeat;
+}
+.share_this ul li a#fb_icon:hover{
+	background: url(http://img.ibtimes.com/uk/images/fb_share_1on.jpg) no-repeat;
+}
+.share_this ul li a#tw_icon{
+	background: url(http://img.ibtimes.com/uk/images/tw_share_1off.jpg) no-repeat;
+}
+.share_this ul li a#tw_icon:hover{
+	background: url(http://img.ibtimes.com/uk/images/tw_share_1on.jpg) no-repeat;
+}
+.share_this ul li a#go_icon{
+	background: url(http://img.ibtimes.com/uk/images/go_share_1off.jpg) no-repeat;
+}
+.share_this ul li a#go_icon:hover{
+	background: url(http://img.ibtimes.com/uk/images/go_share_1on.jpg) no-repeat;
+}
+.share_this ul li a#li_icon{
+	background: url(http://img.ibtimes.com/uk/images/li_share_1off.jpg) no-repeat;
+}
+.share_this ul li a#li_icon:hover{
+	background: url(http://img.ibtimes.com/uk/images/li_share_1on.jpg) no-repeat;
+}
+.share_this ul li a#more_icon{
+	background: url(http://img.ibtimes.com/uk/images/more_share_1off.jpg) no-repeat;
+}
+.share_this ul li a#more_icon:hover{
+	background: url(http://img.ibtimes.com/uk/images/more_share_1on.jpg) no-repeat;
+}
+
+
+.print_this{
+	float: left;
+	width: 22px;
+	height: auto;
+	padding-left: 30px;
+}
+.print_this ul{
+	list-style: none;	
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.print_this ul li{
+	list-style: none !important;
+	float: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	margin-bottom: 5px !important;
+}
+.print_this ul li a{	
+	display: block;
+	width: 22px;
+	height: 22px;
+	margin-bottom: 5px !important;
+}
+.print_this ul li a#print_icon{
+	background: url(http://img.ibtimes.com/uk/images/print_icon_1off.jpg) no-repeat;
+}
+.print_this ul li a#print_icon:hover{
+	background: url(http://img.ibtimes.com/uk/images/print_icon_1on.jpg) no-repeat;
+}
+.print_this ul li a#email_icon{
+	background: url(http://img.ibtimes.com/uk/images/email_icon_1off.jpg) no-repeat;
+}
+.print_this ul li a#email_icon:hover{
+	background: url(http://img.ibtimes.com/uk/images/email_icon_1on.jpg) no-repeat;
+}
+.addthis_32x32_style .dummy .at300bs, .addthis_32x32_style .at300bs, .addthis_32x32_style .at15t {
+background: none;
+}
+.addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300m {
+padding: 0 0;
+}
+.imgBox {
+	border: none;
+}

@@ -1,0 +1,257 @@
+
+.top-block-soc {
+  
+  padding:0;
+}
+.top-block-title-header,
+.top-block-soc-wrap {
+  width:380px;
+  margin:0 auto;
+  float: left;
+  padding: 0 5px !important;
+}
+.top-block-soc-wrap {
+  padding:0 10px;
+}
+.top-block-soc-wrap ul.article-tools-icons {
+  float:right;
+  width: auto;
+  height:24px;
+}
+.top-block-soc-wrap ul.article-tools-icons li.mail a,
+.top-block-soc-wrap ul.article-tools-icons li.print a {
+  background:url(http://www.ibtimes.co.uk/images/article_share_sprite.png)  0 -288px no-repeat;
+  height:24px;
+  width:24px;
+  display:block;
+}
+.top-block-soc-wrap ul.article-tools-icons li.mail {
+  margin-right:15px;
+}
+.top-block-soc-wrap ul.article-tools-icons li.print {
+  margin-right: 0;
+}
+.top-block-soc-wrap ul.article-tools-icons li.print a {
+  background-position: 0 -240px;
+}
+.top-block-soc-wrap ul.article-tools-icons li.mail a:hover {
+  background-position: 0 -312px;
+}
+.top-block-soc-wrap ul.article-tools-icons li.print a:hover {
+  background-position: 0 -264px;
+}
+.top-block-soc-wrap .addthis_default_style .at300b, 
+.top-block-soc-wrap .addthis_default_style .at300bo, 
+.top-block-soc-wrap .addthis_default_style .at300m {
+  padding:0;
+}
+.top-block-soc-wrap .at300b:hover {
+  opacity:1
+}
+.top-block-soc-wrap ul.article-tools-icons li {
+  float:left;
+  display:inline;
+}
+.top-block-soc-wrap ul.article-tools-icons li p {
+  display:inline-block;
+  font:bold 12px/24px Arial,Helvetica,sans-serif;
+  color:#333;
+  margin-top:3px;
+  margin-right:5px;
+}
+.top-block-soc-wrap ul.article-tools-icons li a {
+  line-height:24px;
+}
+.top-block-soc-wrap ul.article-tools-icons li a.text-small {
+  font-size:14px;
+}
+.top-block-soc-wrap ul.article-tools-icons li a.text-medium {
+  font-size:18px;
+}
+.top-block-soc-wrap ul.article-tools-icons li a.text-big {
+  font-size:22px;
+}
+.top-block-soc-wrap ul.article-tools-icons li a:hover,
+.top-block-soc-wrap ul.article-tools-icons li a.text-size-active {
+  color:#d84b0e;
+}
+.top-block-soc-wrap div.block-soc-icons {
+  float:left;
+  width:395px;
+}
+.top-block-soc-wrap div.block-soc-icons li {
+  float:left;
+  display:inline;
+  /*min-width:55px;*/
+  position:relative;
+  margin-right:15px;
+  margin-left:0;
+}
+.top-block-soc-wrap div.block-soc-icons li.ggl {
+  min-width:24px;
+  width:24px;
+}
+.top-block-soc-wrap div.block-soc-icons .count-bubble-wrapper {
+  height:21px;
+  margin-left:24px;
+  padding-top:2px;
+}
+.top-block-soc-wrap div.block-soc-icons .count_num,
+.top-block-soc-wrap div.block-soc-icons .count_num a {
+  font:bold 11px/20px Arial,Helvetica,sans-serif;
+  color:#666;
+}
+.top-block-soc-wrap div.block-soc-icons .count-num-left,
+.top-block-soc-wrap div.block-soc-icons .count-num,
+.top-block-soc-wrap div.block-soc-icons .count-num-right {
+  float:left;
+  height:21px;
+  background:url(http://www.ibtimes.co.uk/images/article_share_sprite.png) no-repeat;
+  display:block;
+  overflow:hidden;
+}
+.top-block-soc-wrap div.block-soc-icons .count_num {
+  float:left;
+  text-align: center;
+  background:#fff;
+  border-top:1px solid #d1d1d1;
+  border-bottom:1px solid #d1d1d1;
+  height:19px;
+  min-width:19px;
+  padding-left:2px;
+  padding-right:2px;
+}
+.top-block-soc-wrap div.block-soc-icons .count-num-left {
+  width:6px;
+  background-position: 0 -336px;
+}
+.top-block-soc-wrap div.block-soc-icons .count-num-right {
+  width:2px;
+  background-position: -7px -336px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-flyout{
+  display:none
+}
+
+.top-block-soc-wrap div.block-soc-icons li .soc-comments,
+.top-block-soc-wrap div.block-soc-icons li .soc-facebook,
+.top-block-soc-wrap div.block-soc-icons li .soc-twitter,
+.top-block-soc-wrap div.block-soc-icons li .soc-linkedin,
+.top-block-soc-wrap div.block-soc-icons li .soc-gp {
+  background:url(http://www.ibtimes.co.uk/images/article_share_sprite.png)no-repeat;
+  height:24px;
+  display:block;
+  cursor:pointer;
+}
+.top-block-soc-wrap div.block-soc-icons li .soc-facebook {
+  background-position: 0 0;
+}
+.top-block-soc-wrap div.block-soc-icons li .soc-twitter {
+  background-position: 0 -48px;
+}
+.top-block-soc-wrap div.block-soc-icons li .soc-linkedin {
+  background-position: 0 -144px;
+}
+.top-block-soc-wrap div.block-soc-icons li .soc-gp {
+  background-position: 0 -96px;
+}
+.top-block-soc-wrap div.block-soc-icons li .soc-facebook:hover {
+  background-position: 0px -24px;
+}
+.top-block-soc-wrap div.block-soc-icons li .soc-twitter:hover {
+  background-position: 0 -72px;
+}
+.top-block-soc-wrap div.block-soc-icons li .soc-linkedin:hover {
+  background-position: 0 -168px;
+}
+.top-block-soc-wrap div.block-soc-icons li .soc-gp:hover {
+  background-position: 0 -120px;
+}
+.top-block-soc-wrap div.block-soc-icons li.more {
+  height:24px;
+  width:24px;
+}
+.top-block-soc-wrap div.block-soc-icons li.more a.soc-more.addthis_button_compact {
+  background: red url(http://www.ibtimes.co.uk/images/article_share_sprite.png) 0 -192px no-repeat;
+  height:24px;
+  width:24px;
+  display:block;
+}
+.top-block-soc-wrap div.block-soc-icons li.more:hover a.soc-more.addthis_button_compact {
+  background: red url(http://www.ibtimes.co.uk/images/article_share_sprite.png) 0 -216px no-repeat;
+}
+/*flyout*/
+.top-block-soc-wrap div.block-soc-icons .soc-flyout{
+	background:none;
+	position: absolute;
+	top: 30px;
+	z-index: 5000000;
+	border: 1px solid #E8E8E8;
+	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+	background: #fbfbfb; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fbfbfb 0%, #eeeeee 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fbfbfb 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fbfbfb 0%,#eeeeee 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fbfbfb 0%,#eeeeee 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fbfbfb 0%,#eeeeee 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+	padding: 3px 10px 10px 10px;
+	width: 90px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-flyout .outter-triangle {
+	height: 0;
+	width: 0;
+	position: relative;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #E8E8E8;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-flyout .outter-triangle .inner-triangle {
+  height: 0;
+  width: 0;
+  position: relative;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-facebook-flyout .outter-triangle {
+  top: -10px;
+  left: 20px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-twitter-flyout .outter-triangle {
+  top: -10px;
+  left: 15px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-linkedin-flyout .outter-triangle,
+.top-block-soc-wrap div.block-soc-icons .soc-google_plusone-flyout .outter-triangle {
+  top: -10px;
+  left: 10px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-facebook-flyout .outter-triangle .inner-triangle,
+.top-block-soc-wrap div.block-soc-icons .soc-twitter-flyout .outter-triangle .inner-triangle,
+.top-block-soc-wrap div.block-soc-icons .soc-linkedin-flyout .outter-triangle .inner-triangle,
+.top-block-soc-wrap div.block-soc-icons .soc-google_plusone-flyout .outter-triangle .inner-triangle {
+	top: 2px;
+	left: -5px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-facebook-flyout {
+	left: -25px;
+	height:27px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-twitter-flyout {
+    left: -20px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-linkedin-flyout {
+	left: -15px;
+	width: 100px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-google_plusone-flyout {
+	left: -15px;
+	width: 58px;
+}
+.top-block-soc-wrap div.block-soc-icons .soc-facebook-flyout iframe{
+	z-index:10000;
+}  
