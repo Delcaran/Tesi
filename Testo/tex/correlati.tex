@@ -50,13 +50,11 @@ Se la circolazione di BTC si riduce troppo, potrebbe verificarsi una perdita di 
 Purtroppo non esistono contromisure pratiche per il rischio di deflazione, e l'unico modo per rendere Bitcoin resistente a tale pericolo consiste nel rendere consapevoli gli utenti ed in particolare i minatori di quanto importante sia il loro contributo per la salvaguardia del loro stesso denaro.\\
 Si può però imparare da Bitcoin per una futura moneta elettronica che sia resistente alla deflazione integrando un sistema di feedback per controllare il tasso di mining globale, in modo che rifornire il sistema nel caso la circolazione diminuisca.
 
-\section{Esempi reali ???titolo da cambiare}
-
-\subsection{Distributore automatico}\label{distributore-automatico}
+\section{Distributore automatico}\label{distributore-automatico}
 
 Sfruttando e ampliando i risultati espressi in \ref{double-spending} è stato realizzato il primo prototipo di distributore automatico resistente agli attacchi doppia-spesa in grado di erogare il servizio in meno di 10 secondi accettando Bitcoin in pagamento.  Tale lavoro è stato compiuto da alcuni ricercatori dell'ETH di Zurigo (tra cui il già citato Christian Decker, tra gli autori di \cite{bitcoinpropagation}) e da Roger Wattenhofer della divisione ricerca di Microsoft (visto anche lui in \cite{bitcoinpropagation}) e descritto nella loro recente pubblicazione \cite{bitcoinsnack}. \\
 
-\subsubsection{Analisi preliminare}\label{doublespending-prevention-snack}
+\subsection{Analisi preliminare}\label{doublespending-prevention-snack}
 
 L'ampliamento dei risultati è stato realizzato implementando un attaccante ed un mercante come due sistemi completamente automatici in cui l'attaccante genera due transazioni conflittuali con gli stessi input e diverso output che vengono inviate a due nodi aiutanti collegati ad un numero casuale di nodi nella rete per meglio propagare le transazioni.\\
 Il mercante invece segue i consigli descritti in \ref{prevenzione-doppia-spesa} collegandosi ad un grande numero di nodi monitorando gli annunci di transazioni da essi provenienti, ma non inoltra nessuna transazione per evitare di rimanere isolato. Il log degli annunci viene utilizzato ai fini dell'analisi prendendo un campione causale dei nodi connessi per simulare molteplici configurazioni come se fossero state realmente implementate\footnote{L'osservazione si è infatti svolta sulla rete reali, con solo mercante ed attaccante implementati ad-hoc, e questa accortezza di sfruttare unicamente il log per simulare varie configurazioni ha il beneficio di non intasare la rete con troppe transazioni fasulle invalidando future statistiche.}\\\\
@@ -65,13 +63,64 @@ Ma il fulcro dell'analisi riguardava le configurazioni dei nodi a cui si connett
 Dato che non tutti i nodi propagano transazioni è necessario impostare un tempo massimo scaduto il quale la transazione viene considerata valida e il servizio erogato. Tale soglia aumenta il rischio di subire l'attacco in quanto riduce la finestra temporale di monitoraggio. I risultati sperimentali confermano però che la probabilità di non vedere entrambe le transazioni decresce esponenzialmente con il numero degli annunci: il 99 percentile per l'identificazione di un attacco doppia-spesa si ha intorno ai 37 annunci. Similmente, il tempo necessario per individuare l'attacco diminuisce con l'aumentare del numero di nodi connessi, con il 99 percentile intorno ai 6.29 secondi per 100 nodi. Con tali risultati si può quindi dire che una transazione può essere accettata con sicurezza dopo 6.29 secondi e 37 annunci di tale transazione oppure quando viene inclusa in un blocco, quale dei due eventi si verifica per primo.\\
 Con tale configurazione la probabilità di successo di un attaccante scende al valore assolutamente accettabile di 0.088\%, il che vuol dire che un commerciante che implementi quanto sopra descritto deve aspettarsi la perdita di un incasso ogni mille.
 
-\subsubsection{Implementazione}
+\subsection{Implementazione}
 
 I risultati della sperimentazione sono stati utilizzati per costruire un prototipo di distributore automatico funzionante a Bitcoin e resistente agli attacchi doppia-spesa.
 L'implementazione è divisa in due parti: un server per la verifica e il distributore. Il server ha il compito di connettersi alla rete Bitcoin e di gestire il portafogli della compagnia proprietaria del distributore, e pertanto può potenzialmente gestire in modo simultaneo un elevato numero di distributori. La macchina invece sfrutta il sistemo operativo Android per connettersi al server tramite rete mobile e un'app dedicata per interfacciarsi con l'utente.\\
 Quando il cliente seleziona un prodotto, il distributore contatta il server che risponde con un indirizzo creato appositamente\footnote{Questo permette di tracciare le transazioni con più facilità e rende potenzialmente più difficile identificare il server come detentore del portafogli e quindi come appetitoso bersaglio per attacchi.} a cui l'utente deve inviare il pagamento e rimane in ascolto per identificare transazioni in ingresso a tale indirizzo. Tale informazione insieme all'ammontare da pagare viene presentato all'utente sotto forma di codice QR\footnote{Tali codici QR rappresentano infatti un URI che contiene informazioni quali indirizzo del destinatario, ammontare del pagamento ed un eventuale messaggio. Sono molto diffusi per la facilità con cui permettono di sfruttare le app Bitcoin sui moderni smartphone.} che viene scansionato dall'utente con una apposita app Bitcoin (esistono infatti diversi client Bitcoin per smartphone) e sfruttato per generare la transazione di pagamento. Una volta che il server riceve il primo annuncio di tale transazione attiva il decadimento della sua soglia di verifica basata sul numero di nodi che l'hanno ricevuta ed inoltrata. Appena viene raggiunto il numero richiesto oppure se la transazione viene inclusa in un blocco prima di tale evento, il sevizio viene erogato. Con una soglia di 40 nodi in media si può fornire il servizio richiesto in meno di 10 secondi.\\
 Durante il suo periodo di operatività la macchina ha funzionato alla perfezione e nessuno degli attacchi di doppia-spesa tentato nei suoi confronti ha avuto successo. Tale confortante risultato ha spinto la compagnia distributrice ad avviare un test su larga scala in Svizzera che verificherà definitivamente la bontà di tale implementazione.
 
-\subsection{Bancomat}
+\section{Litecoin}
 
-\subsection{Silkroad ??FORSE???}
+Nel corso di questa trattazione sono stati messi in risalto alcune problematiche inerenti al protocollo Bitcoin che, se non trattati efficacemente, possono minarne la stabilità nel lungo periodo.
+Essendo tali problemi ben noti agli sviluppatori, sulla base delle varie sperimentazioni descritte o meno in precedenza, si è preso spunto dalle caratteristiche ``buone'' di Bitcoin per realizzare altre forme di monete elettroniche.
+Quella più simile a Bitcoin e di maggiore diffusione è sicuramente \emph{Litecoin}, progettata sulle stesse identiche basi e principi con alcune piccole ma sostanziali differenze di implementazione, riassunte nella tabella \ref{table_bit_lite_diff}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{m{0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep} |}
+    \textbf{} & \textbf{Bitcoin} & \textbf{Litecoin} \\ \hline
+    \textbf{Proof-of-Work} & SHA256 & Scrypt \\ \hline
+    \textbf{Generazione media di un blocco} & 10 minuti & 2.5 minuti \\ \hline
+    \textbf{Ricalcolo della difficoltà} & Ogni 2016 blocchi, circa 14 giorni & Ogni 2016 blocchi, circa 3.5 giorni \\ \hline
+    \textbf{Limite al numero di monete} & 21 milioni & 84 milioni \\ \hline
+    \textbf{Dimezzamento ricompensa} & Ogni 210000 blocchi & Ogni 840000 blocchi \\ \hline
+    \textbf{Indirizzi} & Iniziano con 1 o con 3 & Iniziano con \verb|L| \\ \hline
+    \textbf{Blocco genesis} & Un solo blocco & Due blocchi \\ \hline
+  \end{tabular}
+  \caption{Differenze implementative tra Bitcoin e Litecoin.\label{table_bit_lite_diff}}
+\end{table}
+
+Sebbene Scrypt\footnote{\url{http://www.tarsnap.com/scrypt.html}} sfrutti SHA256 come subroutine, è progettato per richiedere un uso molto intensivo di grandi blocchi di memoria piuttosto che necessitare di pura potenza di calcolo, cosa che lo rende difficilmente parallelizzabile. Questo rende anche molto difficile creare macchine appositamente studiate per il mining, a differenza di Bitcoin in cui tali dispositivi sono oramai obbligatori per chiunque voglia intraprendere seriamente la carriera di minatore.\\
+D'altra parte, scrypt è particolarmente adatto a funzionare su tutte le moderne CPU e GPU, rendendo di fatto accessibile a chiunque, almeno per il momento, la carriera di minatore Litecoin e ampliando la diffusione della rete in modo estremamente veloce. Esiste inoltre la possibilità per qualsiasi sito web di inserire un piccolo miner nelle proprie pagine, in modo da sfruttare i cicli liberi delle CPU del visitatore per contribuire al ritrovamento di un blocco.\\
+La maggior velocità di generazione di blocchi inoltre, sebbene agevoli notevolmente le transazioni rapide, aumenta gli sprechi di potenza di calcolo, in quanto vengono sprecati molti più hash dato che i minatori lavoreranno su un blocco che verrà scartato più spesso che non su un blocco che verrà inserito in blockchain. Questo significa inoltre che una transazione, per raggiungere lo stesso grado di conferma di 6 blocchi Bitcoin, avrà bisogno di circa 24 blocchi Litecoin.\\
+
+Le conseguenze di questi cambiamenti non sono ancora state studiate approfonditamente come per Bitcoin, in particolare l'algoritmo Scrypt non è ancora stato sottoposto a tutte le analisi che SHA256 ha superato, per cui è possibile che ci siano alcune problematiche non ancora individuate che potrebbero risultare fatali per la rete.\\
+Per i detrattori di Litecoin, esso non fornisce abbastanza innovazioni rispetto a Bitcoin e la maggior facilità di mining e di transazione non sono argomenti sufficienti per scommettere sul successo di tale moneta. Anzi, anche la facilità di mining potrebbe essere dannosa: lo Scrypt è infatti pensato per non essere parallelizzabile sulle più comuni architetture, ma questo vuol dire che è possibile che qualcuno investa una grande quantità di tempo e denaro per creare un'architettura dedicata in grado di eseguire scrypt in modo più efficiente. Con un numero relativamente basso di tali sistemi dedicati sarebbe possibile sorpassare la potenza di calcolo del 51\% della rete Litecoin, rendendo possibili i devastanti attacchi basati su hashrate.\\
+
+Al giorno d'oggi, molte delle società che accettano Bitcoin accettano anche Litecoin, inoltre molte exchange permettono di acquistare Bitcoin pagando con Litecoin e viceversa, per cui il dibattito sul futuro di Litecoin e sui suoi rapporti con Bitcoin è ancora aperto.
+
+\section{Legalità}
+
+Dato che Bitcoin è nata come una valuta completamente svincolata da ogni zecca o banca di Stato, la sua posizione legale è quanto mai dubbia, in particolare se si considera come la possibilità di inviare soldi all'estero, l'anonimato e la possibilità di riconvertire Bitcoin in valuta corrente siano attrattive per il mercato nero (come Silkroad, di cui si tratta in \ref{silkroad}). Le informazioni di seguito riportate rappresentano le opinioni di vari governi e di varie associazioni a Dicembre 2013.
+\begin{description}
+ \item[National Crime Agency] ha sede in Regno Unito e sostiene che le BTC siano una proprietà dotata di valore reale, e pertanto la loro sottrazione indebitata va trattata come un vero e proprio furto, non come un semplice reato informatico. Il problema è che essendo virtuali, anonime e senza una società centrale che le amministra, è impossibile stabilire sotto quale giurisdizione ricadono e l'appartenenza ad una persona fisica o giuridica. Secondo l'avvocato Jonathan Lea e l'esperto di sicurezza Brian Krebs, è di fatto praticamente impossibile riuscire ad usare la legge per recuperare le BTC in caso di furto.
+ \item[European Bank Authority] non ha emesso nessuna regolamentazione, ma ha fortemente sconsigliato l'utilizzo di Bitcoin e simili monete a chiunque non ne abbia compreso a fondo le caratteristiche ed i rischi, tra cui l'elevata variabilità della moneta e la difficoltà nel risolvere i furti, e per tali motivi consiglia di investire solamente i capitali che si era comunque disposti a rischiare.
+ \item[Regno Unito] non ritiene Bitcoin una vera moneta e non ne regola in alcun modo l'utilizzo, ma la considera una proprietà con valore. Attualmente la più grande società con sede in Regno Unito che accetta Bitcoin è la società di viaggi spaziali Virin Galactic di proprietà di Richard Branson.
+ \item[Cina] Da Dicembre 2013, la Banca del Popolo ha comunicato ufficialmente che Bitcoin non viene riconosciuta come valuta e non avrà tutela legale, proibendone di fatto l'utilizzo a tutte le società con sede in Cina. Il risultato più notevole è stato il blocco di nuovi depositi da parte dell'exchange BTC China, con conseguente crollo del valore di una BTC da circa 1200\$ a circa 480\$ (valutazioni dell'exchange Mt. Gox con sede a Tokyo). Il valore delle BTC era arrivato a 1200\$ da 100\$ in solo 4 mesi dopo che la stessa Cina aveva aperto le sue porte a Bitcoin, attirando molti investimenti.
+ \item[Danimarca] Attualmente l'utilizzo di Bitcoin non è regolato, ma si sta cercando di regolamentarne l'utilizzo nell'ottica di evitare il riciclaggio di denaro.
+ \item[Norvegia] Bitcoin non è considerata una valuta, ma è indubbio che si tratta di una proprietà con valore economico che deve essere considerato al momento del calcolo delle tasse.
+ \item[Cipro] Bitcoin non è considerata una valuta, ma il suo utilizzo è molto diffuso, soprattutto in conseguenza della crisi economica che ha colpito il paese nell'Aprile 2013 e che ha portato molti ciprioti ad investire nella moneta per evitare il prelievo di capitale dai propri conti bancari da parte del governo di Nicosia. Tali investimenti hanno causato un'impennata del valore delle BTC seconda solo a quella causata dagli investimenti cinesi.
+ Attualmente l'Università di Nicosia accetta Bitcoin come forma di pagamento della retta.
+ \item[Germania] Le BTC sono considerate una unità di scambio valida, paragonata ad una valuta regionale.
+ \item[Francia] È stato fondato in Francia il primo istituto bancario Bitcoin, la Bitcoin-Central, in cui i clienti possono effettuare depositi e trasferire moneta in Euro e in BTC.
+\end{description}
+
+
+\section{Fatti di cronaca}
+
+\subsection{L'embargo cinese e lo scoppio della bolla}
+
+\subsection{Silkroad}\label{silkroad}
+
+\subsection{Bancomat}

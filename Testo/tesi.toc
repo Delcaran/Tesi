@@ -124,15 +124,18 @@
 \contentsline {chapter}{\numberline {7}Argomenti correlati}{107}{chapter.7}
 \contentsline {section}{\numberline {7.1}Statistiche}{107}{section.7.1}
 \contentsline {section}{\numberline {7.2}Deflazione}{109}{section.7.2}
-\contentsline {section}{\numberline {7.3}Esempi reali ???titolo da cambiare}{110}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Distributore automatico}{110}{subsection.7.3.1}
-\contentsline {subsubsection}{Analisi preliminare}{110}{subsection.7.3.1}
-\contentsline {subsubsection}{Implementazione}{111}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Bancomat}{112}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Silkroad ??FORSE???}{112}{subsection.7.3.3}
-\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{113}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{115}{appendix.Alph2}
-\contentsline {chapter}{Bibliografia}{117}{appendix*.29}
+\contentsline {section}{\numberline {7.3}Distributore automatico}{110}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Analisi preliminare}{110}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Implementazione}{111}{subsection.7.3.2}
+\contentsline {section}{\numberline {7.4}Litecoin}{112}{section.7.4}
+\contentsline {section}{\numberline {7.5}Legalit\IeC {\`a}}{114}{section.7.5}
+\contentsline {section}{\numberline {7.6}Fatti di cronaca}{114}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}L'embargo cinese e lo scoppio della bolla}{114}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2}Silkroad}{114}{subsection.7.6.2}
+\contentsline {subsection}{\numberline {7.6.3}Bancomat}{114}{subsection.7.6.3}
+\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{115}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{117}{appendix.Alph2}
+\contentsline {chapter}{Bibliografia}{119}{appendix*.30}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}

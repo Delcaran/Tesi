@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.22)  22 DEC 2013 12:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.22)  3 JAN 2014 15:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1604,7 +1604,7 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 19.
 (/opt/texlive-2013/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-<./img/uniud_lite.PNG, id=328, 406.51875pt x 406.51875pt>
+<./img/uniud_lite.PNG, id=348, 406.51875pt x 406.51875pt>
 File: ./img/uniud_lite.PNG Graphic file (type png)
 
 <use ./img/uniud_lite.PNG>
@@ -1690,35 +1690,35 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 ]
 Capitolo 2.
-[9] [10] <./img/bitcoin_p2_1.PNG, id=551, 863.47594pt x 514.17094pt>
+[9] [10] <./img/bitcoin_p2_1.PNG, id=576, 863.47594pt x 514.17094pt>
 File: ./img/bitcoin_p2_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p2_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p2_1.PNG used on input line 48.
 (pdftex.def)             Requested size: 398.33685pt x 237.19623pt.
  [11] [12 <./img/bitcoin_p2_1.PNG>]
-<./img/bitcoin_p3_1.PNG, id=568, 998.9822pt x 294.34969pt>
+<./img/bitcoin_p3_1.PNG, id=593, 998.9822pt x 294.34969pt>
 File: ./img/bitcoin_p3_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p3_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p3_1.PNG used on input line 64.
 (pdftex.def)             Requested size: 398.33685pt x 117.36948pt.
  [13 <./img/bitcoin_p3_1.PNG>] [14]
-<./img/bitcoin_p4_1.PNG, id=597, 990.70125pt x 513.41812pt>
+<./img/bitcoin_p4_1.PNG, id=622, 990.70125pt x 513.41812pt>
 File: ./img/bitcoin_p4_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p4_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p4_1.PNG used on input line 113.
 (pdftex.def)             Requested size: 398.33685pt x 206.42905pt.
  [15]
-<./img/bitcoin_p5_1.PNG, id=608, 831.85782pt x 354.57469pt>
+<./img/bitcoin_p5_1.PNG, id=633, 831.85782pt x 354.57469pt>
 File: ./img/bitcoin_p5_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p5_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p5_1.PNG used on input line 123.
 (pdftex.def)             Requested size: 398.33685pt x 169.78813pt.
  [16 <./img/bitcoin_p4_1.PNG>]
-<./img/bitcoinpropagation_1.PNG, id=618, 837.1275pt x 249.93375pt>
+<./img/bitcoinpropagation_1.PNG, id=643, 837.1275pt x 249.93375pt>
 File: ./img/bitcoinpropagation_1.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_1.PNG>
@@ -1726,7 +1726,7 @@ Package pdftex.def Info: ./img/bitcoinpropagation_1.PNG used on input line 150.
 
 (pdftex.def)             Requested size: 398.33685pt x 118.92569pt.
  [17 <./img/bitcoin_p5_1.PNG>] [18 <./img/bitcoinpropagation_1.PNG>] [19]
-<./img/bitcoinpropagation_3.PNG, id=645, 760.34062pt x 507.39563pt>
+<./img/bitcoinpropagation_3.PNG, id=671, 760.34062pt x 507.39563pt>
 File: ./img/bitcoinpropagation_3.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_3.PNG>
@@ -1734,7 +1734,7 @@ Package pdftex.def Info: ./img/bitcoinpropagation_3.PNG used on input line 193.
 
 (pdftex.def)             Requested size: 398.33685pt x 265.82925pt.
 
-<./img/bitcoinpropagation_4.PNG, id=647, 730.22812pt x 508.14844pt>
+<./img/bitcoinpropagation_4.PNG, id=673, 730.22812pt x 508.14844pt>
 File: ./img/bitcoinpropagation_4.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_4.PNG>
@@ -1743,7 +1743,7 @@ Package pdftex.def Info: ./img/bitcoinpropagation_4.PNG used on input line 203.
 (pdftex.def)             Requested size: 398.33685pt x 277.19514pt.
  [20] [21 <./img/bitcoinpropagation_3.PNG>] [22 <./img/bitcoinpropagation_4.PNG
 >] [23]
-<./img/bitcoinpropagation_5.PNG, id=673, 727.21687pt x 498.36188pt>
+<./img/bitcoinpropagation_5.PNG, id=698, 727.21687pt x 498.36188pt>
 File: ./img/bitcoinpropagation_5.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_5.PNG>
@@ -1751,7 +1751,7 @@ Package pdftex.def Info: ./img/bitcoinpropagation_5.PNG used on input line 224.
 
 (pdftex.def)             Requested size: 398.33685pt x 272.98964pt.
  [24 <./img/bitcoinpropagation_5.PNG>]
-[25] <./img/bitcoinpropagation_6.PNG, id=693, 771.63281pt x 510.40688pt>
+[25] <./img/bitcoinpropagation_6.PNG, id=718, 771.63281pt x 510.40688pt>
 File: ./img/bitcoinpropagation_6.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_6.PNG>
@@ -1801,56 +1801,56 @@ Overfull \hbox (22.53635pt too wide) in paragraph at lines 273--283
 Underfull \vbox (badness 7613) has occurred while \output is active []
 
  [38]
-<./img/user_privacy_2.PNG, id=830, 635.37375pt x 514.17094pt>
+<./img/user_privacy_2.PNG, id=855, 635.37375pt x 514.17094pt>
 File: ./img/user_privacy_2.PNG Graphic file (type png)
 
 <use ./img/user_privacy_2.PNG>
 Package pdftex.def Info: ./img/user_privacy_2.PNG used on input line 294.
 (pdftex.def)             Requested size: 398.33685pt x 322.36029pt.
 
-<./img/user_privacy_3.PNG, id=832, 581.17125pt x 511.15968pt>
+<./img/user_privacy_3.PNG, id=857, 581.17125pt x 511.15968pt>
 File: ./img/user_privacy_3.PNG Graphic file (type png)
 
 <use ./img/user_privacy_3.PNG>
 Package pdftex.def Info: ./img/user_privacy_3.PNG used on input line 305.
 (pdftex.def)             Requested size: 398.33685pt x 350.35284pt.
  [39] [40 <./img/user_privacy_2.PNG>] [41 <./img/user_privacy_3.PNG>]
-<./img/user_privacy_5.PNG, id=853, 589.4522pt x 501.37312pt>
+<./img/user_privacy_5.PNG, id=878, 589.4522pt x 501.37312pt>
 File: ./img/user_privacy_5.PNG Graphic file (type png)
 
 <use ./img/user_privacy_5.PNG>
 Package pdftex.def Info: ./img/user_privacy_5.PNG used on input line 313.
 (pdftex.def)             Requested size: 398.33685pt x 338.81772pt.
  [42 <./img/user_privacy_5.PNG>]
-<./img/anonimity-028.PNG, id=867, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-028.PNG, id=892, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-028.PNG Graphic file (type png)
 
 <use ./img/anonimity-028.PNG>
 Package pdftex.def Info: ./img/anonimity-028.PNG used on input line 337.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimity-029.PNG, id=868, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-029.PNG, id=893, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-029.PNG Graphic file (type png)
 
 <use ./img/anonimity-029.PNG>
 Package pdftex.def Info: ./img/anonimity-029.PNG used on input line 338.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimato_1_3_c.PNG, id=869, 459.96844pt x 459.21562pt>
+<./img/anonimato_1_3_c.PNG, id=894, 459.96844pt x 459.21562pt>
 File: ./img/anonimato_1_3_c.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_c.PNG>
 Package pdftex.def Info: ./img/anonimato_1_3_c.PNG used on input line 340.
 (pdftex.def)             Requested size: 119.50226pt x 119.30214pt.
 
-<./img/anonimato_1_3_d.PNG, id=870, 470.50781pt x 451.6875pt>
+<./img/anonimato_1_3_d.PNG, id=895, 470.50781pt x 451.6875pt>
 File: ./img/anonimato_1_3_d.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_d.PNG>
 Package pdftex.def Info: ./img/anonimato_1_3_d.PNG used on input line 341.
 (pdftex.def)             Requested size: 119.50226pt x 114.72044pt.
 
-<./img/anonimato_1_3_e.PNG, id=871, 452.4403pt x 451.6875pt>
+<./img/anonimato_1_3_e.PNG, id=896, 452.4403pt x 451.6875pt>
 File: ./img/anonimato_1_3_e.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_e.PNG>
@@ -1875,35 +1875,35 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `table:gofuser' on page 45 undefined on input line 371
 .
 
-<./img/anonimity-030.PNG, id=903, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-030.PNG, id=929, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-030.PNG Graphic file (type png)
 
 <use ./img/anonimity-030.PNG>
 Package pdftex.def Info: ./img/anonimity-030.PNG used on input line 375.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimity-031.PNG, id=904, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-031.PNG, id=930, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-031.PNG Graphic file (type png)
 
 <use ./img/anonimity-031.PNG>
 Package pdftex.def Info: ./img/anonimity-031.PNG used on input line 376.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimato_1_4_c.PNG, id=905, 451.6875pt x 455.45157pt>
+<./img/anonimato_1_4_c.PNG, id=931, 451.6875pt x 455.45157pt>
 File: ./img/anonimato_1_4_c.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_c.PNG>
 Package pdftex.def Info: ./img/anonimato_1_4_c.PNG used on input line 378.
 (pdftex.def)             Requested size: 119.50226pt x 120.4995pt.
 
-<./img/anonimato_1_4_d.PNG, id=906, 450.18187pt x 453.19313pt>
+<./img/anonimato_1_4_d.PNG, id=932, 450.18187pt x 453.19313pt>
 File: ./img/anonimato_1_4_d.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_d.PNG>
 Package pdftex.def Info: ./img/anonimato_1_4_d.PNG used on input line 379.
 (pdftex.def)             Requested size: 119.50226pt x 120.29614pt.
 
-<./img/anonimato_1_4_e.PNG, id=907, 437.38406pt x 450.18187pt>
+<./img/anonimato_1_4_e.PNG, id=933, 437.38406pt x 450.18187pt>
 File: ./img/anonimato_1_4_e.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_e.PNG>
@@ -1911,42 +1911,42 @@ Package pdftex.def Info: ./img/anonimato_1_4_e.PNG used on input line 380.
 (pdftex.def)             Requested size: 119.50226pt x 122.99326pt.
  [45] [46 <./img/anonimity-030.PNG> <./img/anonimity-031.PNG> <./img/anonimato_
 1_4_c.PNG> <./img/anonimato_1_4_d.PNG> <./img/anonimato_1_4_e.PNG>] <./img/anon
-imity-146.PNG, id=931, 935.495pt x 468.75125pt>
+imity-146.PNG, id=957, 935.495pt x 468.75125pt>
 File: ./img/anonimity-146.PNG Graphic file (type png)
 
 <use ./img/anonimity-146.PNG>
 Package pdftex.def Info: ./img/anonimity-146.PNG used on input line 415.
 (pdftex.def)             Requested size: 191.19998pt x 95.80136pt.
 
-<./img/anonimity-148.PNG, id=932, 795.97375pt x 398.48875pt>
+<./img/anonimity-148.PNG, id=958, 795.97375pt x 398.48875pt>
 File: ./img/anonimity-148.PNG Graphic file (type png)
 
 <use ./img/anonimity-148.PNG>
 Package pdftex.def Info: ./img/anonimity-148.PNG used on input line 416.
 (pdftex.def)             Requested size: 191.19998pt x 95.71829pt.
  [47] [48 <./img/anonimity-146.PNG> <./img/anonimity-148.PNG>] <./img/anonimato
-_1_11.PNG, id=971, 616.55344pt x 496.85625pt>
+_1_11.PNG, id=996, 616.55344pt x 496.85625pt>
 File: ./img/anonimato_1_11.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_11.PNG>
 Package pdftex.def Info: ./img/anonimato_1_11.PNG used on input line 439.
 (pdftex.def)             Requested size: 398.33685pt x 321.01189pt.
  [49 <./img/anonimato_1_11.PNG>]
-<./img/anonimato_1_12.PNG, id=990, 421.575pt x 505.13719pt>
+<./img/anonimato_1_12.PNG, id=1015, 421.575pt x 505.13719pt>
 File: ./img/anonimato_1_12.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_12.PNG>
 Package pdftex.def Info: ./img/anonimato_1_12.PNG used on input line 450.
 (pdftex.def)             Requested size: 398.33685pt x 477.30322pt.
  [50] [51 <./img/anonimato_1_12.PNG>]
-<./img/anonimato_1_13.PNG, id=1017, 1008.76875pt x 485.56406pt>
+<./img/anonimato_1_13.PNG, id=1042, 1008.76875pt x 485.56406pt>
 File: ./img/anonimato_1_13.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_13.PNG>
 Package pdftex.def Info: ./img/anonimato_1_13.PNG used on input line 463.
 (pdftex.def)             Requested size: 398.33685pt x 191.73271pt.
 
-<./img/anonimato_1_14.PNG, id=1023, 575.14874pt x 506.6428pt>
+<./img/anonimato_1_14.PNG, id=1048, 575.14874pt x 506.6428pt>
 File: ./img/anonimato_1_14.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_14.PNG>
@@ -1961,7 +1961,7 @@ Package pdftex.def Info: ./img/anonimato_1_14.PNG used on input line 471.
 
 ]
 Capitolo 4.
-<./img/vulnerabilities_p2p-001.PNG, id=1058, 247.92625pt x 347.2975pt>
+<./img/vulnerabilities_p2p-001.PNG, id=1084, 247.92625pt x 347.2975pt>
 File: ./img/vulnerabilities_p2p-001.PNG Graphic file (type png)
 
 <use ./img/vulnerabilities_p2p-001.PNG>
@@ -2392,28 +2392,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
  []
 
 [107] [108] [109]
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--67
+Underfull \hbox (badness 10000) in paragraph at lines 59--65
 
  []
 
-[110] [111]) [112]
+[110] [111]
+
+LaTeX Warning: Reference `table_bit_lite_diff' on page 112 undefined on input l
+ine 77.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[]|\T1/cmr/bx/n/10.95 Dimezzamento
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--97
+
+ []
+
+[112]
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
+
+ []
+
+[113]) [114]
 \openout2 = `./tex/appendice.aux'.
 
  (./tex/appendice.tex
 Appendice A.
-[113
+[115
 
 
 
-] [114]
+] [116]
 Appendice B.
 
-LaTeX Warning: Reference `doppia-spesa' on page 115 undefined on input line 22.
+LaTeX Warning: Reference `doppia-spesa' on page 117 undefined on input line 22.
 
 
 (/opt/texlive-2013/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -2422,9 +2442,9 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (/opt/texlive-2013/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 )
-(./src/AttackerSuccessProbability.c)) [115
+(./src/AttackerSuccessProbability.c)) [117
 
-] [116
+] [118
 
 
 ] (./tesi.bbl
@@ -2470,7 +2490,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--115
 80f88a57aef43d7d5956c6 /
  []
 
-[117
+[119
 
 ]
 Underfull \hbox (badness 1342) in paragraph at lines 141--154
@@ -2484,7 +2504,7 @@ Underfull \hbox (badness 1033) in paragraph at lines 141--154
 is, An-ge-los D. (cu-ra-to-re): \T1/cmr/m/it/10.95 Fi-nan-
  []
 
-[118]
+[120]
 Underfull \hbox (badness 1168) in paragraph at lines 211--219
 []\T1/cmr/m/n/10.95 Merkle, Ral-ph C.: \T1/cmr/m/it/10.95 Pro-to-cols for Pu-bl
 ic Key Cryp-to-sy-stems\T1/cmr/m/n/10.95 .  Nel \T1/cmr/m/it/10.95 IEEE
@@ -2530,22 +2550,16 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                in the tesi.log file.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
-[119]
+[121]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./tesi.aux (./tex/titolo.aux) (./tex/abstract.aux) (./tex/intro.aux)
 (./tex/bitcoin.aux) (./tex/privacy.aux) (./tex/sicurezza.aux) (./tex/mining.aux
 ) (./tex/scripting.aux) (./tex/correlati.aux) (./tex/appendice.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
+Package rerunfilecheck Info: File `tesi.out' has not changed.
+(rerunfilecheck)             Checksum: 170394C52603B3E29EFD696383DAD540;6154.
 
-
-Package rerunfilecheck Warning: File `tesi.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `tesi.out':
-(rerunfilecheck)             Before: ADF6BDAA618D04CEA668B1C17E8929AE;5835
-(rerunfilecheck)             After:  129AF47FBB0AA9E5D16214683BD770FA;5843.
 
 LaTeX Warning: There were undefined references.
 
@@ -2555,15 +2569,18 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 36237 strings out of 494980
- 711880 string characters out of 6180251
- 934400 words of memory out of 5000000
- 37790 multiletter control sequences out of 15000+600000
+ 36254 strings out of 494980
+ 712135 string characters out of 6180251
+ 934508 words of memory out of 5000000
+ 37800 multiletter control sequences out of 15000+600000
  33376 words of font info for 84 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,19n,84p,2652b,2028s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.75} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.76} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.75} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.74} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2811,12 +2828,6 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{appendix.B} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.A} has been referenced but does not exist,
- replaced by a fixed one
-
 {/opt/texlive-2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</opt/te
 xlive-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive-2
 013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></opt/texlive-2013
@@ -2852,10 +2863,10 @@ xlive-2013/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></opt/texlive-20
 nts/type1/public/cm-super/sfti1095.pfb></opt/texlive-2013/texmf-dist/fonts/type
 1/public/cm-super/sftt0900.pfb></opt/texlive-2013/texmf-dist/fonts/type1/public
 /cm-super/sftt1095.pfb>
-Output written on tesi.pdf (131 pages, 3122197 bytes).
+Output written on tesi.pdf (133 pages, 3128749 bytes).
 PDF statistics:
- 1940 PDF objects out of 2073 (max. 8388607)
- 1693 compressed objects within 17 object streams
- 542 named destinations out of 1000 (max. 500000)
- 803 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1979 PDF objects out of 2073 (max. 8388607)
+ 1729 compressed objects within 18 object streams
+ 549 named destinations out of 1000 (max. 500000)
+ 843 words of extra memory for PDF output out of 10000 (max. 10000000)
 
