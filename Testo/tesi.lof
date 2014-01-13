@@ -1,0 +1,47 @@
+\select@language {italian}
+\select@language {italian}
+\select@language {english}
+\select@language {italian}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Panoramica generale sulle reti P2P}{1}{chapter.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Bitcoin: moneta elettronica decentralizzata}{9}{chapter.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Utilizzo delle chiavi e degli hash in una sequenza di transazioni.\relax }}{12}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Struttura minimale di una sequenza di blocchi.\relax }}{13}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Struttura di un blocco prima e dopo la compressione dell'albero delle transazioni.\relax }}{16}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Struttura di un blocco prima e dopo la compressione dell'albero delle transazioni.\relax }}{17}{figure.caption.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Schema di una transazione in cui vengono evidenziati input e output.\relax }}{18}{figure.caption.8}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Istogramma normalizzato del tempo che intercorre dal primo annuncio del blocco con una curva di interpolazione esponenziale.\relax }}{21}{figure.caption.9}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Costo del ritardo per il 50\ensuremath {^\circ }, 75\ensuremath {^\circ } e 90\ensuremath {^\circ } percentile. Il grafico \IeC {\`e} focalizzato sui valori pi\IeC {\`u} bassi delle ascisse per poter mostrare il comportamento costante presente dopo i 20kB.\relax }}{22}{figure.caption.10}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Fork osservati tra i blocchi 180000 e 190000 durante il collegamento alla rete.\relax }}{24}{figure.caption.11}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Tempo di distribuzione spostato a sinistra per i blocchi trovati tra le altezze 180000 e 190000.\relax }}{27}{figure.caption.12}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Privacy}{29}{chapter.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Percentuale di transazioni catturate dagli algoritmi di cluster nello scenario della \textbf {conoscenza parziale}.\relax }}{40}{figure.caption.14}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Caso in cui$\mathcal {A}$ non pu\IeC {\`o} stimare accuratamente $n_U = 200$ nello scenario di \textbf {conoscenza parziale}.\relax }}{41}{figure.caption.15}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Porzione delle transazioni catturate da $\mathcal {A}$ nello scenario di \textbf {conoscenza zero} e con il 50\% degli utenti attenti alla propria privacy.\relax }}{42}{figure.caption.16}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Dati relativi alla rete delle transazioni.\relax }}{44}{figure.caption.17}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dati relativi alla rete degli utenti.\relax }}{46}{figure.caption.19}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Esempio di geolocalizzazione di utenti Bitcoin.\relax }}{48}{figure.caption.21}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Visualizzazione egocentrica del ladro nella rete ausiliaria. Gli archi sono colorati in base al vertice sorgente e la dimensione dei vertici \IeC {\`e} funzione della loro centralit\IeC {\`a} nella rete.\relax }}{49}{figure.caption.22}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Ciclo di transazioni che coinvolge ladro, vittima e altri nodi.\relax }}{51}{figure.caption.23}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Flussi di transazioni interessanti avvenuti in seguito al furto.\relax }}{52}{figure.caption.24}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Transazioni molto rapide in seguito al furto.\relax }}{53}{figure.caption.25}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Sicurezza}{57}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Livelli di attacco in confronto con lo stack ISO/OSI.\relax }}{58}{figure.caption.26}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Probabilit\IeC {\`a} di successo dell'attaccante nella creazione di un nuova blockchain.\relax }}{72}{figure.caption.27}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Mining Pools}{79}{chapter.5}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Scripting}{95}{chapter.6}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Argomenti correlati}{107}{chapter.7}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Simulatore Bitcoin per la valutazione della privacy dell'utente}{117}{appendix.Alph1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Probabilit\IeC {\`a} di successo per l'attaccante}{119}{appendix.Alph2}
+\select@language {italian}
+\select@language {italian}
+\select@language {italian}
+\select@language {italian}

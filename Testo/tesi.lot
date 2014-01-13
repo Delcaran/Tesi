@@ -1,0 +1,33 @@
+\select@language {italian}
+\select@language {italian}
+\select@language {english}
+\select@language {italian}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Panoramica generale sulle reti P2P}{1}{chapter.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Bitcoin: moneta elettronica decentralizzata}{9}{chapter.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Privacy}{29}{chapter.3}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Risultati del clustering basato sul comportamento. Le colonne titolate \textbf {X (Y\%)} indicano una simulazione effettuata con \textbf {X} utenti di cui il \textbf {Y\%} sono attenti alla propria privacy. Ogni valore \IeC {\`e} la media di 5 diverse iterazioni ed \IeC {\`e} rappresentato con intervalli di confidenza del 95\% dopo il segno $\pm $.\relax }}{39}{table.caption.13}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Distribuzioni del grado dei nodi per la transaction network\relax }}{45}{table.caption.18}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Distribuzioni del grado dei nodi per la user network\relax }}{46}{table.caption.20}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Sicurezza}{57}{chapter.4}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Mining Pools}{79}{chapter.5}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Scripting}{95}{chapter.6}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Passaggi della verifica dell'input di una transazione standard tra due utenti.\relax }}{98}{table.caption.28}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Passaggi della verifica di una transazione standard di generazione di BTC.\relax }}{99}{table.caption.29}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Passaggi della verifica di una transazione di esempio contente un puzzle.\relax }}{99}{table.caption.30}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Argomenti correlati}{107}{chapter.7}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Differenze implementative tra Bitcoin e Litecoin.\relax }}{113}{table.caption.31}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Simulatore Bitcoin per la valutazione della privacy dell'utente}{117}{appendix.Alph1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Probabilit\IeC {\`a} di successo per l'attaccante}{119}{appendix.Alph2}
+\select@language {italian}
+\select@language {italian}
+\select@language {italian}
+\select@language {italian}

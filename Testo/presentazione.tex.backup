@@ -1,12 +1,11 @@
 \documentclass[italian]{beamer}
-%\documentclass[italian,handout]{beamer}
 
 \usepackage[utf8]{inputenc}
 
 \title[Bitcoin]{Analisi di Bitcoin}
 \subtitle{Anonimato, Sicurezza e Sviluppi Futuri}
-\author[Paoluzzi Matteo]{Paoluzzi Matteo}
-\institute[UniUD]{Università degli Studi di Udine\and{}Relatore:\\{}Prof. Ivan Scagnetto}
+\author[Paoluzzi Matteo]{Paoluzzi Matteo\par{}Relatore:\\{}Prof. Ivan Scagnetto}
+\institute[UniUD]{Università degli Studi di Udine}
 \date[2014/04/03]{IV Sessione di Laurea AA 2012/2013, Aprile 2014}
 \subject{Bitcoin}
 
@@ -18,7 +17,6 @@
 \graphicspath{{./img/}}
 
 \hypersetup{
-  pdfstartview={Fit},
   pdftitle={Presentazione della Tesi ``Analisi di Bitcoin: Anonimato, Sicurezza e Sviluppi Futuri``},
   pdfauthor={Paoluzzi Matteo},
   pdfsubject={Modello di presentazione di Tesi al computer},
