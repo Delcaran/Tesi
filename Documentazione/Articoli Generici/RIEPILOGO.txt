@@ -1,0 +1,63 @@
+Opinioni degli stati
+=====================
+
+Cina
+----
+
+Nel Dicembre 2013 la banca centrale cinese (la "Banca del Popolo") ha inviato una nota in cui si avvisa che le BTC non sono moneta corrente e quindi non verranno tutelate legalmente, proibendone l'utilizzo da parte degli istituti finanziari. Il risultato è stato il blocco dei nuovi depositi da parte dell'exchange BTC China che ha causato il crollo del valore di un singolo BTC da 1200$ a circa 480$ del 18 Dicembre (dati di Mt. Gox, con sede a Tokyo).
+Gli investimenti cinesi avevano portato il valore di BTC da 100$ al record di 1200$ in soli 4 mesi, un boom visto solo durante Aprile 2013 e probabilmente causato da numerosi investimenti in Cipro.
+
+Danimarca
+---------
+
+Michael Landberg, chief legal adviser at the Financial Supervisory Authority in Denmark, ha intenzione di regolamentare le BTC basandosi sulle attuali leggi anti-riciclaggio.
+Questo significa che in Danimarca non esistono leggi pro o contro Bitcoin, per cui chiunque può avviare un business basato su di esso.
+
+Norvegia
+----------
+
+Il direttore generale della tassazione Norvegese Hans Christian Holte afferma che Bitcoin non ricade nella definizione di moneta corrente, ma stanno comunque tentando di includerlo in modo giusto e corretto nel sistema di tasse norvegese considerando le BTC come un bene di cui tenere conto nel momento del calcolo delle tasse sul capitale: verranno applicate tasse del 25% sulle transazioni.
+
+Cipro
+------
+
+Sophocles Sophocleous, direttore presso l'Argos Capital Management di Cipro, sostiene che un qualcosa il cui valore oscilla quotidianamente del 20/30% non può essere considerato come moneta corrente, dato che deve esistere qualcosa che supporti il valore di una valuta (es, oro).
+Durante l'Aprile 2013, molti ciprioti si sono rivolti a Bitcoin come alternativa alle banche (in quel periodo il governo di Nicosia aveva dichiarato bancarotta, eseguendo prelievi forzati presso i depositi bancari dei cittadini). Il risultato è stato un notevole boom del valore di Bitcoin, che ha superato in poco tempo i 300$, per poi immediatamente precipitare sotto i 100$.
+
+Germania
+--------
+
+Il governo tedesco considera Bitcoin una "unità di scambio" simile ad una valuta regionale.
+
+Francia
+--------
+
+In Francia hano fondato la Bitcoin-Central, un vero istituto bancario in cui i clienti possono effettuare depositi e trasferire moneta in Euro e in BTC.
+
+European Bank Authority
+-------------------------
+
+La European Bank Authority ha dichiarato in una nota che Bitcoin e simili cryptomoneta devono essere utilizzate solamente da color che sono in grado di comprenderne pienamente le specifiche caratteristiche, investendo unicamente i capitali che si è disposti a perdere data l'elevata variabilità della valuta e il rischio di furti (sempre anonimi).
+
+STATUS LEGALE
+=============
+
+La Financial Conduct Authority e la National Crime Agency (entrambe britanniche) stanno cercando di stabilire la posizione legale di Bitcoin.
+La NCA sostiene che le criptomonete sono una forma di pagamento e di valuta, per cui la loro sottrazione è un vero e proprio furto, non solo un semplice attacco informatico, in quanto sono un valore e una proprietà.
+La NCA riconosce le difficoltà che Bitcoin causa in relazione a tasse, eredità, riciclaggio e il fatto che possano essere inviate all'estero senza pagare tasse.
+Il fatto che siano virtuali rende difficile stabilire dove si trovano le monete e quindi sotto quale giurisdizione ricadono, per cui non si sa quali sono le leggi da applicare (es, la UK ha leggi che regolano la moneta elettronica e a cui sono sottoposti servizi quali paypal). Inoltre ogni paese ha la sua idea (alcuni nemmeno l'idea) di cosa sia Bitcoin e quali leggi vadano applicate, semmai vadano applicate.
+Nel caso di furto è praticamente impossibile usare la legge per riavere indietro i propri soldi, a meno che non si spendano milioni in cause, perizie ed avvocati (parole del legale Jonathan Lea, sostenute dall'esperto di sicurezza Brian Krebs).
+In ogni caso solo l'entità del furto determina se la legge interviene o meno: in US i federali intervengono solo per furti almeno a 6 cifre (in dollari) e solo se ritengono di poter arrivare in fondo al caso senza troppi problemi.
+
+La FCA non considera Bitcoin una valuta e non ne regola l'utilizzo, così come nessun'altra moneta elettronica. Nel caso di business che sono sottoposti a regolamenti e che utilizzano anche Bitcoin bisogna stabilire caso per caso dove si deve applicare la legge e in che modo (e sotto che giurisdizione).
+
+SILKROAD
+========
+
+
+
+CHI ACCETTA PAGAMENTI IN BITCOIN:
+=================================
+
+- "Virgin Galactic", società per viaggi spaziali commerciali di Richard Branson.
+- L'Università di Nicosia a Cipro accetta Bitcoin come pagamento della retta.
