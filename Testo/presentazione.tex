@@ -78,11 +78,37 @@ I blocchi vengono creati risolvendo un difficile problema crittografico.
   \begin{itemize}
     \item La modifica di un blocco richiede la modifica di tutti i blocchi successivi.
     \item Concatenare blocchi rende sempre più difficile modificare un blocco vecchio.
+    \item La catena di blocchi usata per fissare tutte le transazioni prende il nome di Blockchain.
   \end{itemize}
 \end{itemize}
 \end{frame}
 
 \framedgraphic{Infografica}{transactions_ABC}
+
+\begin{frame}{Vulnerabilità: velocità di transazioni}
+ \begin{itemize}
+  \item Un transazione non è confermata fintanto che non viene inserita in un blocco, il che richiede in media 10 minuti.
+  \item Una transazione non confermata potrebbe non essere inserita nella blockchain e quindi risultare scartata.
+  \item Un attacco doppia-spesa sfrutta questa debolezza per frodare un venditore poco accorto: \pause
+  \begin{enumerate}
+   \item Si crea una transazione legittima e la si invia al commerciante. \pause
+   \item Il commerciante si fida che la transazione vada bene e invia il prodotto all'attaccante. \pause
+   \item L'attaccante invia una seconda transazione che sovrascrive la prima inviando lo stesso denaro a se stesso, frodando il commerciante. \pause
+   \item Se la seconda transazione viene inserita in un blocco prima della transazione legittima, l'attacco ha successo e l'attaccante ha ottenuto un bene senza pagarlo.
+  \end{enumerate}
+ \end{itemize}
+ \pause
+ La prevenzione è sempre nelle mani dell'utente.
+\end{frame}
+
+\begin{frame}{Vulnerabilità: potenza di calcolo}
+ Se un utente riesce ad accumulare più potenza di calcolo di quella del resto della rete, potrebbe creare una nuova blockchain a sua discrezioni invalidando tutte le transazioni a partire da un momento a sua discrezione.\\
+ \pause
+ La difficoltà nel compiere tale operazione è elevata.
+ \pause
+ Ma questo non vuol dire che sia impossibile!
+\end{frame}
+
 
 \begin{frame}{Mining}
 Creare un blocco ha molteplici scopi.
@@ -131,7 +157,22 @@ Il protocollo sfrutta un linguaggio di scripting che permette di verificare le t
 \pause
 Essendo non-standard, attualmente queste transazioni vengono rifiutate dai nodi e non possono entrare a far parte della blockchain.\\
 Possono però essere usare in reti private con client ad-hoc.
+\end{frame}l
+
+\begin{frame}{Deflazione}
+ L'elevato valore di una singola BTC rende più attraente l'idea di accumularle invece che di spenderle. Questo è vero per almeno il 55\% delle BTC prodotte. L'accumulazione di BTC provoca la seguente catena di eventi:
+ \begin{enumerate}
+  \item Meno transazioni. \puase
+  \item Meno blocchi nell'unità di tempo. \puase
+  \item Meno nuove monete. \puase
+  \imte Meno motivazione a diventare miner. \puase
+  \item Meno utenti che verificano la correttezza delle transazioni. \puase
+  \item Maggiore debolezza ai devastanti attacchi basati su potenza di calcolo e verifiche di transazioni. \puase
+ \end{enumerate}
+ Bitcoin è fortemente dipendente da una comunità attiva e da un costante fluire della moneta: in mancanza di ciò, perde il suo valore avviando potenzialmente una spirale deflazionistica.
 \end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \item Formula che appare un poco per volta:
