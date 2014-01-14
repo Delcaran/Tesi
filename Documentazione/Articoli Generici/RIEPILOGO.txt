@@ -3,15 +3,18 @@ da silkroad ha sequestrato circa 144000 BTC, valevoli circa 27M$, appartenenti
 all'indirizzo 1FfmbHfnpaZjKFvyi1okTjJJusN455paPH .
 Tutte le BTC contenute nei portafogli nei server sequestrati sono state
 inviate ad un unico indirizzo controllato dal governo statunitense: si presume
-che tale
-indirizzo sia 1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX e contiene un totale di
+che tale indirizzo sia 1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX e contiene in totale
 29,658.53328596 BTC. Roger Ver di Blockchain.org sostiene che ci siano forti
 correlazioni ma nessuna prova sul fatto che tale indirizzo contenga i soldi di
 silkroad o sia controllato dall'FBI_
 la prima transazione di tale account contava 47 portafogli trasferenti un
 totale di 1000 BTC il 2013/10/2 10:12:18 GMT, 15 ore dopo l'arresto di
-Ulbricht a San Francisco.
-A tale indirizzo molti altri utenti hanno poi effettuato donazioni volontarie
+Ulbricht a San Francisco. Nei 12 giorni seguenti sono state ricevute altre
+transazioni simili formate da molti indirizzi in input e un ammontare
+complessivo elevato ed esatto (1000 BTC, 50 BTC, 250 BTC, ecc).
+Nessuna transazione di uscita è stata ancora realizzata.
+Dopo queste prime grandi transazioni, a tale indirizzo molti altri utenti hanno 
+poi effettuato donazioni volontarie
 inserendo messaggi contro l'FBI nel "campo pubblico" della transazione.
 Non hanno rivelato come lo sanno, ma l'FBI è sicura che quei soldi siano di
 Ulbricht.
