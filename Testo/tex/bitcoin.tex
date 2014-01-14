@@ -191,7 +191,8 @@ La rilevazione è partita su nodi di altezza 180000 ed è durata per 10000 blocc
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{bitcoinpropagation_3.PNG}
-\caption{Istogramma normalizzato del tempo che intercorre dal primo annuncio del blocco con una curva di interpolazione esponenziale.\label{bitcoinpropagation_3}}
+\caption{Istogramma normalizzato del tempo che intercorre dal primo annuncio del blocco con una curva di interpolazione esponenziale.}
+\label{bitcoinpropagation_3}
 \end{figure}
 
 Le misurazioni effettuate ci permettono di stabilire che il tempo mediano in cui un nodo riceve un blocco è di 6.5 secondi, mentre la media è di 12.6 secondi. La lunghezza della seconda fase, quella di contrazione esponenziale, evidenzia come dopo soli 40 secondi il 95\% dei nodi abbia ricevuto il blocco.
@@ -201,7 +202,8 @@ Abbiamo però detto come la dimensione di un blocco sia variabile, fino a 500kB.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{bitcoinpropagation_4.PNG}
-\caption{Costo del ritardo per il 50°, 75° e 90° percentile. Il grafico è focalizzato sui valori più bassi delle ascisse per poter mostrare il comportamento costante presente dopo i 20kB.\label{bitcoinpropagation_4}}
+\caption{Costo del ritardo per il 50°, 75° e 90° percentile. Il grafico è focalizzato sui valori più bassi delle ascisse per poter mostrare il comportamento costante presente dopo i 20kB.}
+\label{bitcoinpropagation_4}
 \end{figure}
 
 Per pacchetti di dimensione superiore ai 20kB si vede come il costo sia pressoché costante, mentre per dimensioni minori si assiste a notevole ritardo. La causa di ciò sta nel \textbf{ritardo da un roundtrip}, ovvero il fatto che anche i piccoli messaggi vengono annunciati con \emph{inv} e richiesti con \emph{getdata}. Il roundtrip è dominante per le transazione in quanto il 96\% di tutte le transazioni sono inferiori ad 1kB. Per i blocchi, la cui dimensione è per la maggior parte superiore ai 20kB, ogni kB di dimensione costa circa 80ms di ritardo fino al momento in cui la maggioranza dei nodi non ha il blocco. %TODO verificare questa frase, sembra l'esatto opposto di quanto scritto nel grafico
