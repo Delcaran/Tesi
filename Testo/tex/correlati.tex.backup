@@ -104,16 +104,21 @@ Al giorno d'oggi, molte delle società che accettano Bitcoin accettano anche Lit
 
 Dato che Bitcoin è nata come una valuta completamente svincolata da ogni zecca o banca di Stato, la sua posizione legale è quanto mai dubbia, in particolare se si considera come la possibilità di inviare soldi all'estero, l'anonimato e la possibilità di riconvertire Bitcoin in valuta corrente siano attrattive per il mercato nero (come Silkroad, di cui si tratta in \ref{silkroad}). Le informazioni di seguito riportate rappresentano le opinioni di vari governi e di varie associazioni a Dicembre 2013.
 \begin{description}
- \item[Financial Conduct Authority] con sede in Regno Unito, non ritiene Bitcoin una vera moneta e non ne regola in alcun modo l'utilizzo.
  \item[National Crime Agency] ha sede in Regno Unito e sostiene che le BTC siano una proprietà dotata di valore reale, e pertanto la loro sottrazione indebitata va trattata come un vero e proprio furto, non come un semplice reato informatico. Il problema è che essendo virtuali, anonime e senza una società centrale che le amministra, è impossibile stabilire sotto quale giurisdizione ricadono e l'appartenenza ad una persona fisica o giuridica. Secondo l'avvocato Jonathan Lea e l'esperto di sicurezza Brian Krebs, è di fatto praticamente impossibile riuscire ad usare la legge per recuperare le BTC in caso di furto.
+ \item[European Bank Authority] non ha emesso nessuna regolamentazione, ma ha fortemente sconsigliato l'utilizzo di Bitcoin e simili monete a chiunque non ne abbia compreso a fondo le caratteristiche ed i rischi, tra cui l'elevata variabilità della moneta e la difficoltà nel risolvere i furti, e per tali motivi consiglia di investire solamente i capitali che si era comunque disposti a rischiare.
+ \item[Regno Unito] non ritiene Bitcoin una vera moneta e non ne regola in alcun modo l'utilizzo, ma la considera una proprietà con valore. Attualmente la più grande società con sede in Regno Unito che accetta Bitcoin è la società di viaggi spaziali Virin Galactic di proprietà di Richard Branson.
  \item[Cina] Da Dicembre 2013, la Banca del Popolo ha comunicato ufficialmente che Bitcoin non viene riconosciuta come valuta e non avrà tutela legale, proibendone di fatto l'utilizzo a tutte le società con sede in Cina. Il risultato più notevole è stato il blocco di nuovi depositi da parte dell'exchange BTC China, con conseguente crollo del valore di una BTC da circa 1200\$ a circa 480\$ (valutazioni dell'exchange Mt. Gox con sede a Tokyo). Il valore delle BTC era arrivato a 1200\$ da 100\$ in solo 4 mesi dopo che la stessa Cina aveva aperto le sue porte a Bitcoin, attirando molti investimenti.
+ \item[Danimarca] Attualmente l'utilizzo di Bitcoin non è regolato, ma si sta cercando di regolamentarne l'utilizzo nell'ottica di evitare il riciclaggio di denaro.
+ \item[Norvegia] Bitcoin non è considerata una valuta, ma è indubbio che si tratta di una proprietà con valore economico che deve essere considerato al momento del calcolo delle tasse.
+ \item[Cipro] Bitcoin non è considerata una valuta, ma il suo utilizzo è molto diffuso, soprattutto in conseguenza della crisi economica che ha colpito il paese nell'Aprile 2013 e che ha portato molti ciprioti ad investire nella moneta per evitare il prelievo di capitale dai propri conti bancari da parte del governo di Nicosia. Tali investimenti hanno causato un'impennata del valore delle BTC seconda solo a quella causata dagli investimenti cinesi.
+ Attualmente l'Università di Nicosia accetta Bitcoin come forma di pagamento della retta.
+ \item[Germania] Le BTC sono considerate una unità di scambio valida, paragonata ad una valuta regionale.
+ \item[Francia] È stato fondato in Francia il primo istituto bancario Bitcoin, la Bitcoin-Central, in cui i clienti possono effettuare depositi e trasferire moneta in Euro e in BTC.
+ \item[Finlandia] Esistono alcuni esercizi commerciali che offrono la possibilità di effettuare acquisti utilizzando Bitcoin, ed anche un bancomat (posizionato nella stazione centrale di Helsinki) che accetta Euro e carica il relativo ammontare in Bitcoin ad un indirizzo scelto dall'utente.
+ \item[Canada] La società del Nevada Robocoin ha installato a Vancouver uno sportello Bitcoin automatico che converte BTC in dollari canadesi. Per adempiere alle norme antiriclaggio vigenti in Canada, che impediscono ad una persona di prelevare da sportelli automatici più di 3000 dollari al giorno, il bancomat dispone di uno scanner che identifica l'utente in base al palmo della mano. Solo nel primo giorno, tale sportello ha effettuato 81 transazioni per un valore di circa 10mila dollari.
 \end{description}
-
-
-\section{Fatti di cronaca}
-
-\subsection{L'embargo cinese e lo scoppio della bolla}
 
 \subsection{Silkroad}\label{silkroad}
 
-\subsection{Bancomat}
+Basato sulla rete di relays anonimi TOR, si tratta di un onion-site di commercio elettronico creato e gestito da un utente chiamato Dread Pirate Roberts. Come tutti gli onion-site, Silkroad è (o meglio, era) accessibile unicamente tramite TOR, una rete di relays in cui il traffico web viene rimbalzato tra vari nodi per nascondere l'IP di origine e consentire l'accesso a siti altrimenti bloccati dagli ISP o a siti invisibili al di fuori di TOR, appunto gli onion-sites.\\
+Si è detto che il sito era accessibile in quanto nell'Ottobre 2013 l'FBI ha bloccato il sito a causa del tipo di commerci che vi si realizzavano: era infatto noto come l'``Amazon della droga''

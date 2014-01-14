@@ -1,11 +1,12 @@
 \documentclass[italian]{beamer}
+%\documentclass[italian,handout]{beamer}
 
 \usepackage[utf8]{inputenc}
 
 \title[Bitcoin]{Analisi di Bitcoin}
 \subtitle{Anonimato, Sicurezza e Sviluppi Futuri}
-\author[Paoluzzi Matteo]{Paoluzzi Matteo\par{}Relatore:\\{}Prof. Ivan Scagnetto}
-\institute[UniUD]{Università degli Studi di Udine}
+\author[Paoluzzi Matteo]{Paoluzzi Matteo}
+\institute[UniUD]{Università degli Studi di Udine\and{}Relatore:\\{}Prof. Ivan Scagnetto}
 \date[2014/04/03]{IV Sessione di Laurea AA 2012/2013, Aprile 2014}
 \subject{Bitcoin}
 
@@ -17,6 +18,7 @@
 \graphicspath{{./img/}}
 
 \hypersetup{
+  pdfstartview={Fit},
   pdftitle={Presentazione della Tesi ``Analisi di Bitcoin: Anonimato, Sicurezza e Sviluppi Futuri``},
   pdfauthor={Paoluzzi Matteo},
   pdfsubject={Modello di presentazione di Tesi al computer},
@@ -38,6 +40,7 @@
 
 \begin{frame}{Criteri di progettazione}
 \begin{itemize}
+ \item Struttura completamente decentralizzata formata da nodi in un grafo casuale.
  \item Anonimato dell'utente.
  \item Indipendente da istituti centrali.
  \item Transazioni sicure e verificabili.
@@ -93,14 +96,29 @@ Creare un blocco ha molteplici scopi.
     \item Inizialmente il premio era di 50 BTC, ora è sceso a 25 BTC.
   \end{itemize}
 \end{itemize}
+\bigskip
+L'analogia è con i cercatori d'oro, che guadagnano dal ritrovamento delle pepite dopo ore di duro lavoro in miniera. \\
+Pertanto il processo di calcolo dell'hash di un nuovo blocco viene definito \emph{mining} e il nodo \emph{miner}.
 \end{frame}
 
+\begin{frame}{Mining Pools}
+ \begin{itemize}
+  \item Calcolare l'hash per un blocco è un evento casuale senza memoria.
+  \item Un computer end-user ha decisamente poche speranze di trovare un blocco e intascare la ricompensa.
+  \item Con del costoso hardware dedicato le speranze aumentano un poco, ma restano comunque basse.
+  \pause
+  \item La soluzione è una collaborazione tra gli utenti in quelle che vengono definite \emph{mining pools}.
+ \end{itemize}
+
+\end{frame}
+
+
 \begin{frame}{Scripting}
-Il protocollo sfrutta un linguaggio di scripting che permette di creare transazioni non-standard.
+Il protocollo sfrutta un linguaggio di scripting che permette di verificare le transazioni ma anche di crearne alcune non-standard che implementano situazioni diverse dal semplice pagamento.
 \begin{itemize}
-\item Bla
-\item BlaBla
-\item BlaBlaBla
+\item Sistemi di deposito temporaneo.
+\item Raccolte fondi con assicurazione.
+\item Acquisto di beni con un mediatore.
 \end{itemize}
 \end{frame}
 
