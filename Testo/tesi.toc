@@ -1,12 +1,13 @@
 \select@language {italian}
 \select@language {italian}
+\select@language {italian}
 \select@language {english}
 \select@language {italian}
 \contentsline {chapter}{Elenco delle figure}{xiii}{chapter*.2}
 \contentsline {chapter}{Elenco delle tabelle}{xv}{chapter*.3}
 \contentsline {chapter}{\numberline {1}Panoramica generale sulle reti P2P}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Distribuzione dei file in una rete P2P}{2}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Scalabilit\IeC {\`a} (\cite {kurose-ross})}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Scalabilit\IeC {\`a}}{3}{subsection.1.1.1}
 \contentsline {subsubsection}{Caso Client-Server}{3}{subsection.1.1.1}
 \contentsline {subsubsection}{Caso P2P}{4}{subsection.1.1.1}
 \contentsline {subsubsection}{Confronto}{4}{subsection.1.1.1}
@@ -63,41 +64,41 @@
 \contentsline {section}{\numberline {4.1}Reti P2P in genere}{57}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Attacchi di Basso Livello}{57}{subsection.4.1.1}
 \contentsline {subsubsection}{Denial of Service (DoS)}{57}{subsection.4.1.1}
-\contentsline {paragraph}{Contromisure al DDoS}{59}{subsection.4.1.1}
+\contentsline {paragraph}{Contromisure al DDoS}{58}{subsection.4.1.1}
 \contentsline {subsubsection}{Attacco Man-in-the-Middle (MitM)}{59}{subsection.4.1.1}
-\contentsline {subsubsection}{Contrastare il Man-in-the-Middle}{60}{subsection.4.1.1}
+\contentsline {subsubsection}{Contrastare il Man-in-the-Middle}{59}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Attacchi di Medio Livello}{60}{subsection.4.1.2}
 \contentsline {subsubsection}{Worms}{60}{subsection.4.1.2}
-\contentsline {paragraph}{Contrastare i Worm}{61}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Attacchi al livello P2P}{62}{subsection.4.1.3}
-\contentsline {subsubsection}{Comportamento scorretto}{62}{subsection.4.1.3}
+\contentsline {paragraph}{Contrastare i Worm}{60}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Attacchi al livello P2P}{61}{subsection.4.1.3}
+\contentsline {subsubsection}{Comportamento scorretto}{61}{subsection.4.1.3}
 \contentsline {paragraph}{Contrastare i comportamenti scorretti}{62}{subsection.4.1.3}
-\contentsline {subsubsection}{Attacco Sibilla}{63}{subsection.4.1.3}
-\contentsline {paragraph}{Contromisure all'attacco Sibilla}{63}{subsection.4.1.3}
+\contentsline {subsubsection}{Attacco Sibilla}{62}{subsection.4.1.3}
+\contentsline {paragraph}{Contromisure all'attacco Sibilla}{62}{subsection.4.1.3}
 \contentsline {subsubsection}{Attacco Eclipse}{63}{subsection.4.1.3}
 \contentsline {paragraph}{Contromisure ad Eclipse}{63}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Contromisure generali}{64}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}La rete Bitcoin; attacchi doppia-spesa}{64}{section.4.2}
+\contentsline {subsection}{\numberline {4.1.4}Contromisure generali}{63}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}La rete Bitcoin}{64}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Attacchi basati sulla velocit\IeC {\`a}}{64}{subsection.4.2.1}
-\contentsline {subsubsection}{Modello di attacco}{65}{subsection.4.2.1}
-\contentsline {paragraph}{1: $t^\mathcal {V}_\mathcal {V} < t^\mathcal {A}_\mathcal {V}$}{66}{subsection.4.2.1}
-\contentsline {paragraph}{2: $\tau _\mathcal {A}$ confermata nella blockchain}{66}{subsection.4.2.1}
+\contentsline {subsubsection}{Modello di attacco}{64}{subsection.4.2.1}
+\contentsline {paragraph}{1: $t^\mathcal {V}_\mathcal {V} < t^\mathcal {A}_\mathcal {V}$}{65}{subsection.4.2.1}
+\contentsline {paragraph}{2: $\tau _\mathcal {A}$ confermata nella blockchain}{65}{subsection.4.2.1}
 \contentsline {subsubsection}{Risultati sperimentali}{67}{subsection.4.2.1}
-\contentsline {subsubsection}{Prevenire la doppia-spesa in velocit\IeC {\`a}}{68}{subsection.4.2.1}
-\contentsline {paragraph}{Periodo di sorveglianza}{68}{subsection.4.2.1}
-\contentsline {paragraph}{Sorveglianti in rete}{69}{subsection.4.2.1}
-\contentsline {paragraph}{Collaborazioni tra i peer}{69}{subsection.4.2.1}
+\contentsline {subsubsection}{Prevenire la doppia-spesa in velocit\IeC {\`a}}{67}{subsection.4.2.1}
+\contentsline {paragraph}{Periodo di sorveglianza}{67}{subsection.4.2.1}
+\contentsline {paragraph}{Sorveglianti in rete}{68}{subsection.4.2.1}
+\contentsline {paragraph}{Collaborazioni tra i peer}{68}{subsection.4.2.1}
 \contentsline {paragraph}{Prevenzione}{69}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Fork della blockchain arbitrario}{70}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Fork della blockchain arbitrario}{69}{section.4.3}
 \contentsline {subsubsection}{History-revision attack}{71}{figure.caption.27}
-\contentsline {subsection}{\numberline {4.2.3}Ridurre il forking: comunicazione tra i nodi}{73}{subsection.4.2.3}
-\contentsline {subsubsection}{Ridurre i tempi di verifica}{73}{subsection.4.2.3}
-\contentsline {subsubsection}{Propagare blocchi in pipeline}{74}{subsection.4.2.3}
-\contentsline {subsubsection}{Aumentare le connessioni}{74}{subsection.4.2.3}
-\contentsline {subsubsection}{Test delle precedenti soluzioni}{74}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Impedire riscritture della blockchain con lo scetticismo}{75}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}I Portafogli}{76}{section.4.3}
-\contentsline {section}{\numberline {4.4}Bitcoin-Exchange}{77}{section.4.4}
+\contentsline {subsection}{\numberline {4.3.1}Ridurre il forking: comunicazione tra i nodi}{72}{subsection.4.3.1}
+\contentsline {subsubsection}{Ridurre i tempi di verifica}{72}{subsection.4.3.1}
+\contentsline {subsubsection}{Propagare blocchi in pipeline}{73}{subsection.4.3.1}
+\contentsline {subsubsection}{Aumentare le connessioni}{74}{subsection.4.3.1}
+\contentsline {subsubsection}{Test delle precedenti soluzioni}{74}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Impedire riscritture della blockchain con lo scetticismo}{74}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}I Portafogli}{75}{section.4.4}
+\contentsline {section}{\numberline {4.5}Bitcoin-Exchange}{76}{section.4.5}
 \contentsline {chapter}{\numberline {5}Mining Pools}{79}{chapter.5}
 \contentsline {section}{\numberline {5.1}Funzionamento generico}{79}{section.5.1}
 \contentsline {section}{\numberline {5.2}Sistemi di retribuzione semplici}{82}{section.5.2}
