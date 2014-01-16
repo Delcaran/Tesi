@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.22)  13 JAN 2014 12:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.22)  16 JAN 2014 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -177,8 +177,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip43
 )
-(./geometry.sty
-Package: geometry 2002/07/08 v3.2 Page Geometry
+(/opt/texlive-2013/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count99
 \Gm@cntv=\count100
 \c@Gm@tempcnt=\count101
@@ -186,8 +186,13 @@ Package: geometry 2002/07/08 v3.2 Page Geometry
 \Gm@wd@mp=\dimen110
 \Gm@odd@mp=\dimen111
 \Gm@even@mp=\dimen112
+\Gm@layoutwidth=\dimen113
+\Gm@layoutheight=\dimen114
+\Gm@layouthoffset=\dimen115
+\Gm@layoutvoffset=\dimen116
 \Gm@dimlist=\toks15
-) (/opt/texlive-2013/texmf-dist/tex/latex/base/inputenc.sty
+)
+(/opt/texlive-2013/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
@@ -481,7 +486,7 @@ File: italian.mld 2006/01/13
 (/opt/texlive-2013/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
 \FN@temptoken=\toks19
-\footnotemargin=\dimen113
+\footnotemargin=\dimen117
 \c@pp@next@reset=\count106
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
@@ -521,7 +526,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 (/opt/texlive-2013/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count110
-\U@D=\dimen114
+\U@D=\dimen118
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -580,8 +585,8 @@ Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count121
 \calc@Bcount=\count122
-\calc@Adimen=\dimen115
-\calc@Bdimen=\dimen116
+\calc@Adimen=\dimen119
+\calc@Bdimen=\dimen120
 \calc@Askip=\skip49
 \calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 76.
@@ -603,11 +608,11 @@ Package: amstext 2000/06/29 v2.01
 (/opt/texlive-2013/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks24
-\ex@=\dimen117
+\ex@=\dimen121
 ))
 (/opt/texlive-2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen118
+\pmbraise@=\dimen122
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
@@ -624,7 +629,7 @@ LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box30
 \strutbox@=\box31
-\big@size=\dimen119
+\big@size=\dimen123
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count129
@@ -637,12 +642,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \column@=\count134
 \maxfields@=\count135
 \andhelp@=\toks26
-\eqnshift@=\dimen120
-\alignsep@=\dimen121
-\tagshift@=\dimen122
-\tagwidth@=\dimen123
-\totwidth@=\dimen124
-\lineht@=\dimen125
+\eqnshift@=\dimen124
+\alignsep@=\dimen125
+\tagshift@=\dimen126
+\tagwidth@=\dimen127
+\totwidth@=\dimen128
+\lineht@=\dimen129
 \@envbody=\toks27
 \multlinegap=\skip53
 \multlinetaggap=\skip54
@@ -653,14 +658,14 @@ LaTeX Info: Redefining \] on input line 2666.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_MT_multlinerow_int=\count136
-\l_MT_multwidth_dim=\dimen126
+\l_MT_multwidth_dim=\dimen130
 \origjot=\skip55
-\l_MT_shortvdotswithinadjustabove_dim=\dimen127
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen128
-\l_MT_above_intertext_sep=\dimen129
-\l_MT_below_intertext_sep=\dimen130
-\l_MT_above_shortintertext_sep=\dimen131
-\l_MT_below_shortintertext_sep=\dimen132
+\l_MT_shortvdotswithinadjustabove_dim=\dimen131
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen132
+\l_MT_above_intertext_sep=\dimen133
+\l_MT_below_intertext_sep=\dimen134
+\l_MT_above_shortintertext_sep=\dimen135
+\l_MT_below_shortintertext_sep=\dimen136
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -694,7 +699,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen133
+\bigstrutjot=\dimen137
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
@@ -702,13 +707,13 @@ Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 (/opt/texlive-2013/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen134
-\captionmargin@=\dimen135
-\captionwidth=\dimen136
-\caption@tempdima=\dimen137
-\caption@indent=\dimen138
-\caption@parindent=\dimen139
-\caption@hangindent=\dimen140
+\captionmargin=\dimen138
+\captionmargin@=\dimen139
+\captionwidth=\dimen140
+\caption@tempdima=\dimen141
+\caption@indent=\dimen142
+\caption@parindent=\dimen143
+\caption@hangindent=\dimen144
 )
 \c@ContinuedFloat=\count137
 Package caption Info: float package is loaded.
@@ -727,7 +732,7 @@ Package: pgfplots 2013/10/03 v1.9 Data Visualization (1.9)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box32
 
-(./everyshi.sty
+(/opt/texlive-2013/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
@@ -748,14 +753,14 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 x
 \pgfkeys@tmptoks=\toks38
 ))
-\pgf@x=\dimen141
-\pgf@y=\dimen142
-\pgf@xa=\dimen143
-\pgf@ya=\dimen144
-\pgf@xb=\dimen145
-\pgf@yb=\dimen146
-\pgf@xc=\dimen147
-\pgf@yc=\dimen148
+\pgf@x=\dimen145
+\pgf@y=\dimen146
+\pgf@xa=\dimen147
+\pgf@ya=\dimen148
+\pgf@xb=\dimen149
+\pgf@yb=\dimen150
+\pgf@xc=\dimen151
+\pgf@yc=\dimen152
 \w@pgf@writea=\write5
 \r@pgf@reada=\read1
 \c@pgf@counta=\count138
@@ -806,7 +811,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen149
+\pgfmath@dimen=\dimen153
 \pgfmath@count=\count144
 \pgfmath@box=\box33
 \pgfmath@toks=\toks39
@@ -832,32 +837,32 @@ ex))) (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 ))
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen150
-\pgf@picmaxx=\dimen151
-\pgf@picminy=\dimen152
-\pgf@picmaxy=\dimen153
-\pgf@pathminx=\dimen154
-\pgf@pathmaxx=\dimen155
-\pgf@pathminy=\dimen156
-\pgf@pathmaxy=\dimen157
-\pgf@xx=\dimen158
-\pgf@xy=\dimen159
-\pgf@yx=\dimen160
-\pgf@yy=\dimen161
-\pgf@zx=\dimen162
-\pgf@zy=\dimen163
+\pgf@picminx=\dimen154
+\pgf@picmaxx=\dimen155
+\pgf@picminy=\dimen156
+\pgf@picmaxy=\dimen157
+\pgf@pathminx=\dimen158
+\pgf@pathmaxx=\dimen159
+\pgf@pathminy=\dimen160
+\pgf@pathmaxy=\dimen161
+\pgf@xx=\dimen162
+\pgf@xy=\dimen163
+\pgf@yx=\dimen164
+\pgf@yy=\dimen165
+\pgf@zx=\dimen166
+\pgf@zy=\dimen167
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.c
 ode.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen164
-\pgf@path@lasty=\dimen165
+\pgf@path@lastx=\dimen168
+\pgf@path@lasty=\dimen169
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.
 tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen166
-\pgf@shorten@start@additional=\dimen167
+\pgf@shorten@end@additional=\dimen170
+\pgf@shorten@start@additional=\dimen171
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
@@ -869,14 +874,14 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.co
 de.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen168
+\pgflinewidth=\dimen172
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations
 .code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen169
-\pgf@pt@y=\dimen170
-\pgf@pt@temp=\dimen171
+\pgf@pt@x=\dimen173
+\pgf@pt@y=\dimen174
+\pgf@pt@temp=\dimen175
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -894,7 +899,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen172
+\pgf@max=\dimen176
 \pgf@sys@shading@range@num=\count147
 ) (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.te
 x
@@ -925,8 +930,8 @@ File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 (/opt/texlive-2013/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.
 sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen173
-\pgf@nodesepend=\dimen174
+\pgf@nodesepstart=\dimen177
+\pgf@nodesepend=\dimen178
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.
 sty
@@ -936,8 +941,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen175
-\pgffor@skip=\dimen176
+\pgffor@iter=\dimen179
+\pgffor@skip=\dimen180
 \pgffor@stack=\toks42
 \pgffor@toks=\toks43
 ))
@@ -948,14 +953,14 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \pgf@plot@mark@count=\count148
-\pgfplotmarksize=\dimen177
+\pgfplotmarksize=\dimen181
 )
-\tikz@lastx=\dimen178
-\tikz@lasty=\dimen179
-\tikz@lastxsaved=\dimen180
-\tikz@lastysaved=\dimen181
-\tikzleveldistance=\dimen182
-\tikzsiblingdistance=\dimen183
+\tikz@lastx=\dimen182
+\tikz@lasty=\dimen183
+\tikz@lastxsaved=\dimen184
+\tikz@lastysaved=\dimen185
+\tikzleveldistance=\dimen186
+\tikzsiblingdistance=\dimen187
 \tikz@figbox=\box39
 \tikz@tempbox=\box40
 \tikztreelevel=\count149
@@ -980,7 +985,7 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 \t@pgfplots@toka=\toks44
 \t@pgfplots@tokb=\toks45
 \t@pgfplots@tokc=\toks46
-\pgfplots@tmpa=\dimen184
+\pgfplots@tmpa=\dimen188
 \c@pgfplots@coordindex=\count157
 \c@pgfplots@scanlineindex=\count158
 
@@ -1011,7 +1016,7 @@ fsupp_pgfmathfloat.code.tex
 fsupp_pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
 \pgf@plot@mark@count=\count160
-\pgfplotmarksize=\dimen185
+\pgfplotmarksize=\dimen189
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
 fsupp_pgflibraryfpu.code.tex)
@@ -1078,14 +1083,14 @@ x
 librarydecorations.code.tex
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code
 .tex
-\pgfdecoratedcompleteddistance=\dimen186
-\pgfdecoratedremainingdistance=\dimen187
-\pgfdecoratedinputsegmentcompleteddistance=\dimen188
-\pgfdecoratedinputsegmentremainingdistance=\dimen189
-\pgf@decorate@distancetomove=\dimen190
+\pgfdecoratedcompleteddistance=\dimen190
+\pgfdecoratedremainingdistance=\dimen191
+\pgfdecoratedinputsegmentcompleteddistance=\dimen192
+\pgfdecoratedinputsegmentremainingdistance=\dimen193
+\pgf@decorate@distancetomove=\dimen194
 \pgf@decorate@repeatstate=\count165
-\pgfdecorationsegmentamplitude=\dimen191
-\pgfdecorationsegmentlength=\dimen192
+\pgfdecorationsegmentamplitude=\dimen195
+\pgfdecorationsegmentlength=\dimen196
 )
 \tikz@lib@dec@box=\box44
 )
@@ -1098,12 +1103,12 @@ librarydecorations.pathreplacing.code.tex
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibraryd
 ecorations.pathreplacing.code.tex))
 \pgfplots@numplots=\count166
-\pgfplots@xmin@reg=\dimen193
-\pgfplots@xmax@reg=\dimen194
-\pgfplots@ymin@reg=\dimen195
-\pgfplots@ymax@reg=\dimen196
-\pgfplots@zmin@reg=\dimen197
-\pgfplots@zmax@reg=\dimen198
+\pgfplots@xmin@reg=\dimen197
+\pgfplots@xmax@reg=\dimen198
+\pgfplots@ymin@reg=\dimen199
+\pgfplots@ymax@reg=\dimen200
+\pgfplots@zmin@reg=\dimen201
+\pgfplots@zmax@reg=\dimen202
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
 libraryplotmarks.code.tex
@@ -1122,17 +1127,17 @@ Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
 
 (/opt/texlive-2013/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen199
-\extrarowheight=\dimen200
+\col@sep=\dimen203
+\extrarowheight=\dimen204
 \NC@list=\toks51
 \extratabsurround=\skip59
 \backup@length=\skip60
 )
 \TY@count=\count169
-\TY@linewidth=\dimen201
-\tymin=\dimen202
-\tymax=\dimen203
-\TY@tablewidth=\dimen204
+\TY@linewidth=\dimen205
+\tymin=\dimen206
+\tymax=\dimen207
+\TY@tablewidth=\dimen208
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
 Package: newunicodechar 2012/11/12 v1.1 Defining Unicode characters
@@ -1147,17 +1152,25 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box45
 \beforetitleunit=\skip61
 \aftertitleunit=\skip62
-\ttl@plus=\dimen205
-\ttl@minus=\dimen206
+\ttl@plus=\dimen209
+\ttl@minus=\dimen210
 \ttl@toksa=\toks52
-\titlewidth=\dimen207
-\titlewidthlast=\dimen208
-\titlewidthfirst=\dimen209
+\titlewidth=\dimen211
+\titlewidthlast=\dimen212
+\titlewidthfirst=\dimen213
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/babelbib/babelbib.sty
 Package: babelbib 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
+
+(/opt/texlive-2013/texmf-dist/tex/latex/babelbib/italian.bdf
+File: italian.bdf 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
+)
 \c@btxromaniannumeral=\count170
 )
+
+Package babelbib Warning: Command \selectbiblanguage used without package
+(babelbib)                option fixlanguage. Ignored on input line 39.
+
 (/opt/texlive-2013/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip63
 \f@ncyO@elh=\skip64
@@ -1181,14 +1194,14 @@ Package: verbfwr 2003/09/25 v0.02 Verbatim file write
 \lst@gtempboxa=\box46
 \lst@token=\toks53
 \lst@length=\count172
-\lst@currlwidth=\dimen210
+\lst@currlwidth=\dimen214
 \lst@column=\count173
 \lst@pos=\count174
-\lst@lostspace=\dimen211
-\lst@width=\dimen212
+\lst@lostspace=\dimen215
+\lst@width=\dimen216
 \lst@newlines=\count175
 \lst@lineno=\count176
-\lst@maxwidth=\dimen213
+\lst@maxwidth=\dimen217
 
 (/opt/texlive-2013/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
@@ -1326,7 +1339,7 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTpre=\skip77
 \LTpost=\skip78
 \LTchunksize=\count200
-\LTcapwidth=\dimen214
+\LTcapwidth=\dimen218
 \LT@head=\box48
 \LT@firsthead=\box49
 \LT@foot=\box50
@@ -1346,20 +1359,20 @@ Package: glossary-super 2013/11/14 v4.0 (NLCT)
 (/opt/texlive-2013/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
 \c@tracingst=\count205
-\ST@wd=\dimen215
+\ST@wd=\dimen219
 \ST@rightskip=\skip81
 \ST@leftskip=\skip82
 \ST@parfillskip=\skip83
-\ST@pageleft=\dimen216
-\ST@headht=\dimen217
-\ST@tailht=\dimen218
-\ST@pagesofar=\dimen219
-\ST@pboxht=\dimen220
-\ST@lineht=\dimen221
-\ST@stretchht=\dimen222
-\ST@prevht=\dimen223
-\ST@toadd=\dimen224
-\ST@dimen=\dimen225
+\ST@pageleft=\dimen220
+\ST@headht=\dimen221
+\ST@tailht=\dimen222
+\ST@pagesofar=\dimen223
+\ST@pboxht=\dimen224
+\ST@lineht=\dimen225
+\ST@stretchht=\dimen226
+\ST@prevht=\dimen227
+\ST@toadd=\dimen228
+\ST@dimen=\dimen229
 \ST@pbox=\box52
 ))
 (/opt/texlive-2013/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
@@ -1376,7 +1389,7 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 ) (/opt/texlive-2013/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 94.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 96.
 \c@teorema=\count206
 )
 (./commands.sty
@@ -1422,13 +1435,13 @@ LaTeX Font Info:    ... okay on input line 14.
 (/opt/texlive-2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count207
-\scratchdimen=\dimen226
+\scratchdimen=\dimen230
 \scratchbox=\box53
 \nofMPsegments=\count208
 \nofMParguments=\count209
 \everyMPshowfont=\toks65
 \MPscratchCnt=\count210
-\MPscratchDim=\dimen227
+\MPscratchDim=\dimen231
 \MPnumerator=\count211
 \makeMPintoPDFobject=\count212
 \everyMPtoPDFconversion=\toks66
@@ -1468,45 +1481,42 @@ LaTeX Info: Redefining \nameref on input line 14.
 \openout10 = `tesi.out'.
 
 LaTeX Info: Redefining \Ref on input line 14.
--------------------- Geometry parameters
-paper: a4paper
-landscape: --
-twocolumn: --
-twoside: true
-asymmetric: --
-h-parts: 68.2873pt, 0.7\paperwidth , 102.43098pt (default)
-v-parts: 101.40665pt, 0.7\paperheight , 152.11pt (default)
-hmarginratio: 2:3
-vmarginratio: 2:3
-lines: --
-heightrounded: --
-bindingoffset: 28.45274pt
-truedimen: --
-includehead: --
-includefoot: --
-includemp: --
-driver: pdftex
--------------------- Page layout dimensions and switches
-\paperwidth  597.50787pt
-\paperheight 845.04684pt
-\textwidth  398.33685pt
-\textheight 591.5302pt
-\oddsidemargin  24.47005pt
-\evensidemargin 30.161pt
-\topmargin  -2.73714pt
-\headheight 13.6pt
-\headsep    19.8738pt
-\footskip   27.46295pt
-\marginparwidth 106.0pt
-\marginparsep   7.0pt
-\columnsep  10.0pt
-\skip\footins  10.0pt plus 4.0pt minus 2.0pt
-\hoffset 0.0pt
-\voffset 0.0pt
-\mag 1000
-\@twosidetrue \@mparswitchtrue 
-(1in=72.27pt, 1cm=28.45pt)
------------------------
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* bindingoffset: 28.45274pt
+* modes: twoside 
+* h-part:(L,W,R)=(68.2873pt, 398.33685pt, 102.43098pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=398.33685pt
+* \textheight=591.5302pt
+* \oddsidemargin=24.47005pt
+* \evensidemargin=30.161pt
+* \topmargin=-2.73714pt
+* \headheight=13.6pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=106.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
@@ -1514,7 +1524,6 @@ Package minitoc(hints) Info: I0046
 (minitoc(hints))             --- The tocbibind package is loaded. 
 (minitoc(hints))             See the minitoc package documentation 
 (minitoc(hints))             for specific precautions.
-
 
 Package minitoc(hints) Warning: W0099
 (minitoc(hints))                --- The titlesec package is loaded. 
@@ -1570,19 +1579,16 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.9} into y
 our preamble.
  on input line 14.
 
+babelbib extension \bibsitalian added to \extrasitalian
+babelbib extension \btxifchangecaseoff added to \extrasitalian
+babelbib: Use citation-dependent languages in bibliography
 babelbib: Set bibliography fall-back language to italian
 (/opt/texlive-2013/texmf-dist/tex/latex/babelbib/english.bdf
 File: english.bdf 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
 
+babelbib extension \bibsenglish added to \extrasenglish
 babelbib extension \btxifchangecaseon added to \extrasenglish
-) (/opt/texlive-2013/texmf-dist/tex/latex/babelbib/italian.bdf
-File: italian.bdf 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
-
-babelbib extension \btxifchangecaseoff added to \extrasitalian
 )
-babelbib: Load BibTeX extensions \bibsitalian for italian
-babelbib: Set language for keywords in the bibliography fixed to italian
-babelbib: Set language for keywords in the bibliography fixed to italian
 \c@lstlisting=\count214
 
 (/opt/texlive-2013/texmf-dist/tex/latex/glossaries/dict/glossaries-dictionary-E
@@ -1603,7 +1609,7 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 19.
 (/opt/texlive-2013/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-<./img/uniud_lite.PNG, id=348, 406.51875pt x 406.51875pt>
+<./img/uniud_lite.PNG, id=344, 406.51875pt x 406.51875pt>
 File: ./img/uniud_lite.PNG Graphic file (type png)
 
 <use ./img/uniud_lite.PNG>
@@ -1657,18 +1663,17 @@ ite.PNG>] [2
  [11] [12
 
 ]
-No file tesi.lof.
+(./tesi.lof [13])
 \tf@lof=\write12
 \openout12 = `tesi.lof'.
 
-[13] [14
-
-]
-No file tesi.lot.
+ [14] (./tesi.lot)
 \tf@lot=\write13
 \openout13 = `tesi.lot'.
 
-[15] [16
+ [15
+
+] [16
 
 ]
 \openout2 = `./tex/intro.aux'.
@@ -1682,11 +1687,8 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 
 
 ] [2]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 42.
-
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
+
 (/opt/texlive-2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -1702,35 +1704,35 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 ]
 Capitolo 2.
-[9] [10] <./img/bitcoin_p2_1.PNG, id=595, 863.47594pt x 514.17094pt>
+[9] [10] <./img/bitcoin_p2_1.PNG, id=662, 863.47594pt x 514.17094pt>
 File: ./img/bitcoin_p2_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p2_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p2_1.PNG used on input line 48.
 (pdftex.def)             Requested size: 398.33685pt x 237.19623pt.
  [11] [12 <./img/bitcoin_p2_1.PNG>]
-<./img/bitcoin_p3_1.PNG, id=612, 998.9822pt x 294.34969pt>
+<./img/bitcoin_p3_1.PNG, id=678, 998.9822pt x 294.34969pt>
 File: ./img/bitcoin_p3_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p3_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p3_1.PNG used on input line 64.
 (pdftex.def)             Requested size: 398.33685pt x 117.36948pt.
  [13 <./img/bitcoin_p3_1.PNG>] [14]
-<./img/bitcoin_p4_1.PNG, id=640, 990.70125pt x 513.41812pt>
+<./img/bitcoin_p4_1.PNG, id=705, 990.70125pt x 513.41812pt>
 File: ./img/bitcoin_p4_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p4_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p4_1.PNG used on input line 113.
 (pdftex.def)             Requested size: 398.33685pt x 206.42905pt.
  [15]
-<./img/bitcoin_p5_1.PNG, id=653, 831.85782pt x 354.57469pt>
+<./img/bitcoin_p5_1.PNG, id=717, 831.85782pt x 354.57469pt>
 File: ./img/bitcoin_p5_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p5_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p5_1.PNG used on input line 123.
 (pdftex.def)             Requested size: 398.33685pt x 169.78813pt.
  [16 <./img/bitcoin_p4_1.PNG>]
-<./img/bitcoinpropagation_1.PNG, id=663, 837.1275pt x 249.93375pt>
+<./img/bitcoinpropagation_1.PNG, id=726, 837.1275pt x 249.93375pt>
 File: ./img/bitcoinpropagation_1.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_1.PNG>
@@ -1738,7 +1740,7 @@ Package pdftex.def Info: ./img/bitcoinpropagation_1.PNG used on input line 150.
 
 (pdftex.def)             Requested size: 398.33685pt x 118.92569pt.
  [17 <./img/bitcoin_p5_1.PNG>] [18 <./img/bitcoinpropagation_1.PNG>] [19]
-<./img/bitcoinpropagation_3.PNG, id=689, 760.34062pt x 507.39563pt>
+<./img/bitcoinpropagation_3.PNG, id=750, 760.34062pt x 507.39563pt>
 File: ./img/bitcoinpropagation_3.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_3.PNG>
@@ -1746,28 +1748,31 @@ Package pdftex.def Info: ./img/bitcoinpropagation_3.PNG used on input line 193.
 
 (pdftex.def)             Requested size: 398.33685pt x 265.82925pt.
 
-<./img/bitcoinpropagation_4.PNG, id=691, 730.22812pt x 508.14844pt>
+<./img/bitcoinpropagation_4.PNG, id=752, 730.22812pt x 508.14844pt>
 File: ./img/bitcoinpropagation_4.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_4.PNG>
-Package pdftex.def Info: ./img/bitcoinpropagation_4.PNG used on input line 203.
+Package pdftex.def Info: ./img/bitcoinpropagation_4.PNG used on input line 204.
 
 (pdftex.def)             Requested size: 398.33685pt x 277.19514pt.
- [20] [21 <./img/bitcoinpropagation_3.PNG>] [22 <./img/bitcoinpropagation_4.PNG
->] [23]
-<./img/bitcoinpropagation_5.PNG, id=717, 727.21687pt x 498.36188pt>
+
+Underfull \vbox (badness 2351) has occurred while \output is active []
+
+ [20]
+[21 <./img/bitcoinpropagation_3.PNG>] [22 <./img/bitcoinpropagation_4.PNG>]
+[23] <./img/bitcoinpropagation_5.PNG, id=775, 727.21687pt x 498.36188pt>
 File: ./img/bitcoinpropagation_5.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_5.PNG>
-Package pdftex.def Info: ./img/bitcoinpropagation_5.PNG used on input line 224.
+Package pdftex.def Info: ./img/bitcoinpropagation_5.PNG used on input line 226.
 
 (pdftex.def)             Requested size: 398.33685pt x 272.98964pt.
  [24 <./img/bitcoinpropagation_5.PNG>]
-[25] <./img/bitcoinpropagation_6.PNG, id=736, 771.63281pt x 510.40688pt>
+[25] <./img/bitcoinpropagation_6.PNG, id=793, 771.63281pt x 510.40688pt>
 File: ./img/bitcoinpropagation_6.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_6.PNG>
-Package pdftex.def Info: ./img/bitcoinpropagation_6.PNG used on input line 272.
+Package pdftex.def Info: ./img/bitcoinpropagation_6.PNG used on input line 274.
 
 (pdftex.def)             Requested size: 398.33685pt x 263.48163pt.
  [26] [27 <./img/bitcoinpropagation_6.PNG>]) [28]
@@ -1813,156 +1818,139 @@ Overfull \hbox (22.53635pt too wide) in paragraph at lines 273--283
 Underfull \vbox (badness 7613) has occurred while \output is active []
 
  [38]
-<./img/user_privacy_2.PNG, id=873, 635.37375pt x 514.17094pt>
+<./img/user_privacy_2.PNG, id=929, 635.37375pt x 514.17094pt>
 File: ./img/user_privacy_2.PNG Graphic file (type png)
 
 <use ./img/user_privacy_2.PNG>
 Package pdftex.def Info: ./img/user_privacy_2.PNG used on input line 294.
 (pdftex.def)             Requested size: 398.33685pt x 322.36029pt.
 
-<./img/user_privacy_3.PNG, id=875, 581.17125pt x 511.15968pt>
+<./img/user_privacy_3.PNG, id=931, 581.17125pt x 511.15968pt>
 File: ./img/user_privacy_3.PNG Graphic file (type png)
 
 <use ./img/user_privacy_3.PNG>
 Package pdftex.def Info: ./img/user_privacy_3.PNG used on input line 305.
 (pdftex.def)             Requested size: 398.33685pt x 350.35284pt.
  [39] [40 <./img/user_privacy_2.PNG>] [41 <./img/user_privacy_3.PNG>]
-<./img/user_privacy_5.PNG, id=899, 589.4522pt x 501.37312pt>
+<./img/user_privacy_5.PNG, id=951, 589.4522pt x 501.37312pt>
 File: ./img/user_privacy_5.PNG Graphic file (type png)
 
 <use ./img/user_privacy_5.PNG>
 Package pdftex.def Info: ./img/user_privacy_5.PNG used on input line 313.
 (pdftex.def)             Requested size: 398.33685pt x 338.81772pt.
  [42 <./img/user_privacy_5.PNG>]
-<./img/anonimity-028.PNG, id=913, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-028.PNG, id=964, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-028.PNG Graphic file (type png)
 
 <use ./img/anonimity-028.PNG>
 Package pdftex.def Info: ./img/anonimity-028.PNG used on input line 337.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimity-029.PNG, id=914, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-029.PNG, id=965, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-029.PNG Graphic file (type png)
 
 <use ./img/anonimity-029.PNG>
 Package pdftex.def Info: ./img/anonimity-029.PNG used on input line 338.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimato_1_3_c.PNG, id=915, 459.96844pt x 459.21562pt>
+<./img/anonimato_1_3_c.PNG, id=966, 459.96844pt x 459.21562pt>
 File: ./img/anonimato_1_3_c.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_c.PNG>
 Package pdftex.def Info: ./img/anonimato_1_3_c.PNG used on input line 340.
 (pdftex.def)             Requested size: 119.50226pt x 119.30214pt.
 
-<./img/anonimato_1_3_d.PNG, id=916, 470.50781pt x 451.6875pt>
+<./img/anonimato_1_3_d.PNG, id=967, 470.50781pt x 451.6875pt>
 File: ./img/anonimato_1_3_d.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_d.PNG>
 Package pdftex.def Info: ./img/anonimato_1_3_d.PNG used on input line 341.
 (pdftex.def)             Requested size: 119.50226pt x 114.72044pt.
 
-<./img/anonimato_1_3_e.PNG, id=917, 452.4403pt x 451.6875pt>
+<./img/anonimato_1_3_e.PNG, id=968, 452.4403pt x 451.6875pt>
 File: ./img/anonimato_1_3_e.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_e.PNG>
 Package pdftex.def Info: ./img/anonimato_1_3_e.PNG used on input line 342.
 (pdftex.def)             Requested size: 119.50226pt x 119.30376pt.
-
-
-Package caption Warning: \label without proper \caption on input line 352.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `table:goftransactions' on page 43 undefined on input 
-line 346.
-
-[43] [44 <./img/anonimity-028.PNG> <./img/anonimity-029.PNG> <./img/anonimato_1
-_3_c.PNG> <./img/anonimato_1_3_d.PNG> <./img/anonimato_1_3_e.PNG>]
-
-Package caption Warning: \label without proper \caption on input line 386.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `table:gofuser' on page 45 undefined on input line 371
-.
-
-<./img/anonimity-030.PNG, id=949, 1053.9375pt x 1053.9375pt>
+ [43] [44 <./img/anonimity-028.PNG> <./img/anonimity-029.PNG> <./img/anonimato_
+1_3_c.PNG> <./img/anonimato_1_3_d.PNG> <./img/anonimato_1_3_e.PNG>]
+<./img/anonimity-030.PNG, id=997, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-030.PNG Graphic file (type png)
 
 <use ./img/anonimity-030.PNG>
-Package pdftex.def Info: ./img/anonimity-030.PNG used on input line 375.
+Package pdftex.def Info: ./img/anonimity-030.PNG used on input line 374.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimity-031.PNG, id=950, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-031.PNG, id=998, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-031.PNG Graphic file (type png)
 
 <use ./img/anonimity-031.PNG>
-Package pdftex.def Info: ./img/anonimity-031.PNG used on input line 376.
+Package pdftex.def Info: ./img/anonimity-031.PNG used on input line 375.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimato_1_4_c.PNG, id=951, 451.6875pt x 455.45157pt>
+<./img/anonimato_1_4_c.PNG, id=999, 451.6875pt x 455.45157pt>
 File: ./img/anonimato_1_4_c.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_c.PNG>
-Package pdftex.def Info: ./img/anonimato_1_4_c.PNG used on input line 378.
+Package pdftex.def Info: ./img/anonimato_1_4_c.PNG used on input line 377.
 (pdftex.def)             Requested size: 119.50226pt x 120.4995pt.
 
-<./img/anonimato_1_4_d.PNG, id=952, 450.18187pt x 453.19313pt>
+<./img/anonimato_1_4_d.PNG, id=1000, 450.18187pt x 453.19313pt>
 File: ./img/anonimato_1_4_d.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_d.PNG>
-Package pdftex.def Info: ./img/anonimato_1_4_d.PNG used on input line 379.
+Package pdftex.def Info: ./img/anonimato_1_4_d.PNG used on input line 378.
 (pdftex.def)             Requested size: 119.50226pt x 120.29614pt.
 
-<./img/anonimato_1_4_e.PNG, id=953, 437.38406pt x 450.18187pt>
+<./img/anonimato_1_4_e.PNG, id=1001, 437.38406pt x 450.18187pt>
 File: ./img/anonimato_1_4_e.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_e.PNG>
-Package pdftex.def Info: ./img/anonimato_1_4_e.PNG used on input line 380.
+Package pdftex.def Info: ./img/anonimato_1_4_e.PNG used on input line 379.
 (pdftex.def)             Requested size: 119.50226pt x 122.99326pt.
  [45] [46 <./img/anonimity-030.PNG> <./img/anonimity-031.PNG> <./img/anonimato_
-1_4_c.PNG> <./img/anonimato_1_4_d.PNG> <./img/anonimato_1_4_e.PNG>] <./img/anon
-imity-146.PNG, id=979, 935.495pt x 468.75125pt>
+1_4_c.PNG> <./img/anonimato_1_4_d.PNG> <./img/anonimato_1_4_e.PNG>]
+<./img/anonimity-146.PNG, id=1024, 935.495pt x 468.75125pt>
 File: ./img/anonimity-146.PNG Graphic file (type png)
 
 <use ./img/anonimity-146.PNG>
-Package pdftex.def Info: ./img/anonimity-146.PNG used on input line 415.
+Package pdftex.def Info: ./img/anonimity-146.PNG used on input line 413.
 (pdftex.def)             Requested size: 191.19998pt x 95.80136pt.
 
-<./img/anonimity-148.PNG, id=980, 795.97375pt x 398.48875pt>
+<./img/anonimity-148.PNG, id=1025, 795.97375pt x 398.48875pt>
 File: ./img/anonimity-148.PNG Graphic file (type png)
 
 <use ./img/anonimity-148.PNG>
-Package pdftex.def Info: ./img/anonimity-148.PNG used on input line 416.
+Package pdftex.def Info: ./img/anonimity-148.PNG used on input line 414.
 (pdftex.def)             Requested size: 191.19998pt x 95.71829pt.
  [47] [48 <./img/anonimity-146.PNG> <./img/anonimity-148.PNG>] <./img/anonimato
-_1_11.PNG, id=1018, 616.55344pt x 496.85625pt>
+_1_11.PNG, id=1062, 616.55344pt x 496.85625pt>
 File: ./img/anonimato_1_11.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_11.PNG>
-Package pdftex.def Info: ./img/anonimato_1_11.PNG used on input line 439.
+Package pdftex.def Info: ./img/anonimato_1_11.PNG used on input line 437.
 (pdftex.def)             Requested size: 398.33685pt x 321.01189pt.
  [49 <./img/anonimato_1_11.PNG>]
-<./img/anonimato_1_12.PNG, id=1036, 421.575pt x 505.13719pt>
+<./img/anonimato_1_12.PNG, id=1079, 421.575pt x 505.13719pt>
 File: ./img/anonimato_1_12.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_12.PNG>
-Package pdftex.def Info: ./img/anonimato_1_12.PNG used on input line 450.
+Package pdftex.def Info: ./img/anonimato_1_12.PNG used on input line 448.
 (pdftex.def)             Requested size: 398.33685pt x 477.30322pt.
  [50] [51 <./img/anonimato_1_12.PNG>]
-<./img/anonimato_1_13.PNG, id=1065, 1008.76875pt x 485.56406pt>
+<./img/anonimato_1_13.PNG, id=1107, 1008.76875pt x 485.56406pt>
 File: ./img/anonimato_1_13.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_13.PNG>
-Package pdftex.def Info: ./img/anonimato_1_13.PNG used on input line 463.
+Package pdftex.def Info: ./img/anonimato_1_13.PNG used on input line 461.
 (pdftex.def)             Requested size: 398.33685pt x 191.73271pt.
 
-<./img/anonimato_1_14.PNG, id=1071, 575.14874pt x 506.6428pt>
+<./img/anonimato_1_14.PNG, id=1113, 575.14874pt x 506.6428pt>
 File: ./img/anonimato_1_14.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_14.PNG>
-Package pdftex.def Info: ./img/anonimato_1_14.PNG used on input line 471.
+Package pdftex.def Info: ./img/anonimato_1_14.PNG used on input line 469.
 (pdftex.def)             Requested size: 398.33685pt x 350.89813pt.
  [52 <./img/anonimato_1_13.PNG>] [53 <./img/anonimato_1_14.PNG>] [54]) [55]
 \openout2 = `./tex/sicurezza.aux'.
@@ -1973,44 +1961,37 @@ Package pdftex.def Info: ./img/anonimato_1_14.PNG used on input line 471.
 
 ]
 Capitolo 4.
-<./img/vulnerabilities_p2p-001.PNG, id=1106, 247.92625pt x 347.2975pt>
+<./img/vulnerabilities_p2p-001.PNG, id=1145, 247.92625pt x 347.2975pt>
 File: ./img/vulnerabilities_p2p-001.PNG Graphic file (type png)
 
 <use ./img/vulnerabilities_p2p-001.PNG>
 Package pdftex.def Info: ./img/vulnerabilities_p2p-001.PNG used on input line 2
 9.
-(pdftex.def)             Requested size: 398.33685pt x 558.03494pt.
- [57] [58 <./img/vulnerabilities_p2p-001.PNG>] [59] [60]
-Underfull \vbox (badness 1038) has occurred while \output is active []
-
- [61]
-[62] [63] [64]
-Underfull \vbox (badness 4752) has occurred while \output is active []
-
- [65]
-[66]
+(pdftex.def)             Requested size: 123.96281pt x 173.64832pt.
+ [57] [58 <./img/vulnerabilities_p2p-001.PNG>] [59] [60] [61] [62] [63] [64] [6
+5]
 Overfull \hbox (11.8356pt too wide) in paragraph at lines 207--207
 [] 
  []
 
-[67]
+[66]
 Underfull \hbox (badness 10000) in paragraph at lines 227--230
 
  []
 
-[68]
+[67]
 Underfull \hbox (badness 10000) in paragraph at lines 242--244
 
  []
 
+
+Underfull \vbox (badness 2426) has occurred while \output is active []
+
+ [68]
 [69] [70]
 PGFPlots: reading {src/risultati_nakamoto_1.dat}
 PGFPlots: reading {src/risultati_nakamoto_3.dat}
- [71] [72] [73] [74]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [75]
-[76] [77]) [78]
+ [71] [72] [73] [74] [75] [76]) [77] [78]
 \openout2 = `./tex/mining.aux'.
 
  (./tex/mining.tex
@@ -2098,12 +2079,12 @@ nput line 7.
 
 
 ]
-Overfull \hbox (19.76178pt too wide) in paragraph at lines 35--36
+Overfull \hbox (36.22955pt too wide) in paragraph at lines 35--36
 [][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (19.76178pt too wide) in paragraph at lines 40--41
+Overfull \hbox (36.22955pt too wide) in paragraph at lines 40--41
 [][][][][][][][][][][][][][][][][] 
  []
 
@@ -2114,273 +2095,243 @@ T1/cmr/m/n/10.95 do-ve []\T1/cmtt/m/n/10.95 pubKeyHash
  []
 
 
-Package caption Warning: \label without proper \caption on input line 35.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `table:pay-to-pubkey-hash' on page 97 undefined on inp
-ut line 31.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
 []|[]\T1/cmtt/m/n/10.95 <sig> []<pubKey>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
 []\T1/cmtt/m/n/10.95 OP_DUP []OP_HASH160
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
 []\T1/cmtt/m/n/10.95 <pubKeyHash>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
 []\T1/cmtt/m/n/10.95 OP_EQUALVERIFY
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
 []|\T1/cmr/m/n/10.95 Unisco il cam-po
  []
 
 
-Underfull \hbox (badness 1874) in paragraph at lines 40--40
+Underfull \hbox (badness 1874) in paragraph at lines 39--39
 \T1/cmr/m/n/10.95 cam-po []\T1/cmtt/m/n/10.95 scriptPubKey
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
 []|[]\T1/cmtt/m/n/10.95 OP_DUP []OP_HASH160
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
 []\T1/cmtt/m/n/10.95 <pubKeyHash>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
 []\T1/cmtt/m/n/10.95 OP_EQUALVERIFY
  []
 
 
-Underfull \hbox (badness 4168) in paragraph at lines 41--41
+Underfull \hbox (badness 4168) in paragraph at lines 40--40
 \T1/cmr/m/n/10.95 e la re-la-ti-va chia-ve
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 []|[]\T1/cmtt/m/n/10.95 <sig> []<pubKey>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 []|[]\T1/cmtt/m/n/10.95 OP_HASH160
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 []\T1/cmtt/m/n/10.95 <pubKeyHash>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 []\T1/cmtt/m/n/10.95 OP_EQUALVERIFY
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 []|\T1/cmr/m/n/10.95 Duplico la chia-ve
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 \T1/cmr/m/n/10.95 pub-bli-ca in ci-ma
  []
 
 
-Underfull \hbox (badness 5417) in paragraph at lines 42--42
+Underfull \hbox (badness 5417) in paragraph at lines 41--41
 \T1/cmr/m/n/10.95 uti-liz-za-re due vol-te:
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 42--42
+Underfull \hbox (badness 5787) in paragraph at lines 41--41
 \T1/cmr/m/n/10.95 pri-ma per ve-ri-fi-ca-re
  []
 
 
-Underfull \hbox (badness 1237) in paragraph at lines 42--42
+Underfull \hbox (badness 1237) in paragraph at lines 41--41
 \T1/cmr/m/n/10.95 il de-sti-na-ta-rio di $\OML/cmm/m/it/10.95 ^^\[]$\T1/cmr/m/n
 /10.95 ,
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 42--42
+Underfull \hbox (badness 3965) in paragraph at lines 41--41
 \T1/cmr/m/n/10.95 e poi per ve-ri-fi-ca-re
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
 []|[]\T1/cmtt/m/n/10.95 <sig> []<pubKey>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
 []|[]\T1/cmtt/m/n/10.95 <pubKeyHash>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
 []\T1/cmtt/m/n/10.95 OP_EQUALVERIFY
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 43--43
+Underfull \hbox (badness 6893) in paragraph at lines 42--42
 []|\T1/cmr/m/n/10.95 Calcolo l'hash del-la
  []
 
 
-Underfull \hbox (badness 4739) in paragraph at lines 43--43
+Underfull \hbox (badness 4739) in paragraph at lines 42--42
 \T1/cmr/m/n/10.95 chia-ve pub-bli-ca del-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []|[]\T1/cmtt/m/n/10.95 <sig> []<pubKey>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []\T1/cmtt/m/n/10.95 <pubHashA>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []|[]\T1/cmtt/m/n/10.95 OP_EQUALVERIFY
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 45--45
+Underfull \hbox (badness 5985) in paragraph at lines 44--44
 \T1/cmr/m/n/10.95 men-ti in ci-ma al-lo
  []
 
 
-Underfull \hbox (badness 4060) in paragraph at lines 46--46
+Underfull \hbox (badness 4060) in paragraph at lines 45--45
 \T1/cmr/m/n/10.95 te del-l'au-to-re di $\OML/cmm/m/it/10.95 ^^\[]$
  []
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 46--46
+Underfull \hbox (badness 1019) in paragraph at lines 45--45
 \T1/cmr/m/n/10.95 del-la ne-ces-sa-ria chia-
  []
 
 
-LaTeX Warning: Float too large for page by 20.48741pt on input line 49.
+LaTeX Warning: Float too large for page by 20.48741pt on input line 48.
 
 
-Package caption Warning: \label without proper \caption on input line 55.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `table:pay-to-pubkey' on page 97 undefined on input li
-ne 51.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
 []|[]\T1/cmtt/m/n/10.95 <sig> []<pubKey>
  []
 
 
-Underfull \hbox (badness 4242) in paragraph at lines 60--60
+Underfull \hbox (badness 4242) in paragraph at lines 58--58
 \T1/cmr/m/n/10.95 da $\OML/cmm/m/it/10.95 tau[]$ \T1/cmr/m/n/10.95 crean-do lo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 \T1/cmr/m/n/10.95 fir-ma del-l'au-to-re di
  []
 
 
-Overfull \hbox (60.57907pt too wide) in paragraph at lines 67--67
+Overfull \hbox (60.57907pt too wide) in paragraph at lines 65--65
 [][][]$\T1/cmtt/m/n/9 https : / / blockexplorer . com / tx / eb31ca1a4cbd97c277
 0983164d7560d2d03276ae1aee26f12d7c2c6424252f29$[]| 
  []
 
 
-Overfull \hbox (60.57907pt too wide) in paragraph at lines 69--69
+Overfull \hbox (60.57907pt too wide) in paragraph at lines 67--67
 [][][]$\T1/cmtt/m/n/9 https : / / blockexplorer . com / tx / a4bfa8ab6435ae5f25
 dae9d89e4eb67dfa94283ca751f393c1ddc5a837bbc31b$[]| 
  []
 
-
-Package caption Warning: \label without proper \caption on input line 73.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `table:puzzle-transaction' on page 97 undefined on inp
-ut line 69.
-
 [97] [98]
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []|[]\T1/cmtt/m/n/10.95 <data> []OP_HASH256
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []\T1/cmtt/m/n/10.95 <given_hash>
  []
 
 
-Underfull \hbox (badness 4242) in paragraph at lines 78--78
+Underfull \hbox (badness 4242) in paragraph at lines 75--75
 []|\T1/cmr/m/n/10.95 Unisco []\T1/cmtt/m/n/10.95 scriptSig \T1/cmr/m/n/10.95 e
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []|[]\T1/cmtt/m/n/10.95 OP_HASH256
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []\T1/cmtt/m/n/10.95 <given_hash>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []|\T1/cmr/m/n/10.95 Carico nel-lo stack
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
 []|[]\T1/cmtt/m/n/10.95 <given_hash>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 []|[]\T1/cmtt/m/n/10.95 <data_hash>
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 []|\T1/cmr/m/n/10.95 Carico nel-lo stack
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
-[99] [100]
-Overfull \hbox (2.69397pt too wide) in paragraph at lines 101--104
-\T1/cmr/m/n/10.95 fir-me per es-se-re ve-ri-fi-ca-to con lo script []\T1/cmtt/m
-/n/10.95 2 []<pubKey1> []pubKey2 []2 []CHECKMULTISIGVERIFY\T1/cmr/m/n/10.95 .
- []
-
-[101]
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+[99] [100] [101]
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
@@ -2428,28 +2379,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--100
 
  []
 
-[113] [114]) [115]
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+[113] [114] [115]) [116]
 \openout2 = `./tex/appendice.aux'.
 
- (./tex/appendice.tex [116
-
-
-
-]
+ (./tex/appendice.tex
 Appendice A.
-[117] [118]
+[117
+
+
+
+] [118]
 Appendice B.
-
-LaTeX Warning: Reference `doppia-spesa' on page 119 undefined on input line 22.
-
-
 (/opt/texlive-2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 )
-(./src/AttackerSuccessProbability.c)) [119
+(./src/AttackerSuccessProbability.c
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 1.
+)) [119
 
 ] [120
 
@@ -2564,17 +2519,8 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
 ) (./tex/scripting.aux) (./tex/correlati.aux) (./tex/appendice.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
-
-
-Package rerunfilecheck Warning: File `tesi.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `tesi.out':
-(rerunfilecheck)             Before: 170394C52603B3E29EFD696383DAD540;6154
-(rerunfilecheck)             After:  41914A5317DDCA5272993C315795D54E;6046.
-
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Info: File `tesi.out' has not changed.
+(rerunfilecheck)             Checksum: 3EFB9A076CF19F2F4B8725E30124B247;5999.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2582,10 +2528,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 36156 strings out of 494980
- 710489 string characters out of 6180251
- 926158 words of memory out of 5000000
- 37686 multiletter control sequences out of 15000+600000
+ 36262 strings out of 494980
+ 712114 string characters out of 6180251
+ 936747 words of memory out of 5000000
+ 37797 multiletter control sequences out of 15000+600000
  33376 words of font info for 84 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  70i,19n,84p,2652b,2028s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2618,12 +2564,6 @@ t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.67} has been referenced but does not exis
 t, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.27} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.26} has been referenced but does not 
-exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.66} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2745,9 +2685,6 @@ t, replaced by a fixed one
 pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not exis
 t, replaced by a fixed one
 
-pdfTeX warning (dest): name{figure.caption.20} has been referenced but does not
- exist, replaced by a fixed one
-
 pdfTeX warning (dest): name{Hfootnote.27} has been referenced but does not exis
 t, replaced by a fixed one
 
@@ -2778,9 +2715,6 @@ t, replaced by a fixed one
 pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
 t, replaced by a fixed one
 
-pdfTeX warning (dest): name{table.caption.16} has been referenced but does not 
-exist, replaced by a fixed one
-
 pdfTeX warning (dest): name{glo:pvalori} has been referenced but does not exist
 , replaced by a fixed one
 
@@ -2802,14 +2736,8 @@ t, replaced by a fixed one
 pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
 t, replaced by a fixed one
 
-pdfTeX warning (dest): name{figure.caption.13} has been referenced but does not
- exist, replaced by a fixed one
-
 pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
 t, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.11} has been referenced but does not 
-exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2859,21 +2787,6 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{appendix*.30} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.6.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.6.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.6.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.6} has been referenced but does not exist
-, replaced by a fixed one
-
 {/opt/texlive-2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</opt/te
 xlive-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive-2
 013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></opt/texlive-2013
@@ -2909,10 +2822,10 @@ xlive-2013/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></opt/texlive-20
 nts/type1/public/cm-super/sfti1095.pfb></opt/texlive-2013/texmf-dist/fonts/type
 1/public/cm-super/sftt0900.pfb></opt/texlive-2013/texmf-dist/fonts/type1/public
 /cm-super/sftt1095.pfb>
-Output written on tesi.pdf (139 pages, 3135256 bytes).
+Output written on tesi.pdf (139 pages, 3146726 bytes).
 PDF statistics:
- 2018 PDF objects out of 2073 (max. 8388607)
- 1762 compressed objects within 18 object streams
- 565 named destinations out of 1000 (max. 500000)
- 843 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2047 PDF objects out of 2073 (max. 8388607)
+ 1791 compressed objects within 18 object streams
+ 554 named destinations out of 1000 (max. 500000)
+ 835 words of extra memory for PDF output out of 10000 (max. 10000000)
 

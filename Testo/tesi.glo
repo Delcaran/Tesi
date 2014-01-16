@@ -29,4 +29,4 @@
 (indexentry :tkey (("DAG" "\\glossentry{dag}") ) :locref "{}{43}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("Goodness-of-Fit" "\\glossentry{gof}") ) :locref "{}{43}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("p-valori" "\\glossentry{pvalori}") ) :locref "{}{43}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("AML-CFT" "\\glossentry{amlcft}") ) :locref "{}{78}" :attr "pageglsnumberformat" ) 
+(indexentry :tkey (("AML-CFT" "\\glossentry{amlcft}") ) :locref "{}{77}" :attr "pageglsnumberformat" ) 

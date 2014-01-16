@@ -1,5 +1,6 @@
 \select@language {italian}
 \select@language {italian}
+\select@language {italian}
 \select@language {english}
 \select@language {italian}
 \addvspace {10\p@ }
@@ -30,7 +31,7 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Sicurezza}{57}{chapter.4}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Livelli di attacco in confronto con lo stack ISO/OSI.\relax }}{58}{figure.caption.26}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Probabilit\IeC {\`a} di successo dell'attaccante nella creazione di un nuova blockchain.\relax }}{72}{figure.caption.27}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Probabilit\IeC {\`a} di successo dell'attaccante nella creazione di un nuova blockchain.\relax }}{71}{figure.caption.27}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Mining Pools}{79}{chapter.5}
 \addvspace {10\p@ }

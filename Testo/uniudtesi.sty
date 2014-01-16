@@ -34,10 +34,12 @@
 \usepackage{cite}
 \usepackage{titlesec}
 %\usepackage{epstopdf}
-\usepackage[fixlanguage]{babelbib}
+%\usepackage[fixlanguage]{babelbib}
+\usepackage[italian]{babelbib}
 \selectbiblanguage{italian}
 
 \usepackage{fancyhdr}
+\pagestyle{fancy}
 \usepackage{examplep}
 
 \usepackage{hyperref}
@@ -93,22 +95,38 @@ pdfauthor=Paoluzzi Matteo,
 pdfsubject={Analisi di Bitcoin: Anonimato, Sicurezza e Sviluppi Futuri},
 pdfkeywords=p2p bitcoin}
 
-\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-\fancyhf{}
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[LO]{\bfseries\rightmark}
-\fancyhead[RE]{\bfseries\leftmark}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0pt}
-\setlength{\headheight}{13.6pt}
 
-\fancypagestyle{plain}{ %
-  \fancyhf{} % remove everything
-  \renewcommand{\headrulewidth}{0pt} % remove lines as well
+\fancypagestyle{default}{
+  \fancyhead[LE,RO]{\slshape\rightmark}
+  \fancyhead[LO,RE]{\slshape\leftmark}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
 }
+
+\fancypagestyle{mio}{ % definisco lo stile per le mie pagine
+  \fncyblank
+  \fancyhead[LE,RO]{\bfseries \thepage}
+  \fancyhead[LO]{\bfseries \rightmark}
+  \fancyhead[RE]{\bfseries \leftmark}  
+  \renewcommand{\headrulewidth}{0.1pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \setlength{\headheight}{13.6pt}
+}
+\fancypagestyle{plain}{ % ridefinisco lo stile automatico dei capitoli
+  \fncyblank
+  \fancyhead[LE,RO]{\bfseries \thepage}
+  \fancyhead[LO]{\bfseries \rightmark}
+  \fancyhead[RE]{\bfseries \leftmark}  
+  \renewcommand{\headrulewidth}{0.1pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \setlength{\headheight}{13.6pt}
+}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\pagestyle{mio} % applico lo stile alle mie pagine
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Con le dichiarazioni seguenti                           %

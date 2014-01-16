@@ -192,7 +192,7 @@ Dato che ogni GA è "posseduta" da esattamente un utente, la stima dell'assegnam
 L'algoritmo \gls{hac} assume che inizialmente ogni GA rappresenti un utente separato ($\{ z_i = i \}^{n_\text{GA}}_{i=1}$) e calcola valori di similitudine per ogni coppia di cluster. I cluster con elevata similarità vengono raggruppati insieme e il processo si ripete sui nuovi raggruppamenti, fermandosi quando il numero di raggruppamenti è esattamente uguale al numero di utenti $n_U$.
 A questo punto si avvia \gls{kmc}, inizializzato con l'output di \gls{hac}, il quale assume che ogni utente sia rappresentato dal punto centrale di ogni raggruppamento. L'algoritmo tenta di minimizzare la distanza tra i GA e i cluster a cui essi sono stati assegnati, ricalcolando ad ogni round sia il centro dei cluster sia la distanza GA-cluster.
 
-Nella loro implementazione, gli autori di \cite{user-privacy} hanno rappresentato ogni transazione all'interno delle GA con tre punti:
+Nella loro implementazione, Androulaki, Karame, Roeschlin, Scherer e Capkun, autori di \cite{user-privacy} hanno rappresentato ogni transazione all'interno delle GA con tre punti:
 \begin{enumerate}
     \item
         L'orario in cui la transazione ha avuto luogo.
@@ -260,7 +260,7 @@ I risultati nella tabella \ref{table:risultati} mostrano come non ci siano grand
   \label{table:risultati}
   \begin{tabular}{| c  c | c | c | c | c | c |}
     \hline
-    \multicolumn{2}{| c |}{\textbf{Utenti:}} & \textbf{100 (50\%)} & \textbf{200 (0\%)} & \textbf{200 (50\%)} & \textbf{200 (100\%)} & \textbf{400 (59\%)} \\ \hline
+    \multicolumn{2}{| c |}{\textbf{Utenti:}} & \textbf{100 (50\%)} & \textbf{200 (0\%)} & \textbf{200 (50\%)} & \textbf{200 (100\%)} & \textbf{400 (50\%)} \\ \hline
     \hline
     \multicolumn{2}{| c |}{\textbf{$\text{Link}_\adversary$}} & $0.91 \pm 0.01$ & $0.90 \pm 0.01$ & $0.91 \pm 0.01$ & $0.92 \pm 0.01$ & $0.93 \pm 0.01$ \\ \hline
     \multirow{2}{*}{\textbf{$\text{Prof}^a_\adversary$}} & \gls{nmi} & $0.76 \pm 0.01$ & $0.87 \pm 0.01$ & $0.79 \pm 0.01$ & $0.70 \pm 0.01$ & $0.80 \pm 0.01$ \\
@@ -272,7 +272,7 @@ I risultati nella tabella \ref{table:risultati} mostrano come non ci siano grand
   \bigskip
   \begin{tabular}{| c  c | c | c | c | c | c |}
     \hline
-    \multicolumn{2}{| c |}{\textbf{Utenti:}} & \textbf{100 (50\%)} & \textbf{200 (0\%)} & \textbf{200 (50\%)} & \textbf{200 (100\%)} & \textbf{400 (59\%)} \\ \hline
+    \multicolumn{2}{| c |}{\textbf{Utenti:}} & \textbf{100 (50\%)} & \textbf{200 (0\%)} & \textbf{200 (50\%)} & \textbf{200 (100\%)} & \textbf{400 (50\%)} \\ \hline
     \hline
     \multicolumn{2}{| c |}{\textbf{$\text{Link}_\adversary$}} & $0.90 \pm 0.01$ & $0.90 \pm 0.01$ & $0.91 \pm 0.01$ & $0.92 \pm 0.01$ & $0.93 \pm 0.01$ \\ \hline
     \multirow{2}{*}{\textbf{$\text{Prof}^a_\adversary$}} & \gls{nmi} & $0.79 \pm 0.01$ & $0.89 \pm 0.01$ & $0.79 \pm 0.01$ & $0.71 \pm 0.02$ & $0.80 \pm 0.01$ \\
@@ -317,7 +317,7 @@ Infine il grafico \ref{userprivacy_fig_5} mostra come la percentuale di transazi
 \section{Caso reale: analisi di un furto}
 
 Tutti questi risultati sono stati ottenuti in un contesto universitario ben delimitato come estensione possibili variabili, per cui essi rappresentano più il limite superiore di una corretta valutazione della privacy del sistema Bitcoin piuttosto che una precisa descrizione di essa nella rete reale.
-Le tecniche illustrate sono state però applicate, dopo essere state adattate, alla rete reale dai ricercatori Fergal Reid e Martin Harrigan in \cite{anonimity}, i quali hanno anche utilizzato gli strumenti da loro creati per analizzare un reale caso di furto di Bitcoin.
+Le tecniche illustrate sono state però applicate, dopo essere state adattate, alla rete reale dai ricercatori Reid ed Harrigan in \cite{anonimity}, i quali hanno anche utilizzato gli strumenti da loro creati per analizzare un reale caso di furto di Bitcoin.
 
 \subsection{Mappare la rete Bitcoin}
 
@@ -349,8 +349,7 @@ Se si analizza anche il numero di nodi, la densità e la lunghezza media dei cam
 
 \begin{table}
 \centering
-\label{table:goftransactions}
-\caption{Distribuzioni del grado dei nodi per la transaction network}
+\caption{Distribuzioni del grado dei nodi per la transaction network\label{table:goftransactions}}
 \begin{tabular}{r | c c c c c c c}
 \textbf{Variabile} & \textbf{$\tilde{x}$} & \textbf{$\bar{x}$} & \textbf{s} & \textbf{$\alpha$} & \textbf{$x_\text{min}$} & \textbf{GoF} & \textbf{p-valore} \\
 \hline
@@ -383,8 +382,7 @@ Anche qui sono state fatte analisi sulla distribuzione del grado dei nodi, con r
 
 \begin{table}
 \centering
-\label{table:gofuser}
-\caption{Distribuzioni del grado dei nodi per la user network}
+\caption{Distribuzioni del grado dei nodi per la user network\label{table:gofuser}}
 \begin{tabular}{r | c c c c c c c}
 \textbf{Variabile} & \textbf{$\tilde{x}$} & \textbf{$\bar{x}$} & \textbf{s} & \textbf{$\alpha$} & \textbf{$x_\text{min}$} & \textbf{GoF} & \textbf{p-valore} \\
 \hline

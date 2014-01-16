@@ -26,7 +26,7 @@ Visto che le reti P2P sono costruite sulla base di altre reti, i livelli ISO/OSI
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{vulnerabilities_p2p-001.PNG}
+\includegraphics[scale=0.5]{vulnerabilities_p2p-001.PNG}
 \caption{Livelli di attacco in confronto con lo stack ISO/OSI.\label{vulnerabilities_p2p-001}}
 \end{figure}
 
@@ -141,7 +141,7 @@ In particolare i progettisti di reti P2P dovrebbero implementare le seguenti car
 \item
   Un limite per la velocità di churm per i nuovi nodi.
 \item
-  Limitare la velocità di scambio di messaggi tra i nodi, ad esemppio   con un princing.
+  Limitare la velocità di scambio di messaggi tra i nodi, ad esempio   con un princing.
 \item
   Utilizzare la crittografia a chiave pubblica per garantire solo   messaggi legittimi tra i nodi.
 \item
@@ -150,7 +150,7 @@ In particolare i progettisti di reti P2P dovrebbero implementare le seguenti car
 
 Se queste caratteristiche vengono implementate, allora tutti gli attacchi fin qui descritti perdono gran parte della loro efficacia, ripagando con la sicurezza il costo che richiede la loro realizzazione.
 
-\section{La rete Bitcoin; attacchi doppia-spesa}\label{la-rete-bitcoin}
+\section{La rete Bitcoin}\label{la-rete-bitcoin}
 
 \subsection{Attacchi basati sulla velocità}\label{double-spending}
 
@@ -212,12 +212,12 @@ corrisponde all'evento in cui il blocco contenente $\tau_\mathcal{A}$ è il prim
 
 è l'evento in cui i due blocchi contenenti $\tau_\mathcal{A}$ e $\tau_\mathcal{V}$ sono generati nello stesso istante $t_{g_\mathcal{A}} = t_{g_\mathcal{V}}$. In quest'ultimo caso, la probabilità che il blocco contenente $\tau_\mathcal{A}$ venga adottato nella blockchain è $\frac{1}{2}$.
 
-Androulaki, Karame e Capkun hanno testato $P^{\left(2\right)}_S$ per diversi valori di $n^k_\mathcal{X}$ e $p$ con $t_s = \delta t = 10$ secondi e 60000 nodi. Da tale analisi (visibile in forma completa nell'appendice B di \cite{doublespendig_fast}) risulta che $\mathcal{A}$ può massimizzare $P^{\left(2\right)}_S$ incrementando il numero di peer che riceveranno $\tau_\mathcal{A}, n^k_\mathcal{A} \forall t_k$. Ciò è fattibile inviando $\tau_\mathcal{A}$ prima di $\tau_\mathcal{V}$ e/o aumentare il numero di aiutanti. Nel caso decida di inviare la propria transazione fraudolenta prima di quella legittima, il ritardo con cui può trasmettere $\tau_\mathcal{V}$ rispetto ad $\tau_\mathcal{A}$ può essere al massimo $\Delta t = \delta t^\mathcal{A}_\mathcal{HV} - \delta t^\mathcal{V}_\mathcal{AV}$.
+Karame, Androulaki e Capkun hanno testato $P^{\left(2\right)}_S$ per diversi valori di $n^k_\mathcal{X}$ e $p$ con $t_s = \delta t = 10$ secondi e 60000 nodi. Da tale analisi (visibile in forma completa nell'appendice B di \cite{doublespendig_fast}) risulta che $\mathcal{A}$ può massimizzare $P^{\left(2\right)}_S$ incrementando il numero di peer che riceveranno $\tau_\mathcal{A}, n^k_\mathcal{A} \forall t_k$. Ciò è fattibile inviando $\tau_\mathcal{A}$ prima di $\tau_\mathcal{V}$ e/o aumentare il numero di aiutanti. Nel caso decida di inviare la propria transazione fraudolenta prima di quella legittima, il ritardo con cui può trasmettere $\tau_\mathcal{V}$ rispetto ad $\tau_\mathcal{A}$ può essere al massimo $\Delta t = \delta t^\mathcal{A}_\mathcal{HV} - \delta t^\mathcal{V}_\mathcal{AV}$.
 
 \subsubsection{Risultati sperimentali}
 
 Denotando con $P^{\left(1\right)}_S$ la probabilità che il primo requisito sia soddisfatto, la probabilità totale di riuscita dell'attacco è $P_S = P^{\left(1\right)}_S P^{\left(2\right)}_S$.\\
-I ricercatori hanno poi creato una rete Bitcoin ad-hoc distribuita in un'ampia area geografica per testare sperimentalmente i loro risultati con una configurazione ispirata a quanto riportato nella sezione precedente. I risultati visibili nel dettaglio in \cite{doublespendig_fast} mostra come la probabilità di successo di $\mathcal{A}$ non siano trascurabili. Anche se, in conformità con l'analisi, $\P_S$ è inversamente proporzionale a $\Delta t$ a causa dell'aumentato numero di peer che ricevono $\tau_\mathcal{V}$, per valori molto alti di $\Delta t$ (2 secondi) bastano 2 aiutanti per raggiungere percentuali di successo superiori al 90\% e, con lo stesso numero di aiutanti ma $\Delta t = 1$ secondi il successo dell'attacco è garantito.\\
+I ricercatori hanno poi creato una rete Bitcoin ad-hoc distribuita in un'ampia area geografica per testare sperimentalmente i loro risultati con una configurazione ispirata a quanto riportato nella sezione precedente. I risultati visibili nel dettaglio in \cite{doublespendig_fast} mostra come la probabilità di successo di $\mathcal{A}$ non siano trascurabili. Anche se, in conformità con l'analisi, $P_S$ è inversamente proporzionale a $\Delta t$ a causa dell'aumentato numero di peer che ricevono $\tau_\mathcal{V}$, per valori molto alti di $\Delta t$ (2 secondi) bastano 2 aiutanti per raggiungere percentuali di successo superiori al 90\% e, con lo stesso numero di aiutanti ma $\Delta t = 1$ secondi il successo dell'attacco è garantito.\\
 Si è notato come il numero delle connessioni di $\mathcal{V}$ sia di importanza fondamentale per il risultato di $P_S$, soprattutto nel caso in cui $\mathcal{A}$ controlli un numero ristretto di aiutanti: nel caso in cui il numero di connessioni di $\mathcal{V}$ si avvicini al numero di $\mathcal{H}$ la probabilità di successo $P_S$ si avvicina a $\frac{1}{2}$, il che corrisponde al caso in cui $\tau_\mathcal{V}$ e $\tau_\mathcal{A}$ siano egualmente distribuite nella rete.
 
 \subsubsection{Prevenire la doppia-spesa in velocità}\label{prevenzione-doppia-spesa}
@@ -384,7 +384,7 @@ Sono questi i servizi in cui un utente può acquistare BTC da un altro utente in
 I servizi di exchange generalmente richiedono ad un utente iscritto di depositare sul proprio conto online una certa somma in denaro reale oppure in BTC. Una volta depositati, i soldi reali possono essere spesi per acquistare BTC, mentre i BTC possono essere ceduti ad altri utenti che ne fanno richiesta in cambio di soldi reali. Il denaro così guadagnato viene inviato ad un conto precedentemente indicato dall'utente, e solo a questo punto il denaro è effettivamente nelle sue mani.
 Esiste quindi un periodo in cui i soldi dell'utente sono in mano a terze parti a cui si è costretti a dare totale ed incondizionata fiducia che tale denaro sarà al sicuro per tutta la durata del deposito. Questo, unito al fatto che potrebbe passare molto tempo tra il deposito e l'acquisto\footnote{La compravendita è infatti basata su offerte e ordini in stile borsistico: un utente che desidera acquistare $X$ BTC piazza un ordine per $X$ BTC e dichiara che intende pagare $Y$ denaro reale. Fintanto che un secondo utente non dichiara di voler vendere $X$ BTC per $Y$ denaro, l'acquisto non avverrà e l'ordine rimarrà pendente, salvo sua rimozione.}
 
-I ricercatori Tyler Moore e Nicolas Christin, dato il numero molto elevato di tali servizi che sono attualmente presenti e l'elevato valore monetario mosso da Bitcoin (a Gennaio 2013 si parla di circa 187 milioni di dollari), hanno deciso di analizzare in modo empirico il rischio che un utente incorre nel dare fiducia a queste exchange (\cite{middleman}).
+I ricercatori Moore e Christian, dato il numero molto elevato di tali servizi che sono attualmente presenti e l'elevato valore monetario mosso da Bitcoin (a Gennaio 2013 si parla di circa 187 milioni di dollari), hanno deciso di analizzare in modo empirico il rischio che un utente incorre nel dare fiducia a queste exchange (\cite{middleman}).
 
 Per la loro analisi, hanno raccolto dal sito \url{http://www.bitcoincharts.com} dati sui tassi di cambio (che includono anche la quantità di scambi giornalieri e quotazioni medie) fino al 16 Gennaio 2013 per 40 diverse exchange che convertono in 33 diverse valute.
 Hanno poi calcolato il volume di commercio giornaliero per ogni exchange rapportando il numero totale di Bitcoin convertite in tutte le valute trattate dall'exchange al numero di giorni in cui l'exchange è stata operativa. Tale arco di tempo rappresenta il ``lifetime'' dell'exchange ed è la differenza tra la prima e l'ultima data in cui è stato effettuato uno scambio. Una exchange viene considerata chiusa se non è stato effettuato nessuno scambio in almeno due settimana prima del 16 Gennaio 2013.

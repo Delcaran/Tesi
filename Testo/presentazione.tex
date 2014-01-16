@@ -103,8 +103,10 @@ I blocchi vengono creati risolvendo un difficile problema crittografico.
 
 \begin{frame}{Vulnerabilità: potenza di calcolo}
  Se un utente riesce ad accumulare più potenza di calcolo di quella del resto della rete, potrebbe creare una nuova blockchain a sua discrezioni invalidando tutte le transazioni a partire da un momento a sua discrezione.\\
+ \bigskip
  \pause
  La difficoltà nel compiere tale operazione è elevata.
+ \bigskip
  \pause
  Ma questo non vuol dire che sia impossibile!
 \end{frame}
@@ -118,7 +120,7 @@ Creare un blocco ha molteplici scopi.
   \item Permette la creazione di nuova moneta.
   \begin{itemize}
     \item Il lavoro speso per trovare il blocco viene ricompensato con BTC create ``dal nulla''.
-    \item Il numero di BTC si dimezza nel tempo per mantenere il numero massimo di BTC a circa 21 milioni.
+    \item Il numero di BTC si dimezza ogni 210000 blocchi per mantenere il numero massimo di BTC a circa 21 milioni.
     \item Inizialmente il premio era di 50 BTC, ora è sceso a 25 BTC.
   \end{itemize}
 \end{itemize}
@@ -157,25 +159,51 @@ Il protocollo sfrutta un linguaggio di scripting che permette di verificare le t
 \pause
 Essendo non-standard, attualmente queste transazioni vengono rifiutate dai nodi e non possono entrare a far parte della blockchain.\\
 Possono però essere usare in reti private con client ad-hoc.
-\end{frame}l
+\end{frame}
 
 \begin{frame}{Deflazione}
- L'elevato valore di una singola BTC rende più attraente l'idea di accumularle invece che di spenderle. Questo è vero per almeno il 55\% delle BTC prodotte. L'accumulazione di BTC provoca la seguente catena di eventi:
+ L'elevato valore tendenzialmente crescente di una singola BTC rende più attraente l'idea di accumularle invece che di spenderle. Questo è vero per almeno il 55\% delle BTC prodotte. L'accumulazione di BTC provoca la seguente catena di eventi:
  \begin{enumerate}
-  \item Meno transazioni. \puase
-  \item Meno blocchi nell'unità di tempo. \puase
-  \item Meno nuove monete. \puase
-  \imte Meno motivazione a diventare miner. \puase
-  \item Meno utenti che verificano la correttezza delle transazioni. \puase
-  \item Maggiore debolezza ai devastanti attacchi basati su potenza di calcolo e verifiche di transazioni. \puase
+  \item Meno transazioni. \pause
+  \item Meno blocchi nell'unità di tempo. \pause
+  \item Meno nuove monete. \pause
+  \item Meno motivazione a diventare miner. \pause
+  \item Meno utenti che verificano la correttezza delle transazioni. \pause
+  \item Maggiore debolezza ai devastanti attacchi basati su potenza di calcolo e verifiche di transazioni. \pause
  \end{enumerate}
  Bitcoin è fortemente dipendente da una comunità attiva e da un costante fluire della moneta: in mancanza di ciò, perde il suo valore avviando potenzialmente una spirale deflazionistica.
 \end{frame}
 
-\begin{frame}{Litecoin}
+\begin{frame}{Questioni Legali}
+  Data la sua natura volutamente ambigua, dal punto di vista legale ancora molto poco è stato definito per Bitcoin, e solo in ambiti limitati.\pause
+  \begin{itemize}
+   \item Le Bitcoin sono una forma di valuta? \pause
+   \item Come verifico la proprietà di un oggetto acquistato con BTC in mancaza di ricevuta?\pause
+   \item Sotto quale giurisdizione ricadono le BTC? \pause
+   \item Come risolvo il problema del riciclaggio di denaro? \pause
+   \item Sono un bene da tutelare?\pause
+   \begin{itemize}
+    \item Come identifico un eventuale ladro se è tutto anonimo? \pause
+    \item Come calcolo le tasse, ammesso che debba calcolarle? \pause
+    \item Come gestisco le eredità in caso di portafogli cifrati e mancanza di chiave privata?
+   \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Litecoin ed altre}
   Creata nel 2011, è una variante di Bitcoin che sta avendo notevole diffusione:
-  
-  bla bla bla differenze in tabella bla bla bla
+  \begin{itemize}
+   \item Un blocco ogni 2.5 minuti.
+   \item 84 milioni di LTC.
+   \item Ricompensa dimezzata ogni 840000 blocchi.
+  \end{itemize}
+  Esistono moltre altre monete elettroniche... \pause
+  \begin{itemize}
+    \item $\ldots$ alcune diffuse come Namecoin, PPCoin e Mastercoin $\ldots$ \pause
+    \item $\ldots$ altre meno note come Megacoin e Anoncoin $\ldots$ \pause
+    \item $\ldots$ e altre ancora umoristiche create apposta per farsi quattro risate, come Dogecoin e Coinye $\ldots$ \pause
+  \end{itemize}
+  $\ldots$ Ma tutte basate sugli stessi principi di decentralizzazione e anonimato e tutte perfettamente ``funzionanti''.
 \end{frame}
 
 
