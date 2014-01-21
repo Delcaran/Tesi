@@ -5,7 +5,7 @@ Negli ultimi anni si è assistito ad una progressiva alterazione delle "leggi" c
 Per fortuna la soluzione è stata immediata e consiste nello sfruttamento di più elaboratori collegati in rete che condividono (genericamente parlando) risorse. Sebbene per compiti specifici risulta spesso conveniente creare una rete ad-hoc, per l'utilizzo di tutti i giorni da parte dell'utente comune, la rete per eccellenza risulta essere senza ombra di dubbio la rete Internet. A causa di questa sua centralità, è stata scelta come base per lo sviluppo di applicazioni dedicate alla condivisione di risorse di vario tipo da parte di utenti con interessi in comune, creando di fatto una sottorete virtuale all'interno della già virtuale rete internet.
 %TODO sistemare sta frase scritta da cani
 
-Questa convidisione di risorse da parte di utenti per un interesse comune definisce il nucleo di quelle che vengono chiamate \textbf{reti Perr-to-Peer}, da qui in avanti abbreviate come \emph{reti P2P} Data la grande diffusione di queste reti e i loro svariati obiettivi, è comprensibile che ci siano molti disaccordi sulla definizione esatta di \emph{rete P2P}.
+Questa convidisione di risorse da parte di utenti per un interesse comune definisce il nucleo di quelle che vengono chiamate \textbf{reti Peer-to-Peer}, da qui in avanti abbreviate come \emph{reti P2P}. Data la grande diffusione di queste reti e i loro svariati obiettivi, è comprensibile che ci siano molti disaccordi sulla definizione esatta di \emph{rete P2P}.
 
 Una classificazione molto adatta agli scopi di questo documento è quella presente in \cite{core-concepts-p2p} che distingue tre diversi livelli di rete:
 
@@ -33,7 +33,7 @@ Infatti, se nel modello client-server ``puro'' i ruoli sono definiti ed immutabi
 
 Prendiamo il caso in cui il peer \textbf{A} voglia ottenere dal peer \textbf{B} il file \emph{file.txt}. All'inizio della comunicazione il peer \textbf{A} sarà ili client e il peer \textbf{B} sarà invece il server. Immaginiamo che, mentre questo transferimento è in atto, un terzo peer \textbf{C} voglia avere il file \emph{file.txt}.
 
-Se ci troviamo al di fuori di una rete P2P (ad esempio nel normale download di un file da internet tramite browser), i ruoli di \textbf{A} e \textbf{B} non subiscono variazioni e il peer \textbf{C} assume il ruolo di client del server \textbf{B}, il quale dovrà ottimizzare le sue risorse di banda e cpu per servire sia \textbf{A} che \textbf{C} contemporaneamente NOTA:(da questo discorso esulano tematiche quali il multitasking della cpu: il punto di vista è quello di un ipotetico utente che osserva la macchina in tempo reale).
+Se ci troviamo al di fuori di una rete P2P (ad esempio nel normale download di un file da internet tramite browser), i ruoli di \textbf{A} e \textbf{B} non subiscono variazioni e il peer \textbf{C} assume il ruolo di client del server \textbf{B}, il quale dovrà ottimizzare le sue risorse di banda e cpu per servire sia \textbf{A} che \textbf{C} contemporaneamente\footnote{Da questo discorso esulano tematiche quali il multitasking della cpu: il punto di vista è quello di un ipotetico utente che osserva la macchina in tempo reale}.
 
 All'interno di una rete P2P invece, nel momento in cui comincia a scaricare \emph{file.txt}, \textbf{C} è consapevole che \textbf{B} ne possiede una copia completa e \textbf{A} una parziale e, contemporaneamente, \textbf{A} verrà informato che \textbf{C} sta scaricando lo stesso file. Quello che succede è che \textbf{B} farà da server per \textbf{A} e \textbf{C} (i quali saranno i suoi client), mentre \textbf{A} e \textbf{C} si scambieranno le parti di \emph{file.txt} che mancano l'uno all'altro (ovvero saranno sia client che server contemporaneamente). Il risultato è una sostanziale ottimizzazione delle risorse a disposizione nella rete e una maggiore velocità di ``diffusione'' del file.
 
@@ -103,7 +103,7 @@ Per un confronto diretto tra le due architetture, poniamo $F/u = 1 \text{ora}$, 
 
 %TODO grafico pag 134 kurose-ross
 
-Si nota subito che per l'architettura client-server il tempo di distribuzione risulta essere lineare come calcolato, ma ancora più notevole è il tempo di distribuzione per l'architettura P2P che non solo è sempre minore della controparte client-server, ma addirittura risulta quasi costante all'aumentare del numero dei peer. Questo dimostra come le reti P2P siano estremamente scalabili, e non c'è da stupirsi come il successo di una particolare rete dipenda essenzialmente dal numero di peer presenti. \%FIXME: questa è detta molto male.
+Si nota subito che per l'architettura client-server il tempo di distribuzione risulta essere lineare come calcolato, ma ancora più notevole è il tempo di distribuzione per l'architettura P2P che non solo è sempre minore della controparte client-server, ma addirittura risulta quasi costante all'aumentare del numero dei peer. Questo dimostra come le reti P2P siano estremamente scalabili, e non c'è da stupirsi come il successo di una particolare rete dipenda essenzialmente dal numero di peer presenti. %FIXME: questa è detta molto male.
 
 \subsection{Ricerca di informazioni}\label{ricerca-di-informazioni}
 

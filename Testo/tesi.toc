@@ -21,16 +21,16 @@
 \contentsline {section}{\numberline {2.2}Portafogli e indirizzi}{10}{section.2.2}
 \contentsline {section}{\numberline {2.3}Transazioni}{11}{section.2.3}
 \contentsline {section}{\numberline {2.4}Timestamp e Proof-of-Work}{12}{section.2.4}
-\contentsline {section}{\numberline {2.5}Network}{13}{section.2.5}
+\contentsline {section}{\numberline {2.5}Network}{14}{section.2.5}
 \contentsline {section}{\numberline {2.6}Risorse necessarie}{15}{section.2.6}
-\contentsline {section}{\numberline {2.7}Gestione dei valori}{16}{section.2.7}
+\contentsline {section}{\numberline {2.7}Gestione dei valori}{17}{section.2.7}
 \contentsline {section}{\numberline {2.8}Analisi della rete}{18}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Topologia}{18}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.1}Topologia}{19}{subsection.2.8.1}
 \contentsline {subsection}{\numberline {2.8.2}Propagazione delle informazioni}{19}{subsection.2.8.2}
 \contentsline {subsection}{\numberline {2.8.3}Informazioni scomparse}{23}{subsection.2.8.3}
-\contentsline {section}{\numberline {2.9}Fork della blockchain}{23}{section.2.9}
-\contentsline {subsection}{\numberline {2.9.1}Creazione del modello}{24}{subsection.2.9.1}
-\contentsline {subsection}{\numberline {2.9.2}Misurazioni}{25}{subsection.2.9.2}
+\contentsline {section}{\numberline {2.9}Fork della blockchain}{24}{section.2.9}
+\contentsline {subsection}{\numberline {2.9.1}Creazione del modello}{25}{subsection.2.9.1}
+\contentsline {subsection}{\numberline {2.9.2}Misurazioni}{26}{subsection.2.9.2}
 \contentsline {chapter}{\numberline {3}Privacy}{29}{chapter.3}
 \contentsline {section}{\numberline {3.1}Analisi quantitativa della privacy}{29}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Il modello antagonistico}{30}{subsection.3.1.1}
@@ -133,9 +133,9 @@
 \contentsline {section}{\numberline {7.4}Litecoin}{112}{section.7.4}
 \contentsline {section}{\numberline {7.5}Legalit\IeC {\`a}}{114}{section.7.5}
 \contentsline {subsection}{\numberline {7.5.1}Silkroad}{115}{subsection.7.5.1}
-\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{117}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{119}{appendix.Alph2}
-\contentsline {chapter}{Bibliografia}{121}{appendix*.32}
+\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{119}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{121}{appendix.Alph2}
+\contentsline {chapter}{Bibliografia}{123}{appendix*.32}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}
