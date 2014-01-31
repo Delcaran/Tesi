@@ -3,6 +3,30 @@
 	description={Bitcoin intesa come unità di misura della moneta elettronica}
 }
 
+\newglossaryentry{componenteconnessa}{
+  name={Componente Connessa},
+  description={Dato G=(V,E) un grafo non orientato, una componente connessa è un sottografo massimale di un grafo G tale che per ogni coppia di nodi distinti del sottografo esiste un cammino che porta dal primo al secondo nodo (e viceversa).}
+}
+
+\newglossaryentry{componentebiconnessa}{
+  name={Componente Biconnessa},
+  description={Dato G=(V,E) un grafo non orientato, una componente biconnessa è un sottografo massimale di un grafo G tale che il sottografo è connesso e se viene rimosso un nodo e gli archi a lui incidenti, il sottografo risultante è ancora connesso.}
+}
+
+\newglossaryentry{debolmenteconnessa}{
+  name={Componente Debolmente Connessa},
+   description={Un grafo orientato si dice debolmente connesso se due qualsiasi vertici sono uniti da un cammino non orientato.},
+   text={componente debolmente connessa},
+   plural={componeneti debolmente connessi}
+}
+
+\newglossaryentry{fortementeconnessa}{
+  name={Componente Fortemente Connessa},
+   description={Una componente fortemente connessa di un grafo diretto G è un sotto-grafo massimale di G in cui esiste un cammino orientato tra ogni coppia di nodi ad esso appartenenti. Un nodo non può trovarsi contemporaneamente in due componenti fortemente connesse. Un grafo diretto è fortemente connesso se e solo se ha una sola componente connessa.},
+   text={componente fortemente connessa},
+   plural={componenti fortemente connessi}
+}
+
 \newglossaryentry{satoshi}{
 	name=satoshi,
 	description={Unità di misura del valore di una transazione utilizzata all'interno della struttura dati. 1 \gls{btc} = 100000000 satoshi}
@@ -17,6 +41,18 @@
 	description={Funzione che descrive la probabilità che una variabile casuale assuma un certo valore. Per un range di valori, è il risultato dato dall'integrazione della funzione rappresentante il valore in quell'intervallo.},
 	first={Funzione di Densità di Probabilità (PDF)},
 	text={funzione di densità di probabilità}
+}
+
+\newglossaryentry{gradonodo}{
+  name={Grado di un nodo},
+  description={Numero di connessioni entranti o uscenti da un nodo in un grafo.},
+  text={grado}
+}
+
+\newglossaryentry{leggepotenza}{
+  name={Legge di Potenza},
+  description={Si tratta di una qualsiasi relazione del tipo $f(x) = ax^k + o\left(x^k\right)$ dove $k$ è costante e $o\left(x^k\right)$ è una funzione asintoticamente piccola di $x^k$.},
+  text={legge di potenza}
 }
 
 \newglossaryentry{cdf}{
@@ -35,8 +71,7 @@
 
 \newglossaryentry{distribuzionepoisson}{
   name={Distribuzione di Poisson},
-  description={Esprime le probabilità per un numero di eventi indipendenti che si verificano successivamente in uno specifico intervallo temporale sapendo quanti se ne verificano mediamente.\\Definendo $\lambda$ come il numero medio di eventi in analisi si ha 
-  $$P(n) = e^{-\lambda}\frac{\lambda^n}{n!}$$},
+  description={Esprime le probabilità per un numero di eventi indipendenti che si verificano successivamente in uno specifico intervallo temporale sapendo quanti se ne verificano mediamente.\\Definendo $\lambda$ come il numero medio di eventi in analisi si ha $P(n) = e^{-\lambda}\frac{\lambda^n}{n!}$},
   first={distribuzione di Poisson},
   text={distribuzione di Poisson}
 }
