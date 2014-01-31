@@ -7,15 +7,15 @@
 \contentsline {xchapter}{Panoramica generale sulle reti P2P}{1}{chapter.1}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Bitcoin: moneta elettronica decentralizzata}{9}{chapter.2}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Utilizzo delle chiavi e degli hash in una sequenza di transazioni.\relax }}{12}{figure.caption.4}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Struttura minimale di una sequenza di blocchi.\relax }}{13}{figure.caption.5}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Struttura di un blocco prima e dopo la compressione dell'albero delle transazioni.\relax }}{16}{figure.caption.6}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Struttura di un blocco prima e dopo la compressione dell'albero delle transazioni.\relax }}{17}{figure.caption.7}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Schema di una transazione in cui vengono evidenziati input e output.\relax }}{18}{figure.caption.8}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Istogramma normalizzato del tempo che intercorre dal primo annuncio del blocco con una curva di interpolazione esponenziale.\relax }}{21}{figure.caption.9}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Costo del ritardo per il 50\ensuremath {^\circ }, 75\ensuremath {^\circ } e 90\ensuremath {^\circ } percentile. Il grafico \IeC {\`e} focalizzato sui valori pi\IeC {\`u} bassi delle ascisse per poter mostrare il comportamento costante presente dopo i 20kB.\relax }}{22}{figure.caption.10}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Fork osservati tra i blocchi 180000 e 190000 durante il collegamento alla rete.\relax }}{24}{figure.caption.11}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Tempo di distribuzione spostato a sinistra per i blocchi trovati tra le altezze 180000 e 190000.\relax }}{27}{figure.caption.12}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Sequenza di transazioni}}{12}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Blockchain minimale}}{13}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Blocco compresso}}{16}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Blockchain con blocchi compressi}}{17}{figure.caption.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Schema di transazione}}{18}{figure.caption.8}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Propagazione di blocchi}}{21}{figure.caption.9}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Costo del ritardo}}{22}{figure.caption.10}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Fork nella Blockchain}}{23}{figure.caption.11}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Distribuzione dei blocchi nel tempo}}{26}{figure.caption.12}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Privacy}{29}{chapter.3}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Percentuale di transazioni catturate dagli algoritmi di cluster nello scenario della \textbf {conoscenza parziale}.\relax }}{40}{figure.caption.14}

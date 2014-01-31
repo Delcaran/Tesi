@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tesi.aux
 A level-1 auxiliary file: ./tex/titolo.aux
@@ -22,12 +22,12 @@ Warning--to sort, need author or key in bitcoin-protocol
 Warning--to sort, need author or key in bitcoin-scripting-api
 Warning--to sort, need author or key in bitcoin_wiki
 Warning--to sort, need author or key in bitcoin-protocolrules
-Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty language in bitcoin-difficulty
 Warning--empty journal in doublespending_hash
 You've used 33 entries,
             2788 wiz_defined-function locations,
-            832 strings with 11840 characters,
+            832 strings with 11616 characters,
 and the built_in function-call counts, 11961 in all, are:
 = -- 1017
 > -- 370

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.22)  21 JAN 2014 15:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.12.22)  31 JAN 2014 17:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,25 +497,9 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 .
 )
-(/opt/texlive-2013/texmf-dist/tex/latex/acronym/acronym.sty
-Package: acronym 2012/10/29 v1.38 Support for acronyms (Tobias Oetiker)
-
-(/opt/texlive-2013/texmf-dist/tex/latex/bigfoot/suffix.sty
-Package: suffix 2006/07/15 1.5 Variant command support
-)
-(/opt/texlive-2013/texmf-dist/tex/generic/xstring/xstring.sty
-(/opt/texlive-2013/texmf-dist/tex/generic/xstring/xstring.tex
-\@xs@message=\write4
-\integerpart=\count107
-\decimalpart=\count108
-)
-Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
-)
-\AC@clearlist=\toks20
-)
 (/opt/texlive-2013/texmf-dist/tex/latex/tools/varioref.sty
 Package: varioref 2011/10/02 v1.4z package for extended references (FMi)
-\c@vrcnt=\count109
+\c@vrcnt=\count107
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2013/12/03 3.9h The Babel package
@@ -525,7 +509,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/opt/texlive-2013/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/12/03 3.9h Babel common definitions
-\babel@savecnt=\count110
+\babel@savecnt=\count108
 \U@D=\dimen118
 )
 \l@canadian = a dialect from \language\l@american 
@@ -534,9 +518,9 @@ File: babel.def 2013/12/03 3.9h Babel common definitions
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2013/11/22 v1.3f Italian support from the babel system
-\it@lettering=\count111
+\it@lettering=\count109
 Package babel Info: Making " an active character on input line 98.
-\Virgola=\count112
+\Virgola=\count110
 )
 
 Package babel Warning: Last declared language option is `english,
@@ -550,9 +534,9 @@ Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
 
 (/opt/texlive-2013/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count113
+\et@xins=\count111
 )
-\etb@tempcnta=\count114
+\etb@tempcnta=\count112
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
@@ -560,21 +544,21 @@ nment
 
 (/opt/texlive-2013/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count115
-\float@exts=\toks21
+\c@float@type=\count113
+\float@exts=\toks20
 \float@box=\box28
-\@float@everytoks=\toks22
+\@float@everytoks=\toks21
 \@floatcapt=\box29
 )
-\@float@every@algorithm=\toks23
-\c@algorithm=\count116
+\@float@every@algorithm=\toks22
+\c@algorithm=\count114
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count117
-\c@ALC@line=\count118
-\c@ALC@rem=\count119
-\c@ALC@depth=\count120
+\c@ALC@unique=\count115
+\c@ALC@line=\count116
+\c@ALC@rem=\count117
+\c@ALC@depth=\count118
 \ALC@tlm=\skip47
 \algorithmicindent=\skip48
 )
@@ -583,15 +567,15 @@ Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
 (/opt/texlive-2013/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count121
-\calc@Bcount=\count122
+\calc@Acount=\count119
+\calc@Bcount=\count120
 \calc@Adimen=\dimen119
 \calc@Bdimen=\dimen120
 \calc@Askip=\skip49
 \calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count123
+\calc@Ccount=\count121
 \calc@Cskip=\skip51
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/mh/mhsetup.sty
@@ -607,7 +591,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/opt/texlive-2013/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks24
+\@emptytoks=\toks23
 \ex@=\dimen121
 ))
 (/opt/texlive-2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -617,13 +601,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/opt/texlive-2013/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count124
+\inf@bad=\count122
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count125
-\leftroot@=\count126
+\uproot@=\count123
+\leftroot@=\count124
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count127
-\DOTSCASE@=\count128
+\classnum@=\count125
+\DOTSCASE@=\count126
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -632,32 +616,32 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen123
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count129
-\c@MaxMatrixCols=\count130
+\macc@depth=\count127
+\c@MaxMatrixCols=\count128
 \dotsspace@=\muskip11
-\c@parentequation=\count131
-\dspbrk@lvl=\count132
-\tag@help=\toks25
-\row@=\count133
-\column@=\count134
-\maxfields@=\count135
-\andhelp@=\toks26
+\c@parentequation=\count129
+\dspbrk@lvl=\count130
+\tag@help=\toks24
+\row@=\count131
+\column@=\count132
+\maxfields@=\count133
+\andhelp@=\toks25
 \eqnshift@=\dimen124
 \alignsep@=\dimen125
 \tagshift@=\dimen126
 \tagwidth@=\dimen127
 \totwidth@=\dimen128
 \lineht@=\dimen129
-\@envbody=\toks27
+\@envbody=\toks26
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks28
+\mathdisplay@stack=\toks27
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count136
+\g_MT_multlinerow_int=\count134
 \l_MT_multwidth_dim=\dimen130
 \origjot=\skip55
 \l_MT_shortvdotswithinadjustabove_dim=\dimen131
@@ -679,15 +663,15 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks29
-\thm@bodyfont=\toks30
-\thm@headfont=\toks31
-\thm@notefont=\toks32
-\thm@headpunct=\toks33
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
 \thm@preskip=\skip56
 \thm@postskip=\skip57
 \thm@headsep=\skip58
-\dth@everypar=\toks34
+\dth@everypar=\toks33
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
@@ -715,7 +699,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen143
 \caption@hangindent=\dimen144
 )
-\c@ContinuedFloat=\count137
+\c@ContinuedFloat=\count135
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
@@ -727,7 +711,7 @@ Package: pgfplots 2013/10/03 v1.9 Data Visualization (1.9)
 (/opt/texlive-2013/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/opt/texlive-2013/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks35
+\pgfutil@everybye=\toks34
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box32
@@ -746,12 +730,12 @@ Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
 Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks36
-\pgfkeys@temptoks=\toks37
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
 
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.te
 x
-\pgfkeys@tmptoks=\toks38
+\pgfkeys@tmptoks=\toks37
 ))
 \pgf@x=\dimen145
 \pgf@y=\dimen146
@@ -761,12 +745,12 @@ x
 \pgf@yb=\dimen150
 \pgf@xc=\dimen151
 \pgf@yc=\dimen152
-\w@pgf@writea=\write5
+\w@pgf@writea=\write4
 \r@pgf@reada=\read1
-\c@pgf@counta=\count138
-\c@pgf@countb=\count139
-\c@pgf@countc=\count140
-\c@pgf@countd=\count141
+\c@pgf@counta=\count136
+\c@pgf@countb=\count137
+\c@pgf@countc=\count138
+\c@pgf@countd=\count139
  (/opt/texlive-2013/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -781,8 +765,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.t
 ex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count142
-\pgfsyssoftpath@bigbuffer@items=\count143
+\pgfsyssoftpath@smallbuffer@items=\count140
+\pgfsyssoftpath@bigbuffer@items=\count141
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.t
 ex
@@ -812,11 +796,11 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen153
-\pgfmath@count=\count144
+\pgfmath@count=\count142
 \pgfmath@box=\box33
-\pgfmath@toks=\toks39
-\pgfmath@stack@operand=\toks40
-\pgfmath@stack@operation=\toks41
+\pgfmath@toks=\toks38
+\pgfmath@stack@operand=\toks39
+\pgfmath@stack@operation=\toks40
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.
@@ -833,7 +817,7 @@ ex)
 tex)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.t
 ex))) (/opt/texlive-2013/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count145
+\c@pgfmathroundto@lastzeros=\count143
 ))
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
@@ -869,7 +853,7 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box34
 \pgf@hbox=\box35
 \pgf@layerbox@main=\box36
-\pgf@picture@serial@count=\count146
+\pgf@picture@serial@count=\count144
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.co
 de.tex
@@ -900,7 +884,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen176
-\pgf@sys@shading@range@num=\count147
+\pgf@sys@shading@range@num=\count145
 ) (/opt/texlive-2013/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.te
 x
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
@@ -943,8 +927,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
 \pgffor@iter=\dimen179
 \pgffor@skip=\dimen180
-\pgffor@stack=\toks42
-\pgffor@toks=\toks43
+\pgffor@stack=\toks41
+\pgffor@toks=\toks42
 ))
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
@@ -952,7 +936,7 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.
 code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count148
+\pgf@plot@mark@count=\count146
 \pgfplotmarksize=\dimen181
 )
 \tikz@lastx=\dimen182
@@ -963,18 +947,18 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikzsiblingdistance=\dimen187
 \tikz@figbox=\box39
 \tikz@tempbox=\box40
-\tikztreelevel=\count149
-\tikznumberofchildren=\count150
-\tikznumberofcurrentchild=\count151
-\tikz@fig@count=\count152
+\tikztreelevel=\count147
+\tikznumberofchildren=\count148
+\tikznumberofcurrentchild=\count149
+\tikz@fig@count=\count150
 
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count153
-\pgfmatrixcurrentcolumn=\count154
-\pgf@matrix@numberofcolumns=\count155
+\pgfmatrixcurrentrow=\count151
+\pgfmatrixcurrentcolumn=\count152
+\pgf@matrix@numberofcolumns=\count153
 )
-\tikz@expandcount=\count156
+\tikz@expandcount=\count154
 
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
 librarytopaths.code.tex
@@ -982,12 +966,12 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 )))
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks44
-\t@pgfplots@tokb=\toks45
-\t@pgfplots@tokc=\toks46
+\t@pgfplots@toka=\toks43
+\t@pgfplots@tokb=\toks44
+\t@pgfplots@tokc=\toks45
 \pgfplots@tmpa=\dimen188
-\c@pgfplots@coordindex=\count157
-\c@pgfplots@scanlineindex=\count158
+\c@pgfplots@coordindex=\count155
+\c@pgfplots@scanlineindex=\count156
 
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.
 tex))
@@ -1001,21 +985,21 @@ Package pgfplots: loading complementary code for your PGF version...
 fsupp_misc.code.tex)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
 fsupp_pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks47
-\pgfkeys@temptoks=\toks48
+\pgfkeys@pathtoks=\toks46
+\pgfkeys@temptoks=\toks47
 
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
 fsupp_pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks49
+\pgfkeys@tmptoks=\toks48
 ))
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
 fsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count159
+\c@pgfmathroundto@lastzeros=\count157
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
 fsupp_pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
-\pgf@plot@mark@count=\count160
+\pgf@plot@mark@count=\count158
 \pgfplotmarksize=\dimen189
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
@@ -1026,7 +1010,7 @@ File: pgfcorescopes.code.tex 2012/11/30  (rcs-revision 1.38)
 \pgfpic=\box41
 \pgf@hbox=\box42
 \pgf@layerbox@main=\box43
-\pgf@picture@serial@count=\count161
+\pgf@picture@serial@count=\count159
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
 fsupp_pgfcorelayers.code.tex
@@ -1039,14 +1023,14 @@ ructure.code.tex)
 ructureext.code.tex)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.
 code.tex
-\c@pgfplotsarray@tmp=\count162
+\c@pgfplotsarray@tmp=\count160
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix
 .code.tex)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared
 .code.tex
-\c@pgfplotstable@counta=\count163
-\t@pgfplotstable@a=\toks50
+\c@pgfplotstable@counta=\count161
+\t@pgfplotstable@a=\toks49
 )
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.
 code.tex)
@@ -1058,7 +1042,7 @@ e.tex))
 tex)
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surf
 shading.code.tex
-\c@pgfplotslibrarysurf@no=\count164
+\c@pgfplotslibrarysurf@no=\count162
 
 (/opt/texlive-2013/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfs
 hading.pgfsys-pdftex.def)))
@@ -1088,7 +1072,7 @@ librarydecorations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen192
 \pgfdecoratedinputsegmentremainingdistance=\dimen193
 \pgf@decorate@distancetomove=\dimen194
-\pgf@decorate@repeatstate=\count165
+\pgf@decorate@repeatstate=\count163
 \pgfdecorationsegmentamplitude=\dimen195
 \pgfdecorationsegmentlength=\dimen196
 )
@@ -1102,7 +1086,7 @@ ecorations.pathmorphing.code.tex))
 librarydecorations.pathreplacing.code.tex
 (/opt/texlive-2013/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibraryd
 ecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count166
+\pgfplots@numplots=\count164
 \pgfplots@xmin@reg=\dimen197
 \pgfplots@xmax@reg=\dimen198
 \pgfplots@ymin@reg=\dimen199
@@ -1119,8 +1103,8 @@ e.tex
 File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
 ))) (/opt/texlive-2013/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-\c@subfigure=\count167
-\c@subtable=\count168
+\c@subfigure=\count165
+\c@subtable=\count166
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/tabulary/tabulary.sty
 Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
@@ -1129,11 +1113,11 @@ Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen203
 \extrarowheight=\dimen204
-\NC@list=\toks51
+\NC@list=\toks50
 \extratabsurround=\skip59
 \backup@length=\skip60
 )
-\TY@count=\count169
+\TY@count=\count167
 \TY@linewidth=\dimen205
 \tymin=\dimen206
 \tymax=\dimen207
@@ -1154,7 +1138,7 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \aftertitleunit=\skip62
 \ttl@plus=\dimen209
 \ttl@minus=\dimen210
-\ttl@toksa=\toks52
+\ttl@toksa=\toks51
 \titlewidth=\dimen211
 \titlewidthlast=\dimen212
 \titlewidthfirst=\dimen213
@@ -1165,7 +1149,7 @@ Package: babelbib 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
 (/opt/texlive-2013/texmf-dist/tex/latex/babelbib/italian.bdf
 File: italian.bdf 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
 )
-\c@btxromaniannumeral=\count170
+\c@btxromaniannumeral=\count168
 )
 
 Package babelbib Warning: Command \selectbiblanguage used without package
@@ -1187,26 +1171,26 @@ Package: examplep 2010/02/03 v0.04 Verbatim and typeset TeX code
 
 (/opt/texlive-2013/texmf-dist/tex/latex/examplep/verbfwr.sty
 Package: verbfwr 2003/09/25 v0.02 Verbatim file write
-\verbfwr@writefile=\write6
+\verbfwr@writefile=\write5
 ))
 (/opt/texlive-2013/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count171
+\lst@mode=\count169
 \lst@gtempboxa=\box46
-\lst@token=\toks53
-\lst@length=\count172
+\lst@token=\toks52
+\lst@length=\count170
 \lst@currlwidth=\dimen214
-\lst@column=\count173
-\lst@pos=\count174
+\lst@column=\count171
+\lst@pos=\count172
 \lst@lostspace=\dimen215
 \lst@width=\dimen216
-\lst@newlines=\count175
-\lst@lineno=\count176
+\lst@newlines=\count173
+\lst@lineno=\count174
 \lst@maxwidth=\dimen217
 
 (/opt/texlive-2013/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-\c@lstnumber=\count177
-\lst@skipnumbers=\count178
+\c@lstnumber=\count175
+\lst@skipnumbers=\count176
 \lst@framebox=\box47
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/listings/listings.cfg
@@ -1221,15 +1205,15 @@ Package: glossaries 2013/12/05 v4.02 (NLCT)
 Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
 
 (/opt/texlive-2013/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-\XKV@toks=\toks54
-\XKV@tempa@toks=\toks55
-\XKV@depth=\count179
+\XKV@toks=\toks53
+\XKV@tempa@toks=\toks54
+\XKV@depth=\count177
 File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 ))
 (/opt/texlive-2013/texmf-dist/tex/latex/glossaries/base/mfirstuc.sty
 Package: mfirstuc 2013/11/04 v1.08 (NLCT)
-\@glsmfirst=\toks56
-\@glsmrest=\toks57
+\@glsmfirst=\toks55
+\@glsmrest=\toks56
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
@@ -1242,7 +1226,7 @@ Package: datatool-base 2013/09/06 v2.18 (NLCT)
 
 (/opt/texlive-2013/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count180
+\c@su@anzahl=\count178
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2013/08/29 v2.17 (NLCT)
@@ -1253,19 +1237,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/opt/texlive-2013/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count181
+\actioncount=\count179
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count182
-\FP@xia=\count183
-\FP@xib=\count184
-\FP@xfa=\count185
-\FP@xfb=\count186
-\FP@rega=\count187
-\FP@regb=\count188
-\FP@regs=\count189
-\FP@times=\count190
+\FP@xs=\count180
+\FP@xia=\count181
+\FP@xib=\count182
+\FP@xfa=\count183
+\FP@xfb=\count184
+\FP@rega=\count185
+\FP@regb=\count186
+\FP@regs=\count187
+\FP@times=\count188
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -1284,7 +1268,7 @@ Package: fp-pas 1994/08/29
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count191
+\FPseed=\count189
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -1295,15 +1279,15 @@ Package: fp-upn 1996/10/21
 (/opt/texlive-2013/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
-\@dtl@toks=\toks58
-\@dtl@tmpcount=\count192
+\@dtl@toks=\toks57
+\@dtl@tmpcount=\count190
 \dtl@tmplength=\skip72
-\dtl@sortresult=\count193
-\@dtl@numgrpsepcount=\count194
-\@dtl@datatype=\count195
-\dtl@codeA=\count196
-\dtl@codeB=\count197
-\@dtl@foreach@level=\count198
+\dtl@sortresult=\count191
+\@dtl@numgrpsepcount=\count192
+\@dtl@datatype=\count193
+\dtl@codeA=\count194
+\dtl@codeB=\count195
+\@dtl@foreach@level=\count196
 )
 (/opt/texlive-2013/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-3
 07.sty
@@ -1314,14 +1298,14 @@ Package: translator 2010/06/12 ver 1.10
 
 (/opt/texlive-2013/texmf-dist/tex/latex/beamer/translator/translator-language-m
 appings.tex))
-\gls@level=\count199
-\@gls@tmpb=\toks59
+\gls@level=\count197
+\@gls@tmpb=\toks58
 \gls@tmplen=\skip73
-\glswrite=\write7
-\glskeylisttok=\toks60
-\glslabeltok=\toks61
-\glsshorttok=\toks62
-\glslongtok=\toks63
+\glswrite=\write6
+\glskeylisttok=\toks59
+\glslabeltok=\toks60
+\glsshorttok=\toks61
+\glslongtok=\toks62
 
 (/opt/texlive-2013/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
 Package: glossary-hypernav 2013/11/14 v4.0 (NLCT)
@@ -1338,17 +1322,17 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTright=\skip76
 \LTpre=\skip77
 \LTpost=\skip78
-\LTchunksize=\count200
+\LTchunksize=\count198
 \LTcapwidth=\dimen218
 \LT@head=\box48
 \LT@firsthead=\box49
 \LT@foot=\box50
 \LT@lastfoot=\box51
-\LT@cols=\count201
-\LT@rows=\count202
-\c@LT@tables=\count203
-\c@LT@chunks=\count204
-\LT@p@ftn=\toks64
+\LT@cols=\count199
+\LT@rows=\count200
+\c@LT@tables=\count201
+\c@LT@chunks=\count202
+\LT@p@ftn=\toks63
 )
 \glsdescwidth=\skip79
 \glspagelistwidth=\skip80
@@ -1358,7 +1342,7 @@ Package: glossary-super 2013/11/14 v4.0 (NLCT)
 
 (/opt/texlive-2013/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
-\c@tracingst=\count205
+\c@tracingst=\count203
 \ST@wd=\dimen219
 \ST@rightskip=\skip81
 \ST@leftskip=\skip82
@@ -1390,26 +1374,26 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 96.
-\c@teorema=\count206
+\c@teorema=\count204
 )
 (./commands.sty
 Package: commands 
 )
-\@input{./tex/glossario.aux}
-\openout2 = `./tex/glossario.aux'.
+\glo@main@file=\write7
+\openout7 = `tesi.glo'.
 
-(./tex/glossario.tex)
-\glo@main@file=\write8
-\openout8 = `tesi.glo'.
+Package glossaries Info: Writing glossary file tesi.glo on input line 9.
+\glo@acronym@file=\write8
+\openout8 = `tesi.acn'.
 
-Package glossaries Info: Writing glossary file tesi.glo on input line 11.
+Package glossaries Info: Writing glossary file tesi.acn on input line 9.
 \@indexfile=\write9
 \openout9 = `tesi.idx'.
 
 
 Writing index file tesi.idx
-(./tesi.aux (./tex/titolo.aux) (./tex/abstract.aux) (./tex/intro.aux)
-(./tex/bitcoin.aux) (./tex/privacy.aux
+(./tex/glossario.tex) (./tesi.aux (./tex/titolo.aux) (./tex/abstract.aux)
+(./tex/intro.aux) (./tex/bitcoin.aux) (./tex/privacy.aux
 
 LaTeX Warning: Label `profind_alg' multiply defined.
 
@@ -1434,17 +1418,17 @@ LaTeX Font Info:    ... okay on input line 14.
 
 (/opt/texlive-2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count207
+\scratchcounter=\count205
 \scratchdimen=\dimen230
 \scratchbox=\box53
-\nofMPsegments=\count208
-\nofMParguments=\count209
-\everyMPshowfont=\toks65
-\MPscratchCnt=\count210
+\nofMPsegments=\count206
+\nofMParguments=\count207
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count208
 \MPscratchDim=\dimen231
-\MPnumerator=\count211
-\makeMPintoPDFobject=\count212
-\everyMPtoPDFconversion=\toks66
+\MPnumerator=\count209
+\makeMPintoPDFobject=\count210
+\everyMPtoPDFconversion=\toks65
 ) (/opt/texlive-2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1469,7 +1453,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/opt/texlive-2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count213
+\c@section@level=\count211
 LaTeX Info: Redefining \Ref on input line 513.
 )
 LaTeX Info: Redefining \ref on input line 14.
@@ -1589,7 +1573,7 @@ File: english.bdf 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
 babelbib extension \bibsenglish added to \extrasenglish
 babelbib extension \btxifchangecaseon added to \extrasenglish
 )
-\c@lstlisting=\count214
+\c@lstlisting=\count212
 
 (/opt/texlive-2013/texmf-dist/tex/latex/glossaries/dict/glossaries-dictionary-E
 nglish.dict
@@ -1598,7 +1582,7 @@ Dictionary: glossaries-dictionary, Language: English
 (/opt/texlive-2013/texmf-dist/tex/latex/glossaries/dict/glossaries-dictionary-I
 talian.dict
 Dictionary: glossaries-dictionary, Language: Italian 
-)
+) (./tesi.glsdefs)
 \openout2 = `./tex/titolo.aux'.
 
  (./tex/titolo.tex
@@ -1609,7 +1593,7 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 19.
 (/opt/texlive-2013/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-<./img/uniud_lite.PNG, id=344, 406.51875pt x 406.51875pt>
+<./img/uniud_lite.PNG, id=352, 406.51875pt x 406.51875pt>
 File: ./img/uniud_lite.PNG Graphic file (type png)
 
 <use ./img/uniud_lite.PNG>
@@ -1631,9 +1615,7 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 19.
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ) [1
 
-
-
-\openout7 = `tesi.xdy'.
+\openout6 = `tesi.ist'.
 
 
 
@@ -1663,17 +1645,17 @@ ite.PNG>] [2
  [11] [12
 
 ]
-(./tesi.lof [13])
+(./tesi.lof)
 \tf@lof=\write12
 \openout12 = `tesi.lof'.
 
- [14] (./tesi.lot)
+ [13] [14
+
+] (./tesi.lot)
 \tf@lot=\write13
 \openout13 = `tesi.lot'.
 
- [15
-
-] [16
+ [15] [16
 
 ]
 \openout2 = `./tex/intro.aux'.
@@ -1704,14 +1686,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 ]
 Capitolo 2.
-[9] [10] <./img/bitcoin_p2_1.PNG, id=665, 863.47594pt x 514.17094pt>
+[9] [10] <./img/bitcoin_p2_1.PNG, id=670, 863.47594pt x 514.17094pt>
 File: ./img/bitcoin_p2_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p2_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p2_1.PNG used on input line 48.
 (pdftex.def)             Requested size: 398.33685pt x 237.19623pt.
  [11] [12 <./img/bitcoin_p2_1.PNG>]
-<./img/bitcoin_p3_1.PNG, id=682, 998.9822pt x 294.34969pt>
+<./img/bitcoin_p3_1.PNG, id=687, 998.9822pt x 294.34969pt>
 File: ./img/bitcoin_p3_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p3_1.PNG>
@@ -1728,17 +1710,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2753) has occurred while \output is active []
 
  [13 <./img/bitcoin_p3_1.PNG>] [14]
-<./img/bitcoin_p4_1.PNG, id=709, 990.70125pt x 513.41812pt>
+<./img/bitcoin_p4_1.PNG, id=718, 990.70125pt x 513.41812pt>
 File: ./img/bitcoin_p4_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p4_1.PNG>
 Package pdftex.def Info: ./img/bitcoin_p4_1.PNG used on input line 115.
 (pdftex.def)             Requested size: 398.33685pt x 206.42905pt.
  [15]
-<./img/bitcoin_p5_1.PNG, id=721, 831.85782pt x 354.57469pt>
+<./img/bitcoin_p5_1.PNG, id=732, 831.85782pt x 354.57469pt>
 File: ./img/bitcoin_p5_1.PNG Graphic file (type png)
 
 <use ./img/bitcoin_p5_1.PNG>
@@ -1748,62 +1730,59 @@ Package pdftex.def Info: ./img/bitcoin_p5_1.PNG used on input line 125.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16 <./img/bitcoin_p4_1.PNG>] [17 <./img/bitcoin_p5_1.PNG>]
-<./img/bitcoinpropagation_1.PNG, id=736, 837.1275pt x 249.93375pt>
+<./img/bitcoinpropagation_1.PNG, id=747, 837.1275pt x 249.93375pt>
 File: ./img/bitcoinpropagation_1.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_1.PNG>
-Package pdftex.def Info: ./img/bitcoinpropagation_1.PNG used on input line 152.
+Package pdftex.def Info: ./img/bitcoinpropagation_1.PNG used on input line 154.
 
 (pdftex.def)             Requested size: 398.33685pt x 118.92569pt.
  [18 <./img/bitcoinpropagation_1.PNG>]
-[19] <./img/bitcoinpropagation_3.PNG, id=754, 760.34062pt x 507.39563pt>
+[19] <./img/bitcoinpropagation_3.PNG, id=766, 760.34062pt x 507.39563pt>
 File: ./img/bitcoinpropagation_3.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_3.PNG>
-Package pdftex.def Info: ./img/bitcoinpropagation_3.PNG used on input line 195.
+Package pdftex.def Info: ./img/bitcoinpropagation_3.PNG used on input line 197.
 
-(pdftex.def)             Requested size: 398.33685pt x 265.82925pt.
-
-<./img/bitcoinpropagation_4.PNG, id=756, 730.22812pt x 508.14844pt>
+(pdftex.def)             Requested size: 298.75264pt x 199.37001pt.
+ [20]
+<./img/bitcoinpropagation_4.PNG, id=773, 730.22812pt x 508.14844pt>
 File: ./img/bitcoinpropagation_4.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_4.PNG>
-Package pdftex.def Info: ./img/bitcoinpropagation_4.PNG used on input line 206.
+Package pdftex.def Info: ./img/bitcoinpropagation_4.PNG used on input line 208.
 
-(pdftex.def)             Requested size: 398.33685pt x 277.19514pt.
-
-Underfull \vbox (badness 2351) has occurred while \output is active []
-
- [20]
-[21 <./img/bitcoinpropagation_3.PNG>] [22 <./img/bitcoinpropagation_4.PNG>]
-[23] <./img/bitcoinpropagation_5.PNG, id=779, 727.21687pt x 498.36188pt>
+(pdftex.def)             Requested size: 298.75264pt x 207.89249pt.
+ [21 <./img/bitcoinpropagation_3.PNG>]
+[22 <./img/bitcoinpropagation_4.PNG>]
+<./img/bitcoinpropagation_5.PNG, id=788, 727.21687pt x 498.36188pt>
 File: ./img/bitcoinpropagation_5.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_5.PNG>
-Package pdftex.def Info: ./img/bitcoinpropagation_5.PNG used on input line 228.
+Package pdftex.def Info: ./img/bitcoinpropagation_5.PNG used on input line 230.
 
-(pdftex.def)             Requested size: 398.33685pt x 272.98964pt.
+(pdftex.def)             Requested size: 278.83458pt x 191.09045pt.
 
-Underfull \vbox (badness 1354) has occurred while \output is active []
+Underfull \vbox (badness 7685) has occurred while \output is active []
 
- [24 <./img/bitcoinpropagation_5.PNG>] [25]
-<./img/bitcoinpropagation_6.PNG, id=798, 771.63281pt x 510.40688pt>
+ [23 <./img/bitcoinpropagation_5.PNG>] [24]
+<./img/bitcoinpropagation_6.PNG, id=814, 771.63281pt x 510.40688pt>
 File: ./img/bitcoinpropagation_6.PNG Graphic file (type png)
 
 <use ./img/bitcoinpropagation_6.PNG>
-Package pdftex.def Info: ./img/bitcoinpropagation_6.PNG used on input line 276.
+Package pdftex.def Info: ./img/bitcoinpropagation_6.PNG used on input line 278.
 
 (pdftex.def)             Requested size: 398.33685pt x 263.48163pt.
- [26] [27 <./img/bitcoinpropagation_6.PNG>]) [28]
+ [25] [26 <./img/bitcoinpropagation_6.PNG>]) [27]
 \openout2 = `./tex/privacy.aux'.
 
- (./tex/privacy.tex
+ (./tex/privacy.tex [28
+
+
+
+]
 Capitolo 3.
-[29
-
-
-
-] [30] (./tex/AddUnl.tex
+[29] [30] (./tex/AddUnl.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 2.
 ) [31] [32] (./tex/ProfInd.tex) [33] [34] [35]
@@ -1837,56 +1816,56 @@ Overfull \hbox (22.53635pt too wide) in paragraph at lines 273--283
 Underfull \vbox (badness 7613) has occurred while \output is active []
 
  [38]
-<./img/user_privacy_2.PNG, id=933, 635.37375pt x 514.17094pt>
+<./img/user_privacy_2.PNG, id=953, 635.37375pt x 514.17094pt>
 File: ./img/user_privacy_2.PNG Graphic file (type png)
 
 <use ./img/user_privacy_2.PNG>
 Package pdftex.def Info: ./img/user_privacy_2.PNG used on input line 294.
 (pdftex.def)             Requested size: 398.33685pt x 322.36029pt.
 
-<./img/user_privacy_3.PNG, id=935, 581.17125pt x 511.15968pt>
+<./img/user_privacy_3.PNG, id=955, 581.17125pt x 511.15968pt>
 File: ./img/user_privacy_3.PNG Graphic file (type png)
 
 <use ./img/user_privacy_3.PNG>
 Package pdftex.def Info: ./img/user_privacy_3.PNG used on input line 305.
 (pdftex.def)             Requested size: 398.33685pt x 350.35284pt.
  [39] [40 <./img/user_privacy_2.PNG>] [41 <./img/user_privacy_3.PNG>]
-<./img/user_privacy_5.PNG, id=955, 589.4522pt x 501.37312pt>
+<./img/user_privacy_5.PNG, id=975, 589.4522pt x 501.37312pt>
 File: ./img/user_privacy_5.PNG Graphic file (type png)
 
 <use ./img/user_privacy_5.PNG>
 Package pdftex.def Info: ./img/user_privacy_5.PNG used on input line 313.
 (pdftex.def)             Requested size: 398.33685pt x 338.81772pt.
  [42 <./img/user_privacy_5.PNG>]
-<./img/anonimity-028.PNG, id=968, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-028.PNG, id=988, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-028.PNG Graphic file (type png)
 
 <use ./img/anonimity-028.PNG>
 Package pdftex.def Info: ./img/anonimity-028.PNG used on input line 337.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimity-029.PNG, id=969, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-029.PNG, id=989, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-029.PNG Graphic file (type png)
 
 <use ./img/anonimity-029.PNG>
 Package pdftex.def Info: ./img/anonimity-029.PNG used on input line 338.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimato_1_3_c.PNG, id=970, 459.96844pt x 459.21562pt>
+<./img/anonimato_1_3_c.PNG, id=990, 459.96844pt x 459.21562pt>
 File: ./img/anonimato_1_3_c.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_c.PNG>
 Package pdftex.def Info: ./img/anonimato_1_3_c.PNG used on input line 340.
 (pdftex.def)             Requested size: 119.50226pt x 119.30214pt.
 
-<./img/anonimato_1_3_d.PNG, id=971, 470.50781pt x 451.6875pt>
+<./img/anonimato_1_3_d.PNG, id=991, 470.50781pt x 451.6875pt>
 File: ./img/anonimato_1_3_d.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_d.PNG>
 Package pdftex.def Info: ./img/anonimato_1_3_d.PNG used on input line 341.
 (pdftex.def)             Requested size: 119.50226pt x 114.72044pt.
 
-<./img/anonimato_1_3_e.PNG, id=972, 452.4403pt x 451.6875pt>
+<./img/anonimato_1_3_e.PNG, id=992, 452.4403pt x 451.6875pt>
 File: ./img/anonimato_1_3_e.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_3_e.PNG>
@@ -1894,35 +1873,35 @@ Package pdftex.def Info: ./img/anonimato_1_3_e.PNG used on input line 342.
 (pdftex.def)             Requested size: 119.50226pt x 119.30376pt.
  [43] [44 <./img/anonimity-028.PNG> <./img/anonimity-029.PNG> <./img/anonimato_
 1_3_c.PNG> <./img/anonimato_1_3_d.PNG> <./img/anonimato_1_3_e.PNG>]
-<./img/anonimity-030.PNG, id=1001, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-030.PNG, id=1021, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-030.PNG Graphic file (type png)
 
 <use ./img/anonimity-030.PNG>
 Package pdftex.def Info: ./img/anonimity-030.PNG used on input line 374.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimity-031.PNG, id=1002, 1053.9375pt x 1053.9375pt>
+<./img/anonimity-031.PNG, id=1022, 1053.9375pt x 1053.9375pt>
 File: ./img/anonimity-031.PNG Graphic file (type png)
 
 <use ./img/anonimity-031.PNG>
 Package pdftex.def Info: ./img/anonimity-031.PNG used on input line 375.
 (pdftex.def)             Requested size: 179.25037pt x 179.2474pt.
 
-<./img/anonimato_1_4_c.PNG, id=1003, 451.6875pt x 455.45157pt>
+<./img/anonimato_1_4_c.PNG, id=1023, 451.6875pt x 455.45157pt>
 File: ./img/anonimato_1_4_c.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_c.PNG>
 Package pdftex.def Info: ./img/anonimato_1_4_c.PNG used on input line 377.
 (pdftex.def)             Requested size: 119.50226pt x 120.4995pt.
 
-<./img/anonimato_1_4_d.PNG, id=1004, 450.18187pt x 453.19313pt>
+<./img/anonimato_1_4_d.PNG, id=1024, 450.18187pt x 453.19313pt>
 File: ./img/anonimato_1_4_d.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_d.PNG>
 Package pdftex.def Info: ./img/anonimato_1_4_d.PNG used on input line 378.
 (pdftex.def)             Requested size: 119.50226pt x 120.29614pt.
 
-<./img/anonimato_1_4_e.PNG, id=1005, 437.38406pt x 450.18187pt>
+<./img/anonimato_1_4_e.PNG, id=1025, 437.38406pt x 450.18187pt>
 File: ./img/anonimato_1_4_e.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_4_e.PNG>
@@ -1930,42 +1909,42 @@ Package pdftex.def Info: ./img/anonimato_1_4_e.PNG used on input line 379.
 (pdftex.def)             Requested size: 119.50226pt x 122.99326pt.
  [45] [46 <./img/anonimity-030.PNG> <./img/anonimity-031.PNG> <./img/anonimato_
 1_4_c.PNG> <./img/anonimato_1_4_d.PNG> <./img/anonimato_1_4_e.PNG>]
-<./img/anonimity-146.PNG, id=1028, 935.495pt x 468.75125pt>
+<./img/anonimity-146.PNG, id=1048, 935.495pt x 468.75125pt>
 File: ./img/anonimity-146.PNG Graphic file (type png)
 
 <use ./img/anonimity-146.PNG>
 Package pdftex.def Info: ./img/anonimity-146.PNG used on input line 413.
 (pdftex.def)             Requested size: 191.19998pt x 95.80136pt.
 
-<./img/anonimity-148.PNG, id=1029, 795.97375pt x 398.48875pt>
+<./img/anonimity-148.PNG, id=1049, 795.97375pt x 398.48875pt>
 File: ./img/anonimity-148.PNG Graphic file (type png)
 
 <use ./img/anonimity-148.PNG>
 Package pdftex.def Info: ./img/anonimity-148.PNG used on input line 414.
 (pdftex.def)             Requested size: 191.19998pt x 95.71829pt.
  [47] [48 <./img/anonimity-146.PNG> <./img/anonimity-148.PNG>] <./img/anonimato
-_1_11.PNG, id=1066, 616.55344pt x 496.85625pt>
+_1_11.PNG, id=1087, 616.55344pt x 496.85625pt>
 File: ./img/anonimato_1_11.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_11.PNG>
 Package pdftex.def Info: ./img/anonimato_1_11.PNG used on input line 437.
 (pdftex.def)             Requested size: 398.33685pt x 321.01189pt.
  [49 <./img/anonimato_1_11.PNG>]
-<./img/anonimato_1_12.PNG, id=1083, 421.575pt x 505.13719pt>
+<./img/anonimato_1_12.PNG, id=1103, 421.575pt x 505.13719pt>
 File: ./img/anonimato_1_12.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_12.PNG>
 Package pdftex.def Info: ./img/anonimato_1_12.PNG used on input line 448.
 (pdftex.def)             Requested size: 398.33685pt x 477.30322pt.
  [50] [51 <./img/anonimato_1_12.PNG>]
-<./img/anonimato_1_13.PNG, id=1111, 1008.76875pt x 485.56406pt>
+<./img/anonimato_1_13.PNG, id=1131, 1008.76875pt x 485.56406pt>
 File: ./img/anonimato_1_13.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_13.PNG>
 Package pdftex.def Info: ./img/anonimato_1_13.PNG used on input line 461.
 (pdftex.def)             Requested size: 398.33685pt x 191.73271pt.
 
-<./img/anonimato_1_14.PNG, id=1117, 575.14874pt x 506.6428pt>
+<./img/anonimato_1_14.PNG, id=1137, 575.14874pt x 506.6428pt>
 File: ./img/anonimato_1_14.PNG Graphic file (type png)
 
 <use ./img/anonimato_1_14.PNG>
@@ -1980,7 +1959,7 @@ Package pdftex.def Info: ./img/anonimato_1_14.PNG used on input line 469.
 
 ]
 Capitolo 4.
-<./img/vulnerabilities_p2p-001.PNG, id=1149, 247.92625pt x 347.2975pt>
+<./img/vulnerabilities_p2p-001.PNG, id=1169, 247.92625pt x 347.2975pt>
 File: ./img/vulnerabilities_p2p-001.PNG Graphic file (type png)
 
 <use ./img/vulnerabilities_p2p-001.PNG>
@@ -2403,7 +2382,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-[113] [114] [115]) [116] [117]
+[113] [114] [115] [116]) [117]
 \openout2 = `./tex/appendice.aux'.
 
  (./tex/appendice.tex [118
@@ -2454,19 +2433,19 @@ You need to provide a definition with \DeclareInputText
 or \DeclareInputMath before using this key.
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 83--95
+Underfull \hbox (badness 1270) in paragraph at lines 83--94
 []\T1/cmr/m/n/10.95 .  []$\T1/cmtt/m/n/10.95 http : / / doi . acm . org / 10 . 
 1145 / 2229012 . 2229022$[]\T1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 104--115
+Underfull \hbox (badness 1117) in paragraph at lines 103--114
 []\T1/cmr/m/n/10.95 Bamert, To-bias, Chri-stian Dec-ker, Len-nart El-sen, Ro-ge
 r Wat-te-n-ho-fer e
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--115
+Underfull \hbox (badness 10000) in paragraph at lines 103--114
 []$\T1/cmtt/m/n/10.95 http : / / www . tik . ee . ethz . ch / file / 848064fa2e
 80f88a57aef43d7d5956c6 /
  []
@@ -2474,46 +2453,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--115
 [123
 
 ]
-Underfull \hbox (badness 1342) in paragraph at lines 141--154
-[]\T1/cmr/m/n/10.95 Clark, Je-re-my e Alek-san-der Es-sex: \T1/cmr/m/it/10.95 C
-om-mit-Coin: Car-bon Da-ting Com-
- []
-
-
-Underfull \hbox (badness 1033) in paragraph at lines 141--154
-\T1/cmr/m/it/10.95 mit-men-ts wi-th Bit-coin\T1/cmr/m/n/10.95 .  Nel Ke-ro-my-t
-is, An-ge-los D. (cu-ra-to-re): \T1/cmr/m/it/10.95 Fi-nan-
- []
-
-[124]
-Underfull \hbox (badness 1168) in paragraph at lines 211--219
+Underfull \hbox (badness 1168) in paragraph at lines 210--218
 []\T1/cmr/m/n/10.95 Merkle, Ral-ph C.: \T1/cmr/m/it/10.95 Pro-to-cols for Pu-bl
 ic Key Cryp-to-sy-stems\T1/cmr/m/n/10.95 .  Nel \T1/cmr/m/it/10.95 IEEE
  []
 
 
-Underfull \hbox (badness 5832) in paragraph at lines 211--219
-\T1/cmr/m/it/10.95 Sym-po-sium on Se-cu-ri-ty and pri-va-cy\T1/cmr/m/n/10.95 , 
-vo-lu-me 1109, pa-gi-ne 122--134,
+Underfull \hbox (badness 3482) in paragraph at lines 210--218
+\T1/cmr/m/n/10.95 le 1980.  []$\T1/cmtt/m/n/10.95 http : / / www . cs . washing
+ton . edu / research / projects / poirot3 /
  []
 
-
-Underfull \hbox (badness 3746) in paragraph at lines 233--237
+[124]
+Underfull \hbox (badness 3746) in paragraph at lines 231--235
 []\T1/cmr/m/n/10.95 Nakamoto, Sa-to-shi: \T1/cmr/m/it/10.95 Bit-coin: A Peer-to
 -Peer Elec-tro-nic Cash Sy-stem\T1/cmr/m/n/10.95 .
  []
 
-)
+) (./tesi.gls [125] [126
 
-Package glossaries Warning: Deprecated command \glossarystyle.
- I recommend you switch to \setglossarystyle unless you want to maintain backwa
-rd compatibility on input line 47.
+]) (./tesi.acr [127
 
-No file tesi.gls.
+] [128
+
+])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the tesi.maf file.
 \openout3 = `tesi.maf'.
+
 
 
 Package minitoc(hints) Warning: W0033
@@ -2531,7 +2499,9 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                in the tesi.log file.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
-[125]
+[129
+
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./tesi.aux (./tex/titolo.aux) (./tex/abstract.aux) (./tex/intro.aux)
 (./tex/bitcoin.aux) (./tex/privacy.aux) (./tex/sicurezza.aux) (./tex/mining.aux
@@ -2539,7 +2509,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: 3EFB9A076CF19F2F4B8725E30124B247;5999.
+(rerunfilecheck)             Checksum: 67214E115B2C3C550CC67C57F996576A;6090.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2547,15 +2517,30 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 36269 strings out of 494980
- 712192 string characters out of 6180251
- 936755 words of memory out of 5000000
- 37798 multiletter control sequences out of 15000+600000
+ 35634 strings out of 494980
+ 702703 string characters out of 6180251
+ 921252 words of memory out of 5000000
+ 37152 multiletter control sequences out of 15000+600000
  34077 words of font info for 85 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 70i,19n,84p,2650b,2028s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.79} has been referenced but does not ex
+ 70i,19n,84p,2681b,2028s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.84} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.83} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.82} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.81} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.80} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.79} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.78} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2619,9 +2604,6 @@ t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.58} has been referenced but does not exis
 t, replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:amlcft} has been referenced but does not exist,
- replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.57} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2740,17 +2722,8 @@ t, replaced by a fixed one
 pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
 t, replaced by a fixed one
 
-pdfTeX warning (dest): name{glo:pvalori} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:gof} has been referenced but does not exist, re
-placed by a fixed one
-
 pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
 t, replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:dag} has been referenced but does not exist, re
-placed by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2766,18 +2739,6 @@ t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
 t, replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:hac} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{glo:kmc} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{glo:ami} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{glo:nmi} has been referenced but does not exist, re
-placed by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2851,10 +2812,10 @@ nts/type1/public/cm-super/sfti0900.pfb></opt/texlive-2013/texmf-dist/fonts/type
 1/public/cm-super/sfti1095.pfb></opt/texlive-2013/texmf-dist/fonts/type1/public
 /cm-super/sftt0900.pfb></opt/texlive-2013/texmf-dist/fonts/type1/public/cm-supe
 r/sftt1095.pfb>
-Output written on tesi.pdf (141 pages, 3165977 bytes).
+Output written on tesi.pdf (145 pages, 3172049 bytes).
 PDF statistics:
- 2071 PDF objects out of 2073 (max. 8388607)
- 1811 compressed objects within 19 object streams
- 559 named destinations out of 1000 (max. 500000)
- 835 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2136 PDF objects out of 2487 (max. 8388607)
+ 1872 compressed objects within 19 object streams
+ 575 named destinations out of 1000 (max. 500000)
+ 851 words of extra memory for PDF output out of 10000 (max. 10000000)
 

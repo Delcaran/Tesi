@@ -90,8 +90,7 @@
   2012. \btxpublisherfont {ACM}\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont
   {978-1-4503-1415-2}}}.
 \newblock {\latintext \btxurlfont{http://doi.acm.org/10.1145/2229012.2229022}},
-  Disponibile in download gratuito all'indirizzo
-  \url{http://arxiv.org/pdf/1111.2626.pdf}.
+  Download: \url{http://arxiv.org/pdf/1111.2626.pdf}.
 
 \bibitem {hashcash}
 \btxnamefont {\btxlastnamefont {Back}, Adam}\btxauthorcolon\ \btxtitlefont
@@ -108,8 +107,8 @@
   {Welten}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Have a snack, pay
   with bitcoins}{Have a Snack, Pay with Bitcoins}}.
 \newblock \Btxinlong {}\ \btxtitlefont {IEEE Internation Conference on
-  Peer-to-Peer Computing (P2P)}, Trento, Italy,
-  \btxprintmonthyear{.}{September}{2013}{long}.
+  Peer-to-Peer Computing (P2P)}, Trento, Italia,
+  \btxprintmonthyear{.}{Settembre}{2013}{long}.
 \newblock {\latintext
   \btxurlfont{http://www.tik.ee.ethz.ch/file/848064fa2e80f88a57aef43d7d5956c6/P2P2013_093.pdf}}.
 
@@ -127,8 +126,8 @@
   \btxpageslong {}\ 399--414. \btxpublisherfont {Springer Berlin Heidelberg},
   2012\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont {978-3-642-32945-6}}}.
 \newblock {\latintext
-  \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_29}}, Disponibile in
-  download gratuito all'indirizzo \url{http://www.cs.stanford.edu/~xb/fc12/}.
+  \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_29}}, Download:
+  \url{http://www.cs.stanford.edu/~xb/fc12/}.
 
 \bibitem {boyen2007halting}
 \btxnamefont {\btxlastnamefont {Boyen}, Xavier}\btxauthorcolon\ \btxtitlefont
@@ -149,8 +148,8 @@
   \btxpageslong {}\ 390--398. \btxpublisherfont {Springer Berlin Heidelberg},
   2012\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont {978-3-642-32945-6}}}.
 \newblock {\latintext
-  \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_28}}, Disponibile in
-  download gratuito all'indirizzo \url{http://eprint.iacr.org/2011/677.pdf}.
+  \btxurlfont{http://dx.doi.org/10.1007/978-3-642-32946-3_28}}, Download:
+  \url{http://eprint.iacr.org/2011/677.pdf}.
 
 \bibitem {bitcoinpropagation}
 \btxnamefont {\btxlastnamefont {Decker}, Christian} \btxandlong {}\
@@ -158,8 +157,8 @@
   \btxtitlefont {\btxifchangecase {Information propagation in the bitcoin
   network}{Information Propagation in the Bitcoin Network}}.
 \newblock \Btxinlong {}\ \btxtitlefont {IEEE Internation Conference on
-  Peer-to-Peer Computing (P2P)}, Trento, Italy,
-  \btxprintmonthyear{.}{September}{2013}{long}.
+  Peer-to-Peer Computing (P2P)}, Trento, Italia,
+  \btxprintmonthyear{.}{Settembre}{2013}{long}.
 \newblock {\latintext
   \btxurlfont{http://www.tik.ee.ethz.ch/file/49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf}}.
 
@@ -171,7 +170,7 @@
   Critical Look at their Solution}}.
 \newblock \btxtechreplong {}, Kent State University, Networking and Media
   Communications Research Laboratories, Department of Computer Science, 233
-  MSB, Kent, OH 44242, \btxprintmonthyear{.}{November}{2006}{long}.
+  MSB, Kent, OH 44242, \btxprintmonthyear{.}{Novembre}{2006}{long}.
 \newblock {\latintext
   \btxurlfont{http://medianet.kent.edu/technicalreports.html}}.
 
@@ -197,7 +196,7 @@
   {Mukesh}}\btxauthorcolon\ \btxtitlefont {Peer-to-peer computing and overlay
   graphs}, \btxchapterlong {}~18.
 \newblock \btxpublisherfont {Cambridge University Press}, The Edinburgh
-  Building, Cambridge CB2 8RU, UK, \btxeditionnumlong {first}{}, 2008.
+  Building, Cambridge CB2 8RU, UK, \btxeditionnumlong {prima}{}, 2008.
 
 \bibitem {kurose-ross}
 \btxnamefont {\btxlastnamefont {Kurose}, James\btxfnamespacelong F.}
@@ -213,7 +212,7 @@
   cryptosystems}{Protocols for Public Key Cryptosystems}}.
 \newblock \Btxinlong {}\ \btxtitlefont {IEEE Symposium on Security and
   privacy}, \btxvolumelong {}\ \btxvolumefont {1109}, \btxpageslong {}\
-  122--134, \btxprintmonthyear{.}{April}{1980}{long}.
+  122--134, \btxprintmonthyear{.}{Aprile}{1980}{long}.
 \newblock {\latintext
   \btxurlfont{http://www.cs.washington.edu/research/projects/poirot3/Oakland/sp/PAPERS/00044729.PDF}}.
 
@@ -224,10 +223,9 @@
   bitcoin-exchange risk}{Beware the Middleman: Empirical Analysis of
   Bitcoin-Exchange Risk}}.
 \newblock \Btxinlong {}\ \btxtitlefont {Proceedings of Financial Cryptography
-  2013}, \btxprintmonthyear{.}{April}{2013}{long}.
+  2013}, \btxprintmonthyear{.}{Aprile}{2013}{long}.
 \newblock {\latintext \btxurlfont{http://www.truststc.org/pubs/907.html}},
-  Disponibile in download gratuito all'indirizzo
-  \url{http://fc13.ifca.ai/proc/1-2.pdf}.
+  Download: \url{http://fc13.ifca.ai/proc/1-2.pdf}.
 
 \bibitem {bitcoin}
 \btxnamefont {\btxlastnamefont {Nakamoto}, Satoshi}\btxauthorcolon\
@@ -256,8 +254,8 @@
   197--223. \btxpublisherfont {Springer New York}, 2013\ifbtxprintISBN {,
   \mbox{\btxISBN~\btxISBNfont {978-1-4614-4138-0}}}.
 \newblock {\latintext
-  \btxurlfont{http://dx.doi.org/10.1007/978-1-4614-4139-7_10}}, Disponibile in
-  download gratuito all'indirizzo \url{http://arxiv.org/pdf/1107.4524.pdf}.
+  \btxurlfont{http://dx.doi.org/10.1007/978-1-4614-4139-7_10}}, Download:
+  \url{http://arxiv.org/pdf/1107.4524.pdf}.
 
 \bibitem {transazioni}
 \btxnamefont {\btxlastnamefont {Ron}, Dorit} \btxandlong {}\ \btxnamefont {Adi
@@ -272,8 +270,7 @@
   \btxjtitlefont {\btxifchangecase {Analysis of bitcoin pooled mining reward
   systems}{Analysis of Bitcoin Pooled Mining Reward Systems}}.
 \newblock \btxjournalfont {CoRR}, abs/1112.4980, 2011.
-\newblock Disponibile in download gratuito all'indirizzo
-  \url{http://arxiv.org/pdf/1112.4980v1.pdf}.
+\newblock Download: \url{http://arxiv.org/pdf/1112.4980v1.pdf}.
 
 \bibitem {doublespending_hash}
 \btxnamefont {\btxlastnamefont {Rosenfeld}, Meni}\btxauthorcolon\

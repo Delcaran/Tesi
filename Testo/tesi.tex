@@ -6,10 +6,10 @@
 
 \includeonly{./tex/glossario,./tex/titolo,./tex/abstract,./tex/intro,./tex/bitcoin,./tex/sicurezza,./tex/privacy,./tex/appendice,./tex/correlati,./tex/mining,./tex/scripting}
 
-\include{./tex/glossario}
-
 \makeglossaries
 \makeindex
+
+\input{./tex/glossario}
 
 \begin{document}
 
@@ -44,7 +44,7 @@
 
 %\printindex % se si fa l'indice analitico.
 
-\glossarystyle{listgroup}
+%\glossarystyle{listgroup}
 %\glsaddall
 \printglossaries
 
