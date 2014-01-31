@@ -26,10 +26,10 @@
 \contentsline {section}{\numberline {2.7}Gestione dei valori}{17}{section.2.7}
 \contentsline {section}{\numberline {2.8}Analisi della rete}{19}{section.2.8}
 \contentsline {subsection}{\numberline {2.8.1}Topologia}{19}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}Propagazione delle informazioni}{19}{subsection.2.8.2}
-\contentsline {subsection}{\numberline {2.8.3}Informazioni scomparse}{21}{subsection.2.8.3}
+\contentsline {subsection}{\numberline {2.8.2}Propagazione delle informazioni}{20}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Informazioni scomparse}{22}{subsection.2.8.3}
 \contentsline {section}{\numberline {2.9}Fork della blockchain}{23}{section.2.9}
-\contentsline {subsection}{\numberline {2.9.1}Creazione del modello}{24}{subsection.2.9.1}
+\contentsline {subsection}{\numberline {2.9.1}Creazione del modello}{23}{subsection.2.9.1}
 \contentsline {subsection}{\numberline {2.9.2}Misurazioni}{25}{subsection.2.9.2}
 \contentsline {chapter}{\numberline {3}Privacy}{29}{chapter.3}
 \contentsline {section}{\numberline {3.1}Analisi quantitativa della privacy}{29}{section.3.1}
@@ -40,105 +40,105 @@
 \contentsline {subsubsection}{User Profile Indistinguishability}{33}{ALC@unique.17}
 \contentsline {paragraph}{Quantificazione di Profile Indistinguishability}{33}{ALC@unique.22}
 \contentsline {section}{\numberline {3.2}Applicare il modello}{35}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Euristiche per sfruttare il client}{35}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Euristiche per sfruttare il client ufficiale}{35}{subsection.3.2.1}
 \contentsline {paragraph}{Transazioni multi-input}{35}{subsection.3.2.1}
 \contentsline {paragraph}{Indirizzi ombra}{35}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Analisi basata sul comportamento}{35}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Simulazione: utilizzo di Bitcoin in ambiente universitario}{36}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Simulazione: utilizzo di Bitcoin in ambiente universitario}{37}{subsection.3.2.3}
 \contentsline {paragraph}{Configurazione della simulazione}{37}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Risultati della simulazione}{38}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Caso reale: analisi di un furto}{42}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Mappare la rete Bitcoin}{43}{subsection.3.3.1}
-\contentsline {subsubsection}{Transaction Network}{43}{subsection.3.3.1}
-\contentsline {subsubsection}{User Network}{45}{table.caption.18}
-\contentsline {subsubsection}{Integrare user network con informazioni off-network}{47}{table.caption.20}
-\contentsline {paragraph}{The Bitcoin Faucet}{47}{table.caption.20}
-\contentsline {paragraph}{Rivelazioni volontarie}{47}{figure.caption.21}
-\contentsline {paragraph}{Analisi dello stack TCP/IP}{48}{figure.caption.21}
-\contentsline {subsection}{\numberline {3.3.2}Analisi di un furto}{48}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Contromisure e consigli per aumentare la privacy}{52}{section.3.4}
-\contentsline {paragraph}{Evitare l'euristica per le transazioni multi-input}{52}{section.3.4}
-\contentsline {paragraph}{Evitare l'euristica degli indirizzi ombra}{54}{section.3.4}
-\contentsline {paragraph}{Implicazioni per l'utilizzo generico di Bitcoin}{54}{section.3.4}
-\contentsline {chapter}{\numberline {4}Sicurezza}{57}{chapter.4}
-\contentsline {section}{\numberline {4.1}Reti P2P in genere}{57}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Attacchi di Basso Livello}{57}{subsection.4.1.1}
-\contentsline {subsubsection}{Denial of Service (DoS)}{57}{subsection.4.1.1}
-\contentsline {paragraph}{Contromisure al DDoS}{58}{subsection.4.1.1}
-\contentsline {subsubsection}{Attacco Man-in-the-Middle (MitM)}{59}{subsection.4.1.1}
-\contentsline {subsubsection}{Contrastare il Man-in-the-Middle}{59}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Attacchi di Medio Livello}{60}{subsection.4.1.2}
-\contentsline {subsubsection}{Worms}{60}{subsection.4.1.2}
-\contentsline {paragraph}{Contrastare i Worm}{60}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Attacchi al livello P2P}{61}{subsection.4.1.3}
-\contentsline {subsubsection}{Comportamento scorretto}{61}{subsection.4.1.3}
-\contentsline {paragraph}{Contrastare i comportamenti scorretti}{62}{subsection.4.1.3}
-\contentsline {subsubsection}{Attacco Sibilla}{62}{subsection.4.1.3}
-\contentsline {paragraph}{Contromisure all'attacco Sibilla}{62}{subsection.4.1.3}
-\contentsline {subsubsection}{Attacco Eclipse}{63}{subsection.4.1.3}
-\contentsline {paragraph}{Contromisure ad Eclipse}{63}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Contromisure generali}{63}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}La rete Bitcoin}{64}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Attacchi basati sulla velocit\IeC {\`a}}{64}{subsection.4.2.1}
-\contentsline {subsubsection}{Modello di attacco}{64}{subsection.4.2.1}
-\contentsline {paragraph}{1: $t^\mathcal {V}_\mathcal {V} < t^\mathcal {A}_\mathcal {V}$}{65}{subsection.4.2.1}
-\contentsline {paragraph}{2: $\tau _\mathcal {A}$ confermata nella blockchain}{65}{subsection.4.2.1}
-\contentsline {subsubsection}{Risultati sperimentali}{67}{subsection.4.2.1}
-\contentsline {subsubsection}{Prevenire la doppia-spesa in velocit\IeC {\`a}}{67}{subsection.4.2.1}
-\contentsline {paragraph}{Periodo di sorveglianza}{67}{subsection.4.2.1}
-\contentsline {paragraph}{Sorveglianti in rete}{68}{subsection.4.2.1}
-\contentsline {paragraph}{Collaborazioni tra i peer}{68}{subsection.4.2.1}
-\contentsline {paragraph}{Prevenzione}{69}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Fork della blockchain arbitrario}{69}{section.4.3}
-\contentsline {subsubsection}{History-revision attack}{71}{figure.caption.27}
-\contentsline {subsection}{\numberline {4.3.1}Ridurre il forking: comunicazione tra i nodi}{72}{subsection.4.3.1}
-\contentsline {subsubsection}{Ridurre i tempi di verifica}{72}{subsection.4.3.1}
-\contentsline {subsubsection}{Propagare blocchi in pipeline}{73}{subsection.4.3.1}
-\contentsline {subsubsection}{Aumentare le connessioni}{74}{subsection.4.3.1}
-\contentsline {subsubsection}{Test delle precedenti soluzioni}{74}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Impedire riscritture della blockchain con lo scetticismo}{74}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}I Portafogli}{75}{section.4.4}
-\contentsline {section}{\numberline {4.5}Bitcoin-Exchange}{76}{section.4.5}
-\contentsline {chapter}{\numberline {5}Mining Pools}{79}{chapter.5}
-\contentsline {section}{\numberline {5.1}Funzionamento generico}{79}{section.5.1}
-\contentsline {section}{\numberline {5.2}Sistemi di retribuzione semplici}{82}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Proporzionale}{82}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Pay-Per-Share (PPS)}{83}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Sistemi di retribuzione a punteggio}{84}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Metodo di Slush}{84}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Metodo Geometrico}{85}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Pay-per-lst-N-shares (PPLNS)}{87}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Pay-per-share privo di rischi}{89}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Maximum Pay-Per-Share (MPPS)}{89}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Shared maximum Pay-Per-Share (SMPPS)}{90}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Equalized shared maximum Pay-Per-Share (ESMPPS)}{91}{subsection.5.4.3}
-\contentsline {section}{\numberline {5.5}Attacchi}{92}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Pool-Hopping}{92}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Sottrazione di blocchi}{92}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}Sabotaggi}{92}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}Imboscata}{93}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}Contromisura: Share Offuscate}{93}{subsection.5.5.5}
-\contentsline {chapter}{\numberline {6}Scripting}{95}{chapter.6}
-\contentsline {section}{\numberline {6.1}Contratti}{100}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Deposito temporaneo}{101}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Acquisto di beni con mediatore}{102}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Raccolta fondi assicurata}{103}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Sviluppi}{105}{section.6.2}
-\contentsline {chapter}{\numberline {7}Argomenti correlati}{107}{chapter.7}
-\contentsline {section}{\numberline {7.1}Statistiche}{107}{section.7.1}
-\contentsline {section}{\numberline {7.2}Deflazione}{109}{section.7.2}
-\contentsline {section}{\numberline {7.3}Distributore automatico}{110}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Analisi preliminare}{110}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Implementazione}{111}{subsection.7.3.2}
-\contentsline {section}{\numberline {7.4}Litecoin}{112}{section.7.4}
-\contentsline {section}{\numberline {7.5}Legalit\IeC {\`a}}{114}{section.7.5}
-\contentsline {subsection}{\numberline {7.5.1}Silkroad}{115}{subsection.7.5.1}
-\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{119}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{121}{appendix.Alph2}
-\contentsline {chapter}{Bibliografia}{123}{appendix*.32}
+\contentsline {section}{\numberline {3.3}Caso reale: analisi di un furto}{40}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Mappare la rete Bitcoin}{42}{subsection.3.3.1}
+\contentsline {subsubsection}{Transaction Network}{42}{subsection.3.3.1}
+\contentsline {subsubsection}{User Network}{44}{table.caption.18}
+\contentsline {subsubsection}{Integrare user network con informazioni off-network}{46}{table.caption.20}
+\contentsline {paragraph}{The Bitcoin Faucet}{46}{table.caption.20}
+\contentsline {paragraph}{Rivelazioni volontarie}{46}{figure.caption.21}
+\contentsline {paragraph}{Analisi dello stack TCP/IP}{47}{figure.caption.21}
+\contentsline {subsection}{\numberline {3.3.2}Analisi di un furto}{47}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Contromisure e consigli per aumentare la privacy}{51}{section.3.4}
+\contentsline {paragraph}{Evitare l'euristica per le transazioni multi-input}{51}{section.3.4}
+\contentsline {paragraph}{Evitare l'euristica degli indirizzi ombra}{53}{section.3.4}
+\contentsline {paragraph}{Implicazioni per l'utilizzo generico di Bitcoin}{53}{section.3.4}
+\contentsline {chapter}{\numberline {4}Sicurezza}{55}{chapter.4}
+\contentsline {section}{\numberline {4.1}Reti P2P in genere}{55}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Attacchi di Basso Livello}{55}{subsection.4.1.1}
+\contentsline {subsubsection}{Denial of Service (DoS)}{55}{subsection.4.1.1}
+\contentsline {paragraph}{Contromisure al DDoS}{56}{subsection.4.1.1}
+\contentsline {subsubsection}{Attacco Man-in-the-Middle (MitM)}{57}{subsection.4.1.1}
+\contentsline {subsubsection}{Contrastare il Man-in-the-Middle}{57}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Attacchi di Medio Livello}{58}{subsection.4.1.2}
+\contentsline {subsubsection}{Worms}{58}{subsection.4.1.2}
+\contentsline {paragraph}{Contrastare i Worm}{58}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Attacchi al livello P2P}{59}{subsection.4.1.3}
+\contentsline {subsubsection}{Comportamento scorretto}{59}{subsection.4.1.3}
+\contentsline {paragraph}{Contrastare i comportamenti scorretti}{60}{subsection.4.1.3}
+\contentsline {subsubsection}{Attacco Sibilla}{60}{subsection.4.1.3}
+\contentsline {paragraph}{Contromisure all'attacco Sibilla}{60}{subsection.4.1.3}
+\contentsline {subsubsection}{Attacco Eclipse}{61}{subsection.4.1.3}
+\contentsline {paragraph}{Contromisure ad Eclipse}{61}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Contromisure generali}{61}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}La rete Bitcoin}{62}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Attacchi basati sulla velocit\IeC {\`a}}{62}{subsection.4.2.1}
+\contentsline {subsubsection}{Modello di attacco}{62}{subsection.4.2.1}
+\contentsline {paragraph}{1: $t^\mathcal {V}_\mathcal {V} < t^\mathcal {A}_\mathcal {V}$}{63}{subsection.4.2.1}
+\contentsline {paragraph}{2: $\tau _\mathcal {A}$ confermata nella blockchain}{63}{subsection.4.2.1}
+\contentsline {subsubsection}{Risultati sperimentali}{65}{subsection.4.2.1}
+\contentsline {subsubsection}{Prevenire la doppia-spesa in velocit\IeC {\`a}}{65}{subsection.4.2.1}
+\contentsline {paragraph}{Periodo di sorveglianza}{65}{subsection.4.2.1}
+\contentsline {paragraph}{Sorveglianti in rete}{66}{subsection.4.2.1}
+\contentsline {paragraph}{Collaborazioni tra i peer}{66}{subsection.4.2.1}
+\contentsline {paragraph}{Prevenzione}{67}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Fork della blockchain arbitrario}{67}{section.4.3}
+\contentsline {subsubsection}{History-revision attack}{69}{figure.caption.27}
+\contentsline {subsection}{\numberline {4.3.1}Ridurre il forking: comunicazione tra i nodi}{70}{subsection.4.3.1}
+\contentsline {subsubsection}{Ridurre i tempi di verifica}{70}{subsection.4.3.1}
+\contentsline {subsubsection}{Propagare blocchi in pipeline}{71}{subsection.4.3.1}
+\contentsline {subsubsection}{Aumentare le connessioni}{72}{subsection.4.3.1}
+\contentsline {subsubsection}{Test delle precedenti soluzioni}{72}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Impedire riscritture della blockchain con lo scetticismo}{72}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}I Portafogli}{73}{section.4.4}
+\contentsline {section}{\numberline {4.5}Bitcoin-Exchange}{74}{section.4.5}
+\contentsline {chapter}{\numberline {5}Mining Pools}{77}{chapter.5}
+\contentsline {section}{\numberline {5.1}Funzionamento generico}{77}{section.5.1}
+\contentsline {section}{\numberline {5.2}Sistemi di retribuzione semplici}{80}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Proporzionale}{80}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Pay-Per-Share (PPS)}{81}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Sistemi di retribuzione a punteggio}{82}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Metodo di Slush}{82}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Metodo Geometrico}{83}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Pay-per-lst-N-shares (PPLNS)}{85}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Pay-per-share privo di rischi}{87}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Maximum Pay-Per-Share (MPPS)}{87}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Shared maximum Pay-Per-Share (SMPPS)}{88}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Equalized shared maximum Pay-Per-Share (ESMPPS)}{89}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Attacchi}{90}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Pool-Hopping}{90}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Sottrazione di blocchi}{90}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Sabotaggi}{90}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Imboscata}{91}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}Contromisura: Share Offuscate}{91}{subsection.5.5.5}
+\contentsline {chapter}{\numberline {6}Scripting}{93}{chapter.6}
+\contentsline {section}{\numberline {6.1}Contratti}{98}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Deposito temporaneo}{99}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Acquisto di beni con mediatore}{100}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Raccolta fondi assicurata}{101}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Sviluppi}{103}{section.6.2}
+\contentsline {chapter}{\numberline {7}Argomenti correlati}{105}{chapter.7}
+\contentsline {section}{\numberline {7.1}Statistiche}{105}{section.7.1}
+\contentsline {section}{\numberline {7.2}Deflazione}{107}{section.7.2}
+\contentsline {section}{\numberline {7.3}Distributore automatico}{108}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Analisi preliminare}{108}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Implementazione}{109}{subsection.7.3.2}
+\contentsline {section}{\numberline {7.4}Litecoin}{110}{section.7.4}
+\contentsline {section}{\numberline {7.5}Legalit\IeC {\`a}}{112}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Silkroad}{113}{subsection.7.5.1}
+\contentsline {chapter}{\numberline {A}Simulatore Bitcoin per la valutazione della privacy dell'utente}{117}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Probabilit\IeC {\`a} di successo per l'attaccante}{119}{appendix.Alph2}
+\contentsline {chapter}{Bibliografia}{121}{appendix*.32}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}
 \select@language {italian}
-\contentsline {chapter}{Glossario}{127}{section*.33}
-\contentsline {chapter}{Acronimi}{129}{section*.35}
+\contentsline {chapter}{Glossario}{125}{section*.33}
+\contentsline {chapter}{Acronimi}{127}{section*.35}
