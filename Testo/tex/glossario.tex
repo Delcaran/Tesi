@@ -1,8 +1,3 @@
-\newglossaryentry{blocco}{
-    name={blocco},
-    description={}
-}
-
 \newglossaryentry{btc}{
 	name=BTC,
 	description={Bitcoin intesa come unità di misura della moneta elettronica}
@@ -17,16 +12,33 @@
 	description={Indica l'inserimento o la rimozione di un nodo o di un file in una rete P2P}
 }
 
-\newacronym{pdf}{PDF}{Probability Density Function}
-\newglossaryentry{PDF}{
+\newglossaryentry{pdf}{
 	name={Funzione di Densità di Probabilità},
-	description={Funzione che descrive la probabilità che una variabile casuale assuma un certo valore. Per un range di valori, è il risultato dato dall'integrazione della funzione rappresentante il valore in quell'intervallo.}
+	description={Funzione che descrive la probabilità che una variabile casuale assuma un certo valore. Per un range di valori, è il risultato dato dall'integrazione della funzione rappresentante il valore in quell'intervallo.},
+	first={Funzione di Densità di Probabilità (PDF)},
+	text={funzione di densità di probabilità}
 }
 
-\newacronym{cdf}{CDF}{Cumulative Density Function}
-\newglossaryentry{CDF}{
+\newglossaryentry{cdf}{
 	name={Funzione di Ripartizione},
-	description={Descrive la probabilità che una variabile casuale con una data \gls{pdf} assuma valori minori o maggiori ad $x$. Si calcola integrando la funzione che rappresenta la variabile nell'intervallo $[-\infty, x]$ oppure $[x, \infty]$.}
+	description={Descrive la probabilità che una variabile casuale con una data \gls{pdf} assuma valori minori o maggiori ad $x$. Si calcola integrando la funzione che rappresenta la variabile nell'intervallo $[-\infty, x]$ oppure $[x, \infty]$.},
+	first={funzione di ripartizione (CDF)},
+	text={funzione di ripartizione}
+}
+
+\newglossaryentry{processopoisson}{
+  name={Processo di Poisson},
+  description={Un qualsiasi esperimento in cui si simula e si conta il quanti specifici eventi stocastici indipendenti avvengono durante la durata della rilevazione. Il numero di eventi che si sono manifestati entro due intervalli di tempo segue la \gls{distribuzionepoisson}},
+  first={processo di Poisson},
+  text={processo di Poisson}
+}
+
+\newglossaryentry{distribuzionepoisson}{
+  name={Distribuzione di Poisson},
+  description={Esprime le probabilità per un numero di eventi indipendenti che si verificano successivamente in uno specifico intervallo temporale sapendo quanti se ne verificano mediamente.\\Definendo $\lambda$ come il numero medio di eventi in analisi si ha 
+  $$P(n) = e^{-\lambda}\frac{\lambda^n}{n!}$$},
+  first={distribuzione di Poisson},
+  text={distribuzione di Poisson}
 }
 
 \newacronym{nmi}{NMI}{Normalized Mutual Information}
