@@ -1,8 +1,8 @@
 \chapter{Scripting}\label{transaction-scripting}
 
-Le transazioni Bitcoin contengono un potenziale nascosto che non viene ancora sfruttato dalle attuali implementazioni del client.
-Alcuni campi delle transazioni possono infatti contenere piccoli script scritti in un linguaggio di programmazione Forth-like basato su stack valutato da sinistra verso destra, e di fatto nelle implementazioni attuali contengono script per la verifica della correttezza delle transazioni. Il linguaggio di scripting è descritto in \cite{bitcoin-scripting-api} ed offre funzioni crittografiche quali \verb|SHA1|, che rimpiazza l'elemento in cima allo stack con il suo hash, e \verb|CHECKSIG| che estrae una chiave pubblica ECDSA e la relativa firma dallo stack, verifica la firma per un messaggio implicitamente definito dai dati della transazione e carica il risultato (vero o falso) nello stack.\\\\
-Per capire meglio, il seguente listato mostra il contenuto una transazione standard (transazione \verb|pay-to-pubkey-hash|) decodificato dall'esadecimale\footnote{Un esempio di messaggio di transazione non decodificato (così come una chiara rappresentazione di tutte le strutture dati usate dal protocollo) è disponibile in \url{https://en.bitcoin.it/wiki/Protocol_specification\#Transaction_Verification} } ed espresso in formato JSON\footnote{I dati qui sono stati troncati per brevità, ma la transazione è realmente esistente ed è visibile all'indirizzo \url{http://blockexplorer.com/rawtx/99383066a5140b35b93e8f84ef1d40fd720cc201d2aa51915b6c33616587b94f}}:
+Le transazioni Bitcoin contengono un potenziale nascosto che non viene ancora sfruttato nelle attuali implementazioni del client.
+Alcuni campi delle transazioni possono infatti contenere piccoli script in un linguaggio di programmazione Forth-like basato su stack valutato da sinistra verso destra, e di fatto attualmente alcuni script standard vengono utilizzati per la verifica della correttezza delle transazioni. Il linguaggio di scripting è descritto in \cite{bitcoin-scripting-api} ed offre funzioni crittografiche quali \verb|SHA1|, che rimpiazza l'elemento in cima allo stack con il suo hash, e \verb|CHECKSIG| che estrae una chiave pubblica ECDSA e la relativa firma dallo stack, verifica la firma e carica il risultato (vero o falso) nello stack.\\\\
+Per capire meglio, il seguente listato mostra il contenuto una transazione standard (transazione \verb|pay-to-pubkey-hash|) decodificato dall'esadecimale\footnote{Un esempio di messaggio di transazione non decodificato (così come una chiara rappresentazione di tutte le strutture dati usate dal protocollo) è disponibile in \url{https://en.bitcoin.it/wiki/Protocol_specification\#Transaction_Verification} } ed espresso in formato JSON\footnote{I dati sono qui stati troncati per brevità, ma la transazione è realmente esistente ed è visibile all'indirizzo \url{http://blockexplorer.com/rawtx/99383066a5140b35b93e8f84ef1d40fd720cc201d2aa51915b6c33616587b94f}}:
 
 \lstinputlisting[tabsize=2, numbers=left]{src/transaction.json}
 
@@ -34,7 +34,7 @@ La verifica di un input di tale transazione avviene secondo la procedura illustr
   \centering
   \begin{tabular}{m{0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep}}
     \hline
-    Stack&Script&Descrizione \\
+    \textbf{Stack}&\textbf{Script}&\textbf{Descrizione} \\
     \hline
     \verb||&\verb|<sig>| \verb|<pubKey>| \verb|OP_DUP| \verb|OP_HASH160| \verb|<pubKeyHash>| \verb|OP_EQUALVERIFY| \verb|OP_CHECKSIG|&Unisco il campo \verb|scriptSig| di $\tau_1$ con il campo \verb|scriptPubKey| del relativo output di $tau_0$ creando lo script da eseguire  \\ \hline
     \verb|<sig>| \verb|<pubKey>|&\verb|OP_DUP| \verb|OP_HASH160| \verb|<pubKeyHash>| \verb|OP_EQUALVERIFY| \verb|OP_CHECKSIG|&Carico nello stack la firma dell'autore di $\tau_1$ e la relativa chiave pubblica \\ \hline
@@ -44,7 +44,7 @@ La verifica di un input di tale transazione avviene secondo la procedura illustr
     \verb|<sig>| \verb|<pubKey>|&\verb|OP_CHECKSIG|&Verifico che i due elementi in cima allo stack siano uguali, ovvero che l'autore di $\tau_1$ sia anche il destinatario di $\tau_0$ \\ \hline
     \verb|true|&\verb||&Verifico la firma (ovvero il possesso da parte dell'autore di $\tau_1$ della necessaria chiave privata) e salvo il risultato nello stack \\ \hline
   \end{tabular}
-  \caption{Passaggi della verifica dell'input di una transazione standard tra due utenti.\label{table:pay-to-pubkey-hash}}
+  \caption[Verifica di una transazione]{Passaggi della verifica dell'input di una transazione standard tra due utenti.\label{table:pay-to-pubkey-hash}}
 \end{table}
 
 L'altra transazione standard accettata dall'implementazione attuale è quella con cui si pagano le ricompense derivanti dal ritrovamento di un blocco, ovvero le transazioni \emph{coinbase} che appartengono alla tipologia \verb|pay-to-pubkey|. Non essendoci un indirizzo sorgente o una transazione in input, i valori dei campi sono più ridotti: \verb|scriptPubKey| contiene \verb|<pubKey> OP_CHECKSIG| mentre \verb|scriptSig| contiene unicamente \verb|<sig>|. Il funzionamento di questo script è descritto nella tabella \ref{table:pay-to-pubkey} e si usano le stesse convenzioni della tabella precedente.
@@ -53,16 +53,16 @@ L'altra transazione standard accettata dall'implementazione attuale è quella co
   \centering
   \begin{tabular}{m{0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep}}
     \hline
-    Stack&Script&Descrizione \\
+    \textbf{Stack}&\textbf{Script}&\textbf{Descrizione} \\
     \hline
     \verb||&\verb|<sig>| \verb|<pubKey>| \verb|OP_CHECKSIG|&Unisco \verb|scriptSig| da $tau_1$ e \verb|scriptPubKey| da $tau_0$ creando lo script da analizzare  \\ \hline
     \verb|<sig>| \verb|<pubKey>|&\verb|OP_CHECKSIG|&Carico nello stack la firma dell'autore di $tau_1$ e la chiave pubblica del destinatario di $tau_0$ \\ \hline
     \verb|true|&\verb||&Verifico la firma e salvo il risultato nello stack \\ \hline
   \end{tabular}
-  \caption{Passaggi della verifica di una transazione standard di generazione di BTC.\label{table:pay-to-pubkey}}
+  \caption[Verifica di una transazione di generazione BTC]{Passaggi della verifica di una transazione standard di generazione di BTC.\label{table:pay-to-pubkey}}
 \end{table}
 
-Con il linguaggio di scripting è anche possibile effettuare alcune transazioni particolari non ancora considerate standard, per realizzare le quali è necessario utilizzare dei clienti appositi in grado di manipolare la struttura grezza delle transazioni. Ad esempio è possibile creare una transazione il cui output non è spendibile semplicemente inserendo all'inizio di \verb|scriptPubKey| il comando \verb|OP_RETURN|, il quale termina subito l'esecuzione dello script rendendo la transazione non utilizzabile in un futuro input in quanto il contenuto di \verb|scriptSig| diventa inutile. Esiste un esempio di tale tipo di transazione\footnote{\url{https://blockexplorer.com/tx/eb31ca1a4cbd97c2770983164d7560d2d03276ae1aee26f12d7c2c6424252f29}} che avendo l'unico output impostato a 0, lascia l'intero ammontare di 0.125 BTC come transaction fee al minatore che troverà il blocco.\\
+Con il linguaggio di scripting è anche possibile effettuare alcune transazioni particolari non ancora considerate standard, per realizzare le quali è necessario utilizzare dei client appositi in grado di manipolare la struttura grezza delle transazioni. Ad esempio è possibile creare una transazione il cui output non è spendibile semplicemente inserendo all'inizio di \verb|scriptPubKey| il comando \verb|OP_RETURN|, il quale termina subito l'esecuzione dello script rendendo la transazione non utilizzabile in un futuro input in quanto il contenuto di \verb|scriptSig| diventa inutile. Esiste un esempio di tale tipo di transazione\footnote{\url{https://blockexplorer.com/tx/eb31ca1a4cbd97c2770983164d7560d2d03276ae1aee26f12d7c2c6424252f29}} che avendo l'unico output impostato a 0, lascia l'intero ammontare di 0.125 BTC come transaction fee al minatore che troverà il blocco.\\
 Dal lato opposto, è anche possibile creare transazioni spendibili da chiunque\footnote{Un motivo per utilizzare in futuro questo tipo di transazioni è illustrato nel Wiki all'indirizzo \url{https://en.bitcoin.it/wiki/Fidelity_bonds}.} lasciando vuoto \verb|scriptPubKey| e inserendo \verb|OP_TRUE| in \verb|scriptSig|.\\
 Un ulteriore esempio delle potenzialità dello scripting è la creazione di alcuni puzzle crittografici che devono essere risolti per poter spendere le BTC. Esiste un esempio \footnote{\url{https://blockexplorer.com/tx/a4bfa8ab6435ae5f25dae9d89e4eb67dfa94283ca751f393c1ddc5a837bbc31b}} in cui si richiede di trovare qualche dato tale che, sottoposto due volte ad hash, risulti uguale ad un dato fornito. La tabella \ref{table:puzzle-transaction} illustra l'esecuzione di un simile script.
 
@@ -70,7 +70,7 @@ Un ulteriore esempio delle potenzialità dello scripting è la creazione di alcu
   \centering
   \begin{tabular}{m{0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep} | m{\dimexpr 0.3\linewidth-2\tabcolsep}}
     \hline
-    Stack&Script&Descrizione \\
+    \textbf{Stack}&\textbf{Script}&\textbf{Descrizione} \\
     \hline
     \verb||&\verb|<data>| \verb|OP_HASH256| \verb|<given_hash>| \verb|OP_EQUAL|&Unisco \verb|scriptSig| e \verb|scriptPubKey| creando lo script da analizzare  \\ \hline
     \verb|<data>|&\verb|OP_HASH256| \verb|<given_hash>| \verb|OP_EQUAL|&Carico nello stack \verb|scriptSig| \\ \hline
@@ -78,41 +78,41 @@ Un ulteriore esempio delle potenzialità dello scripting è la creazione di alcu
     \verb|<data_hash>| \verb|<given_hash>|&\verb|OP_EQUAL|&Carico nello stack l'hash di confronto \\ \hline
     \verb|true|&\verb||&Confronto i due hash \\ \hline
   \end{tabular}
-  \caption{Passaggi della verifica di una transazione di esempio contenente un puzzle.\label{table:puzzle-transaction}}
+  \caption[Verifica di transazione con puzzle]{Passaggi della verifica di una transazione di esempio contenente un puzzle.\label{table:puzzle-transaction}}
 \end{table}
 
 \section{Contratti}\label{contratti}
 
-I contratti distribuiti sono un modo per sfruttare le potenzialità dello scripting Bitcoin per creare accordi tra persone in modo da limitare al minimo la fiducia da riporre in esse. Come per alcuni degli script precedentemente descritti, anche questi non sono considerati standard e sono anzi da considerare solo come esempi di una possibile futura evoluzione delle rete che permette nuove forme di transazioni evadibili in automatico tramite la blockchain senza necessità di intervento umano. Gli esempi sono presi dal Wiki ufficiale (\cite{bitcoin-contracts}) che a sua volta prende spunto da una dissertazione di Nick Szab\'{o} (\cite{nick-szabo}).\\
+I contratti sono un modo per sfruttare le potenzialità dello scripting Bitcoin per creare accordi tra persone in modo da limitare al minimo la fiducia da riporre in esse. Come per alcuni degli script precedentemente descritti, anche questi non sono considerati standard e sono anzi da considerare solo come esempi di una possibile futura evoluzione delle rete che permette nuove forme di transazioni evadibili in automatico tramite la blockchain senza necessità di intervento umano. Gli esempi sono presi dal Wiki ufficiale \cite{bitcoin-contracts} che a sua volta prende spunto da una dissertazione di Nick Szab\'{o} \cite{nick-szabo}.\\
 
 I contratti vengono realizzati sfruttando alcune caratteristiche delle transazioni e del linguaggio di scripting che non sono considerate ancora standard.
 Una di queste caratteristiche è il \emph{time-lock} visto in precedenza: ogni transazione può infatti possedere un blocco temporale che ne consente la modifica e l'eliminazione entro un certa tempo (ad esempio un timestamp o l'indice di un blocco) e se impedisce lo sfruttamento dei BTC coinvolti fino a quel momento. Una transazione con time-lock che ha superato l'istante previsto diventa definitiva.
-Nel caso di modifica di una transazione viene incrementato un contatore interno (uno per ogni voce di input della transazione) fino ad un valore massimo. Per cui anche nel caso in cui il time-lock non sia stato raggiunto, se tutti i contatori sono arrivati al loro valore massimo (definito come \verb|UINT_MAX|), allora la transazione viene considerata definitiva. I contatori possono essere utilizzati per generare nuove versioni di una transazione senza invalidare le firme precedenti, ad esempio nel caso in cui si voglia aggiungere un input proveniente da un diverso utente mediante l'utilizzo dei flag precedentemente accennati. Tali flag \verb|SIGHASH| definiscono il modo in cui viene creato l'hash che viene utilizzato nella fase di verifica della firma e permettono dunque di costruire transazioni multi-utente in cui ciascuno degli utenti coinvolti firma una parte della transazione senza dover (e poter) firmare o influenzare le altre parti.\\
-I flag sono composti da due componenti, una modalità e un modificatore. Le modalità possibili sono 3:
+Nel caso di modifica di una transazione viene incrementato un contatore interno (uno per ogni voce di input della transazione) fino ad un valore massimo. Per cui anche nel caso in cui il time-lock non sia stato raggiunto, se tutti i contatori sono arrivati al loro valore massimo (definito come \verb|UINT_MAX|), allora la transazione viene considerata definitiva. I contatori possono essere utilizzati per generare nuove versioni di una transazione senza invalidare le firme precedenti, ad esempio nel caso in cui si voglia aggiungere un input proveniente da un diverso utente mediante l'utilizzo dei flag precedentemente accennati. Tali flag \verb|SIGHASH| definiscono il modo in cui viene creato l'hash che viene utilizzato nella fase di verifica della firma e permettono dunque di costruire transazioni multi-utente in cui ciascuno degli utenti coinvolti firma una parte della transazione (il proprio input) senza dover (e poter) firmare o influenzare le altre parti.\\
+I flag sono composti da due componenti, una modalità e un modificatore. Le modalità possibili sono tre:
 \begin{description}
-    \item[\PVerb{SIGHASH_ALL}:] è il valore di default, indica che tutta la transazione viene firmata ad eccezione degli script di input (che se venissero firmati anch'essi renderebbero impossibile la verifica, per cui sono sempre esclusi dalla firma). Vengono quindi incluse nella firma le altre proprietà dell'input quali gli output connessi e i contatori. È equivalente a firmare un contratto che reciti ``Sono d'accordo di impiegare danaro proveniente da questi miei fondi se tutti impiegano il danaro proveniente dai loro fondi e il totale impiegato è quello definito.''.
+    \item[\PVerb{SIGHASH_ALL}:] è il valore di default, indica che tutta la transazione viene firmata ad eccezione degli script di input (che se venissero firmati anch'essi renderebbero impossibile la creazione della transazione, per cui sono sempre esclusi dalla firma). Vengono però incluse nella firma le altre proprietà dell'input quali gli output connessi e i contatori. È equivalente a firmare un contratto che reciti ``Sono d'accordo di impiegare danaro proveniente da questi miei fondi se tutti impiegano il danaro proveniente dai loro fondi e il totale impiegato è quello definito.''.
     \item[\PVerb{SIGHASH_NONE}:] gli output non vengono firmati e possono contenere qualsiasi cosa. Il contratto sarebbe ``Sono d'accordo di impiegare danaro proveniente da questi miei fondi fintanto che tutti impiegano il danaro proveniente dai loro fondi, ma non sono interessato a come verrà impiegata tale somma o se verrà usata nella sua totalità.''. Con questa modalità si autorizza altri utenti ad aggiornare la transazione modificando i contatori relativi ai propri input.
     \item[\PVerb{SIGHASH_SINGLE}:] come per la modalità precedente, gli input sono firmati ma non i contatori, in modo che altri utenti possano aggiornare la transazione. L'unico output che viene firmato è quello inserito nella transazione nella stessa posizione dell'input\footnote{Per chiarezza, tornando all'array degli input e degli output in formato JSON, l'output all'indice $x$ verrà firmato tramite l'input  all'indice $x$}. Il contratto equivalente è ``Accetto il contratto fintanto che il mio output sia quanto io ho stabilito, indipendentemente dagli altri firmatari.''.
 \end{description}
 
-Il modificatore è invece \verb|SIGHASH_ANYONECANPAY|, che, se inserito in uno script di input, indica che tale input viene firmato ma non è necessario che lo siano anche gli altri.
-È inoltre possibile utilizzare più chiavi pubbliche tramite l'opcode \verb|CHECKMULTISIGVERIFY| tramite il quale si possono fornire più chiavi pubbliche e richiedere un numero minimo di firme che devono essere valide, numero che può anche essere minore del numero di chiavi fornite. Ad esempio un output può richiedere due firme per essere verificato con lo script \verb|2| \verb|<pubKey1>| \verb|<pubKey2>| \verb|2| \verb|CHECKMULTISIGVERIFY|.
+Il modificatore è invece \verb|SIGHASH_ANYONECANPAY|, che, se inserito in uno script di input, indica che tale input viene firmato ma non è necessario che lo siano anche gli altri.\\
+È inoltre possibile utilizzare più chiavi pubbliche tramite l'opcode \verb|CHECKMULTISIGVERIFY| tramite il quale si possono fornire più chiavi pubbliche e richiedere un numero minimo di firme che devono essere valide, numero che può anche essere minore del numero di chiavi fornite. Ad esempio un output può richiedere due firme per essere verificato con lo script \verb|2| \verb|<pubKey1>| \verb|<pubKey2>| \verb|2| \verb|CHECKMULTISIGVERIFY|.\\
 Infine un aspetto fondamentale per realizzare un contratto è la tecnica di propagazione nella rete dello stesso: per essere valido (in termini legali, non in termini crittografici), il contratto deve essere visibile a tutti i possibili firmatari prima della firma, in modo che essi sappiano quale accordo stanno sottoscrivendo. Esistono due metodi generici per fare ciò in modo sicuro (ovvero con minima fiducia tra le parti):
 \begin{itemize}
-    \item Inviare le transazioni tra i possibili firmatari al di fuori della rete Bitcoin in forma incompleta o invalida e inviato una volta completo.
+    \item Inviare le transazioni tra i possibili firmatari al di fuori della rete Bitcoin in forma incompleta o invalida e metterle in rete una volta complete.
     \item Utilizzare due transazioni. La prima (il contratto) viene creata e firmata ma non inoltrata nella rete. L'altra transazione (il pagamento) viene inoltrata dopo che il contratto è stato siglato in modo da bloccare le BTC, dopodiché viene inoltrato il contratto.
 \end{itemize}
 
-Tutti questi strumenti combinati possono portare alla creazione di nuovi strumenti finanziari che si basano sulla rete Bitcoin, come ad esempio quelli illustrati brevemente di seguito. Per maggiori dettagli o altri possibili contratti sono disponibili informazioni più approfondite in \cite{bitcoin-contracts}, in \cite{nick-szabo} e in \cite{bitter-better}.
+Tutti questi strumenti combinati possono portare alla creazione di nuovi strumenti finanziari che si basano sulla rete Bitcoin, come ad esempio quelli illustrati brevemente di seguito. Per maggiori dettagli o altri possibili contratti sono disponibili informazioni più approfondite in \cite{bitcoin-contracts,nick-szabo,bitter-better}.
 
 \subsection{Deposito temporaneo}
 
-Rimanendo nell'ambito della rete Internet, è possibile voler sottoscrivere un account presso un sito Internet che richieda una certa fiducia nell'utente, ad esempio per verificare che egli non sia uno spambot. Una soluzione possibile consiste nell'inviare una caparra all'operatore del sito, fidandosi del fatto che tale somma verrà restituita in caso di cancellazione dell'account e che l'operatore non scapperà con il denaro. Tale fiducia può essere eliminata con un contratto Bitcoin secondo la seguente procedura:
+Rimanendo nell'ambito della rete Internet, è possibile voler sottoscrivere un account presso un sito Internet che richieda una certa fiducia nell'utente, ad esempio per verificare che egli non sia uno spambot. Una soluzione possibile consiste nell'inviare una sorta di caparra all'operatore del sito, fidandosi del fatto che tale somma verrà restituita in caso di cancellazione dell'account e che l'operatore non scapperà con il denaro. Tale fiducia può essere eliminata con un contratto Bitcoin secondo la seguente procedura:
 \begin{enumerate}
     \item Utente ed operatore si scambiano una coppia di chiavi pubbliche appositamente create.
     \item L'utente crea la transazione $\tau_1$ (il pagamento) contenente X BTC in un output che richiede la firma sia dell'utente che dell'operatore, ma non la inserisce in rete.
     \item L'hash della transazione appena creata viene inviata all'operatore.
-    \item L'operatore crea una seconda transazione $\tau_2$ (il contratto) la quale paga l'output di $\tau_1$ all'utente. \verb|lock_time| viene impostato ad una qualche data nel futuro il contatore viene inizializzato a 0. Dato che l'output di $\tau_1$ richiede la firma sia dell'operatore che dell'utente per essere speso, la transazione è incompleta.
+    \item L'operatore crea una seconda transazione $\tau_2$ (il contratto) la quale paga l'output di $\tau_1$ all'utente. \verb|lock_time| viene impostato ad una qualche data nel futuro e il contatore viene inizializzato a 0. Dato che l'output di $\tau_1$ richiede la firma sia dell'operatore che dell'utente per essere speso, la transazione è incompleta.
     \item $\tau_2$ incompleta viene inviata all'utente, il quale verifica che il denaro prima o poi tornerà nelle sue tasche alla data designata, salvo modifiche. Essendo il contatore impostato a 0, il contratto può essere modificato in futuro se entrambe le parti sono concordi. Lo script in input di $\tau_2$ è incompleto visto che manca la firma dell'utente, che verrà apposta una volta verificato il contratto, completando così la transazione.
     \item L'utente può ora inviare $\tau_1$ per pagare l'operatore con la somma pattuita e successivamente inoltrare $\tau_2$ per rendere valido il contratto.
 \end{enumerate}
@@ -129,8 +129,8 @@ Sfruttando Bitcoin e le opzioni di firma multipla viste è possibile eseguire le
 \begin{enumerate}
     \item Ognuna delle parti crea la sua chiave pubblica: $k_c$ per il commerciante, $k_a$ per l'acquirente e $k_m$ per il mediatore. Commerciante e mediatore inviano le proprie chiavi all'acquirente.
     \item L'acquirente invia al commerciante $k_m$.
-    \item Il commerciante ``sfida'' il mediatore con una nonce casuale, che viene da lui firmata con la porzione privata di $k_m$, garantendo che tale nonce appartiene proprio al commerciante.
-    \item L'acquirente crea la transazione $\tau_1$ nel cui output sarà presente lo script \verb|2| \verb|<Kc>| \verb|Km| \verb|Ka| \verb|3| \verb|CHECKMULTISIGVERIFY| e la inoltra nella rete.
+    \item Il commerciante ``sfida'' il mediatore con una nonce casuale, che viene da lui firmata con la porzione privata di $k_m$, garantendo che tale chiave appartenga proprio al commerciante.
+    \item L'acquirente crea la transazione $\tau_1$ nel cui output sarà presente lo script \verb|2| \verb|<Kc>| \verb|<Km>| \verb|<Ka>| \verb|3| \verb|CHECKMULTISIGVERIFY| e la inoltra nella rete.
 \end{enumerate}
 
 La situazione che si viene a creare blocca le monete inviate con la transazione in uno stato di inspendibilità fino a quando non avviene uno dei seguenti fatti:
@@ -145,11 +145,11 @@ Infatti l'output della transazione inoltrata, per essere speso, richiede che l'i
 
 Si immagini un'associazione di volontari che intenda creare un bene comune, ad esempio gli abitanti di un quartiere che vogliono realizzare un parco giochi o la Protezione Civile che intende sistemare gli argini di un fiume senza intaccare gli scarsi fondi comunali, e che avvia appositamente una raccolta fondi per finanziare il progetto. Probabilmente tutti gli interessati investirebbero nell'impresa secondo le loro potenzialità, ma cosa succede se i fondi raccolti non raggiungono la somma preventivata per la buona riuscita dell'opera? Si cambia opera? Si abbassa la qualità del lavoro finale? Si restituiscono i soldi? E in quest'ultimo caso come si procede in caso di donazioni anonime?
 Con una raccolta fondi assicurata ci si impegna a pagare una somma se e soltanto se il totale delle donazioni raggiunge una certa quota prefissata, altrimenti nessuno deve pagare nulla.
-Si può implementare questo comportamento come segue:
+Si può implementare questa funzionalità come segue:
 \begin{enumerate}
     \item Un imprenditore crea un nuovo indirizzo per la raccolta fondi e stima il traguardo a X BTC.
     \item Chiunque intenda contribuire crea una nuova transazione prendendo come input il valore che desidera inviare ma non la inoltra. La transazione differisce per tre particolari da una transazione normale: \begin{itemize}
-        \item Non esiste resto. L'utente deve quindi effettuare una transazione preventiva per creare un output dell'ammontare desiderato nel caso non ne possieda già uno.
+        \item Non esiste resto. L'utente deve quindi effettuare una transazione preventiva per poter creare un output dell'ammontare desiderato da usare come input per la donazione nel caso non ne possieda già uno.
         \item Lo script di input è firmato con ``\verb|SIGHASH_ALL| $\|$ \verb|SIGHASH_ANYONECANPAY|``.
         \item Il valore in output è esattamente X BTC. Dato che tale output è maggiore della somma degli input, la transazione non risulta valida ed è quindi totalmente sicuro inviarla ad uno sconosciuto.
     \end{itemize}
