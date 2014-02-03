@@ -64,7 +64,7 @@ L'altra transazione standard accettata dall'implementazione attuale è quella co
 
 Con il linguaggio di scripting è anche possibile effettuare alcune transazioni particolari non ancora considerate standard, per realizzare le quali è necessario utilizzare dei clienti appositi in grado di manipolare la struttura grezza delle transazioni. Ad esempio è possibile creare una transazione il cui output non è spendibile semplicemente inserendo all'inizio di \verb|scriptPubKey| il comando \verb|OP_RETURN|, il quale termina subito l'esecuzione dello script rendendo la transazione non utilizzabile in un futuro input in quanto il contenuto di \verb|scriptSig| diventa inutile. Esiste un esempio di tale tipo di transazione\footnote{\url{https://blockexplorer.com/tx/eb31ca1a4cbd97c2770983164d7560d2d03276ae1aee26f12d7c2c6424252f29}} che avendo l'unico output impostato a 0, lascia l'intero ammontare di 0.125 BTC come transaction fee al minatore che troverà il blocco.\\
 Dal lato opposto, è anche possibile creare transazioni spendibili da chiunque\footnote{Un motivo per utilizzare in futuro questo tipo di transazioni è illustrato nel Wiki all'indirizzo \url{https://en.bitcoin.it/wiki/Fidelity_bonds}.} lasciando vuoto \verb|scriptPubKey| e inserendo \verb|OP_TRUE| in \verb|scriptSig|.\\
-Un ulteriore esempio delle potenzialità dello scripting è la creazione di alcuni puzzle crittografici che devono essere risolti per poter spendere le BTC\. Esiste un esempio \footnote{\url{https://blockexplorer.com/tx/a4bfa8ab6435ae5f25dae9d89e4eb67dfa94283ca751f393c1ddc5a837bbc31b}} in cui si richiede di trovare qualche dato tale che, sottoposto due volte ad hash, risulti uguale ad un dato fornito. La tabella \ref{table:puzzle-transaction} illustra l'esecuzione di un simile script.
+Un ulteriore esempio delle potenzialità dello scripting è la creazione di alcuni puzzle crittografici che devono essere risolti per poter spendere le BTC. Esiste un esempio \footnote{\url{https://blockexplorer.com/tx/a4bfa8ab6435ae5f25dae9d89e4eb67dfa94283ca751f393c1ddc5a837bbc31b}} in cui si richiede di trovare qualche dato tale che, sottoposto due volte ad hash, risulti uguale ad un dato fornito. La tabella \ref{table:puzzle-transaction} illustra l'esecuzione di un simile script.
 
 \begin{table}
   \centering
@@ -78,7 +78,7 @@ Un ulteriore esempio delle potenzialità dello scripting è la creazione di alcu
     \verb|<data_hash>| \verb|<given_hash>|&\verb|OP_EQUAL|&Carico nello stack l'hash di confronto \\ \hline
     \verb|true|&\verb||&Confronto i due hash \\ \hline
   \end{tabular}
-  \caption{Passaggi della verifica di una transazione di esempio contente un puzzle.\label{table:puzzle-transaction}}
+  \caption{Passaggi della verifica di una transazione di esempio contenente un puzzle.\label{table:puzzle-transaction}}
 \end{table}
 
 \section{Contratti}\label{contratti}
@@ -86,7 +86,7 @@ Un ulteriore esempio delle potenzialità dello scripting è la creazione di alcu
 I contratti distribuiti sono un modo per sfruttare le potenzialità dello scripting Bitcoin per creare accordi tra persone in modo da limitare al minimo la fiducia da riporre in esse. Come per alcuni degli script precedentemente descritti, anche questi non sono considerati standard e sono anzi da considerare solo come esempi di una possibile futura evoluzione delle rete che permette nuove forme di transazioni evadibili in automatico tramite la blockchain senza necessità di intervento umano. Gli esempi sono presi dal Wiki ufficiale (\cite{bitcoin-contracts}) che a sua volta prende spunto da una dissertazione di Nick Szab\'{o} (\cite{nick-szabo}).\\
 
 I contratti vengono realizzati sfruttando alcune caratteristiche delle transazioni e del linguaggio di scripting che non sono considerate ancora standard.
-Una di queste caratteristiche è il \emph{time-lock} visto in precedenza: ogni transazione può infatti possedere un blocco temporale che ne consente la modifica e l'eliminazione entro una certa tempo (ad esempio un timestamp o l'indice di un blocco) e se impedisce lo sfruttamento dei BTC coinvolti fino a quel momento. Una transazione con time-lock che ha superato l'istante previsto diventa definitiva.
+Una di queste caratteristiche è il \emph{time-lock} visto in precedenza: ogni transazione può infatti possedere un blocco temporale che ne consente la modifica e l'eliminazione entro un certa tempo (ad esempio un timestamp o l'indice di un blocco) e se impedisce lo sfruttamento dei BTC coinvolti fino a quel momento. Una transazione con time-lock che ha superato l'istante previsto diventa definitiva.
 Nel caso di modifica di una transazione viene incrementato un contatore interno (uno per ogni voce di input della transazione) fino ad un valore massimo. Per cui anche nel caso in cui il time-lock non sia stato raggiunto, se tutti i contatori sono arrivati al loro valore massimo (definito come \verb|UINT_MAX|), allora la transazione viene considerata definitiva. I contatori possono essere utilizzati per generare nuove versioni di una transazione senza invalidare le firme precedenti, ad esempio nel caso in cui si voglia aggiungere un input proveniente da un diverso utente mediante l'utilizzo dei flag precedentemente accennati. Tali flag \verb|SIGHASH| definiscono il modo in cui viene creato l'hash che viene utilizzato nella fase di verifica della firma e permettono dunque di costruire transazioni multi-utente in cui ciascuno degli utenti coinvolti firma una parte della transazione senza dover (e poter) firmare o influenzare le altre parti.\\
 I flag sono composti da due componenti, una modalità e un modificatore. Le modalità possibili sono 3:
 \begin{description}
@@ -117,7 +117,7 @@ Rimanendo nell'ambito della rete Internet, è possibile voler sottoscrivere un a
     \item L'utente può ora inviare $\tau_1$ per pagare l'operatore con la somma pattuita e successivamente inoltrare $\tau_2$ per rendere valido il contratto.
 \end{enumerate}
 
-Una volta completati tali passaggi, le X BTC inviate con $\tau_1$ si trovano in uno stato in cui non possono essere spese ne dall'utente ne dall'operatore senza l'approvazione dell'altro. Allo scadere del \verb|time_lock| il contratto si concluderà e l'utente riavrà indietro le sue monete anche nel caso in cui il sito o l'operatore siano spariti.\\
+Una volta completati tali passaggi, le X BTC inviate con $\tau_1$ si trovano in uno stato in cui non possono essere spese né dall'utente né dall'operatore senza l'approvazione dell'altro. Allo scadere del \verb|time_lock| il contratto si concluderà e l'utente riavrà indietro le sue monete anche nel caso in cui il sito o l'operatore siano spariti.\\
 
 Nel caso in cui l'utente voglia chiudere anticipatamente il contratto, l'operatore crea una nuova versione di $\tau_2$, ad esempio $\tau_{2.1}$, in cui \verb|lock_time| è impostato a 0 e il contatore al suo massimo \verb|UINT_MAX| e applica la sua firma. $\tau_{2.1}$ viene inviata all'utente, il quale controlla, eventualmente firma e inoltra la transazione alla rete invalidando $\tau_2$ e riappropriandosi subito delle sue BTC.\\
 La stessa procedura viene applicata se l'utente volesse prolungare il contratto: basta impostare un nuovo \verb|lock_time|, incrementare di una unità il contatore, firmare ed inoltrare.
@@ -136,14 +136,14 @@ Sfruttando Bitcoin e le opzioni di firma multipla viste è possibile eseguire le
 La situazione che si viene a creare blocca le monete inviate con la transazione in uno stato di inspendibilità fino a quando non avviene uno dei seguenti fatti:
 \begin{itemize}
     \item Commerciante ed acquirente raggiungono un accordo (il commercio è andato a buon fine oppure il commerciante accetta di rimborsare il cliente).
-    \item Acquirente e mediatore si accordano (il commercio è andato male e il mediatore da ragione all'acquirente).
+    \item Acquirente e mediatore si accordano (il commercio è andato male e il mediatore dà ragione all'acquirente).
     \item Il mediatore spalleggia il commerciante (i beni sono comunque arrivati a destinazione come richiesto e il denaro spetta al commerciante).
 \end{itemize}
 Infatti l'output della transazione inoltrata, per essere speso, richiede che l'input della nuova transazione contenga almeno due delle firme collegate alle chiavi pubbliche elencate. Per cui una volta raggiunto l'accordo, una delle parti crea una $\tau_2$ con \verb|scriptSig| contenente la sua firma, la inoltra alla seconda parte interessata la quale la firma e la inoltra alla rete assegnando il denaro a chi di dovere.
 
 \subsection{Raccolta fondi assicurata}
 
-Si immagini un'associazione di volontari che intenda creare un bene comune, ad esempio gli abitanti di un quartiere che vogliono realizzare un parco giochi o la Protezione Civile che intende sistemare gli argini di un fiume senza intaccare gli scarsi fondi comunali, e che avvia appositamente una raccolta fondi per finanziare il progetto. Probabilmente tutti gli interessati investirebbero nell'impresa secondo le loro potenzialità, ma cosa succede se i fondi raccolti non raggiungono la somma preventivata per la buona riuscita dell'opera? Si cambia opera? Si abbassa la qualità del lavoro finale? Si restituiscono i soldi? E in quest'ultimo caso come si procede in caso di donazioni anonime?.
+Si immagini un'associazione di volontari che intenda creare un bene comune, ad esempio gli abitanti di un quartiere che vogliono realizzare un parco giochi o la Protezione Civile che intende sistemare gli argini di un fiume senza intaccare gli scarsi fondi comunali, e che avvia appositamente una raccolta fondi per finanziare il progetto. Probabilmente tutti gli interessati investirebbero nell'impresa secondo le loro potenzialità, ma cosa succede se i fondi raccolti non raggiungono la somma preventivata per la buona riuscita dell'opera? Si cambia opera? Si abbassa la qualità del lavoro finale? Si restituiscono i soldi? E in quest'ultimo caso come si procede in caso di donazioni anonime?
 Con una raccolta fondi assicurata ci si impegna a pagare una somma se e soltanto se il totale delle donazioni raggiunge una certa quota prefissata, altrimenti nessuno deve pagare nulla.
 Si può implementare questo comportamento come segue:
 \begin{enumerate}
