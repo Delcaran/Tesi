@@ -23,9 +23,9 @@ Esiste un altro criterio per classificare un meccanismo di indicizzazione, basat
 \subsection{Indici distribuiti}\label{indici-distribuiti-todo-probabilmente-posso-eliminare}
 %TODO: probabilmente posso eliminare questa sezione
 
-In una overlay strutturata, la rete P2P ha una topologia ben definita e i dati sono localizzati secondo un criterio deterministico dipendente da algoritmi precisi. L'obiettivo di questa precisa struttura è fornire una ricerca molto rapida e deterministica per le query, pertanto tali sistemi vengono definiti \emph{sistemi di lookup} e tipicamente sfruttano tabelle di hash per localizzare i dati. Oltre allo svantaggio sopra indicato dell'impossibilità di effetture query approssimative, il calcolo dell'hash per ogni risorsa condivisa dai peer genera un certo overhead che potrebbe essere particolarmente gravoso in fase di churm.
+In una overlay strutturata, la rete P2P ha una topologia ben definita e i dati sono localizzati secondo un criterio deterministico dipendente da algoritmi precisi. L'obiettivo di questa precisa struttura è fornire una ricerca molto rapida e deterministica per le query, pertanto tali sistemi vengono definiti \emph{sistemi di lookup} e tipicamente sfruttano tabelle di hash per localizzare i dati. Oltre allo svantaggio sopra indicato dell'impossibilità di effetture query approssimative, il calcolo dell'hash per ogni risorsa condivisa dai peer genera un certo overhead che potrebbe essere particolarmente gravoso in fase di churn.
 
-D'altro canto, in una overlay non strutturata, dato che non esiste un metodo per stabilire la posizione di un file o di un nodo all'interno della rete, viene usato un \emph{indice locale} per ogni peer. Pur facilitando il churm, una query eseguita in questa rete può generare un grande numero di messaggi e un grande ritardo per la risposta. Tale svantaggio viene però bilanciato dalla possibilità di effettuare query approssimative. Nonostante l'assenza di un struttra definita, emergono alcune topologie, a seconda della funzione statistica che lega i nodi:
+D'altro canto, in una overlay non strutturata, dato che non esiste un metodo per stabilire la posizione di un file o di un nodo all'interno della rete, viene usato un \emph{indice locale} per ogni peer. Pur facilitando il churn, una query eseguita in questa rete può generare un grande numero di messaggi e un grande ritardo per la risposta. Tale svantaggio viene però bilanciato dalla possibilità di effettuare query approssimative. Nonostante l'assenza di un struttra definita, emergono alcune topologie, a seconda della funzione statistica che lega i nodi:
 
 \textbf{Power law random graph} (PLRG): Questa topologia viene rappresentata da un grafo casuale in cui ogni nodo ha un certo numero di vicini (\emph{grado}) e si relaziona con gli altri nodi in base alla
 \emph{Legge della Potenza} \footnote{Si tratta di una relazione   funzionale tra due quantità in cui una quantità varia in base ad una   potenza dell'altra.}. Se ordiniamo i nodi in base al grado, allora l'$i$-esimo nodo avrà $c/i^\alpha$ vicini con $c$ costante.
@@ -45,7 +45,7 @@ Come accennato, lo svantaggio principale nelle overlay non strutturate sta nella
 \item
   Supporto le query complesse basate su range, attributi e valori   approssimati.
 \item
-  Un churm elevato non rappresenta un problema, la connessione e la   disconnessione di molti nodi risulta sempre rapida e non influisce   sulle performance.
+  Un churn elevato non rappresenta un problema, la connessione e la   disconnessione di molti nodi risulta sempre rapida e non influisce   sulle performance.
 \end{itemize}
 
 Tali vantaggi sono validi nella maggior parte delle implementazioni di una overlay non strutturata, come ad esempio in Gnutella, ma se vengono soddisfatte alcune condizioni sono valide anche le seguenti proprietà: 
@@ -122,7 +122,7 @@ Il random walk risulta più performante rispetto al flooding e offre anche molta
 
 \section{Chord Distributed Hash Table}\label{chord-distributed-hash-table}
 
-Questo algoritmo per le DHT utilizza uno spazio delle chiavi piatto per associare le mappe tra i nodi e i dati condivisi. Sia l'indirizzo del nodo che i dati sono mappati ad un identificatore nello spazio delle chiavi tramite una funzione di hash. Sia il mapping delle chiavi che il mapping dei nodi dovrebbero assicurarsi che le chiavi siano uniformemente distribuiti tra tutti i nodi. Questo inoltre riduce la possibilità che i calcoli da effettuare durante il churm generino troppo overhead. Nello specifico, quando un nodo lascia o si unisce ad una rete con $n$ nodi, solamente $O(1/n)$ chiavi devono essere spostate in altri nodi. L'algoritmo Chord supporta una sola operazione, \emph{lookup(x)}, che mappa una data chiave $x$ ad un nodo della rete. Chord salva un dato nel nodo mappato dalla chiave di tale dato, il richiede due step:
+Questo algoritmo per le DHT utilizza uno spazio delle chiavi piatto per associare le mappe tra i nodi e i dati condivisi. Sia l'indirizzo del nodo che i dati sono mappati ad un identificatore nello spazio delle chiavi tramite una funzione di hash. Sia il mapping delle chiavi che il mapping dei nodi dovrebbero assicurarsi che le chiavi siano uniformemente distribuiti tra tutti i nodi. Questo inoltre riduce la possibilità che i calcoli da effettuare durante il churn generino troppo overhead. Nello specifico, quando un nodo lascia o si unisce ad una rete con $n$ nodi, solamente $O(1/n)$ chiavi devono essere spostate in altri nodi. L'algoritmo Chord supporta una sola operazione, \emph{lookup(x)}, che mappa una data chiave $x$ ad un nodo della rete. Chord salva un dato nel nodo mappato dalla chiave di tale dato, il richiede due step:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -148,4 +148,4 @@ Una versione più raffinata del precedente algoritmo richiede l'aumento dello sp
 
 A causa della sua struttura logaritmica, la finger table contiene più informazioni sui nodi successivi vicini rispetto ai nodi successivi lontani \footnote{qui ``successivi'', ``vicini'' e ``lontani'' fanno   riferimento all'anello che si viene a creare nella Chord overlay.}. Immaginiamo infatti di cercare la chiave $k$ partendo dal nodo $i$. Se $k$ si trova tra $i$ e il suo successore, allora vuol dire che $k$ si trova effettivamente nel successore. Altrimenti $k$ si trova oltre il successore, per cui $i$ deve scandire la sua finger table per identificare il nodo $j$ che precede immediatamente $k$. Dato che $j$ si trova più vicino a $k$ di $i$, esso conterrà molte più informazioni utili alla localizzazione di $k$.
 
-%TODO gestione del churm in una Chord (pagg 691-695)
+%TODO gestione del churn in una Chord (pagg 691-695)
