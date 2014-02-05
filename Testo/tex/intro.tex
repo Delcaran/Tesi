@@ -99,9 +99,13 @@ Unendo le affermazioni precedenti in una unica formulazione otteniamo il tempo m
 
 \subsubsection{Confronto}\label{confronto}
 
-Per un confronto diretto tra le due architetture, poniamo $F/u = 1 \text{ora}$, $u_s = 10u$ e $d_{min} \geq u_s$, ovvero abbiamo posto che un peer può trasmettere l'intero file in un'ora, la frequenza di trasmissione del server è 10 volte quella del peer e (per semplificare) le frequenze di trasmissione dei peer sono grandi abbastanza da essere irrilevanti. Otteniamo la seguente figura.
+Per un confronto diretto tra le due architetture, poniamo $F/u = 1 \text{ora}$, $u_s = 10u$ e $d_{min} \geq u_s$, ovvero abbiamo posto che un peer può trasmettere l'intero file in un'ora, la frequenza di trasmissione del server è 10 volte quella del peer e (per semplificare) le frequenze di trasmissione dei peer sono grandi abbastanza da essere irrilevanti. Otteniamo la figura \ref{img_kurose}.
 
-%TODO grafico pag 134 kurose-ross
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{kurose.png}
+\caption[Tempi di distribuzione]{Tempi di distribuzione a confronto per le architetture P2P e client-server.\label{img_kurose}}
+\end{figure}
 
 Si nota subito che per l'architettura client-server il tempo di distribuzione risulta essere lineare come calcolato, ma ancora più notevole è il tempo di distribuzione per l'architettura P2P che non solo è sempre minore della controparte client-server, ma addirittura risulta quasi costante all'aumentare del numero dei peer. Questo dimostra come le reti P2P siano estremamente scalabili, e non c'è da stupirsi come il successo di una particolare rete dipenda essenzialmente dal numero di peer presenti. %FIXME: questa è detta molto male.
 
