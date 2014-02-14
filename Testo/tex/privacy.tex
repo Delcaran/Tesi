@@ -83,7 +83,7 @@ Le altre formule vengono mantenute uguali sostituendo $E^{\mathcal{R}}_\text{lin
 
 L'impossibilità di ricostruire i profili di tutti gli utenti è una proprietà molto più forte rispetto all'impossibilità di associare due indirizzi diversi ad uno stesso utente.
 
-L'algortimo di sfida \emph{ProfInd}\label{profind_alg} viene costruito nel modo seguente.
+L'algoritmo di sfida \emph{ProfInd}\label{profind_alg} viene costruito nel modo seguente.
 Lo sfidante $\challenger$ invia ad $\adversary$ il numero $n_U$ di utenti in $\{\text{pubLog} \smallsetminus \knowa\}$, che risponde con $n_U$ insiemi di indirizzi (o transazioni) e con la matrice $E_\text{prof} = {\{g_i\}}^{n_U}_{i=1}$ rappresentante la stima fatta da $\adversary$ sui profili degli utenti nel sistema.
 Come per l'algoritmo precedente, definiamo $\text{GT}_\text{prof} = {\{\text{gt}_i\}}^{n_U}_{i=1}$ rappresentante le vere associazioni tra indirizzi (o transazioni) e utenti, per cui:
 
@@ -112,7 +112,7 @@ Diciamo che un sistema soddisfa la proprietà di \emph{Profile Indistinguishabil
 
 Anche in questa stima come per la precedente, la quantificazione dipende dal confronto tra la stima di $\adversary$ e i dati reali.
 Definiamo quindi la similitudine tra $E_\text{prof}$ e $\text{GT}_\text{prof}$ come la funzione $Sim(E_\text{prof}, \text{GT}_\text{prof})$, i cui valori appartengono all'insieme $[0, 1]$.
-Come per la address unlinkability, misuriano la profile indistinguishability contro $\adversary$ stimando il grado con cui $\adversary$ è in grado di stilare un profilo utente corretto, ovvero misurando il vantaggio che $\adversary$ ha rispetto a $\adversaryrnd$ nell'avvicinarsi a $\text{GT}_\text{prof}$:
+Come per la address unlinkability, misuriamo la profile indistinguishability contro $\adversary$ stimando il grado con cui $\adversary$ è in grado di stilare un profilo utente corretto, ovvero misurando il vantaggio che $\adversary$ ha rispetto a $\adversaryrnd$ nell'avvicinarsi a $\text{GT}_\text{prof}$:
 
 \[ \text{Prof}_\adversary = \text{Sim}(E_\text{prof}, \text{GT}_\text{prof}) - \text{Sim}(E^\mathcal{R}_\text{prof}, \text{GT}_\text{prof}) \]
 
@@ -172,7 +172,7 @@ Dato che le BTC sono nel portafogli dell'utente, se tali BTC sono prese da indir
 
 Come detto in precedenza, gli indirizzi ombra vengono creati dal client per raccogliere l'eventuale resto delle transazioni.
 Immaginando quindi una transazione con un input e due output, si può ragionevolmente stabilire quale dei due indirizzi sia quello ombra appartenente allo stesso utente che ha inviato la transazione. L'indirizzo ombra sarà infatti creato sul momento, dunque sarà l'indirizzo che non è presente nel pubLog in data precedente alla transazione.
-Questo è valido se si assume che gli utenti della rete siano attivi (abbiano fatto almeno una transazione) e che il client non consenta di creare una transazione con più indirizzi in output\footnote{Sebbene formalmente errata, in quanto molti client forniscono la possibilità di creare transazioni multioutput, l'assunzione rimane valida in quanto i client più diffusi nascondono tale funzionalità all'utente riservandola a quei client destinati all'utilizzo avanzato.}.
+Questo è valido se si assume che gli utenti della rete siano attivi (abbiano fatto almeno una transazione) e che il client non consenta di creare una transazione con più indirizzi in output\footnote{Sebbene formalmente errata, in quanto molti client forniscono la possibilità di creare transazioni multi-output, l'assunzione rimane valida in quanto i client più diffusi nascondono tale funzionalità all'utente riservandola a quei client destinati all'utilizzo avanzato.}.
 
 Per valutare la bontà delle euristiche, creiamo un parser che analizzi alcuni blocchi e raggruppi gli indirizzi in cluster di indirizzi generici (GA) basati sulle euristiche.
 
@@ -490,6 +490,6 @@ Una soluzione che comporta la modifica del protocollo, analogamente a quella pro
 
 Gli autori di \cite{user-privacy}, nonostante la specificità della loro simulazione, ritengono che i risultati trovati possano essere applicati anche ad un utilizzo generico della rete Bitcoin.
 Nello specifico, ritengono che $\adversary$ possa estrarre dalla blockchain una piccola porzione di indirizzi che corrispondono ad utenti collocati geograficamente vicino allo stesso $\adversary$, permettendogli quindi di lanciare gli algoritmi di clustering visti in scenari simili a quelli del simulatore.
-Ad esempio, se Bitcoin fosse diffuso tra i negozianti (alcuni passi in questa direzione si sono fatti negli ultimi mesi in Brazile, Canada e Nord America), allora $\adversary$ potrebbe estrarre tutti gli indirizzi che interagiscono con i negozianti presenti in una particolare area geografica: più grande il numero di indirizzi di commercianti (fisici) conosciuti, più completa la visione che $\adversary$ ha della rete Bitcoin in quell'area, in quanto si ritiene che solo i clienti più attivi di tali commercianti siano i residenti dell'area.
+Ad esempio, se Bitcoin fosse diffuso tra i negozianti (alcuni passi in questa direzione si sono fatti negli ultimi mesi in Brasile, Canada e Nord America), allora $\adversary$ potrebbe estrarre tutti gli indirizzi che interagiscono con i negozianti presenti in una particolare area geografica: più grande il numero di indirizzi di commercianti (fisici) conosciuti, più completa la visione che $\adversary$ ha della rete Bitcoin in quell'area, in quanto si ritiene che solo i clienti più attivi di tali commercianti siano i residenti dell'area.
 L'unica soluzione a ciò è rappresentata dall'utilizzo di servizi Bitcoin di terze parti, come banche Bitcoin e anonimizzatori, che nascondano la relazione tra gli input e gli output di una transazione. Ovviamente questa soluzione fa letteralmente a pugni con uno dei motivi principali per cui è stata creata la rete Bitcoin, ovvero la rimozione completa delle ``terze parti'' nelle transazioni. Inoltre si tratta di una relativa \emph{scelta dell'orco}: bisogna rischiare che un $\adversary$ tracci il mio profilo oppure devo fidarmi e lasciare in gestione le mie transazioni\footnote{con relativi BTC miei e delle mie controparti} ad una società che intercede per me, magari anche dietro pagamento?
 

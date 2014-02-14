@@ -11,11 +11,11 @@ malevoli.  Data la grande varietà di tali reti, è necessario specificare cosa 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Uno spazio degli ID composto da b bits.
+  Uno spazio degli ID composto da b bit.
 \item
   Un sistema di mappatura degli ID.
 \item
-  Un sistema di routing, che utilizza una chiave per inoltrare un   messaggio alla sua destinazione. Questo include una serie di regole   per il churn.
+  Un sistema di routing, che utilizza una chiave per inoltrare un   messaggio alla sua destinazione. Questo include una serie di regole   per il \gls{churn}.
 \end{itemize}
 
 %TODO vedere se usare la documentazione del prof per descrivere i modelli di rete P2P
@@ -66,7 +66,7 @@ Il metodo più diffuso per evitare la fuoriuscita di informazioni nella comunica
 
 \subsection{Attacchi di Medio Livello}\label{attacchi-di-medio-livello}
 
-\subsubsection{Worms}\label{worms}
+\subsubsection{Worm}\label{worms}
 
 Un worm è un programma auto-replicante simile a un virus che, a differenza di questo, è indipendente da altri programmi presenti sul sistema. La minaccia rappresentata da un worm è decisamente significativa per una rete P2P, in quanto si diffondono a tutti i nodi della rete tramite vulnerabilità presenti ad un livello più basso rispetto a quello della rete stessa. Pur non essendo legati direttamente al P2P, i worm vengono diffusi in modo capillare da esso principalmente a causa di come il P2P viene implementato. In molte architetture infatti i nodi per comunicare tra loro devono avere installato lo stesso software. Ciò significa che quando questo software ha una certa vulnerabilità (ad esempio, un buffer overflow), tutti i nodi della rete che utilizzano tale versione del software sono vulnerabili. Quindi mentre un worm ``normale'' deve effettuare una scansione dell'intera rete per trovare degli host vulnerabili, un worm P2P deve solo guardare le tabelle di routing e infettare tutti i nodi vicini, diffondendosi esponenzialmente: in confronto ai worm normali, i worm P2P infettano l'intera rete in modo praticamente istantaneo.
 
@@ -78,7 +78,7 @@ Infine, i worm possono usare la rete come uno strumento. Si è parlato prima par
 
 Il modo principale è mantenere le applicazioni sicure: senza una vulnerabilità comune un worm non può diffondersi in modo efficace. La sicurezza di un software dipende dal modo in cui esso è stato programmato, ad esempio per ridurre il rischio di buffer overflow è possibile usare linguaggi fortemente tipati.
 
-Per ridurre invece l'efficacia di un worm si può decentralizzare il più possibile la rete evitando di implementare nodi privilegiati e/o utilizzare sistemi operativi \emph{hardened}. OpenBSD dalla versione 3.8 per esempio utilizza indirizzi pseudocausali in fase di allocazione della memoria, rendendo quindi difficile sfruttare vulnerabilità presenti nei vari applicativi.
+Per ridurre invece l'efficacia di un worm si può decentralizzare il più possibile la rete evitando di implementare nodi privilegiati e/o utilizzare sistemi operativi \emph{hardened}. OpenBSD dalla versione 3.8 per esempio utilizza indirizzi pseudocasuali in fase di allocazione della memoria, rendendo quindi difficile sfruttare vulnerabilità presenti nei vari applicativi.
 
 Ma il modo più pratico per difendersi dai worm è mantenere aperta la rete ovvero basarsi su open standard diffusi per i propri applicativi. Rilasciare i protocolli al pubblico e distribuire il codice dei propri software incoraggia altri sviluppatori ad una analisi critica, il che porta alla più tempestiva scoperta di vulnerabilità ed alla rapida creazione di patch, bug-fix e fork più robusti del software in questione. Inoltre, con opportune licenze, ogni sviluppatore può creare il proprio client per interfacciarsi con la rete costringendo un attaccante a creare un worm specifico per ogni versione di ogni client, e a mantenere tale worm aggiornato mano a mano che nuove vulnerabilità vengono scoperte e risolte o nuovi client implementati. Con una grande varietà di client a disposizione, non tutti i nodi saranno vulnerabili allo stesso identico difetto presente in un altro client.
 
@@ -96,7 +96,7 @@ Ci sono molte ragioni per cui un nodo voglia comportarsi in questo modo:
 \item
   Per motivi legali, in special modo dove la condivisione di contenuti   protetti dal copyright può risultare in un'azione legale nei confronti   del nodo che condivide. Data la natura aperta delle reti, spesso è   molto facile risalire all'origine di un contenuto.
 \item
-  Per istinto: molte persone, se viene lasciata loro possibilità di   scelta, tendono a non cooperare per il solo benificio di aiutare la   comunità a cui appartengono, non importa quanto minimo sia il costo   che comporta loro.
+  Per istinto: molte persone, se viene lasciata loro possibilità di   scelta, tendono a non cooperare per il solo beneficio di aiutare la   comunità a cui appartengono, non importa quanto minimo sia il costo   che comporta loro.
 \end{itemize}
 
 Come descritto, due sono i metodi in cui ci può implementare questo ``attacco'': riducendo le risorse a disposizione della rete oppure riducendo il contenuto condiviso.
@@ -139,9 +139,9 @@ In particolare i progettisti di reti P2P dovrebbero implementare le seguenti car
 \item
   L'impossibilità per un nodo di decidere in che punto della rete   piazzarsi.
 \item
-  Un limite per la velocità di churn per i nuovi nodi.
+  Un limite per la velocità di \gls{churn} per i nuovi nodi.
 \item
-  Limitare la velocità di scambio di messaggi tra i nodi, ad esempio   con un princing.
+  Limitare la velocità di scambio di messaggi tra i nodi, ad esempio   con un pricing.
 \item
   Utilizzare la crittografia a chiave pubblica per garantire solo   messaggi legittimi tra i nodi.
 \item
@@ -195,7 +195,7 @@ Se all'istante $t_s = s \delta t + t_0$ ogni nodo della rete ha ricevuto almeno 
 \]
 
 Il che suggerisce $\forall i \geq s, n^i_\mathcal{V} + n^i_\mathcal{A} = n^{k+1}_\mathcal{V} = n^s_\mathcal{V}$.
-Con l'assunto che $\forall k , n^k_\mathcal{X}$ non si scambiano i blocchi appena costruiti, i temp $t_{g_\mathcal{X}}$ necessari perché i nodi che lavorano in favore di $\tau_\mathcal{X}$ generino un blocco sono tra loro indipendenti, il che porta la probabilità che il requisito sia soddisfatto ad essere:
+Con l'assunto che $\forall k , n^k_\mathcal{X}$ non si scambiano i blocchi appena costruiti, i tempi $t_{g_\mathcal{X}}$ necessari perché i nodi che lavorano in favore di $\tau_\mathcal{X}$ generino un blocco sono tra loro indipendenti, il che porta la probabilità che il requisito sia soddisfatto ad essere:
 
 \[ P^{\left(2\right)}_S = \Pr \left( t_{g_\mathcal{A}} < t_{g_\mathcal{V}} \right) + \frac{1}{2}\Pr \left( t_{g_\mathcal{A}} = t_{g_\mathcal{V}} \right) \]
 
@@ -309,7 +309,7 @@ Se non bastasse la legge matematica, i risultati ottenuti con tale codice e rias
 Nonostante i risultati sembrino incoraggianti, secondo quanto riportato in \cite{bitter-better} la minaccia risulta essere molto reale, soprattutto a causa della Legge di Moore\footnote{La potenza di calcolo per unità di costo raddoppia ogni anno.}.
 Assumendo un numero costante di minatori, la difficoltà nel generare un nuovo blocco (che viene dinamicamente calcolata ogni 2016 blocchi in modo da avere un nuovo blocco ogni 10 minuti circa) risulta essere una funzione esponenziale $f(t) = \alpha e^\frac{t}{\tau}$, da cui risulta che la difficoltà totale dell'intera blockchain in un qualsiasi intervallo di tempo risulta essere l'integrale $F(T) = \int^t_{t_0} f(t')\mathrm{d} t' \propto f(t)$.
 Se si pensa ad un attaccante che voglia creare nell'istante $t_1$ una blockchain con radice nell'istante $t_0$ alternativa e di difficoltà superiore a quella esistente\footnote{La difficoltà di una blockchain è direttamente correlata con la sua lunghezza: maggiore è la lunghezza, più blocchi saranno stati generati e più è elevata la difficoltà.}, allora risulta che, se tale attaccante ha a sua disposizione un piccolo multiplo (ad esempio 2) della potenza di calcolo complessivamente a disposizione dei nodi legittimi, la nuova catena rimpiazzerà quella esistente nell'istante futuro $t=t_2$, dove $\delta t = t_2 - t_1$ è un valore costante che dipende dalla potenza di calcolo (per un multiplo pari a 2 è di 1 o 2 anni).
-Se questi dati sembrano ancora relativamente sicuri, una piccola analisi della situazione moderna può far cambiare idea. Al giorno d'oggi infatti la maggior parte dei minatori unisce le proprie risorse in \emph{mining pools} (vedi sezione \ref{mining-pools}) in quanto più conveniente che non creare blocchi in solitario. Un esempio per tutti, la mining pool \verb|deepbit| nel 2012 raccoglieva sotto di se circa il 40\% della potenza di calcolo totale: se avesse raddoppiato la sua quota di mercato, ora come ora potrebbe aver modificato tutte le transazioni mai verificatesi in Bitcoin. Per fortuna gli utenti più consapevoli di tale rischio hanno diffuso la voce, e ora non solo \verb|deepbit| rappresenta circa l'1\%, ma le due più grandi mining pools, \verb|BTC Guild| e \verb|GHash.IO|, rappresentano rispettivamente il 27\% e il 28\%, ben lontani dalla soglia di rischio.
+Se questi dati sembrano ancora relativamente sicuri, una piccola analisi della situazione moderna può far cambiare idea. Al giorno d'oggi infatti la maggior parte dei minatori unisce le proprie risorse in \emph{mining pool} (vedi sezione \ref{mining-pools}) in quanto più conveniente che non creare blocchi in solitario. Un esempio per tutti, la mining pool \verb|deepbit| nel 2012 raccoglieva sotto di se circa il 40\% della potenza di calcolo totale: se avesse raddoppiato la sua quota di mercato, ora come ora potrebbe aver modificato tutte le transazioni mai verificatesi in Bitcoin. Per fortuna gli utenti più consapevoli di tale rischio hanno diffuso la voce, e ora non solo \verb|deepbit| rappresenta circa l'1\%, ma le due più grandi mining pool, \verb|BTC Guild| e \verb|GHash.IO|, rappresentano rispettivamente il 27\% e il 28\%, ben lontani dalla soglia di rischio.
 Un ulteriore fattore di rischio sta nella deflazione insita nel sistema Bitcoin (vedi \ref{deflazione}), che renderà gli incentivi derivanti dal mining sempre più ridotti, diminuendo quindi il numero di minatori. Di conseguenza la difficoltà per la creazione di nuovi blocchi invece che aumentare comincerà a diminuire e con i nuovi PC che con tutta probabilità esisteranno al tempo, la completa riscrittura dell'intera storia delle transazioni potrebbe diventare un pericolo decisamente concreto.
 
 \subsection{Ridurre il forking: comunicazione tra i nodi}
@@ -374,7 +374,7 @@ Esistono anche questioni relative alla sicurezza delle password e dei generatori
 
 Naturalmente come sempre accade spetta all'utente decidere il livello di sicurezza di cui necessita e prendere le misure necessarie.
 
-L'implementazione di un particolare tipo di portafogli potrebbe però risultare in un eccellente compromesso tra sicurezza e facilità d'uso: il \emph{super-wallet} proposto in \cite{bitter-better}, un portafoglio cifrato e distribuito su più dispositivi fisici in modo tale che solo se più autorizzazioni vengono verificate (ad esempio, una password, un file sul filesystem e una chiave privata) se ne può sfruttare il contenuto. L'utente porterebbe inoltre con sé una sorta di \emph{sub-wallet}, magari installato nel suo smartphone, configurato con alcune transazioni pre-approvate in modo che si possa prelevare denaro dal portafogli principale in piccole quantità e in un certo intervallo di tempo. Il funzionamento è esattamente identico a quello di una banca che offre servizio bancomat: si può prelevare denaro in quantità predefinite e con una soglia massima mensile. Il vantaggio evidente si ha in caso di furto del portafoglio più piccolo: si perde solo quello che vi è contenuto, il resto del proprio denaro è al sicuro in ``banca''.
+L'implementazione di un particolare tipo di portafogli potrebbe però risultare in un eccellente compromesso tra sicurezza e facilità d'uso: il \emph{super-wallet} proposto in \cite{bitter-better}, un portafoglio cifrato e distribuito su più dispositivi fisici in modo tale che solo se più autorizzazioni vengono verificate (ad esempio, una password, un file sul filesystem e una chiave privata) se ne può sfruttare il contenuto. L'utente porterebbe inoltre con sé una sorta di \emph{sub-wallet}, magari installato nel suo smartphone, configurato con alcune transazioni preapprovate in modo che si possa prelevare denaro dal portafogli principale in piccole quantità e in un certo intervallo di tempo. Il funzionamento è esattamente identico a quello di una banca che offre servizio bancomat: si può prelevare denaro in quantità predefinite e con una soglia massima mensile. Il vantaggio evidente si ha in caso di furto del portafoglio più piccolo: si perde solo quello che vi è contenuto, il resto del proprio denaro è al sicuro in ``banca''.
 Tale portafogli è implementabile con una modifica al protocollo di generazione delle chiavi, ma è retrocompatibile in quanto non richiede modifiche ai meccanismi di verifica.
 
 \section{Bitcoin-Exchange}\label{bitcoin-exchange}
