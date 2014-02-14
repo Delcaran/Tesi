@@ -124,7 +124,7 @@ La stessa procedura viene applicata se l'utente volesse prolungare il contratto:
 
 \subsection{Acquisto di beni con mediatore}
 
-La preoccupazione più grande di tutti coloro che acquistano online o con altri mezzi telematici è ``Il prodoto che ricevo (se lo ricevo) sarà quello per cui ho pagato? E se non sono soddisfatto riavrò i soldi indietro?''. Simile è anche la preoccupazione di chi vende nel caso in cui il pagamento venga effettuato dopo la spedizione o dopo aver dovuto effettuare alcune spese: ``Riceverò mai il denaro che mi spetta?''. Sfruttando piattaforme quali eBay o Amazon è possibile richiedere l'intervento di un mediatore (appunto, eBay o Amazon) per risolvere la disputa e assegnare il denaro a colui che ne ha diritto.\\
+La preoccupazione più grande di tutti coloro che acquistano online o con altri mezzi telematici è ``Il prodotto che ricevo (se lo ricevo) sarà quello per cui ho pagato? E se non sono soddisfatto riavrò i soldi indietro?''. Simile è anche la preoccupazione di chi vende nel caso in cui il pagamento venga effettuato dopo la spedizione o dopo aver dovuto effettuare alcune spese: ``Riceverò mai il denaro che mi spetta?''. Sfruttando piattaforme quali eBay o Amazon è possibile richiedere l'intervento di un mediatore (appunto, eBay o Amazon) per risolvere la disputa e assegnare il denaro a colui che ne ha diritto.\\
 Sfruttando Bitcoin e le opzioni di firma multipla viste è possibile eseguire le stesse operazioni, ovvero creare un pagamento tra tre parti che rimane bloccato fintanto che due delle tre parti non decidono a chi spetta il denaro. La procedura è la seguente:
 \begin{enumerate}
     \item Ognuna delle parti crea la sua chiave pubblica: $k_c$ per il commerciante, $k_a$ per l'acquirente e $k_m$ per il mediatore. Commerciante e mediatore inviano le proprie chiavi all'acquirente.
@@ -133,7 +133,7 @@ Sfruttando Bitcoin e le opzioni di firma multipla viste è possibile eseguire le
     \item L'acquirente crea la transazione $\tau_1$ nel cui output sarà presente lo script \verb|2| \verb|<Kc>| \verb|<Km>| \verb|<Ka>| \verb|3| \verb|CHECKMULTISIGVERIFY| e la inoltra nella rete.
 \end{enumerate}
 
-La situazione che si viene a creare blocca le monete inviate con la transazione in uno stato di inspendibilità fino a quando non avviene uno dei seguenti fatti:
+La situazione che si viene a creare blocca le monete inviate con la transazione in uno stato di non spendibilità fino a quando non avviene uno dei seguenti fatti:
 \begin{itemize}
     \item Commerciante ed acquirente raggiungono un accordo (il commercio è andato a buon fine oppure il commerciante accetta di rimborsare il cliente).
     \item Acquirente e mediatore si accordano (il commercio è andato male e il mediatore dà ragione all'acquirente).
