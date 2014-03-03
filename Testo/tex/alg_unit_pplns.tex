@@ -1,0 +1,23 @@
+\begin{algorithm}
+  \caption{units-PPLNS}
+  \label{alg_unit_pplns}
+  \begin{algorithmic}
+    \STATE Impostare tariffa $f$
+    \STATE Impostare dimensione finestra temporale $X$ \COMMENT{Multipli del tempo medio per trovare un blocco}
+    \FORALL{round}
+      \REPEAT
+        \IF{share $i$ inviata}
+          \STATE $\text{unit}_i \leftarrow$ p
+          \STATE $\text{amplifier}_i \leftarrow$ B
+        \ENDIF
+      \UNTIL{blocco trovato}
+      \STATE $u_n \leftarrow$ unit della share che ha risolto il blocco
+      \FORALL{shares $k$ tranne la risolutrice del blocco}
+        \STATE $u_k \leftarrow$ unit della share $k$
+        \STATE $a_k \leftarrow$ amplifier della share $k$
+        \STATE $U_k \leftarrow \sum_{i \leftarrow k+1} u_i$
+        \STATE paga $\frac{\left(1-f\right) a_k u_k \max \left(\min \left(\frac{X - U + u_n}{u_n}, 1\right),0\right)}{X}$
+      \ENDFOR
+    \ENDFOR
+  \end{algorithmic}
+\end{algorithm}

@@ -1,0 +1,27 @@
+\begin{algorithm}
+    \caption{Metodo Geometrico}
+    \label{alg_metodo_geometrico}
+    \begin{algorithmic}
+      \STATE Impostare tariffa fissa $f$
+      \STATE Impostare tariffa variabile $c$
+      \FORALL{round}
+        \STATE contatore per il decadimento: $s \leftarrow 1$
+        \FORALL{minatore: $k$}
+          \STATE punteggio di $k$: $S_k \leftarrow 0$
+        \ENDFOR
+        \REPEAT
+          \IF{prima iterazione \OR $D$ modificata}
+            \STATE $p = \frac{1}{D}$
+            \STATE tasso di decadimento: $r = 1 - p + \frac{p}{c}$
+          \ENDIF
+          \IF{minatore $k$ invia share}
+            \STATE $S_k \leftarrow S_k + spB$
+            \STATE $s \leftarrow sr$
+          \ENDIF
+        \UNTIL{blocco trovato}
+        \FORALL{minatore: $k$}
+          \STATE{paga $\frac{\left( 1 - f \right)\left(r - 1 \right)S_k}{sp}$}
+        \ENDFOR
+      \ENDFOR
+    \end{algorithmic}
+\end{algorithm}

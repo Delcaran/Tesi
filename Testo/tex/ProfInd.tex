@@ -1,0 +1,11 @@
+\begin{algorithm}
+	\caption{ProfInd}
+	\label{profind_alg}
+	\begin{algorithmic}
+		\STATE $\challenger$.send($n_U$, A)
+		\STATE $E_\text{prof} \leftarrow$ A.estimateProfile()
+		\IF{$E_\text{prof} = \text{GT}_\text{prof}$}
+			\STATE A.win()
+		\ENDIF
+	\end{algorithmic}
+\end{algorithm}
