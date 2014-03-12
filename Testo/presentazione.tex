@@ -12,11 +12,19 @@
 \date[2014/04/03]{IV Sessione di Laurea AA 2012/2013, Aprile 2014}
 \subject{Bitcoin}
 
+\usepackage{color}
 \usepackage{default}
 \usepackage{pres_commands}
 \usepackage{ragged2e}
+\usepackage{subcaption}
 %\usepackage{pres_uniudtesi}
 \usetheme{Madrid}
+
+\definecolor{arancione}{HTML}{FF7F00}
+\definecolor{giallo}{HTML}{FFFF33}
+\definecolor{rosso}{HTML}{E4191B}
+\definecolor{verde}{HTML}{4CAE4A}
+\definecolor{viola}{HTML}{984DA3}
 
 \graphicspath{{./img/}}
 
@@ -121,13 +129,25 @@ Creando un grafo delle transazioni pubblicamente disponibile e applicando le agg
 \end{frame}
 
 \begin{frame}{Esempio reale: un furto} % 9
-\justifying
-Il 13 Giugno 2011 sembra sia avvenuto un furto di circa 25000 BTC.\\
-Analizzando il flusso delle transazioni si è potuto osservare come il furto abbia coinvolto più di 34100 indirizzi, alcuni mai visti prima ed altri appartenenti a entità note come il gruppo hacker LulzSec (non associabile al furto) e il servizio MyBitcoin.\\
-Sfruttando le tecniche descritte è stato possibile unificare più indirizzi diversi ad una stessa entità, dimostrando quindi come sia possibile minacciare la privacy di un utente aggregando le informazioni disponibili online e offline.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{anonimato_1_11.PNG}
+    \caption*{
+    \textcolor{verde}{Vittima}\\
+    \textcolor{rosso}{Presunto ladro}\\
+    \textcolor{viola}{Slush Pool}\\
+    \textcolor{arancione}{LulzSec}\\
+    \textcolor{giallo}{Sconosciuto}
+    }
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{anonimato_1_12.PNG}
+  \end{subfigure}
+\end{figure}
 \end{frame}
 
-\framedgraphic{Seguire le transazioni}{anonimato_1_13} % 10
+\framedgraphic{Furto: transazioni seguenti}{anonimato_1_13} % 10
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
