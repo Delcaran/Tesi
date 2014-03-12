@@ -14,6 +14,7 @@
 
 \usepackage{default}
 \usepackage{pres_commands}
+\usepackage{ragged2e}
 %\usepackage{pres_uniudtesi}
 \usetheme{Madrid}
 
@@ -25,14 +26,16 @@
   pdfauthor={Paoluzzi Matteo},
   pdfsubject={Modello di presentazione di Tesi al computer},
   pdfkeywords={LaTeX pdf presentazione tesi laurea}}
-
+  
 \begin{document}
 
 \frame{\titlepage}
 
 \begin{frame}{Di cosa si tratta} % 1
+\justifying
 Una valuta elettronica basata su crittografia a chiave pubblica progettata per:
 \begin{itemize}
+\justifying
  \item Proteggere l'identità degli utenti sfruttando \textbf{indirizzi} anonimi.
  \item Essere indipendente da qualsiasi istituto di credito.
  \item Essere immune dal rischio di inflazione.
@@ -41,8 +44,10 @@ Una valuta elettronica basata su crittografia a chiave pubblica progettata per:
 \end{frame}
 
 \begin{frame}{Indirizzi} % 2
+\justifying
 L'anonimato dell'utente viene implementato tramite stringhe di testo note come indirizzi.
 \begin{itemize}
+\justifying
  \item Un indirizzo viene generato a partire da una coppia di chiavi pubbliche e private.
  \item Tutte le \textbf{transazioni} di BTC avvengono da e verso indirizzi, senza divulgare informazioni sull'identità delle parti coinvolte.
  \item Le chiavi di cifratura consentono di spendere il denaro ricevuto e impedire che il denaro inviato finisca ad un destinatario diverso da quello desiderato.
@@ -51,7 +56,9 @@ L'anonimato dell'utente viene implementato tramite stringhe di testo note come i
 \end{frame}
 
 \begin{frame}{Transazioni} % 3
+\justifying
 \begin{itemize}
+\justifying
  \item Sono identificate da un hash calcolato su un sottoinsieme di dati in modo da fissare alcune proprietà specifiche.
  \item Gli output contengono le BTC inviate e lo script che il destinatario deve eseguire per spendere le BTC.
  \item Con gli input si firmano gli output di transazioni precedentemente ricevute dimostrando di esserne il proprietario.
@@ -64,22 +71,27 @@ L'anonimato dell'utente viene implementato tramite stringhe di testo note come i
 \end{frame}
 
 \begin{frame}{Blocchi} % 4
+\justifying
 Le transazioni vengono raccolte in blocchi che risultano validi se il loro hash non supera un determinato target:
 \begin{itemize}
+\justifying
  \item Trovare tale hash è un'operazione detta \textbf{mining} configurato ridimensionando il target ogni 2016 blocchi in modo da generare in media un blocco ogni 10 minuti.
- \item Il nodo che trova il blocco viene premiato con una cifra fissa di BTC e con le transaction fee.
+ \item Il nodo che trova il blocco viene premiato con una quantità fissa di BTC e con le transaction fee.
 \end{itemize}
 Nell'insieme i blocchi formano una \textbf{blockchain} il cui scopo è fissare le transazioni nel tempo rendendone computazionalmente quasi impossibile la modifica.
-\begin{figure}[htbp]
+\begin{figure}[htp]
 \centering
-\includegraphics[width=\textwidth]{bitcoin_p3_1.PNG}
+\includegraphics[scale=0.25]{bitcoin_p3_1.PNG}
 \end{figure}
+
 \end{frame}
 
 \framedgraphic{Infografica}{transactions_ABC} % 5
 
-\begin{frame}{Vulenrabilità} % 6
+\begin{frame}{Vulnerabilità} % 6
+\justifying
  \begin{description}
+ \justifying
   \item[Double-Spending] Inoltrare più transazioni con lo stesso input in modo che solo quella più conveniente per il mittente venga inclusa in un blocco senza che il destinatario se ne accorga. Senza contromisure e con adeguata preparazione, l'attacco ha una probabilità di successo del 90\%.
   \item[History Revision] Creare una blockchain alternativa che modifica l'intera storia delle transazioni da un dato blocco in poi. Una blockchain alternativa può verificarsi spontaneamente con una probabilità del 1.78\% ma si risolve automaticamente.
   \item[Portafogli] Contengono le chiavi private neccessarie per spendere le proprie BTC e sono quindi un obiettivo sensibile da tenere il più possibile sicuro e lontano da pericoli.
@@ -87,7 +99,9 @@ Nell'insieme i blocchi formano una \textbf{blockchain} il cui scopo è fissare l
 \end{frame}
 
 \begin{frame}{Protezione} % 7
+\justifying
  \begin{description}
+ \justifying
   \item[Double-Spending] Collegandosi ad un gran numero di nodi fidati, bloccando le comunicazioni in ingresso e attendendo numerose conferme di ogni transazione è possibile di fatto annullare le probabilità di successo di un attacco doppia-spesa.
   \item[History Revision] È possibile dimezzare la frequenza di blockchain alternative spontanee velocizzando la propagazione dei messaggi in rete. Le blockchain arbitrarie non possono essere bloccate, ma è estremamente improbabile (per ora) che un tale attacco possa avere luogo.
   \item[Portafogli] Oltre le classiche opzioni di cifratura, è possibile salvare il portafogli in computer mai collegati in rete (\textbf{cold storage wallet}) oppure usare indirizzi ''receive main - send once`` stampati unicamente su carta (\textbf{paper wallet}).
@@ -95,9 +109,11 @@ Nell'insieme i blocchi formano una \textbf{blockchain} il cui scopo è fissare l
 \end{frame}
 
 \begin{frame}{Privacy} % 8
+\justifying
 Il sistema di indirizzi adottato è simile a quello dei conti bancari in Svizzera: numeri di conto non collegabili direttamente a persone.\\
 Ma il sistema di cifratura a chiave pubblica permette di stabilire se indirizzi diversi hanno il medesimo proprietario:
 \begin{itemize}
+\justifying
  \item Una transazione contenente più indirizzi in input indica che tali indirizzi appartengono tutti al creatore della transazione stessa.
  \item Se una transazione contiene un output molto piccolo e destinato ad un indirizzo mai visto prima, probabilmente tale indirizzo è stato creato appositamente dal creatore della transazione per raccogliere il resto.
 \end{itemize}
@@ -105,6 +121,7 @@ Creando un grafo delle transazioni pubblicamente disponibile e applicando le agg
 \end{frame}
 
 \begin{frame}{Esempio reale: un furto} % 9
+\justifying
 Il 13 Giugno 2011 sembra sia avvenuto un furto di circa 25000 BTC.\\
 Analizzando il flusso delle transazioni si è potuto osservare come il furto abbia coinvolto più di 34100 indirizzi, alcuni mai visti prima ed altri appartenenti a entità note come il gruppo hacker LulzSec (non associabile al furto) e il servizio MyBitcoin.\\
 Sfruttando le tecniche descritte è stato possibile unificare più indirizzi diversi ad una stessa entità, dimostrando quindi come sia possibile minacciare la privacy di un utente aggregando le informazioni disponibili online e offline.
